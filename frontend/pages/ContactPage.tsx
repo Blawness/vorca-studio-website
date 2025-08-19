@@ -87,19 +87,19 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      title: t("contact.email"),
       value: "hello@vorca.studio",
       link: "mailto:hello@vorca.studio"
     },
     {
       icon: Phone,
-      title: "Phone",
+      title: t("contact.phone"),
       value: "+1 (555) 123-4567",
       link: "tel:+15551234567"
     },
     {
       icon: MapPin,
-      title: "Location",
+      title: t("contact.location"),
       value: "San Francisco, CA",
       link: "#"
     }
@@ -146,7 +146,7 @@ export default function ContactPage() {
               <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-2xl text-white">
-                    Send us a message
+                    {t("contact.sendMessage")}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -255,10 +255,10 @@ export default function ContactPage() {
             >
               <div>
                 <h2 className="text-4xl font-bold text-white mb-6">
-                  Get in Touch
+                  {t("contact.getInTouch")}
                 </h2>
                 <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                  Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                  {t("contact.getInTouch.desc")}
                 </p>
               </div>
 
@@ -295,16 +295,16 @@ export default function ContactPage() {
 
               <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-white p-8 rounded-2xl backdrop-blur-sm">
                 <h3 className="text-xl font-semibold mb-4">
-                  Free Consultation
+                  {t("contact.freeConsultation")}
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Not sure where to start? Book a free 30-minute consultation to discuss your project and get expert advice.
+                  {t("contact.freeConsultation.desc")}
                 </p>
                 <Button 
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                   size="lg"
                 >
-                  Schedule Call
+                  {t("contact.scheduleCall")}
                 </Button>
               </div>
             </motion.div>
@@ -323,10 +323,10 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Visit Our Office
+              {t("contact.visitOffice")}
             </h2>
             <p className="text-xl text-gray-400">
-              Located in the heart of San Francisco
+              {t("contact.visitOffice.desc")}
             </p>
           </motion.div>
 
@@ -337,7 +337,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 h-96 rounded-2xl flex items-center justify-center backdrop-blur-sm"
           >
-            <p className="text-gray-400">Interactive map would be embedded here</p>
+            <p className="text-gray-400">{t("contact.mapPlaceholder")}</p>
           </motion.div>
         </div>
       </section>

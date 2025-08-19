@@ -12,8 +12,8 @@ export default function StudentsPage() {
   const services = [
     {
       icon: Code,
-      title: "Web Development Projects",
-      description: "Complete website development for your assignments",
+      title: t("students.webDevProjects"),
+      description: t("students.webDevProjects.desc"),
       price: "$150 - $500",
       features: ["HTML/CSS/JavaScript", "React/Vue.js", "Backend Integration", "Responsive Design"],
       duration: "3-7 days",
@@ -21,8 +21,8 @@ export default function StudentsPage() {
     },
     {
       icon: Palette,
-      title: "UI/UX Design",
-      description: "Professional design for your projects",
+      title: t("students.uiuxDesign"),
+      description: t("students.uiuxDesign.desc"),
       price: "$100 - $300",
       features: ["Wireframes", "Mockups", "Prototypes", "Design Systems"],
       duration: "2-5 days",
@@ -30,8 +30,8 @@ export default function StudentsPage() {
     },
     {
       icon: BookOpen,
-      title: "Programming Assignments",
-      description: "Help with coding assignments and projects",
+      title: t("students.programmingAssignments"),
+      description: t("students.programmingAssignments.desc"),
       price: "$50 - $200",
       features: ["Python/Java/C++", "Data Structures", "Algorithms", "Code Documentation"],
       duration: "1-3 days",
@@ -42,33 +42,33 @@ export default function StudentsPage() {
   const process = [
     {
       step: "01",
-      title: "Submit Brief",
-      description: "Tell us about your assignment requirements and deadline"
+      title: t("students.submitBrief"),
+      description: t("students.submitBrief.desc")
     },
     {
       step: "02",
-      title: "Free Consultation",
-      description: "30-minute discussion to understand your needs better"
+      title: t("students.freeConsultation"),
+      description: t("students.freeConsultation.desc")
     },
     {
       step: "03",
-      title: "Development",
-      description: "We build your project with regular updates"
+      title: t("students.development"),
+      description: t("students.development.desc")
     },
     {
       step: "04",
-      title: "Explanation",
-      description: "We explain the code/design so you understand it completely"
+      title: t("students.explanation"),
+      description: t("students.explanation.desc")
     }
   ];
 
   const benefits = [
-    "Affordable student pricing",
-    "Quick turnaround times",
-    "High-quality work",
-    "Code explanation included",
-    "Revision support",
-    "24/7 communication"
+    t("students.affordablePricing"),
+    t("students.quickTurnaround"),
+    t("students.highQuality"),
+    t("students.codeExplanation"),
+    t("students.revisionSupport"),
+    t("students.communication")
   ];
 
   return (
@@ -133,10 +133,10 @@ export default function StudentsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Why Choose Vorca for Your Assignments?
+              {t("students.whyChoose")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We understand the challenges students face and provide tailored solutions
+              {t("students.whyChoose.desc")}
             </p>
           </motion.div>
 
@@ -169,10 +169,10 @@ export default function StudentsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Student Services & Pricing
+              {t("students.servicesAndPricing")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Transparent pricing designed for student budgets
+              {t("students.servicesAndPricing.desc")}
             </p>
           </motion.div>
 
@@ -192,7 +192,7 @@ export default function StudentsPage() {
                   {service.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1">
-                        Most Popular
+                        {t("services.mostPopular")}
                       </Badge>
                     </div>
                   )}
@@ -231,7 +231,7 @@ export default function StudentsPage() {
                       className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                     >
                       <Link to="/contact">
-                        Get Started
+                        {t("services.getStarted")}
                       </Link>
                     </Button>
                   </CardContent>
@@ -253,10 +253,10 @@ export default function StudentsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              How It Works
+              {t("students.howItWorks")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Simple process from brief to completion
+              {t("students.howItWorks.desc")}
             </p>
           </motion.div>
 
@@ -296,7 +296,7 @@ export default function StudentsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Frequently Asked Questions
+              {t("students.faq")}
             </h2>
           </motion.div>
 
@@ -360,10 +360,10 @@ export default function StudentsPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl font-bold text-white mb-6">
-              Ready to Ace Your Assignment?
+              {t("students.readyToAce")}
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              Get your free consultation and let's discuss your project requirements.
+              {t("students.readyToAce.desc")}
             </p>
             <Button 
               asChild 
@@ -371,7 +371,7 @@ export default function StudentsPage() {
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
               <Link to="/contact">
-                Start Free Consultation
+                {t("students.startFreeConsultation")}
               </Link>
             </Button>
           </motion.div>

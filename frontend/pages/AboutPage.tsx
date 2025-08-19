@@ -9,23 +9,23 @@ export default function AboutPage() {
   const values = [
     {
       icon: Target,
-      title: "Precision",
-      description: "Like the Orca's precise hunting techniques, we deliver exact solutions."
+      title: t("about.precision"),
+      description: t("about.precision.desc")
     },
     {
       icon: Zap,
-      title: "Power",
-      description: "Harnessing the strength of modern technology for maximum impact."
+      title: t("about.power"),
+      description: t("about.power.desc")
     },
     {
       icon: Users,
-      title: "Collaboration",
-      description: "Working together as a pod to achieve extraordinary results."
+      title: t("about.collaboration"),
+      description: t("about.collaboration.desc")
     },
     {
       icon: Heart,
-      title: "Passion",
-      description: "Driven by genuine love for creating exceptional digital experiences."
+      title: t("about.passion"),
+      description: t("about.passion.desc")
     }
   ];
 
@@ -54,6 +54,13 @@ export default function AboutPage() {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
       bio: "Agile project manager ensuring smooth delivery and client satisfaction."
     }
+  ];
+
+  const stats = [
+    { number: "50+", label: t("common.happyClients") },
+    { number: "100+", label: t("common.projectsCompleted") },
+    { number: "5+", label: t("common.yearsExperience") },
+    { number: "99%", label: t("common.clientSatisfaction") }
   ];
 
   return (
@@ -94,13 +101,13 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-bold text-white mb-6">
-                Why the Orca?
+                {t("about.whyOrca")}
               </h2>
               <p className="text-lg text-gray-400 mb-6 leading-relaxed">
-                The Orca, or Killer Whale, represents everything we stand for: intelligence, power, and precision. These magnificent creatures are apex predators not through brute force alone, but through strategic thinking, teamwork, and adaptability.
+                {t("about.whyOrca.desc1")}
               </p>
               <p className="text-lg text-gray-400 mb-6 leading-relaxed">
-                Just as Orcas dominate the ocean through their sophisticated hunting strategies and strong family bonds, we help businesses dominate the digital landscape through intelligent solutions and collaborative partnerships.
+                {t("about.whyOrca.desc2")}
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
                 {t("about.mission")}
@@ -137,10 +144,10 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Our Values
+              {t("about.ourValues")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              The principles that guide everything we do
+              {t("about.ourValues.desc")}
             </p>
           </motion.div>
 
@@ -184,10 +191,10 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Meet Our Pod
+              {t("about.meetOurPod")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              The talented individuals behind Vorca Studio
+              {t("about.meetOurPod.desc")}
             </p>
           </motion.div>
 
@@ -231,12 +238,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "50+", label: "Happy Clients" },
-              { number: "100+", label: "Projects Completed" },
-              { number: "5+", label: "Years Experience" },
-              { number: "99%", label: "Client Satisfaction" }
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}

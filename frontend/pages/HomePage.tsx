@@ -27,26 +27,26 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { icon: Users, value: "50+", label: "Happy Clients" },
-    { icon: Award, value: "100+", label: "Projects Completed" },
-    { icon: TrendingUp, value: "99%", label: "Client Satisfaction" },
+    { icon: Users, value: "50+", label: t("common.happyClients") },
+    { icon: Award, value: "100+", label: t("common.projectsCompleted") },
+    { icon: TrendingUp, value: "99%", label: t("common.clientSatisfaction") },
   ];
 
   const features = [
     {
       icon: Rocket,
-      title: "Lightning Fast",
-      description: "Optimized for performance and speed"
+      title: t("common.lightningFast"),
+      description: t("common.lightningFast.desc")
     },
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level security for your data"
+      title: t("common.enterpriseSecurity"),
+      description: t("common.enterpriseSecurity.desc")
     },
     {
       icon: Sparkles,
-      title: "AI-Powered",
-      description: "Smart automation and insights"
+      title: t("common.aiPowered"),
+      description: t("common.aiPowered.desc")
     }
   ];
 
@@ -97,7 +97,7 @@ export default function HomePage() {
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-cyan-400 mr-2" />
-                <span className="text-sm text-cyan-300 font-medium">Next-Gen Digital Solutions</span>
+                <span className="text-sm text-cyan-300 font-medium">{t("common.nextGen")}</span>
               </div>
             </motion.div>
 
@@ -243,7 +243,7 @@ export default function HomePage() {
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
               <Link to="/services">
-                View All Services
+                {t("common.viewAllServices")}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
@@ -291,10 +291,10 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl font-bold text-white mb-6">
-              Ready to Dominate the Digital Ocean?
+              {t("common.readyToDominate")}
             </h2>
             <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-              Let's create something powerful together. Start your project today.
+              {t("common.readyToDominate.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -314,7 +314,7 @@ export default function HomePage() {
                 className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
               >
                 <Link to="/portfolio">
-                  View Our Work
+                  {t("common.viewOurWork")}
                 </Link>
               </Button>
             </div>

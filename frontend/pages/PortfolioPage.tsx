@@ -3,15 +3,18 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function PortfolioPage() {
+  const { t } = useLanguage();
+
   const projects = [
     {
       title: "E-Commerce Platform",
       description: "Modern e-commerce solution with advanced features",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
       tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      category: "Web Development",
+      category: t("portfolio.webDevelopment"),
       results: ["300% increase in sales", "50% faster load times", "99.9% uptime"],
       link: "#",
       github: "#"
@@ -21,7 +24,7 @@ export default function PortfolioPage() {
       description: "Comprehensive patient management system",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
       tags: ["Vue.js", "Express", "MongoDB", "Chart.js"],
-      category: "UI/UX Design",
+      category: t("portfolio.uiuxDesign"),
       results: ["40% reduction in admin time", "Improved patient satisfaction", "HIPAA compliant"],
       link: "#",
       github: "#"
@@ -31,7 +34,7 @@ export default function PortfolioPage() {
       description: "Secure financial management application",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
       tags: ["React Native", "Firebase", "Plaid API", "Biometrics"],
-      category: "Mobile Development",
+      category: t("portfolio.mobileDevelopment"),
       results: ["10k+ downloads", "4.8 app store rating", "Bank-level security"],
       link: "#",
       github: "#"
@@ -41,7 +44,7 @@ export default function PortfolioPage() {
       description: "Multi-location restaurant website with online ordering",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
       tags: ["Next.js", "Tailwind", "Sanity CMS", "Stripe"],
-      category: "Web Development",
+      category: t("portfolio.webDevelopment"),
       results: ["200% increase in online orders", "Mobile-first design", "SEO optimized"],
       link: "#",
       github: "#"
@@ -51,7 +54,7 @@ export default function PortfolioPage() {
       description: "Real-time analytics dashboard for businesses",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       tags: ["React", "D3.js", "Python", "AWS"],
-      category: "Web Development",
+      category: t("portfolio.webDevelopment"),
       results: ["Real-time data processing", "Custom visualizations", "Scalable architecture"],
       link: "#",
       github: "#"
@@ -61,14 +64,20 @@ export default function PortfolioPage() {
       description: "Online learning platform with interactive courses",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
       tags: ["Angular", "NestJS", "PostgreSQL", "WebRTC"],
-      category: "Web Development",
+      category: t("portfolio.webDevelopment"),
       results: ["5000+ active students", "Interactive video lessons", "Progress tracking"],
       link: "#",
       github: "#"
     }
   ];
 
-  const categories = ["All", "Web Development", "UI/UX Design", "Mobile Development", "Branding"];
+  const categories = [
+    t("portfolio.all"), 
+    t("portfolio.webDevelopment"), 
+    t("portfolio.uiuxDesign"), 
+    t("portfolio.mobileDevelopment"), 
+    t("portfolio.branding")
+  ];
 
   return (
     <div className="pt-16 bg-black">
@@ -87,11 +96,11 @@ export default function PortfolioPage() {
           >
             <h1 className="text-6xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                Our Portfolio
+                {t("portfolio.title")}
               </span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Showcasing our best work and the impact we've created for our clients
+              {t("portfolio.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -142,13 +151,13 @@ export default function PortfolioPage() {
                       <Button size="sm" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold" asChild>
                         <a href={project.link} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          View
+                          {t("portfolio.view")}
                         </a>
                       </Button>
                       <Button size="sm" variant="outline" className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4 mr-2" />
-                          Code
+                          {t("portfolio.code")}
                         </a>
                       </Button>
                     </div>
@@ -171,7 +180,7 @@ export default function PortfolioPage() {
                       ))}
                     </div>
                     <div className="space-y-1">
-                      <h4 className="font-semibold text-sm text-cyan-400">Results:</h4>
+                      <h4 className="font-semibold text-sm text-cyan-400">{t("portfolio.results")}</h4>
                       {project.results.map((result, resultIndex) => (
                         <div key={resultIndex} className="flex items-center text-sm text-gray-300">
                           <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></div>
@@ -201,10 +210,10 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl font-bold text-white mb-6">
-              Ready to Create Something Amazing?
+              {t("portfolio.readyToCreate")}
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              Let's discuss your project and bring your vision to life.
+              {t("portfolio.readyToCreate.desc")}
             </p>
             <Button 
               asChild 
@@ -212,7 +221,7 @@ export default function PortfolioPage() {
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
               <a href="/contact">
-                Start Your Project
+                {t("portfolio.startYourProject")}
               </a>
             </Button>
           </motion.div>

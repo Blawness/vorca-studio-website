@@ -36,40 +36,40 @@ export default function ServicesPage() {
     },
     {
       icon: Server,
-      title: "Web Hosting",
-      description: "Reliable and secure hosting solutions",
+      title: t("services.webHosting"),
+      description: t("services.webHosting.desc"),
       features: ["99.9% Uptime", "SSL Certificates", "Daily Backups", "24/7 Support"],
       price: "Starting from $10/month",
       popular: false
     },
     {
       icon: Smartphone,
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications",
+      title: t("services.mobileApps"),
+      description: t("services.mobileApps.desc"),
       features: ["iOS & Android", "React Native", "App Store Deployment", "Push Notifications"],
       price: "Starting from $3,000",
       popular: false
     },
     {
       icon: Search,
-      title: "SEO Optimization",
-      description: "Improve your search engine rankings",
+      title: t("services.seoOptimization"),
+      description: t("services.seoOptimization.desc"),
       features: ["Keyword Research", "On-page SEO", "Technical SEO", "Analytics Setup"],
       price: "Starting from $400",
       popular: false
     },
     {
       icon: Shield,
-      title: "Security Audit",
-      description: "Comprehensive security assessment and protection",
+      title: t("services.securityAudit"),
+      description: t("services.securityAudit.desc"),
       features: ["Vulnerability Scanning", "Security Hardening", "SSL Implementation", "Monitoring"],
       price: "Starting from $500",
       popular: false
     },
     {
       icon: Headphones,
-      title: "Maintenance & Support",
-      description: "Ongoing website maintenance and technical support",
+      title: t("services.maintenanceSupport"),
+      description: t("services.maintenanceSupport.desc"),
       features: ["Regular Updates", "Bug Fixes", "Performance Monitoring", "Content Updates"],
       price: "Starting from $200/month",
       popular: false
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                   {service.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1">
-                        Most Popular
+                        {t("services.mostPopular")}
                       </Badge>
                     </div>
                   )}
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                       className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                     >
                       <Link to="/contact">
-                        Get Started
+                        {t("services.getStarted")}
                       </Link>
                     </Button>
                   </CardContent>
@@ -177,19 +177,19 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-white mb-4">
-              Our Process
+              {t("services.ourProcess")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              A streamlined approach to deliver exceptional results
+              {t("services.ourProcess.desc")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Discovery", description: "Understanding your needs and goals" },
-              { step: "02", title: "Strategy", description: "Planning the perfect solution" },
-              { step: "03", title: "Development", description: "Building with precision and care" },
-              { step: "04", title: "Launch", description: "Deploying and optimizing for success" }
+              { step: "01", title: t("services.discovery"), description: t("services.discovery.desc") },
+              { step: "02", title: t("services.strategy"), description: t("services.strategy.desc") },
+              { step: "03", title: t("services.development"), description: t("services.development.desc") },
+              { step: "04", title: t("services.launch"), description: t("services.launch.desc") }
             ].map((process, index) => (
               <motion.div
                 key={index}
@@ -228,10 +228,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl font-bold text-white mb-6">
-              Ready to Start Your Project?
+              {t("services.readyToStart")}
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              Let's discuss how we can help you achieve your digital goals.
+              {t("services.readyToStart.desc")}
             </p>
             <Button 
               asChild 
@@ -239,7 +239,7 @@ export default function ServicesPage() {
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
               <Link to="/contact">
-                Get Free Consultation
+                {t("services.getFreeConsultation")}
               </Link>
             </Button>
           </motion.div>
