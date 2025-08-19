@@ -106,19 +106,26 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-black">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#001F3F] to-[#002a5c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              {t("contact.title")}
+            <h1 className="text-6xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+                {t("contact.title")}
+              </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               {t("contact.subtitle")}
             </p>
           </motion.div>
@@ -126,7 +133,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -136,9 +143,9 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card>
+              <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-[#001F3F]">
+                  <CardTitle className="text-2xl text-white">
                     Send us a message
                   </CardTitle>
                 </CardHeader>
@@ -146,54 +153,58 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="name">{t("contact.name")} *</Label>
+                        <Label htmlFor="name" className="text-gray-300">{t("contact.name")} *</Label>
                         <Input
                           id="name"
                           value={formData.name}
                           onChange={(e) => handleInputChange("name", e.target.value)}
                           required
+                          className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email">{t("contact.email")} *</Label>
+                        <Label htmlFor="email" className="text-gray-300">{t("contact.email")} *</Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
                           onChange={(e) => handleInputChange("email", e.target.value)}
                           required
+                          className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="phone">{t("contact.phone")}</Label>
+                        <Label htmlFor="phone" className="text-gray-300">{t("contact.phone")}</Label>
                         <Input
                           id="phone"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
+                          className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="company">{t("contact.company")}</Label>
+                        <Label htmlFor="company" className="text-gray-300">{t("contact.company")}</Label>
                         <Input
                           id="company"
                           value={formData.company}
                           onChange={(e) => handleInputChange("company", e.target.value)}
+                          className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="serviceType">{t("contact.service")} *</Label>
+                      <Label htmlFor="serviceType" className="text-gray-300">{t("contact.service")} *</Label>
                       <Select value={formData.serviceType} onValueChange={(value) => handleInputChange("serviceType", value)}>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500">
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-gray-800 border-gray-600">
                           {serviceTypes.map((service) => (
-                            <SelectItem key={service} value={service}>
+                            <SelectItem key={service} value={service} className="text-white hover:bg-gray-700">
                               {service}
                             </SelectItem>
                           ))}
@@ -202,7 +213,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message">{t("contact.message")} *</Label>
+                      <Label htmlFor="message" className="text-gray-300">{t("contact.message")} *</Label>
                       <Textarea
                         id="message"
                         rows={5}
@@ -210,13 +221,14 @@ export default function ContactPage() {
                         onChange={(e) => handleInputChange("message", e.target.value)}
                         placeholder="Tell us about your project..."
                         required
+                        className="bg-gray-800/50 border-gray-600 text-white focus:border-cyan-500"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-[#001F3F] hover:bg-[#002a5c]"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -242,10 +254,10 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-[#001F3F] mb-6">
+                <h2 className="text-4xl font-bold text-white mb-6">
                   Get in Touch
                 </h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                   Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                 </p>
               </div>
@@ -259,17 +271,17 @@ export default function ContactPage() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="hover:shadow-md transition-shadow duration-300">
+                    <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
                       <CardContent className="p-6">
                         <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-[#001F3F] rounded-lg flex items-center justify-center">
-                            <info.icon className="w-6 h-6 text-white" />
+                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
+                            <info.icon className="w-6 h-6 text-black" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-[#001F3F]">{info.title}</h3>
+                            <h3 className="font-semibold text-white">{info.title}</h3>
                             <a
                               href={info.link}
-                              className="text-gray-600 hover:text-[#001F3F] transition-colors"
+                              className="text-gray-400 hover:text-cyan-400 transition-colors"
                             >
                               {info.value}
                             </a>
@@ -281,14 +293,17 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="bg-[#001F3F] text-white p-8 rounded-lg">
+              <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-white p-8 rounded-2xl backdrop-blur-sm">
                 <h3 className="text-xl font-semibold mb-4">
                   Free Consultation
                 </h3>
-                <p className="text-blue-100 mb-4">
+                <p className="text-gray-300 mb-4">
                   Not sure where to start? Book a free 30-minute consultation to discuss your project and get expert advice.
                 </p>
-                <Button variant="secondary" size="lg">
+                <Button 
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
+                  size="lg"
+                >
                   Schedule Call
                 </Button>
               </div>
@@ -298,7 +313,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -307,10 +322,10 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-[#001F3F] mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Visit Our Office
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-400">
               Located in the heart of San Francisco
             </p>
           </motion.div>
@@ -320,9 +335,9 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gray-200 h-96 rounded-lg flex items-center justify-center"
+            className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 h-96 rounded-2xl flex items-center justify-center backdrop-blur-sm"
           >
-            <p className="text-gray-500">Interactive map would be embedded here</p>
+            <p className="text-gray-400">Interactive map would be embedded here</p>
           </motion.div>
         </div>
       </section>

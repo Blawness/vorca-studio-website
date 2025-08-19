@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 function AppInner() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black text-white">
         <Header />
         <main>
           <Routes>

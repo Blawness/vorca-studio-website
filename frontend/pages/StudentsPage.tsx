@@ -16,7 +16,8 @@ export default function StudentsPage() {
       description: "Complete website development for your assignments",
       price: "$150 - $500",
       features: ["HTML/CSS/JavaScript", "React/Vue.js", "Backend Integration", "Responsive Design"],
-      duration: "3-7 days"
+      duration: "3-7 days",
+      popular: true
     },
     {
       icon: Palette,
@@ -24,7 +25,8 @@ export default function StudentsPage() {
       description: "Professional design for your projects",
       price: "$100 - $300",
       features: ["Wireframes", "Mockups", "Prototypes", "Design Systems"],
-      duration: "2-5 days"
+      duration: "2-5 days",
+      popular: false
     },
     {
       icon: BookOpen,
@@ -32,7 +34,8 @@ export default function StudentsPage() {
       description: "Help with coding assignments and projects",
       price: "$50 - $200",
       features: ["Python/Java/C++", "Data Structures", "Algorithms", "Code Documentation"],
-      duration: "1-3 days"
+      duration: "1-3 days",
+      popular: false
     }
   ];
 
@@ -69,29 +72,47 @@ export default function StudentsPage() {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-black">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#001F3F] to-[#002a5c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <GraduationCap className="w-16 h-16 mx-auto mb-6 text-blue-200" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              {t("students.title")}
+            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25">
+              <GraduationCap className="w-8 h-8 text-black" />
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+                {t("students.title")}
+              </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
               {t("students.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-[#001F3F] hover:bg-gray-100">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+              >
                 <Link to="/contact">
                   {t("students.consultation")}
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#001F3F]">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg" 
+                className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
+              >
                 <a href="#pricing">
                   {t("students.pricing")}
                 </a>
@@ -102,7 +123,7 @@ export default function StudentsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -111,10 +132,10 @@ export default function StudentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#001F3F] mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Why Choose Vorca for Your Assignments?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We understand the challenges students face and provide tailored solutions
             </p>
           </motion.div>
@@ -129,8 +150,8 @@ export default function StudentsPage() {
                 viewport={{ once: true }}
                 className="flex items-center space-x-3"
               >
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">{benefit}</span>
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                <span className="text-gray-300">{benefit}</span>
               </motion.div>
             ))}
           </div>
@@ -138,7 +159,7 @@ export default function StudentsPage() {
       </section>
 
       {/* Services Section */}
-      <section id="pricing" className="py-20 bg-gray-50">
+      <section id="pricing" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -147,10 +168,10 @@ export default function StudentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#001F3F] mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Student Services & Pricing
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Transparent pricing designed for student budgets
             </p>
           </motion.div>
@@ -163,38 +184,52 @@ export default function StudentsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="group relative"
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#001F3F] rounded-lg flex items-center justify-center mb-4">
-                      <service.icon className="w-6 h-6 text-white" />
+                <Card className={`h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${
+                  service.popular ? 'ring-2 ring-cyan-500/50' : ''
+                }`}>
+                  {service.popular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1">
+                        Most Popular
+                      </Badge>
                     </div>
-                    <CardTitle className="text-xl text-[#001F3F]">
+                  )}
+                  
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
+                      <service.icon className="w-6 h-6 text-black" />
+                    </div>
+                    <CardTitle className="text-xl text-white">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-400 mb-4">
                       {service.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl font-bold text-[#001F3F]">
+                      <div className="text-2xl font-bold text-cyan-400">
                         {service.price}
                       </div>
-                      <Badge variant="secondary" className="flex items-center">
+                      <Badge variant="secondary" className="flex items-center bg-gray-700/50 text-gray-300">
                         <Clock className="w-3 h-3 mr-1" />
                         {service.duration}
                       </Badge>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button asChild className="w-full">
+                    <Button 
+                      asChild 
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
+                    >
                       <Link to="/contact">
                         Get Started
                       </Link>
@@ -208,7 +243,7 @@ export default function StudentsPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -217,10 +252,10 @@ export default function StudentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#001F3F] mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               How It Works
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Simple process from brief to completion
             </p>
           </motion.div>
@@ -233,15 +268,15 @@ export default function StudentsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="text-center group"
               >
-                <div className="w-16 h-16 bg-[#001F3F] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 text-black rounded-2xl flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold text-[#001F3F] mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   {step.description}
                 </p>
               </motion.div>
@@ -251,7 +286,7 @@ export default function StudentsPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -260,7 +295,7 @@ export default function StudentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#001F3F] mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -295,12 +330,12 @@ export default function StudentsPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card>
+                <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-[#001F3F] mb-3">
+                    <h3 className="text-lg font-semibold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-400">
                       {faq.answer}
                     </p>
                   </CardContent>
@@ -312,21 +347,29 @@ export default function StudentsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#001F3F] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full"></div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-5xl font-bold text-white mb-6">
               Ready to Ace Your Assignment?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-gray-400 mb-8">
               Get your free consultation and let's discuss your project requirements.
             </p>
-            <Button asChild size="lg" className="bg-white text-[#001F3F] hover:bg-gray-100">
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+            >
               <Link to="/contact">
                 Start Free Consultation
               </Link>

@@ -24,15 +24,17 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <header className="fixed top-0 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800/50 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-[#001F3F] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">V</span>
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
+              <span className="text-black font-bold text-sm">V</span>
             </div>
-            <span className="text-xl font-bold text-[#001F3F]">Vorca Studio</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Vorca Studio
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,13 +43,21 @@ export default function Header() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#001F3F] ${
+                className={`text-sm font-medium transition-all duration-300 hover:text-cyan-400 relative group ${
                   location.pathname === item.href
-                    ? "text-[#001F3F]"
-                    : "text-gray-600"
+                    ? "text-cyan-400"
+                    : "text-gray-300"
                 }`}
               >
                 {item.name}
+                {location.pathname === item.href && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
+                )}
               </Link>
             ))}
           </div>
@@ -58,7 +68,7 @@ export default function Header() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1"
+              className="flex items-center space-x-1 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50"
             >
               <Globe className="w-4 h-4" />
               <span className="text-sm font-medium">{language.toUpperCase()}</span>
@@ -68,7 +78,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -82,17 +92,17 @@ export default function Header() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden py-4 border-t border-gray-100"
+            className="md:hidden py-4 border-t border-gray-800/50"
           >
             <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-[#001F3F] ${
+                  className={`text-sm font-medium transition-colors hover:text-cyan-400 ${
                     location.pathname === item.href
-                      ? "text-[#001F3F]"
-                      : "text-gray-600"
+                      ? "text-cyan-400"
+                      : "text-gray-300"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
