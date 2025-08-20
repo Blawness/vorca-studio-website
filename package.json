@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "packageManager": "bun",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "build": "npm run -w frontend build"
+  },
   "workspaces": [
     "backend",
     "frontend"
