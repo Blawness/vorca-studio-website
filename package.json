@@ -9,6 +9,9 @@
   "scripts": {
     "build": "npm run -w frontend build"
   },
+  "overrides": {
+    "lightningcss": "npm:lightningcss-wasm@^1"
+  },
   "workspaces": [
     "backend",
     "frontend"

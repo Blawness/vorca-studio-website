@@ -14,6 +14,9 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
+  css: {
+    transformer: 'postcss',
+  },
   mode: "development",
   build: {
     minify: false,
