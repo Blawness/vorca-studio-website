@@ -109,15 +109,16 @@ export default function PortfolioPage() {
       {/* Filter Tabs */}
       <section className="py-8 bg-gray-900 border-b border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category, index) => (
               <Button
                 key={index}
                 variant={index === 0 ? "default" : "outline"}
+                size="sm"
                 className={
                   index === 0 
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold rounded-xl" 
-                    : "border-gray-600 text-gray-300 hover:border-cyan-500/50 hover:text-cyan-400 rounded-xl"
+                    ? "rounded-full px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold shadow-[0_8px_24px_-12px_rgba(34,211,238,0.45)] hover:from-cyan-400 hover:to-blue-500 transition-all duration-300" 
+                    : "rounded-full px-5 py-2.5 border border-white/10 text-gray-200/80 bg-white/5 hover:bg-white/10 hover:text-white shadow-inner backdrop-blur-md transition-all duration-300"
                 }
               >
                 {category}

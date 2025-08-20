@@ -31,28 +31,16 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Alex Rivera",
+      name: "Yudha Hafiz",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      bio: "Full-stack developer with 8+ years of experience in building scalable web applications."
+      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=300&h=300&fit=crop&crop=face",
+      bio: "Founder & CEO leading strategy and product with a focus on precision and impact."
     },
     {
-      name: "Sarah Chen",
-      role: "Lead Designer",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-      bio: "UI/UX designer passionate about creating intuitive and beautiful user experiences."
-    },
-    {
-      name: "Marcus Johnson",
-      role: "Technical Lead",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      bio: "Backend specialist with expertise in cloud architecture and system optimization."
-    },
-    {
-      name: "Elena Vasquez",
-      role: "Project Manager",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-      bio: "Agile project manager ensuring smooth delivery and client satisfaction."
+      name: "Andhika Satya",
+      role: "Lead Marketing",
+      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=300&fit=crop&crop=face",
+      bio: "Marketing lead driving growth, brand presence, and customer engagement."
     }
   ];
 
@@ -198,7 +186,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={index}

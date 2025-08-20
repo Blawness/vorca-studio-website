@@ -119,7 +119,7 @@ export default function HomePage() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
+                className="h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
               >
                 <Link to="/contact">
                   {t("hero.cta")}
@@ -129,9 +129,9 @@ export default function HomePage() {
               
               <Button 
                 asChild 
-                variant="outline" 
+                variant="ghost" 
                 size="lg" 
-                className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
+                className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
               >
                 <Link to="/contact">
                   {t("hero.consultation")}
@@ -300,7 +300,7 @@ export default function HomePage() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                className="h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
               >
                 <Link to="/contact">
                   {t("hero.cta")}
@@ -309,9 +309,9 @@ export default function HomePage() {
               </Button>
               <Button 
                 asChild 
-                variant="outline" 
+                variant="ghost" 
                 size="lg"
-                className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
+                className="h-auto relative group overflow-hidden bg-transparent border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
               >
                 <Link to="/portfolio">
                   {t("common.viewOurWork")}
