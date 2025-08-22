@@ -32,6 +32,7 @@
       --tw-gradient-to-position: 100%;
       --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-ordinal: initial;
       --tw-slashed-zero: initial;
       --tw-numeric-figure: initial;
@@ -162,6 +163,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --tracking-widest: .1em;
     --leading-tight: 1.25;
     --leading-relaxed: 1.625;
     --radius-2xl: 1rem;
@@ -2215,6 +2217,11 @@
     font-weight: var(--font-weight-semibold);
   }
 
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+
   .text-wrap {
     text-wrap: wrap;
   }
@@ -2249,6 +2256,16 @@
 
   .text-cyan-300 {
     color: var(--color-cyan-300);
+  }
+
+  .text-cyan-300\/90 {
+    color: #53eafde6;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-cyan-300\/90 {
+      color: color-mix(in oklab, var(--color-cyan-300) 90%, transparent);
+    }
   }
 
   .text-cyan-400 {
@@ -3943,6 +3960,11 @@
 }
 
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-tracking {
   syntax: "*";
   inherits: false
 }

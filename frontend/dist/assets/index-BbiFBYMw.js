@@ -29299,72 +29299,112 @@ function ServicesPage() {
         }
       ) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: [
-      {
-        name: "Starter",
-        price: 45e5,
-        features: [
-          "Landing page",
-          "1–3 halaman",
-          "SEO dasar",
-          "Hosting + domain 1 tahun",
-          "1 revisi"
-        ],
-        popular: false
-      },
-      {
-        name: "Growth",
-        price: 12e6,
-        features: [
-          "Website korporat",
-          "CMS",
-          "Desain custom",
-          "SEO lengkap",
-          "3 bulan maintenance"
-        ],
-        popular: true
-      },
-      {
-        name: "Enterprise",
-        price: 22e6,
-        features: [
-          "E-commerce / custom app",
-          "Sistem pembayaran",
-          "Dashboard admin",
-          "6 bulan maintenance"
-        ],
-        suffix: "+",
-        popular: false
-      }
-    ].map((pkg, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion.div,
-      {
-        initial: { opacity: 0, y: 30 },
-        whileInView: { opacity: 1, y: 0 },
-        transition: { duration: 0.6, delay: i * 0.1 },
-        viewport: { once: true },
-        className: "group relative",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: `h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${pkg.popular ? "ring-2 ring-cyan-500/50" : ""}`, children: [
-          pkg.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-3 left-1/2 transform -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { className: "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1", children: "Paling Populer" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-black font-bold", children: i + 1 }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: pkg.name })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400 mb-4", children: [
-              formatRupiah(pkg.price),
-              pkg.suffix ?? ""
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true },
+          className: "text-center mb-12",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-300/90 text-sm tracking-widest uppercase", children: "Layanan Unggulan" })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: [
+        {
+          name: "Starter",
+          price: 45e5,
+          discountPercent: 10,
+          description: "Cocok untuk landing page / website sederhana.",
+          features: [
+            "Landing page",
+            "1–3 halaman",
+            "SEO dasar",
+            "Hosting + domain 1 tahun",
+            "1 revisi"
+          ],
+          popular: false
+        },
+        {
+          name: "Growth",
+          price: 12e6,
+          discountPercent: 20,
+          description: "Paket bisnis dengan CMS dan SEO lengkap.",
+          features: [
+            "Website korporat",
+            "CMS",
+            "Desain custom",
+            "SEO lengkap",
+            "3 bulan maintenance"
+          ],
+          popular: true
+        },
+        {
+          name: "Enterprise",
+          price: 22e6,
+          discountPercent: 15,
+          description: "Solusi custom skala besar seperti e-commerce / aplikasi.",
+          features: [
+            "E-commerce / custom app",
+            "Sistem pembayaran",
+            "Dashboard admin",
+            "6 bulan maintenance"
+          ],
+          suffix: "+",
+          popular: false
+        }
+      ].map((pkg, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6, delay: i * 0.1 },
+          viewport: { once: true },
+          className: "group relative",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: `h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${pkg.popular ? "ring-2 ring-cyan-500/50" : ""}`, children: [
+            pkg.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-3 left-1/2 transform -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { className: "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1", children: "Paling Populer" }) }),
+            pkg.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-3 right-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { className: "rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm", children: [
+              "-",
+              pkg.discountPercent,
+              "%"
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-black font-bold", children: i + 1 }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: pkg.name })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2 mb-6", children: pkg.features.map((f, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-sm text-gray-300", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3" }),
-              f
-            ] }, idx)) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, className: "w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: "Discuss Project" }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-4", children: pkg.description }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2 mb-6", children: pkg.features.map((f, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-sm text-gray-300", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3" }),
+                f
+              ] }, idx)) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: pkg.discountPercent > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-400 line-through", children: [
+                  "Mulai dari ",
+                  formatRupiah(pkg.price),
+                  pkg.suffix ?? ""
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-emerald-300", children: [
+                  "Hemat ",
+                  formatRupiah(pkg.price - Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100)))
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400", children: [
+                  "Mulai dari ",
+                  formatRupiah(Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100))),
+                  pkg.suffix ?? ""
+                ] })
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400", children: [
+                "Mulai dari ",
+                formatRupiah(pkg.price),
+                pkg.suffix ?? ""
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, className: "w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: "Discuss Project" }) })
+            ] })
           ] })
-        ] })
-      },
-      i
-    )) }) }) }),
+        },
+        i
+      )) })
+    ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-4 bg-gradient-to-r from-cyan-900/10 via-cyan-700/10 to-blue-900/10 border-y border-cyan-500/10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-3 text-cyan-200 text-sm", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center rounded-full bg-cyan-500/15 text-cyan-300 px-3 py-1 border border-cyan-400/20", children: "Promo" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Diskon hingga 20% untuk proyek baru. Berlaku sampai akhir bulan." })
@@ -29376,7 +29416,7 @@ function ServicesPage() {
         { name: "Digital Branding", price: 3e6, suffix: "+" },
         { name: "SEO Optimization", price: 25e5, suffix: "/bulan" },
         { name: "Analytics Integration", price: 15e5, note: "Included in Growth+" }
-      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
+      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: item.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-400", children: item.note ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
           item.note,
@@ -29397,7 +29437,8 @@ function ServicesPage() {
           viewport: { once: true },
           className: "text-center mb-12",
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Unggulan" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-300/90 text-sm tracking-widest uppercase mb-2", children: "Layanan Unggulan" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Kami Lainnya" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Harga transparan dengan promo aktif — lihat hematannya" })
           ]
         }
@@ -29465,7 +29506,7 @@ function ServicesPage() {
         { name: "Basic", price: 12e5, includes: ["Backup", "Security updates"] },
         { name: "Growth", price: 25e5, includes: ["+ SEO", "Analytics", "Minor updates"] },
         { name: "Retainer", price: 4e6, includes: ["5 jam kerja/bulan"] }
-      ].map((plan, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
+      ].map((plan, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl text-white mb-2", children: plan.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-cyan-400 font-semibold mb-4", children: [
           formatRupiah(plan.price),
@@ -29487,7 +29528,7 @@ function ServicesPage() {
         { name: "Tugas Web", range: [15e4, 3e5] },
         { name: "Web Interaktif", range: [35e4, 6e5] },
         { name: "Full-Stack Project", range: [8e5, 15e5] }
-      ].map((s, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
+      ].map((s, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: s.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-cyan-400", children: [
           formatRupiah(s.range[0]),
@@ -29504,7 +29545,7 @@ function ServicesPage() {
         { q: "Apakah termasuk domain & hosting?", a: "Ya, untuk paket Starter ke atas (1 tahun)." },
         { q: "Berapa lama pengerjaan?", a: "2–4 minggu (tergantung kompleksitas)." },
         { q: "Apakah ada maintenance setelah launch?", a: "Ada opsi bulanan — kami sarankan untuk performa & keamanan." }
-      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
+      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: item.q }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-gray-400", children: item.a })
       ] }) }, idx)) })
@@ -29630,6 +29671,15 @@ function PortfolioPage() {
               {
                 src: project.image,
                 alt: project.title,
+                loading: "lazy",
+                decoding: "async",
+                referrerPolicy: "no-referrer",
+                onError: (e) => {
+                  const target = e.currentTarget;
+                  if (target.dataset.fallbackApplied === "true") return;
+                  target.dataset.fallbackApplied = "true";
+                  target.src = "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg";
+                },
                 className: "w-full h-48 object-cover transition-transform duration-500 group-hover/image:scale-110"
               }
             ),

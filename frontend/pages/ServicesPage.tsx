@@ -124,11 +124,21 @@ export default function ServicesPage() {
       {/* Core Packages (3-tier grid) */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-white mb-2">Layanan Unggulan</h2>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: "Starter",
                 price: 4500000,
+                discountPercent: 10,
+                description: "Cocok untuk landing page / website sederhana.",
                 features: [
                   "Landing page",
                   "1–3 halaman",
@@ -141,6 +151,8 @@ export default function ServicesPage() {
               {
                 name: "Growth",
                 price: 12000000,
+                discountPercent: 20,
+                description: "Paket bisnis dengan CMS dan SEO lengkap.",
                 features: [
                   "Website korporat",
                   "CMS",
@@ -153,6 +165,8 @@ export default function ServicesPage() {
               {
                 name: "Enterprise",
                 price: 22000000,
+                discountPercent: 15,
+                description: "Solusi custom skala besar seperti e-commerce / aplikasi.",
                 features: [
                   "E-commerce / custom app",
                   "Sistem pembayaran",
@@ -181,6 +195,13 @@ export default function ServicesPage() {
                       </Badge>
                     </div>
                   )}
+                  {pkg.discountPercent > 0 && (
+                    <div className="absolute top-3 right-3">
+                      <Badge className="rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm">
+                        -{pkg.discountPercent}%
+                      </Badge>
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
                       <span className="text-black font-bold">{i + 1}</span>
@@ -190,9 +211,7 @@ export default function ServicesPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-lg font-semibold text-cyan-400 mb-4">
-                      {formatRupiah(pkg.price)}{pkg.suffix ?? ''}
-                    </div>
+                    <p className="text-gray-400 mb-4">{pkg.description}</p>
                     <ul className="space-y-2 mb-6">
                       {pkg.features.map((f, idx) => (
                         <li key={idx} className="flex items-center text-sm text-gray-300">
@@ -201,6 +220,25 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    <div className="mb-4">
+                      {pkg.discountPercent > 0 ? (
+                        <>
+                          <div className="text-sm text-gray-400 line-through">
+                            Mulai dari {formatRupiah(pkg.price)}{pkg.suffix ?? ''}
+                          </div>
+                          <div className="text-xs text-emerald-300">
+                            Hemat {formatRupiah(pkg.price - Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100)))}
+                          </div>
+                          <div className="text-lg font-semibold text-cyan-400">
+                            Mulai dari {formatRupiah(Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100)))}{pkg.suffix ?? ''}
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-lg font-semibold text-cyan-400">
+                          Mulai dari {formatRupiah(pkg.price)}{pkg.suffix ?? ''}
+                        </div>
+                      )}
+                    </div>
                     <Button asChild className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300">
                       <Link to="/contact">Discuss Project</Link>
                     </Button>
@@ -233,7 +271,7 @@ export default function ServicesPage() {
             { name: 'SEO Optimization', price: 2500000, suffix: '/bulan' },
             { name: 'Analytics Integration', price: 1500000, note: 'Included in Growth+' }
           ].map((item, idx) => (
-            <Card key={idx} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
+            <Card key={idx} className="h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
               <CardContent className="p-6">
                 <div className="text-white font-semibold mb-2">{item.name}</div>
                 <div className="text-cyan-400">
@@ -259,7 +297,7 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-white mb-2">Layanan Unggulan</h2>
+          <h2 className="text-4xl font-bold text-white mb-2">Layanan Kami Lainnya</h2>
           <p className="text-gray-400">Harga transparan dengan promo aktif — lihat hematannya</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -349,7 +387,7 @@ export default function ServicesPage() {
             { name: 'Growth', price: 2500000, includes: ['+ SEO', 'Analytics', 'Minor updates'] },
             { name: 'Retainer', price: 4000000, includes: ['5 jam kerja/bulan'] },
           ].map((plan, idx) => (
-            <Card key={idx} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
+            <Card key={idx} className="h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className="text-xl text-white mb-2">{plan.name}</div>
                 <div className="text-cyan-400 font-semibold mb-4">{formatRupiah(plan.price)}/bulan</div>
@@ -382,7 +420,7 @@ export default function ServicesPage() {
               { name: 'Web Interaktif', range: [350000, 600000] },
               { name: 'Full-Stack Project', range: [800000, 1500000] },
             ].map((s, idx) => (
-              <Card key={idx} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
+              <Card key={idx} className="h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
                 <CardContent className="p-8">
                   <div className="text-white font-semibold mb-2">{s.name}</div>
                   <div className="text-cyan-400">{formatRupiah(s.range[0])} – {formatRupiah(s.range[1])}</div>
@@ -409,7 +447,7 @@ export default function ServicesPage() {
               { q: 'Berapa lama pengerjaan?', a: '2–4 minggu (tergantung kompleksitas).' },
               { q: 'Apakah ada maintenance setelah launch?', a: 'Ada opsi bulanan — kami sarankan untuk performa & keamanan.' },
             ].map((item, idx) => (
-              <Card key={idx} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
+              <Card key={idx} className="h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
                 <CardContent className="p-6">
                   <div className="text-white font-semibold mb-2">{item.q}</div>
                   <div className="text-gray-400">{item.a}</div>

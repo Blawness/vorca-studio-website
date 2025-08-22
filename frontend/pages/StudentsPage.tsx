@@ -9,32 +9,38 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function StudentsPage() {
   const { t } = useLanguage();
 
+  const formatRupiah = (value: number) =>
+    new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
+
   const services = [
     {
       icon: Code,
       title: t("students.webDevProjects"),
       description: t("students.webDevProjects.desc"),
-      price: "$150 - $500",
+      priceIdr: 500000,
+      discountPercent: 15,
       features: ["HTML/CSS/JavaScript", "React/Vue.js", "Backend Integration", "Responsive Design"],
-      duration: "3-7 days",
+      duration: "3–7 hari",
       popular: true
     },
     {
       icon: Palette,
       title: t("students.uiuxDesign"),
       description: t("students.uiuxDesign.desc"),
-      price: "$100 - $300",
+      priceIdr: 300000,
+      discountPercent: 10,
       features: ["Wireframes", "Mockups", "Prototypes", "Design Systems"],
-      duration: "2-5 days",
+      duration: "2–5 hari",
       popular: false
     },
     {
       icon: BookOpen,
       title: t("students.programmingAssignments"),
       description: t("students.programmingAssignments.desc"),
-      price: "$50 - $200",
+      priceIdr: 200000,
+      discountPercent: 10,
       features: ["Python/Java/C++", "Data Structures", "Algorithms", "Code Documentation"],
-      duration: "1-3 days",
+      duration: "1–3 hari",
       popular: false
     }
   ];
@@ -196,6 +202,13 @@ export default function StudentsPage() {
                       </Badge>
                     </div>
                   )}
+                  {service.discountPercent > 0 && (
+                    <div className="absolute top-3 right-3">
+                      <Badge className="rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm">
+                        -{service.discountPercent}%
+                      </Badge>
+                    </div>
+                  )}
                   
                   <CardHeader>
                     <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
@@ -210,8 +223,20 @@ export default function StudentsPage() {
                       {service.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl font-bold text-cyan-400">
-                        {service.price}
+                      <div>
+                        {service.discountPercent > 0 && (
+                          <>
+                            <div className="text-sm text-gray-400 line-through">
+                              Mulai dari {formatRupiah(service.priceIdr)}
+                            </div>
+                            <div className="text-xs text-emerald-300">
+                              Hemat {formatRupiah(service.priceIdr - Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))}
+                            </div>
+                          </>
+                        )}
+                        <div className="text-2xl font-bold text-cyan-400">
+                          Mulai dari {formatRupiah(Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))}
+                        </div>
                       </div>
                       <Badge variant="secondary" className="flex items-center bg-gray-700/50 text-gray-300">
                         <Clock className="w-3 h-3 mr-1" />

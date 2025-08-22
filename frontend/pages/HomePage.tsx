@@ -7,6 +7,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const title = t("hero.title");
 
   const services = [
     {
@@ -102,9 +103,17 @@ export default function HomePage() {
             </motion.div>
 
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                {t("hero.title")}
-              </span>
+              {Array.from(title).map((char, i) => (
+                <motion.span
+                  key={`${char}-${i}`}
+                  initial={{ opacity: 0, y: 12, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.06, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
+                  className="inline-block bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent will-change-transform will-change-opacity"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
             </h1>
             
             <p className="text-xl md:text-2xl mb-4 text-cyan-100 font-light">

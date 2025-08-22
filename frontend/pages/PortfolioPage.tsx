@@ -146,6 +146,16 @@ export default function PortfolioPage() {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const target = e.currentTarget as HTMLImageElement;
+                        // Prevent infinite loop if fallback also fails
+                        if (target.dataset.fallbackApplied === "true") return;
+                        target.dataset.fallbackApplied = "true";
+                        target.src = "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg";
+                      }}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover/image:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
