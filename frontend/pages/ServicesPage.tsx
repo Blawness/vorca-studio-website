@@ -430,7 +430,7 @@ export default function ServicesPage() {
           </div>
           <div className="text-center mt-8">
             <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300">
-              <Link to="/contact">Ajukan Konsultasi Gratis</Link>
+              <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">Ajukan Konsultasi Gratis</a>
             </Button>
           </div>
         </div>
@@ -464,7 +464,7 @@ export default function ServicesPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-4xl font-bold text-white mb-4">Belum yakin paket mana yang cocok?</h2>
             <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300">
-              <Link to="/contact">Booking Konsultasi Gratis →</Link>
+              <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">Booking Konsultasi Gratis →</a>
             </Button>
           </motion.div>
         </div>

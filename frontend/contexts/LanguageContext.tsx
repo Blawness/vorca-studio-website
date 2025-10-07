@@ -18,6 +18,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "Tentang",
     "nav.students": "Untuk Mahasiswa",
+    // "nav.articles": "Artikel", // Disabled - not needed yet
     "nav.contact": "Kontak",
     
     // Hero
@@ -47,18 +48,7 @@ const translations = {
     "students.subtitle": "Bantuan tugas kuliah dengan harga terjangkau",
     "students.consultation": "Konsultasi Gratis 30 Menit",
     "students.pricing": "Harga Transparan",
-    
-    // Contact
-    "contact.title": "Hubungi Kami",
-    "contact.subtitle": "Mari diskusikan proyek Anda",
-    "contact.name": "Nama",
-    "contact.email": "Email",
-    "contact.phone": "Telepon",
-    "contact.company": "Perusahaan",
-    "contact.service": "Jenis Layanan",
-    "contact.message": "Pesan",
-    "contact.submit": "Kirim Pesan",
-    
+
     // Footer
     "footer.description": "Agency web disruptif yang terinspirasi oleh Orca",
     "footer.services": "Layanan",
@@ -175,6 +165,8 @@ const translations = {
     "students.startFreeConsultation": "Mulai Konsultasi Gratis",
 
     // Contact Page
+    "contact.title": "Hubungi Kami",
+    "contact.subtitle": "Mari diskusikan proyek Anda",
     "contact.sendMessage": "Kirim pesan kepada kami",
     "contact.getInTouch": "Hubungi Kami",
     "contact.getInTouch.desc": "Siap memulai proyek Anda? Kami ingin mendengar dari Anda. Kirim pesan dan kami akan merespons secepat mungkin.",
@@ -185,8 +177,14 @@ const translations = {
     "contact.freeConsultation.desc": "Tidak yakin harus mulai dari mana? Pesan konsultasi gratis 30 menit untuk mendiskusikan proyek Anda dan mendapatkan saran ahli.",
     "contact.scheduleCall": "Jadwalkan Panggilan",
     "contact.visitOffice": "Kunjungi Kantor Kami",
-    "contact.visitOffice.desc": "Berlokasi di jantung San Francisco",
+    "contact.visitOffice.desc": "Berlokasi di jantung Jakarta Selatan",
     "contact.mapPlaceholder": "Peta interaktif akan ditampilkan di sini",
+
+    // Contact Form Fields
+    "contact.name": "Nama",
+    "contact.company": "Perusahaan",
+    "contact.message": "Pesan",
+    "contact.submit": "Kirim Pesan",
   },
   en: {
     // Navigation
@@ -195,6 +193,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "About",
     "nav.students": "For Students",
+    // "nav.articles": "Articles", // Disabled - not needed yet
     "nav.contact": "Contact",
     
     // Hero
@@ -224,18 +223,7 @@ const translations = {
     "students.subtitle": "College assignment help at affordable prices",
     "students.consultation": "Free 30-Minute Consultation",
     "students.pricing": "Transparent Pricing",
-    
-    // Contact
-    "contact.title": "Contact Us",
-    "contact.subtitle": "Let's discuss your project",
-    "contact.name": "Name",
-    "contact.email": "Email",
-    "contact.phone": "Phone",
-    "contact.company": "Company",
-    "contact.service": "Service Type",
-    "contact.message": "Message",
-    "contact.submit": "Send Message",
-    
+
     // Footer
     "footer.description": "Disruptive web agency inspired by the Orca",
     "footer.services": "Services",
@@ -352,6 +340,8 @@ const translations = {
     "students.startFreeConsultation": "Start Free Consultation",
 
     // Contact Page
+    "contact.title": "Contact Us",
+    "contact.subtitle": "Let's discuss your project",
     "contact.sendMessage": "Send us a message",
     "contact.getInTouch": "Get in Touch",
     "contact.getInTouch.desc": "Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
@@ -362,8 +352,14 @@ const translations = {
     "contact.freeConsultation.desc": "Not sure where to start? Book a free 30-minute consultation to discuss your project and get expert advice.",
     "contact.scheduleCall": "Schedule Call",
     "contact.visitOffice": "Visit Our Office",
-    "contact.visitOffice.desc": "Located in the heart of San Francisco",
+    "contact.visitOffice.desc": "Located in the heart of Jakarta Selatan",
     "contact.mapPlaceholder": "Interactive map would be embedded here",
+
+    // Contact Form Fields
+    "contact.name": "Name",
+    "contact.company": "Company",
+    "contact.message": "Message",
+    "contact.submit": "Send Message",
   },
 };
 

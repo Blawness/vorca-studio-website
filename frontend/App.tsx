@@ -10,6 +10,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import AboutPage from "./pages/AboutPage";
 import StudentsPage from "./pages/StudentsPage";
 import ContactPage from "./pages/ContactPage";
+// import ArticlesPage from "./pages/ArticlesPage"; // Disabled - not needed yet
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function AppInner() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            {/* <Route path="/articles" element={<ArticlesPage />} /> */} {/* Disabled - not needed yet */}
           </Routes>
         </main>
         <Footer />

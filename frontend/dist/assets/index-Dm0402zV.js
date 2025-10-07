@@ -16031,6 +16031,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "Tentang",
     "nav.students": "Untuk Mahasiswa",
+    // "nav.articles": "Artikel", // Disabled - not needed yet
     "nav.contact": "Kontak",
     // Hero
     "hero.title": "Smart. Sleek. Deep Impact.",
@@ -16056,16 +16057,6 @@ const translations = {
     "students.subtitle": "Bantuan tugas kuliah dengan harga terjangkau",
     "students.consultation": "Konsultasi Gratis 30 Menit",
     "students.pricing": "Harga Transparan",
-    // Contact
-    "contact.title": "Hubungi Kami",
-    "contact.subtitle": "Mari diskusikan proyek Anda",
-    "contact.name": "Nama",
-    "contact.email": "Email",
-    "contact.phone": "Telepon",
-    "contact.company": "Perusahaan",
-    "contact.service": "Jenis Layanan",
-    "contact.message": "Pesan",
-    "contact.submit": "Kirim Pesan",
     // Footer
     "footer.description": "Agency web disruptif yang terinspirasi oleh Orca",
     "footer.services": "Layanan",
@@ -16176,6 +16167,8 @@ const translations = {
     "students.readyToAce.desc": "Dapatkan konsultasi gratis dan mari diskusikan persyaratan proyek Anda.",
     "students.startFreeConsultation": "Mulai Konsultasi Gratis",
     // Contact Page
+    "contact.title": "Hubungi Kami",
+    "contact.subtitle": "Mari diskusikan proyek Anda",
     "contact.sendMessage": "Kirim pesan kepada kami",
     "contact.getInTouch": "Hubungi Kami",
     "contact.getInTouch.desc": "Siap memulai proyek Anda? Kami ingin mendengar dari Anda. Kirim pesan dan kami akan merespons secepat mungkin.",
@@ -16186,8 +16179,13 @@ const translations = {
     "contact.freeConsultation.desc": "Tidak yakin harus mulai dari mana? Pesan konsultasi gratis 30 menit untuk mendiskusikan proyek Anda dan mendapatkan saran ahli.",
     "contact.scheduleCall": "Jadwalkan Panggilan",
     "contact.visitOffice": "Kunjungi Kantor Kami",
-    "contact.visitOffice.desc": "Berlokasi di jantung San Francisco",
-    "contact.mapPlaceholder": "Peta interaktif akan ditampilkan di sini"
+    "contact.visitOffice.desc": "Berlokasi di jantung Jakarta Selatan",
+    "contact.mapPlaceholder": "Peta interaktif akan ditampilkan di sini",
+    // Contact Form Fields
+    "contact.name": "Nama",
+    "contact.company": "Perusahaan",
+    "contact.message": "Pesan",
+    "contact.submit": "Kirim Pesan"
   },
   en: {
     // Navigation
@@ -16196,6 +16194,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "About",
     "nav.students": "For Students",
+    // "nav.articles": "Articles", // Disabled - not needed yet
     "nav.contact": "Contact",
     // Hero
     "hero.title": "Smart. Sleek. Deep Impact.",
@@ -16221,16 +16220,6 @@ const translations = {
     "students.subtitle": "College assignment help at affordable prices",
     "students.consultation": "Free 30-Minute Consultation",
     "students.pricing": "Transparent Pricing",
-    // Contact
-    "contact.title": "Contact Us",
-    "contact.subtitle": "Let's discuss your project",
-    "contact.name": "Name",
-    "contact.email": "Email",
-    "contact.phone": "Phone",
-    "contact.company": "Company",
-    "contact.service": "Service Type",
-    "contact.message": "Message",
-    "contact.submit": "Send Message",
     // Footer
     "footer.description": "Disruptive web agency inspired by the Orca",
     "footer.services": "Services",
@@ -16341,6 +16330,8 @@ const translations = {
     "students.readyToAce.desc": "Get your free consultation and let's discuss your project requirements.",
     "students.startFreeConsultation": "Start Free Consultation",
     // Contact Page
+    "contact.title": "Contact Us",
+    "contact.subtitle": "Let's discuss your project",
     "contact.sendMessage": "Send us a message",
     "contact.getInTouch": "Get in Touch",
     "contact.getInTouch.desc": "Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
@@ -16351,8 +16342,13 @@ const translations = {
     "contact.freeConsultation.desc": "Not sure where to start? Book a free 30-minute consultation to discuss your project and get expert advice.",
     "contact.scheduleCall": "Schedule Call",
     "contact.visitOffice": "Visit Our Office",
-    "contact.visitOffice.desc": "Located in the heart of San Francisco",
-    "contact.mapPlaceholder": "Interactive map would be embedded here"
+    "contact.visitOffice.desc": "Located in the heart of Jakarta Selatan",
+    "contact.mapPlaceholder": "Interactive map would be embedded here",
+    // Contact Form Fields
+    "contact.name": "Name",
+    "contact.company": "Company",
+    "contact.message": "Message",
+    "contact.submit": "Send Message"
   }
 };
 function LanguageProvider({ children }) {
@@ -28740,6 +28736,7 @@ function Header() {
     { name: t("nav.portfolio"), href: "/portfolio" },
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.students"), href: "/students" },
+    // { name: t("nav.articles"), href: "/articles" }, // Disabled - not needed yet
     { name: t("nav.contact"), href: "/contact" }
   ];
   const toggleLanguage = () => {
@@ -28832,7 +28829,7 @@ function Footer() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-gray-400 hover:text-cyan-400 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Instagram, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-gray-400 hover:text-cyan-400 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-gray-400 hover:text-cyan-400 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-5 h-5" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:hello@vorca.studio", className: "text-gray-400 hover:text-cyan-400 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-5 h-5" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:marketing@vorcastudio.com", className: "text-gray-400 hover:text-cyan-400 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-5 h-5" }) })
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -28908,6 +28905,7 @@ function CardContent({ className, ...props }) {
 }
 function HomePage() {
   const { t } = useLanguage();
+  const title = t("hero.title");
   const services = [
     {
       icon: Code,
@@ -28995,7 +28993,17 @@ function HomePage() {
                 ] })
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-8xl font-bold mb-6 leading-tight", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("hero.title") }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-8xl font-bold mb-6 leading-tight", children: Array.from(title).map((char, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.span,
+              {
+                initial: { opacity: 0, y: 12, filter: "blur(8px)" },
+                animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+                transition: { duration: 0.6, ease: "easeOut", delay: i * 0.06, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 },
+                className: "inline-block bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent will-change-transform will-change-opacity",
+                children: char === " " ? " " : char
+              },
+              `${char}-${i}`
+            )) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl md:text-2xl mb-4 text-cyan-100 font-light", children: t("hero.subtitle") }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg mb-8 text-gray-400 max-w-3xl mx-auto leading-relaxed", children: t("hero.description") }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
@@ -29018,7 +29026,7 @@ function HomePage() {
                   variant: "ghost",
                   size: "lg",
                   className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: t("hero.consultation") })
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("hero.consultation") })
                 }
               )
             ] })
@@ -29307,7 +29315,7 @@ function ServicesPage() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           className: "text-center mb-12",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-300/90 text-sm tracking-widest uppercase", children: "Layanan Unggulan" })
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Unggulan" })
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: [
@@ -29437,7 +29445,6 @@ function ServicesPage() {
           viewport: { once: true },
           className: "text-center mb-12",
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-300/90 text-sm tracking-widest uppercase mb-2", children: "Layanan Unggulan" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Kami Lainnya" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Harga transparan dengan promo aktif — lihat hematannya" })
           ]
@@ -29536,7 +29543,7 @@ function ServicesPage() {
           formatRupiah(s.range[1])
         ] })
       ] }) }, idx)) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: "Ajukan Konsultasi Gratis" }) }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: "Ajukan Konsultasi Gratis" }) }) })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-8 text-center", children: "FAQ" }),
@@ -29552,7 +29559,7 @@ function ServicesPage() {
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-4", children: "Belum yakin paket mana yang cocok?" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: "Booking Konsultasi Gratis →" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: "Booking Konsultasi Gratis →" }) })
     ] }) }) })
   ] });
 }
@@ -29930,32 +29937,36 @@ function AboutPage() {
 }
 function StudentsPage() {
   const { t } = useLanguage();
+  const formatRupiah = (value) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
   const services = [
     {
       icon: Code,
       title: t("students.webDevProjects"),
       description: t("students.webDevProjects.desc"),
-      price: "$150 - $500",
+      priceIdr: 5e5,
+      discountPercent: 15,
       features: ["HTML/CSS/JavaScript", "React/Vue.js", "Backend Integration", "Responsive Design"],
-      duration: "3-7 days",
+      duration: "3–7 hari",
       popular: true
     },
     {
       icon: Palette,
       title: t("students.uiuxDesign"),
       description: t("students.uiuxDesign.desc"),
-      price: "$100 - $300",
+      priceIdr: 3e5,
+      discountPercent: 10,
       features: ["Wireframes", "Mockups", "Prototypes", "Design Systems"],
-      duration: "2-5 days",
+      duration: "2–5 hari",
       popular: false
     },
     {
       icon: BookOpen,
       title: t("students.programmingAssignments"),
       description: t("students.programmingAssignments.desc"),
-      price: "$50 - $200",
+      priceIdr: 2e5,
+      discountPercent: 10,
       features: ["Python/Java/C++", "Data Structures", "Algorithms", "Code Documentation"],
-      duration: "1-3 days",
+      duration: "1–3 hari",
       popular: false
     }
   ];
@@ -30012,7 +30023,7 @@ function StudentsPage() {
                   asChild: true,
                   size: "lg",
                   className: "rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: t("students.consultation") })
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.consultation") })
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30086,6 +30097,11 @@ function StudentsPage() {
           className: "group relative",
           children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: `h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${service.popular ? "ring-2 ring-cyan-500/50" : ""}`, children: [
             service.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-3 left-1/2 transform -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { className: "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1", children: t("services.mostPopular") }) }),
+            service.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-3 right-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { className: "rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm", children: [
+              "-",
+              service.discountPercent,
+              "%"
+            ] }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-6 h-6 text-black" }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: service.title })
@@ -30093,7 +30109,22 @@ function StudentsPage() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-4", children: service.description }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold text-cyan-400", children: service.price }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  service.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-400 line-through", children: [
+                      "Mulai dari ",
+                      formatRupiah(service.priceIdr)
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-emerald-300", children: [
+                      "Hemat ",
+                      formatRupiah(service.priceIdr - Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-2xl font-bold text-cyan-400", children: [
+                    "Mulai dari ",
+                    formatRupiah(Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))
+                  ] })
+                ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "secondary", className: "flex items-center bg-gray-700/50 text-gray-300", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3 mr-1" }),
                   service.duration
@@ -30215,7 +30246,7 @@ function StudentsPage() {
                 asChild: true,
                 size: "lg",
                 className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: t("students.startFreeConsultation") })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.startFreeConsultation") })
               }
             )
           ]
@@ -35182,19 +35213,19 @@ function ContactPage() {
     {
       icon: Mail,
       title: t("contact.email"),
-      value: "hello@vorca.studio",
-      link: "mailto:hello@vorca.studio"
+      value: "marketing@vorcastudio.com",
+      link: "mailto:marketing@vorcastudio.com"
     },
     {
       icon: Phone,
       title: t("contact.phone"),
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+62 851-6700-2152 (WA)",
+      link: "https://wa.me/6285167002152"
     },
     {
       icon: MapPin,
       title: t("contact.location"),
-      value: "San Francisco, CA",
+      value: "Jakarta Selatan, Indonesia",
       link: "#"
     }
   ];
@@ -35377,9 +35408,10 @@ function ContactPage() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Button,
                 {
+                  asChild: true,
                   className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300",
                   size: "lg",
-                  children: t("contact.scheduleCall")
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("contact.scheduleCall") })
                 }
               )
             ] })
@@ -35426,7 +35458,8 @@ function AppInner() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/portfolio", element: /* @__PURE__ */ jsxRuntimeExports.jsx(PortfolioPage, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/about", element: /* @__PURE__ */ jsxRuntimeExports.jsx(AboutPage, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/students", element: /* @__PURE__ */ jsxRuntimeExports.jsx(StudentsPage, {}) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/contact", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ContactPage, {}) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/contact", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ContactPage, {}) }),
+      " "
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, {})

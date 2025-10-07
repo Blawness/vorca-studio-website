@@ -88,19 +88,19 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: t("contact.email"),
-      value: "hello@vorca.studio",
-      link: "mailto:hello@vorca.studio"
+      value: "marketing@vorcastudio.com",
+      link: "mailto:marketing@vorcastudio.com"
     },
     {
       icon: Phone,
       title: t("contact.phone"),
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+62 851-6700-2152 (WA)",
+      link: "https://wa.me/6285167002152"
     },
     {
       icon: MapPin,
       title: t("contact.location"),
-      value: "San Francisco, CA",
+      value: "Jakarta Selatan, Indonesia",
       link: "#"
     }
   ];
@@ -300,11 +300,14 @@ export default function ContactPage() {
                 <p className="text-gray-300 mb-4">
                   {t("contact.freeConsultation.desc")}
                 </p>
-                <Button 
+                <Button
+                  asChild
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                   size="lg"
                 >
-                  {t("contact.scheduleCall")}
+                  <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
+                    {t("contact.scheduleCall")}
+                  </a>
                 </Button>
               </div>
             </motion.div>

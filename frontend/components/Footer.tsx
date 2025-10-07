@@ -32,7 +32,7 @@ export default function Footer() {
               <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="mailto:hello@vorca.studio" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="mailto:marketing@vorcastudio.com" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
