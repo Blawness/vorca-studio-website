@@ -269,7 +269,7 @@ This project is proprietary software. All rights reserved.
 ## 🆘 Support
 
 For support and questions:
-- **Email**: hello@vorca.studio
+- **Email**: marketing@vorcastudio.com
 - **Documentation**: See `agents.md` for detailed guidelines
 - **Issues**: Create an issue in the repository
 
