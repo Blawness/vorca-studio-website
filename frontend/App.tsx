@@ -4,6 +4,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CustomerServiceButton from "./components/CustomerServiceButton";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import PortfolioPage from "./pages/PortfolioPage";
@@ -32,6 +33,7 @@ function AppInner() {
         </main>
         <Footer />
         <Toaster />
+        <CustomerServiceButton />
       </div>
     </Router>
   );

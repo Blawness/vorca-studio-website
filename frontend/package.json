@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "bun",
+  "packageManager": "npm@10.2.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

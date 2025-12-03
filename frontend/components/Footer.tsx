@@ -43,8 +43,8 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-white">{t("footer.services")}</h3>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/services" className="hover:text-cyan-400 transition-colors duration-300">{t("services.web.title")}</Link></li>
-              <li><Link to="/services" className="hover:text-cyan-400 transition-colors duration-300">{t("services.uiux.title")}</Link></li>
-              <li><Link to="/services" className="hover:text-cyan-400 transition-colors duration-300">{t("services.branding.title")}</Link></li>
+              <li><Link to="/services" className="hover:text-cyan-400 transition-colors duration-300">{t("services.apps.title")}</Link></li>
+              <li><Link to="/services" className="hover:text-cyan-400 transition-colors duration-300">{t("services.frontend.title")}</Link></li>
             </ul>
           </div>
 
