@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { useLanguage } from "../contexts/LanguageContext";
+import { PageHero } from "@/components/PageHero";
 import backend from "~backend/client";
 
 export default function ContactPage() {
@@ -40,7 +41,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.serviceType || !formData.message) {
       toast({
         title: "Error",
@@ -107,33 +108,13 @@ export default function ContactPage() {
 
   return (
     <div className="pt-16 bg-black">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                {t("contact.title")}
-              </span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              {t("contact.subtitle")}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t("contact.title")}
+        subtitle={t("contact.subtitle")}
+      />
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -316,7 +297,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

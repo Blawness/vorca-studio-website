@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import { PageHero } from "@/components/PageHero";
 
 export default function ServicesPage() {
   const { t } = useLanguage();
@@ -78,32 +79,13 @@ export default function ServicesPage() {
 
   return (
     <div className="pt-16 bg-black min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                {t("services.title")}
-              </span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              {t("services.subtitle")}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t("services.title")}
+        subtitle={t("services.subtitle")}
+      />
 
       {/* Core Services */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.core.title")}</h2>
@@ -148,10 +130,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Design & Branding */}
-      <section className="py-20 bg-gray-900/50 relative">
-        {/* Top Blend */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
-
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.design.title")}</h2>
@@ -193,12 +172,10 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Bottom Blend */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
       </section>
 
       {/* Maintenance & Support */}
-      <section className="py-20 bg-black relative">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.maintenance.title")}</h2>
@@ -239,10 +216,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-Ons */}
-      <section className="py-20 bg-gray-900/30 border-t border-gray-800 relative">
-        {/* Top Blend */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
-
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-white mb-4">{t("services.addons.title")}</h3>
