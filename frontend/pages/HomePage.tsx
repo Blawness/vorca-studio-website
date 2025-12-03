@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "../contexts/LanguageContext";
+import { PageHero } from "@/components/PageHero";
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -84,48 +85,14 @@ export default function HomePage() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Cosmic Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full"></div>
-
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0.3, 1, 0.3],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+      <PageHero
+        title={
+          <>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-6"
+              className="mb-6 flex justify-center"
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-cyan-400 mr-2" />
@@ -133,7 +100,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               {Array.from(title.replace(" End-to-End", "\nEnd-to-End")).map((char, i) => (
                 char === "\n" ? (
                   <br key={`br-${i}`} />
@@ -150,39 +117,36 @@ export default function HomePage() {
                 )
               ))}
             </h1>
+          </>
+        }
+        subtitle={t("hero.subtitle")}
+      >
+        <p className="text-lg mb-8 text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          {t("hero.description")}
+        </p>
 
-            <p className="text-xl md:text-2xl mb-4 text-cyan-100 font-light max-w-4xl mx-auto">
-              {t("hero.subtitle")}
-            </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Button
+            asChild
+            size="lg"
+            className="h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
+          >
+            <Link to="/contact">
+              {t("hero.cta")}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </Button>
 
-            <p className="text-lg mb-8 text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              {t("hero.description")}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
-              >
-                <Link to="/contact">
-                  {t("hero.cta")}
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
-              >
-                <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
-                  {t("hero.consultation")}
-                </a>
-              </Button>
-            </div>
-          </motion.div>
+          <Button
+            asChild
+            variant="ghost"
+            size="lg"
+            className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
+          >
+            <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
+              {t("hero.consultation")}
+            </a>
+          </Button>
         </div>
 
         {/* Scroll indicator */}
@@ -195,10 +159,7 @@ export default function HomePage() {
             <div className="w-1 h-3 bg-cyan-400/50 rounded-full mt-2"></div>
           </div>
         </motion.div>
-
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
-      </section>
+      </PageHero>
 
       {/* Value Pillars Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
