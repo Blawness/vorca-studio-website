@@ -103,7 +103,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.core.title")}</h2>
@@ -148,10 +148,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Design & Branding */}
-      <section className="py-20 bg-gray-900/50 relative">
-        {/* Top Blend */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
-
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.design.title")}</h2>
@@ -193,12 +190,10 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Bottom Blend */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
       </section>
 
       {/* Maintenance & Support */}
-      <section className="py-20 bg-black relative">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.maintenance.title")}</h2>
@@ -239,10 +234,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-Ons */}
-      <section className="py-20 bg-gray-900/30 border-t border-gray-800 relative">
-        {/* Top Blend */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
-
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-white mb-4">{t("services.addons.title")}</h3>

@@ -72,10 +72,10 @@ export default function PortfolioPage() {
   ];
 
   const categories = [
-    t("portfolio.all"), 
-    t("portfolio.webDevelopment"), 
-    t("portfolio.uiuxDesign"), 
-    t("portfolio.mobileDevelopment"), 
+    t("portfolio.all"),
+    t("portfolio.webDevelopment"),
+    t("portfolio.uiuxDesign"),
+    t("portfolio.mobileDevelopment"),
     t("portfolio.branding")
   ];
 
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +107,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-8 bg-gray-900 border-b border-gray-800/50">
+      <section className="py-8 bg-gradient-to-b from-black to-gray-900 border-b border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category, index) => (
@@ -116,8 +116,8 @@ export default function PortfolioPage() {
                 variant={index === 0 ? "default" : "outline"}
                 size="sm"
                 className={
-                  index === 0 
-                    ? "rounded-full px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold shadow-[0_8px_24px_-12px_rgba(34,211,238,0.45)] hover:from-cyan-400 hover:to-blue-500 transition-all duration-300" 
+                  index === 0
+                    ? "rounded-full px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold shadow-[0_8px_24px_-12px_rgba(34,211,238,0.45)] hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
                     : "rounded-full px-5 py-2.5 border border-white/10 text-gray-200/80 bg-white/5 hover:bg-white/10 hover:text-white shadow-inner backdrop-blur-md transition-all duration-300"
                 }
               >
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -208,11 +208,11 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full"></div>
         </div>
-        
+
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -226,9 +226,9 @@ export default function PortfolioPage() {
             <p className="text-xl text-gray-400 mb-8">
               {t("portfolio.readyToCreate.desc")}
             </p>
-            <Button 
-              asChild 
-              size="lg" 
+            <Button
+              asChild
+              size="lg"
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
               <a href="/contact">
