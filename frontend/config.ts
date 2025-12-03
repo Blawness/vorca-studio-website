@@ -10,7 +10,7 @@ export const apiBaseUrl = process.env.NODE_ENV === "production"
   : "http://localhost:4000";
 
 // Contact email for the company
-export const contactEmail = "hello@vorca.studio";
+export const contactEmail = "marketing@vorcastudio.com";
 
 // Company social media links
 export const socialLinks = {

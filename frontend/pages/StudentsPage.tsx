@@ -109,9 +109,9 @@ export default function StudentsPage() {
                 size="lg" 
                 className="rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
-                <Link to="/contact">
+                <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
                   {t("students.consultation")}
-                </Link>
+                </a>
               </Button>
               <Button 
                 asChild 
@@ -395,9 +395,9 @@ export default function StudentsPage() {
               size="lg" 
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
-              <Link to="/contact">
+              <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
                 {t("students.startFreeConsultation")}
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </div>

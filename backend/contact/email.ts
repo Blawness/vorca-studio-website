@@ -11,8 +11,8 @@ export async function sendContactEmail(contact: ContactRequest): Promise<void> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "noreply@vorca.studio",
-      to: ["hello@vorca.studio"],
+      from: "noreply@vorcastudio.com",
+      to: ["marketing@vorcastudio.com"],
       subject: `New Contact Form Submission - ${contact.name}`,
       html: `
         <h2>New Contact Form Submission</h2>

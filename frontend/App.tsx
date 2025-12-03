@@ -4,12 +4,14 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CustomerServiceButton from "./components/CustomerServiceButton";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import AboutPage from "./pages/AboutPage";
 import StudentsPage from "./pages/StudentsPage";
 import ContactPage from "./pages/ContactPage";
+// import ArticlesPage from "./pages/ArticlesPage"; // Disabled - not needed yet
 
 const queryClient = new QueryClient();
 
@@ -26,10 +28,12 @@ function AppInner() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            {/* <Route path="/articles" element={<ArticlesPage />} /> */} {/* Disabled - not needed yet */}
           </Routes>
         </main>
         <Footer />
         <Toaster />
+        <CustomerServiceButton />
       </div>
     </Router>
   );
