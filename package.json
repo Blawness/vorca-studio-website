@@ -2,12 +2,12 @@
   "name": "leap-app",
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "bun",
+  "packageManager": "bun@1.1.0",
   "engines": {
     "node": "20.x"
   },
   "scripts": {
-    "build": "npm run -w frontend build"
+    "build": "bun run --filter frontend build"
   },
   "overrides": {
     "lightningcss": "npm:lightningcss-wasm@^1"

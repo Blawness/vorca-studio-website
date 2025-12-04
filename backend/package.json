@@ -23,9 +23,9 @@
   "strapi": {
     "uuid": "vorca-studio-backend"
   },
+  "packageManager": "bun@1.1.0",
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
+    "node": ">=18.0.0 <=20.x.x"
   },
   "license": "MIT"
 }
