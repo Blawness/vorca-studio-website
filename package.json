@@ -13,7 +13,7 @@
     "lightningcss": "npm:lightningcss-wasm@^1"
   },
   "resolutions": {
-    "esbuild": "^0.25.0"
+    "esbuild": "0.19.2"
   },
   "workspaces": [
     "backend",
