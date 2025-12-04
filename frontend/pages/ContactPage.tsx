@@ -96,7 +96,7 @@ export default function ContactPage() {
       icon: Phone,
       title: t("contact.phone"),
       value: "+62 851-6700-2152 (WA)",
-      link: "https://wa.me/6285167002152"
+      link: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website."
     },
     {
       icon: MapPin,
@@ -286,7 +286,7 @@ export default function ContactPage() {
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
                   size="lg"
                 >
-                  <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website." target="_blank" rel="noopener noreferrer">
                     {t("contact.scheduleCall")}
                   </a>
                 </Button>

@@ -262,7 +262,7 @@ export default function ServicesPage() {
                 size="lg"
                 className="h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0"
               >
-                <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website." target="_blank" rel="noopener noreferrer">
                   {t("services.cta.discuss")}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>

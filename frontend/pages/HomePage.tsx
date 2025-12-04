@@ -143,7 +143,7 @@ export default function HomePage() {
             size="lg"
             className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
           >
-            <a href="https://wa.me/6285167002152" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website." target="_blank" rel="noopener noreferrer">
               {t("hero.consultation")}
             </a>
           </Button>
