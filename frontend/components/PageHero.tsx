@@ -27,7 +27,7 @@ export function PageHero({ title, subtitle, children, className = "" }: PageHero
                 >
                     <div className="mb-6">
                         {typeof title === "string" ? (
-                            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+                            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent pb-3">
                                 {title}
                             </h1>
                         ) : (

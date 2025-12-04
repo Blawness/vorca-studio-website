@@ -29045,7 +29045,7 @@ function PageHero({ title, subtitle, children, className = "" }) {
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.8 },
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-6", children: typeof title === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: title }) : title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-6", children: typeof title === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent pb-2", children: title }) : title }),
           subtitle && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8", children: subtitle }),
           children
         ]
@@ -29805,7 +29805,7 @@ function AboutPage() {
     { number: "5+", label: t("common.yearsExperience") },
     { number: "99%", label: t("common.clientSatisfaction") }
   ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-black", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       PageHero,
       {
@@ -29813,44 +29813,63 @@ function AboutPage() {
         subtitle: t("about.subtitle")
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, x: -30 },
-          whileInView: { opacity: 1, x: 0 },
-          transition: { duration: 0.6 },
-          viewport: { once: true },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-5xl font-bold text-white mb-6", children: t("about.whyOrca") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-gray-400 mb-6 leading-relaxed", children: t("about.whyOrca.desc1") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-gray-400 mb-6 leading-relaxed", children: t("about.whyOrca.desc2") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-gray-400 leading-relaxed", children: t("about.mission") })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion.div,
-        {
-          initial: { opacity: 0, x: 30 },
-          whileInView: { opacity: 1, x: 0 },
-          transition: { duration: 0.6 },
-          viewport: { once: true },
-          className: "relative",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "img",
-              {
-                src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
-                alt: "Orca in the ocean",
-                className: "w-full h-auto"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-cyan-500/20 via-transparent to-transparent" })
-          ] })
-        }
-      )
-    ] }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 -left-64 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 -right-64 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0, x: -30 },
+            whileInView: { opacity: 1, x: 0 },
+            transition: { duration: 0.6 },
+            viewport: { once: true },
+            className: "relative",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-50" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-gray-900/40 backdrop-blur-sm border border-gray-800/50 p-8 rounded-3xl", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent", children: t("about.whyOrca") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6 text-lg text-gray-300 leading-relaxed", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("about.whyOrca.desc1") }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("about.whyOrca.desc2") }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center space-x-4 pt-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-cyan-400 font-medium italic", children: t("about.mission") })
+                  ] })
+                ] })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0, x: 30 },
+            whileInView: { opacity: 1, x: 0 },
+            transition: { duration: 0.6 },
+            viewport: { once: true },
+            className: "relative group",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl border border-gray-800 shadow-2xl", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "img",
+                  {
+                    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+                    alt: "Orca in the ocean",
+                    className: "w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-6 left-6 z-20 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan-300 text-sm font-medium", children: "Intelligence & Precision" }) })
+              ] })
+            ]
+          }
+        )
+      ] }) })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
