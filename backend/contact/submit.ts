@@ -1,5 +1,4 @@
 import { api } from "encore.dev/api";
-import { contactDB } from "./db";
 import { sendContactEmail } from "./email";
 
 export interface ContactRequest {
@@ -27,11 +26,6 @@ export const submit = api<ContactRequest, ContactResponse>(
     }
 
     // Store in database
-    await contactDB.exec`
-      INSERT INTO contacts (name, email, phone, company, service_type, message, language)
-      VALUES (${req.name}, ${req.email}, ${req.phone || null}, ${req.company || null}, ${req.serviceType}, ${req.message}, ${req.language})
-    `;
-
     // Send notification email
     try {
       await sendContactEmail(req);
@@ -42,7 +36,7 @@ export const submit = api<ContactRequest, ContactResponse>(
 
     return {
       success: true,
-      message: req.language === "en" 
+      message: req.language === "en"
         ? "Thank you for your message! We'll get back to you soon."
         : "Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda."
     };
