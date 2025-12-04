@@ -16108,23 +16108,27 @@ const translations = {
     "cta.button": "Konsultasi Gratis",
     // About
     "about.title": "Tentang Vorca Studio",
-    "about.subtitle": "Terinspirasi oleh kekuatan dan kecerdasan Orca",
-    "about.mission": "Misi kami adalah membantu bisnis mencapai dominasi digital melalui solusi web yang inovatif dan strategis.",
+    "about.subtitle": "Studio pengembangan web dan aplikasi berbasis web yang dibangun dengan prinsip presisi, strategi, dan arsitektur modern.",
+    "about.mission": "Membangun sistem yang relevan, kuat, dan berorientasi pada hasil nyata.",
     "about.whyOrca": "Mengapa Orca?",
-    "about.whyOrca.desc1": "Orca, atau Paus Pembunuh, mewakili segala sesuatu yang kami perjuangkan: kecerdasan, kekuatan, dan presisi.",
-    "about.whyOrca.desc2": "Sama seperti Orca mendominasi lautan melalui strategi berburu yang canggih, kami membantu bisnis mendominasi lanskap digital.",
+    "about.whyOrca.desc1": "Orca dikenal sebagai predator laut dengan strategi, presisi, dan kerja tim yang solid. Cara kerja itu yang kami bawa ke dunia pengembangan web.",
+    "about.whyOrca.desc2": "Kami pelajari konteks bisnis, rancang arsitektur sistemnya, dan eksekusi secara fokus hingga siap dipakai.",
     "about.ourValues": "Nilai-Nilai Kami",
-    "about.ourValues.desc": "Prinsip-prinsip yang memandu segala yang kami lakukan",
+    "about.ourValues.desc": "Prinsip yang memandu cara kami merancang dan membangun solusi digital.",
     "about.precision": "Presisi",
-    "about.precision.desc": "Solusi yang tepat sasaran.",
+    "about.precision.desc": "Setiap detail penting: dari struktur database hingga microcopy dalam UI.",
     "about.power": "Kekuatan",
-    "about.power.desc": "Memanfaatkan teknologi modern untuk dampak maksimal.",
+    "about.power.desc": "Menggunakan stack modern yang stabil, scalable, dan mudah dirawat.",
     "about.collaboration": "Kolaborasi",
-    "about.collaboration.desc": "Bekerja bersama untuk hasil luar biasa.",
-    "about.passion": "Passion",
-    "about.passion.desc": "Cinta sejati untuk menciptakan pengalaman digital yang luar biasa.",
+    "about.collaboration.desc": "Bekerja dekat dengan klien dari ide hingga peluncuran.",
+    "about.ownership": "Ownership",
+    "about.ownership.desc": "Kami memperlakukan proyek seolah itu sistem internal kami sendiri.",
     "about.meetOurPod": "Kenali Tim Kami",
-    "about.meetOurPod.desc": "Individu-individu berbakat di balik Vorca Studio",
+    "about.meetOurPod.desc": "Individu yang berfokus pada engineering dan solusi digital.",
+    "about.team.yudha.role": "Founder & Full-Stack Web Developer",
+    "about.team.yudha.bio": "Fokus pada arsitektur aplikasi, Next.js, React, database modern, dan integrasi backend.",
+    "about.team.andhika.role": "Product & Client Strategy",
+    "about.team.andhika.bio": "Menerjemahkan kebutuhan bisnis menjadi alur fitur yang jelas dan prioritas proyek yang realistis.",
     // Students
     "students.title": "Untuk Mahasiswa",
     "students.subtitle": "Bantuan tugas kuliah dengan harga terjangkau",
@@ -16300,23 +16304,27 @@ const translations = {
     "cta.button": "Free Consultation",
     // About
     "about.title": "About Vorca Studio",
-    "about.subtitle": "Inspired by the power and intelligence of the Orca",
-    "about.mission": "Our mission is to help businesses achieve digital dominance through innovative and strategic web solutions.",
+    "about.subtitle": "A web and web-app development studio built on principles of precision, strategy, and modern architecture.",
+    "about.mission": "Building systems that are relevant, strong, and results-oriented.",
     "about.whyOrca": "Why the Orca?",
-    "about.whyOrca.desc1": "The Orca represents intelligence, power, and precision.",
-    "about.whyOrca.desc2": "Just as Orcas dominate the ocean, we help businesses dominate the digital landscape.",
+    "about.whyOrca.desc1": "The Orca is known as an ocean predator with strategy, precision, and solid teamwork. That's the approach we bring to web development.",
+    "about.whyOrca.desc2": "We study the business context, design the system architecture, and execute with focus until it's ready to use.",
     "about.ourValues": "Our Values",
-    "about.ourValues.desc": "Principles guiding us",
+    "about.ourValues.desc": "Principles that guide how we design and build digital solutions.",
     "about.precision": "Precision",
-    "about.precision.desc": "Exact solutions.",
+    "about.precision.desc": "Every detail matters: from database structure to UI microcopy.",
     "about.power": "Power",
-    "about.power.desc": "Maximum impact.",
+    "about.power.desc": "Using modern stack that is stable, scalable, and maintainable.",
     "about.collaboration": "Collaboration",
-    "about.collaboration.desc": "Working together.",
-    "about.passion": "Passion",
-    "about.passion.desc": "Love for digital experiences.",
-    "about.meetOurPod": "Meet Our Pod",
-    "about.meetOurPod.desc": "The team behind Vorca Studio",
+    "about.collaboration.desc": "Working closely with clients from idea to launch.",
+    "about.ownership": "Ownership",
+    "about.ownership.desc": "We treat every project as if it were our own internal system.",
+    "about.meetOurPod": "Meet Our Team",
+    "about.meetOurPod.desc": "Individuals focused on engineering and digital solutions.",
+    "about.team.yudha.role": "Founder & Full-Stack Web Developer",
+    "about.team.yudha.bio": "Focused on application architecture, Next.js, React, modern databases, and backend integration.",
+    "about.team.andhika.role": "Product & Client Strategy",
+    "about.team.andhika.bio": "Translating business needs into clear feature flows and realistic project priorities.",
     // Students
     "students.title": "For Students",
     "students.subtitle": "Affordable assignment help",
@@ -18237,15 +18245,11 @@ const GraduationCap = createLucideIcon("graduation-cap", __iconNode$l);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$k = [
-  [
-    "path",
-    {
-      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-      key: "c3ymky"
-    }
-  ]
+  ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
+  ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
+  ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
 ];
-const Heart = createLucideIcon("heart", __iconNode$k);
+const Instagram = createLucideIcon("instagram", __iconNode$k);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18253,18 +18257,6 @@ const Heart = createLucideIcon("heart", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
-  ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
-  ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
-  ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
-];
-const Instagram = createLucideIcon("instagram", __iconNode$j);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$i = [
   [
     "path",
     {
@@ -18287,14 +18279,14 @@ const __iconNode$i = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$i);
+const Layers = createLucideIcon("layers", __iconNode$j);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$h = [
+const __iconNode$i = [
   [
     "path",
     {
@@ -18305,7 +18297,18 @@ const __iconNode$h = [
   ["rect", { width: "4", height: "12", x: "2", y: "9", key: "mk3on5" }],
   ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }]
 ];
-const Linkedin = createLucideIcon("linkedin", __iconNode$h);
+const Linkedin = createLucideIcon("linkedin", __iconNode$i);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$h = [
+  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
+  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$h);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18313,17 +18316,6 @@ const Linkedin = createLucideIcon("linkedin", __iconNode$h);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$g = [
-  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
-  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$g);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
   [
     "path",
     {
@@ -18333,7 +18325,19 @@ const __iconNode$f = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$f);
+const MapPin = createLucideIcon("map-pin", __iconNode$g);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }],
+  ["line", { x1: "4", x2: "20", y1: "6", y2: "6", key: "1owob3" }],
+  ["line", { x1: "4", x2: "20", y1: "18", y2: "18", key: "yk5zj1" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$f);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18341,11 +18345,9 @@ const MapPin = createLucideIcon("map-pin", __iconNode$f);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$e = [
-  ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }],
-  ["line", { x1: "4", x2: "20", y1: "6", y2: "6", key: "1owob3" }],
-  ["line", { x1: "4", x2: "20", y1: "18", y2: "18", key: "yk5zj1" }]
+  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$e);
+const MessageCircle = createLucideIcon("message-circle", __iconNode$e);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18353,16 +18355,6 @@ const Menu = createLucideIcon("menu", __iconNode$e);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$d = [
-  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
-];
-const MessageCircle = createLucideIcon("message-circle", __iconNode$d);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$c = [
   ["circle", { cx: "13.5", cy: "6.5", r: ".5", fill: "currentColor", key: "1okk4w" }],
   ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor", key: "f64h9f" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }],
@@ -18375,7 +18367,19 @@ const __iconNode$c = [
     }
   ]
 ];
-const Palette = createLucideIcon("palette", __iconNode$c);
+const Palette = createLucideIcon("palette", __iconNode$d);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$c = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M9 21V9", key: "1oto5p" }]
+];
+const PanelsTopLeft = createLucideIcon("panels-top-left", __iconNode$c);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18383,11 +18387,15 @@ const Palette = createLucideIcon("palette", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "M9 21V9", key: "1oto5p" }]
+  [
+    "path",
+    {
+      d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
+      key: "foiqr5"
+    }
+  ]
 ];
-const PanelsTopLeft = createLucideIcon("panels-top-left", __iconNode$b);
+const Phone = createLucideIcon("phone", __iconNode$b);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18398,12 +18406,13 @@ const __iconNode$a = [
   [
     "path",
     {
-      d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
-      key: "foiqr5"
+      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
+      key: "1ffxy3"
     }
-  ]
+  ],
+  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
 ];
-const Phone = createLucideIcon("phone", __iconNode$a);
+const Send = createLucideIcon("send", __iconNode$a);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18411,16 +18420,12 @@ const Phone = createLucideIcon("phone", __iconNode$a);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$9 = [
-  [
-    "path",
-    {
-      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
-      key: "1ffxy3"
-    }
-  ],
-  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
+  ["rect", { width: "20", height: "8", x: "2", y: "2", rx: "2", ry: "2", key: "ngkwjq" }],
+  ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", ry: "2", key: "iecqi9" }],
+  ["line", { x1: "6", x2: "6.01", y1: "6", y2: "6", key: "16zg32" }],
+  ["line", { x1: "6", x2: "6.01", y1: "18", y2: "18", key: "nzw8ys" }]
 ];
-const Send = createLucideIcon("send", __iconNode$9);
+const Server = createLucideIcon("server", __iconNode$9);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18428,12 +18433,15 @@ const Send = createLucideIcon("send", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["rect", { width: "20", height: "8", x: "2", y: "2", rx: "2", ry: "2", key: "ngkwjq" }],
-  ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", ry: "2", key: "iecqi9" }],
-  ["line", { x1: "6", x2: "6.01", y1: "6", y2: "6", key: "16zg32" }],
-  ["line", { x1: "6", x2: "6.01", y1: "18", y2: "18", key: "nzw8ys" }]
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ]
 ];
-const Server = createLucideIcon("server", __iconNode$8);
+const Shield = createLucideIcon("shield", __iconNode$8);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -28956,7 +28964,7 @@ function CustomerServiceButton() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.a,
     {
-      href: "https://wa.me/6285167002152",
+      href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.",
       target: "_blank",
       rel: "noopener noreferrer",
       className: "fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20bd5a] transition-colors duration-300 pr-5 pl-2 py-2",
@@ -29033,8 +29041,8 @@ function CardContent({ className, ...props }) {
 }
 function PageHero({ title, subtitle, children, className = "" }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `relative pt-32 pb-20 overflow-hidden ${className}`, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 bg-black", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 bg-[#050b16]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-[#050b16] via-gray-900 to-[#050b16] opacity-90" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
     ] }),
@@ -29045,7 +29053,7 @@ function PageHero({ title, subtitle, children, className = "" }) {
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.8 },
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-6", children: typeof title === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent pb-2", children: title }) : title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-6", children: typeof title === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent pb-3", children: title }) : title }),
           subtitle && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8", children: subtitle }),
           children
         ]
@@ -29181,7 +29189,7 @@ function HomePage() {
                 variant: "ghost",
                 size: "lg",
                 className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("hero.consultation") })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.", target: "_blank", rel: "noopener noreferrer", children: t("hero.consultation") })
               }
             )
           ] }),
@@ -29546,7 +29554,7 @@ function ServicesPage() {
                 asChild: true,
                 size: "lg",
                 className: "h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: [
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.", target: "_blank", rel: "noopener noreferrer", children: [
                   t("services.cta.discuss"),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
                 ] })
@@ -29780,32 +29788,32 @@ function AboutPage() {
       description: t("about.collaboration.desc")
     },
     {
-      icon: Heart,
-      title: t("about.passion"),
-      description: t("about.passion.desc")
+      icon: Shield,
+      title: t("about.ownership"),
+      description: t("about.ownership.desc")
     }
   ];
   const team = [
     {
       name: "Yudha Hafiz",
-      role: "Founder & CEO",
+      role: t("about.team.yudha.role"),
       image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=300&h=300&fit=crop&crop=face",
-      bio: "Founder & CEO leading strategy and product with a focus on precision and impact."
+      bio: t("about.team.yudha.bio")
     },
     {
       name: "Andhika Satya",
-      role: "Lead Marketing",
+      role: t("about.team.andhika.role"),
       image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=300&fit=crop&crop=face",
-      bio: "Marketing lead driving growth, brand presence, and customer engagement."
+      bio: t("about.team.andhika.bio")
     }
   ];
   const stats = [
-    { number: "50+", label: t("common.happyClients") },
-    { number: "100+", label: t("common.projectsCompleted") },
-    { number: "5+", label: t("common.yearsExperience") },
-    { number: "99%", label: t("common.clientSatisfaction") }
+    { label: "Klien dari berbagai industri" },
+    { label: "Puluhan proyek web & web app" },
+    { label: "Beberapa tahun pengalaman" },
+    { label: "Fokus pada kualitas & maintainability" }
   ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-black", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-[#050b16]", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       PageHero,
       {
@@ -29813,64 +29821,54 @@ function AboutPage() {
         subtitle: t("about.subtitle")
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 -left-64 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 -right-64 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            initial: { opacity: 0, x: -30 },
-            whileInView: { opacity: 1, x: 0 },
-            transition: { duration: 0.6 },
-            viewport: { once: true },
-            className: "relative",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-gray-900/40 backdrop-blur-sm border border-gray-800/50 p-8 rounded-3xl", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent", children: t("about.whyOrca") }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6 text-lg text-gray-300 leading-relaxed", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("about.whyOrca.desc1") }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("about.whyOrca.desc2") }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center space-x-4 pt-4", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-cyan-400 font-medium italic", children: t("about.mission") })
-                  ] })
-                ] })
-              ] })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            initial: { opacity: 0, x: 30 },
-            whileInView: { opacity: 1, x: 0 },
-            transition: { duration: 0.6 },
-            viewport: { once: true },
-            className: "relative group",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl border border-gray-800 shadow-2xl", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
-                    alt: "Orca in the ocean",
-                    className: "w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-6 left-6 z-20 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan-300 text-sm font-medium", children: "Intelligence & Precision" }) })
-              ] })
-            ]
-          }
-        )
-      ] }) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 md:py-24 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-6xl mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, x: -30 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration: 0.6 },
+          viewport: { once: true },
+          className: "relative",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6", children: t("about.whyOrca") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-slate-300/90 leading-relaxed", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("about.whyOrca.desc1") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-slate-300/80 ml-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "kami pelajari konteks bisnis," }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "kami rancang arsitektur sistemnya," }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "kami eksekusi secara fokus hingga siap dipakai." })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-cyan-400 font-medium italic", children: [
+                '"',
+                t("about.mission"),
+                '"'
+              ] }) })
+            ] })
+          ] })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, x: 30 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration: 0.6 },
+          viewport: { once: true },
+          className: "relative",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(0,140,255,0.3)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: "https://images.unsplash.com/photo-1669707355372-b2d1e31dc083?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              alt: "Orca whale swimming",
+              className: "w-full h-80 lg:h-96 object-cover"
+            }
+          ) })
+        }
+      )
+    ] }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[1px] bg-white/5 mx-auto w-full max-w-6xl" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 md:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto px-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29878,31 +29876,31 @@ function AboutPage() {
           whileInView: { opacity: 1, y: 0 },
           transition: { duration: 0.6 },
           viewport: { once: true },
-          className: "text-center mb-16",
+          className: "text-center mb-12",
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-5xl font-bold text-white mb-4", children: t("about.ourValues") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("about.ourValues.desc") })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4", children: t("about.ourValues") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300/70 max-w-2xl mx-auto", children: t("about.ourValues.desc") })
           ]
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: values.map((value, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6", children: values.map((value, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           transition: { duration: 0.6, delay: index2 * 0.1 },
           viewport: { once: true },
-          className: "group",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full text-center bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(value.icon, { className: "w-8 h-8 text-black" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-white mb-4", children: value.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: value.description })
-          ] }) })
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-cyan-500/30 transition-all duration-300", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 rounded-xl bg-gradient-to-b from-cyan-400 to-blue-600 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(0,150,255,0.3)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(value.icon, { className: "w-6 h-6 text-white" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-semibold tracking-tight text-white mb-2", children: value.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300/80 text-sm leading-relaxed", children: value.description })
+          ] })
         },
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[1px] bg-white/5 mx-auto w-full max-w-6xl" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 md:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto px-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29910,53 +29908,69 @@ function AboutPage() {
           whileInView: { opacity: 1, y: 0 },
           transition: { duration: 0.6 },
           viewport: { once: true },
-          className: "text-center mb-16",
+          className: "text-center mb-12",
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-5xl font-bold text-white mb-4", children: t("about.meetOurPod") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("about.meetOurPod.desc") })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4", children: t("about.meetOurPod") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300/70 max-w-2xl mx-auto", children: t("about.meetOurPod.desc") })
           ]
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8", children: team.map((member, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto", children: team.map((member, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           transition: { duration: 0.6, delay: index2 * 0.1 },
           viewport: { once: true },
-          className: "group",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full text-center bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 md:p-8 flex flex-col items-center text-center", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               "img",
               {
                 src: member.image,
                 alt: member.name,
-                className: "w-24 h-24 rounded-full mx-auto object-cover ring-2 ring-cyan-500/20 group-hover:ring-cyan-500/50 transition-all duration-300"
+                className: "w-20 h-20 md:w-24 md:h-24 rounded-full object-cover ring-2 ring-cyan-500/30"
               }
             ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-white mb-2", children: member.name }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-cyan-400 font-medium mb-4", children: member.role }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 text-sm", children: member.bio })
-          ] }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold tracking-tight text-white mb-1", children: member.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-cyan-400 text-sm font-medium mb-3", children: member.role }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300/80 text-sm leading-relaxed", children: member.bio })
+          ] })
         },
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 text-center", children: stats.map((stat, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
-      {
-        initial: { opacity: 0, scale: 0.8 },
-        whileInView: { opacity: 1, scale: 1 },
-        transition: { duration: 0.6, delay: index2 * 0.1 },
-        viewport: { once: true },
-        className: "group",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent", children: stat.number }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-gray-400 text-lg", children: stat.label })
-        ]
-      },
-      index2
-    )) }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[1px] bg-white/5 mx-auto w-full max-w-6xl" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 md:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6 },
+          viewport: { once: true },
+          className: "text-center mb-12",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4", children: "Track Record" })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-500/50 via-blue-500/50 to-transparent" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: stats.map((stat, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0, x: -20 },
+            whileInView: { opacity: 1, x: 0 },
+            transition: { duration: 0.5, delay: index2 * 0.1 },
+            viewport: { once: true },
+            className: "relative flex items-start gap-6",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(0,150,255,0.4)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "w-6 h-6 text-white", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 2.5, children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M5 13l4 4L19 7" }) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-cyan-500/30 transition-colors duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-200 font-medium", children: stat.label }) })
+            ]
+          },
+          index2
+        )) })
+      ] })
+    ] }) })
   ] });
 }
 function StudentsPage() {
@@ -30040,7 +30054,7 @@ function StudentsPage() {
               asChild: true,
               size: "lg",
               className: "rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.consultation") })
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.", target: "_blank", rel: "noopener noreferrer", children: t("students.consultation") })
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30261,7 +30275,7 @@ function StudentsPage() {
                 asChild: true,
                 size: "lg",
                 className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.startFreeConsultation") })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.", target: "_blank", rel: "noopener noreferrer", children: t("students.startFreeConsultation") })
               }
             )
           ]
@@ -35235,7 +35249,7 @@ function ContactPage() {
       icon: Phone,
       title: t("contact.phone"),
       value: "+62 851-6700-2152 (WA)",
-      link: "https://wa.me/6285167002152"
+      link: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website."
     },
     {
       icon: MapPin,
@@ -35415,7 +35429,7 @@ function ContactPage() {
                   asChild: true,
                   className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300",
                   size: "lg",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("contact.scheduleCall") })
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website.", target: "_blank", rel: "noopener noreferrer", children: t("contact.scheduleCall") })
                 }
               )
             ] })
