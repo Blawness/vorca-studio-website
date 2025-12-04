@@ -12,8 +12,8 @@ export function PageHero({ title, subtitle, children, className = "" }: PageHero
     return (
         <section className={`relative pt-32 pb-20 overflow-hidden ${className}`}>
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-black">
-                <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90"></div>
+            <div className="absolute inset-0 bg-[#050b16]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#050b16] via-gray-900 to-[#050b16] opacity-90"></div>
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
             </div>
