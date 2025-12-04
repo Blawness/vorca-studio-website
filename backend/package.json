@@ -4,17 +4,9 @@
   "version": "0.1.0",
   "description": "Strapi backend for Vorca Studio",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@strapi/strapi": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
-    "@strapi/plugin-i18n": "4.15.0",
-    "mysql": "2.18.1",
-    "better-sqlite3": "8.6.0",
     "encore.dev": "^1.48.13"
   },
   "author": {
