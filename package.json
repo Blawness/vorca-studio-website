@@ -15,5 +15,8 @@
   "workspaces": [
     "backend",
     "frontend"
-  ]
+  ],
+  "dependencies": {
+    "encore.dev": "^1.48.13"
+  }
 }
