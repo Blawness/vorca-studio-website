@@ -16031,32 +16031,135 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "Tentang",
     "nav.students": "Untuk Mahasiswa",
-    // "nav.articles": "Artikel", // Disabled - not needed yet
     "nav.contact": "Kontak",
     // Hero
-    "hero.title": "Smart. Sleek. Deep Impact.",
-    "hero.subtitle": "Agency web disruptif yang terinspirasi oleh Orca",
-    "hero.description": "Kami menciptakan solusi digital yang kuat dan cerdas untuk bisnis Anda. Seperti Orca yang mendominasi lautan, kami membantu brand Anda menguasai dunia digital.",
-    "hero.cta": "Mulai Proyek Anda",
-    "hero.consultation": "Konsultasi Gratis",
-    // Services
-    "services.title": "Layanan Kami",
-    "services.subtitle": "Solusi digital komprehensif untuk setiap kebutuhan bisnis",
-    "services.web.title": "Pengembangan Web",
-    "services.web.description": "Website modern, responsif, dan performa tinggi",
+    "hero.title": "Build Modern Web Apps. End-to-End.",
+    "hero.subtitle": "Kami mengembangkan website dan aplikasi berbasis web yang cepat, scalable, dan siap digunakan untuk kebutuhan operasional bisnis Anda.",
+    "hero.description": "Dari frontend, backend, hingga database, semuanya ditangani secara menyeluruh dan terstruktur.",
+    "hero.cta": "Mulai Proyek",
+    "hero.consultation": "Jadwalkan Konsultasi",
+    // Value Pillars
+    "valuePillars.fullStack.title": "Full-Stack Development",
+    "valuePillars.fullStack.desc": "Aplikasi web modern dengan arsitektur jelas, performa stabil, dan struktur kode yang rapi.",
+    "valuePillars.scalable.title": "Scalable Infrastructure",
+    "valuePillars.scalable.desc": "Fondasi teknis yang mudah dikembangkan saat bisnis atau traffic bertambah.",
+    "valuePillars.workflow.title": "Operational Workflow Ready",
+    "valuePillars.workflow.desc": "Sistem yang benar-benar dipakai tim internal: CRUD, dashboard, roles, integrasi, dan alur kerja operasional.",
+    // Core Services
+    "services.title": "Layanan Vorca Studio",
+    "services.subtitle": "Fokus pada solusi pengembangan web modern dan aplikasi berbasis web yang scalable.",
+    // Core Services Pillar
+    "services.core.title": "Layanan Inti (Core Services)",
+    "services.core.desc": "Layanan utama yang membentuk fondasi teknologi digital klien.",
+    "services.web.title": "Pengembangan Website",
+    "services.web.description": "Website modern, responsif, dan dirancang untuk kebutuhan brand maupun operasional bisnis.",
+    "services.web.features": "Company profile, Landing page, Microsite campaign",
+    "services.apps.title": "Aplikasi Bisnis & Web App",
+    "services.apps.description": "Sistem berbasis web untuk kebutuhan internal maupun operasional bisnis.",
+    "services.apps.features": "Dashboard, Sistem CRUD, Manajemen data, Autentikasi pengguna, Role-based access, Workflow internal, Integrasi API",
+    "services.frontend.title": "Frontend Development",
+    "services.frontend.description": "UI/UX modern berbasis Next.js, React, Tailwind CSS, dan komponen custom reusable. Berfokus pada performa UI, aksesibilitas, dan scalability.",
+    "services.system.title": "System Architecture & Integrations",
+    "services.system.description": "Perancangan struktur aplikasi yang jelas, desain database, dan integrasi sistem supaya aplikasi berjalan stabil dan efisien.",
+    // Design Pillar
+    "services.design.title": "Layanan Pendukung (Design & Branding)",
+    "services.design.desc": "Untuk bisnis yang membutuhkan identitas visual dan antarmuka yang kuat.",
     "services.uiux.title": "UI/UX Design",
-    "services.uiux.description": "Desain antarmuka yang intuitif dan menarik",
-    "services.branding.title": "Branding",
-    "services.branding.description": "Identitas brand yang kuat dan berkesan",
+    "services.uiux.description": "Desain antarmuka dengan flow intuitif, layout jelas, dan komponen siap implementasi.",
+    "services.branding.title": "Digital Branding",
+    "services.branding.description": "Elemen visual dasar untuk membangun identitas brand.",
+    "services.branding.features": "Warna, Tipografi, Logo ringan, Style direction",
+    // Maintenance Pillar
+    "services.maintenance.title": "Maintenance & Support",
+    "services.maintenance.desc": "Menjaga aplikasi tetap stabil dan optimal setelah deploy.",
+    "services.maintenance.web.title": "Website / Web App Maintenance",
+    "services.maintenance.web.features": "Update konten, Performance monitoring, Bug fixing, Routine updates",
+    "services.maintenance.perf.title": "Performance Optimization",
+    "services.maintenance.perf.features": "Optimasi struktur, Perbaikan kecepatan loading, Efisiensi frontend & backend",
+    // Addons
+    "services.addons.title": "Add-Ons (Opsional)",
+    "services.addons.desc": "Tambahan yang melengkapi layanan inti.",
+    "services.addons.list": "SEO Basic Setup, Analytics Setup, Deployment VPS/Cloud, Integrasi API tambahan",
+    "services.cta.discuss": "Diskusikan Proyek Anda",
+    // Tech Stack
+    "techStack.title": "Tech Stack Kami",
+    "techStack.description": "Teknologi yang kami gunakan berfokus pada performa, maintainability, dan skalabilitas.",
+    // System Types
+    "systemTypes.title": "Jenis Sistem yang Bisa Kami Bangun",
+    "systemTypes.data": "Sistem manajemen data",
+    "systemTypes.reservation": "Sistem reservasi",
+    "systemTypes.crm": "CRM mini",
+    "systemTypes.inventory": "Inventory & product tracking",
+    "systemTypes.hris": "HRIS sederhana",
+    "systemTypes.kpi": "Dashboard KPI",
+    "systemTypes.ticket": "Sistem tiket internal",
+    "systemTypes.workflow": "Workflow operasional custom",
+    // Why Choose
+    "whyChoose.title": "Why Choose Vorca Studio",
+    "whyChoose.engineering.title": "Engineering-first Approach",
+    "whyChoose.engineering.desc": "Kami memprioritaskan arsitektur, struktur, dan workflow teknis yang scalable.",
+    "whyChoose.cleanUi.title": "Clean UI, Solid Backend",
+    "whyChoose.cleanUi.desc": "Perpaduan UI modern yang rapi dengan fondasi backend yang kuat.",
+    "whyChoose.docs.title": "Dokumentasi & Maintainability",
+    "whyChoose.docs.desc": "Setiap proyek dirancang agar mudah dikembangkan dalam jangka panjang.",
+    // CTA Footer
+    "cta.title": "Siap membangun aplikasi web yang benar-benar dipakai tim Anda?",
+    "cta.description": "Ayo diskusi, dan kami bantu merancang arsitektur yang paling efisien untuk kebutuhan bisnis Anda.",
+    "cta.button": "Konsultasi Gratis",
     // About
     "about.title": "Tentang Vorca Studio",
     "about.subtitle": "Terinspirasi oleh kekuatan dan kecerdasan Orca",
     "about.mission": "Misi kami adalah membantu bisnis mencapai dominasi digital melalui solusi web yang inovatif dan strategis.",
+    "about.whyOrca": "Mengapa Orca?",
+    "about.whyOrca.desc1": "Orca, atau Paus Pembunuh, mewakili segala sesuatu yang kami perjuangkan: kecerdasan, kekuatan, dan presisi.",
+    "about.whyOrca.desc2": "Sama seperti Orca mendominasi lautan melalui strategi berburu yang canggih, kami membantu bisnis mendominasi lanskap digital.",
+    "about.ourValues": "Nilai-Nilai Kami",
+    "about.ourValues.desc": "Prinsip-prinsip yang memandu segala yang kami lakukan",
+    "about.precision": "Presisi",
+    "about.precision.desc": "Solusi yang tepat sasaran.",
+    "about.power": "Kekuatan",
+    "about.power.desc": "Memanfaatkan teknologi modern untuk dampak maksimal.",
+    "about.collaboration": "Kolaborasi",
+    "about.collaboration.desc": "Bekerja bersama untuk hasil luar biasa.",
+    "about.passion": "Passion",
+    "about.passion.desc": "Cinta sejati untuk menciptakan pengalaman digital yang luar biasa.",
+    "about.meetOurPod": "Kenali Tim Kami",
+    "about.meetOurPod.desc": "Individu-individu berbakat di balik Vorca Studio",
     // Students
     "students.title": "Untuk Mahasiswa",
     "students.subtitle": "Bantuan tugas kuliah dengan harga terjangkau",
     "students.consultation": "Konsultasi Gratis 30 Menit",
     "students.pricing": "Harga Transparan",
+    "students.whyChoose": "Mengapa Memilih Vorca?",
+    "students.whyChoose.desc": "Solusi yang disesuaikan untuk mahasiswa",
+    "students.affordablePricing": "Harga terjangkau",
+    "students.quickTurnaround": "Cepat selesai",
+    "students.highQuality": "Berkualitas tinggi",
+    "students.codeExplanation": "Penjelasan kode",
+    "students.revisionSupport": "Dukungan revisi",
+    "students.communication": "Komunikasi 24/7",
+    "students.servicesAndPricing": "Layanan & Harga",
+    "students.servicesAndPricing.desc": "Harga transparan untuk mahasiswa",
+    "students.webDevProjects": "Proyek Web",
+    "students.webDevProjects.desc": "Pengembangan website lengkap",
+    "students.uiuxDesign": "UI/UX Design",
+    "students.uiuxDesign.desc": "Desain profesional",
+    "students.programmingAssignments": "Tugas Coding",
+    "students.programmingAssignments.desc": "Bantuan tugas pemrograman",
+    "students.howItWorks": "Cara Kerja",
+    "students.howItWorks.desc": "Proses sederhana",
+    "students.submitBrief": "Kirim Brief",
+    "students.submitBrief.desc": "Ceritakan kebutuhan Anda",
+    "students.freeConsultation": "Konsultasi Gratis",
+    "students.freeConsultation.desc": "Diskusi 30 menit",
+    "students.development": "Pengembangan",
+    "students.development.desc": "Kami kerjakan proyek Anda",
+    "students.explanation": "Penjelasan",
+    "students.explanation.desc": "Kami jelaskan kodenya",
+    "students.faq": "FAQ",
+    "students.readyToAce": "Siap Mulai?",
+    "students.readyToAce.desc": "Hubungi kami sekarang",
+    "students.startFreeConsultation": "Mulai Konsultasi",
     // Footer
     "footer.description": "Agency web disruptif yang terinspirasi oleh Orca",
     "footer.services": "Layanan",
@@ -16066,126 +16169,52 @@ const translations = {
     // Common
     "common.nextGen": "Solusi Digital Generasi Baru",
     "common.lightningFast": "Sangat Cepat",
-    "common.lightningFast.desc": "Dioptimalkan untuk performa dan kecepatan",
+    "common.lightningFast.desc": "Dioptimalkan untuk performa",
     "common.enterpriseSecurity": "Keamanan Enterprise",
-    "common.enterpriseSecurity.desc": "Keamanan tingkat bank untuk data Anda",
+    "common.enterpriseSecurity.desc": "Keamanan tingkat tinggi",
     "common.aiPowered": "Bertenaga AI",
-    "common.aiPowered.desc": "Otomasi cerdas dan wawasan mendalam",
+    "common.aiPowered.desc": "Otomasi cerdas",
     "common.viewAllServices": "Lihat Semua Layanan",
-    "common.readyToDominate": "Siap Mendominasi Samudra Digital?",
-    "common.readyToDominate.desc": "Mari ciptakan sesuatu yang kuat bersama-sama. Mulai proyek Anda hari ini.",
+    "common.readyToDominate": "Siap Mendominasi?",
+    "common.readyToDominate.desc": "Mari ciptakan sesuatu yang kuat.",
     "common.viewOurWork": "Lihat Karya Kami",
     "common.happyClients": "Klien Puas",
     "common.projectsCompleted": "Proyek Selesai",
     "common.clientSatisfaction": "Kepuasan Klien",
     "common.yearsExperience": "Tahun Pengalaman",
-    // Services Page
-    "services.webHosting": "Web Hosting",
-    "services.webHosting.desc": "Solusi hosting yang andal dan aman",
-    "services.mobileApps": "Aplikasi Mobile",
-    "services.mobileApps.desc": "Aplikasi mobile native dan cross-platform",
-    "services.seoOptimization": "Optimasi SEO",
-    "services.seoOptimization.desc": "Tingkatkan peringkat mesin pencari Anda",
-    "services.securityAudit": "Audit Keamanan",
-    "services.securityAudit.desc": "Penilaian dan perlindungan keamanan komprehensif",
-    "services.maintenanceSupport": "Pemeliharaan & Dukungan",
-    "services.maintenanceSupport.desc": "Pemeliharaan website berkelanjutan dan dukungan teknis",
-    "services.mostPopular": "Paling Populer",
-    "services.getStarted": "Mulai",
-    "services.ourProcess": "Proses Kami",
-    "services.ourProcess.desc": "Pendekatan yang efisien untuk memberikan hasil luar biasa",
-    "services.discovery": "Penemuan",
-    "services.discovery.desc": "Memahami kebutuhan dan tujuan Anda",
-    "services.strategy": "Strategi",
-    "services.strategy.desc": "Merencanakan solusi yang sempurna",
-    "services.development": "Pengembangan",
-    "services.development.desc": "Membangun dengan presisi dan perhatian",
-    "services.launch": "Peluncuran",
-    "services.launch.desc": "Menerapkan dan mengoptimalkan untuk kesuksesan",
-    "services.readyToStart": "Siap Memulai Proyek Anda?",
-    "services.readyToStart.desc": "Mari diskusikan bagaimana kami dapat membantu Anda mencapai tujuan digital.",
-    "services.getFreeConsultation": "Dapatkan Konsultasi Gratis",
-    // Portfolio Page
-    "portfolio.title": "Portfolio Kami",
-    "portfolio.subtitle": "Menampilkan karya terbaik kami dan dampak yang telah kami ciptakan untuk klien",
-    "portfolio.all": "Semua",
-    "portfolio.webDevelopment": "Pengembangan Web",
-    "portfolio.uiuxDesign": "UI/UX Design",
-    "portfolio.mobileDevelopment": "Pengembangan Mobile",
-    "portfolio.branding": "Branding",
-    "portfolio.view": "Lihat",
-    "portfolio.code": "Kode",
-    "portfolio.results": "Hasil:",
-    "portfolio.readyToCreate": "Siap Menciptakan Sesuatu yang Menakjubkan?",
-    "portfolio.readyToCreate.desc": "Mari diskusikan proyek Anda dan wujudkan visi Anda.",
-    "portfolio.startYourProject": "Mulai Proyek Anda",
-    // About Page
-    "about.whyOrca": "Mengapa Orca?",
-    "about.whyOrca.desc1": "Orca, atau Paus Pembunuh, mewakili segala sesuatu yang kami perjuangkan: kecerdasan, kekuatan, dan presisi. Makhluk megah ini adalah predator puncak bukan hanya melalui kekuatan kasar, tetapi melalui pemikiran strategis, kerja tim, dan kemampuan beradaptasi.",
-    "about.whyOrca.desc2": "Sama seperti Orca mendominasi lautan melalui strategi berburu yang canggih dan ikatan keluarga yang kuat, kami membantu bisnis mendominasi lanskap digital melalui solusi cerdas dan kemitraan kolaboratif.",
-    "about.ourValues": "Nilai-Nilai Kami",
-    "about.ourValues.desc": "Prinsip-prinsip yang memandu segala yang kami lakukan",
-    "about.precision": "Presisi",
-    "about.precision.desc": "Seperti teknik berburu Orca yang presisi, kami memberikan solusi yang tepat.",
-    "about.power": "Kekuatan",
-    "about.power.desc": "Memanfaatkan kekuatan teknologi modern untuk dampak maksimal.",
-    "about.collaboration": "Kolaborasi",
-    "about.collaboration.desc": "Bekerja bersama sebagai kelompok untuk mencapai hasil luar biasa.",
-    "about.passion": "Passion",
-    "about.passion.desc": "Didorong oleh cinta sejati untuk menciptakan pengalaman digital yang luar biasa.",
-    "about.meetOurPod": "Kenali Tim Kami",
-    "about.meetOurPod.desc": "Individu-individu berbakat di balik Vorca Studio",
-    // Students Page
-    "students.whyChoose": "Mengapa Memilih Vorca untuk Tugas Anda?",
-    "students.whyChoose.desc": "Kami memahami tantangan yang dihadapi mahasiswa dan menyediakan solusi yang disesuaikan",
-    "students.affordablePricing": "Harga terjangkau untuk mahasiswa",
-    "students.quickTurnaround": "Waktu penyelesaian cepat",
-    "students.highQuality": "Pekerjaan berkualitas tinggi",
-    "students.codeExplanation": "Penjelasan kode disertakan",
-    "students.revisionSupport": "Dukungan revisi",
-    "students.communication": "Komunikasi 24/7",
-    "students.servicesAndPricing": "Layanan & Harga Mahasiswa",
-    "students.servicesAndPricing.desc": "Harga transparan yang dirancang untuk anggaran mahasiswa",
-    "students.webDevProjects": "Proyek Pengembangan Web",
-    "students.webDevProjects.desc": "Pengembangan website lengkap untuk tugas Anda",
-    "students.uiuxDesign": "UI/UX Design",
-    "students.uiuxDesign.desc": "Desain profesional untuk proyek Anda",
-    "students.programmingAssignments": "Tugas Pemrograman",
-    "students.programmingAssignments.desc": "Bantuan dengan tugas coding dan proyek",
-    "students.howItWorks": "Cara Kerjanya",
-    "students.howItWorks.desc": "Proses sederhana dari brief hingga penyelesaian",
-    "students.submitBrief": "Kirim Brief",
-    "students.submitBrief.desc": "Ceritakan tentang persyaratan tugas dan deadline Anda",
-    "students.freeConsultation": "Konsultasi Gratis",
-    "students.freeConsultation.desc": "Diskusi 30 menit untuk memahami kebutuhan Anda lebih baik",
-    "students.development": "Pengembangan",
-    "students.development.desc": "Kami membangun proyek Anda dengan update berkala",
-    "students.explanation": "Penjelasan",
-    "students.explanation.desc": "Kami menjelaskan kode/desain agar Anda memahaminya sepenuhnya",
-    "students.faq": "Pertanyaan yang Sering Diajukan",
-    "students.readyToAce": "Siap Menguasai Tugas Anda?",
-    "students.readyToAce.desc": "Dapatkan konsultasi gratis dan mari diskusikan persyaratan proyek Anda.",
-    "students.startFreeConsultation": "Mulai Konsultasi Gratis",
-    // Contact Page
+    // Contact
     "contact.title": "Hubungi Kami",
     "contact.subtitle": "Mari diskusikan proyek Anda",
-    "contact.sendMessage": "Kirim pesan kepada kami",
+    "contact.sendMessage": "Kirim pesan",
     "contact.getInTouch": "Hubungi Kami",
-    "contact.getInTouch.desc": "Siap memulai proyek Anda? Kami ingin mendengar dari Anda. Kirim pesan dan kami akan merespons secepat mungkin.",
+    "contact.getInTouch.desc": "Siap memulai? Kami ingin mendengar dari Anda.",
     "contact.email": "Email",
     "contact.phone": "Telepon",
     "contact.location": "Lokasi",
     "contact.freeConsultation": "Konsultasi Gratis",
-    "contact.freeConsultation.desc": "Tidak yakin harus mulai dari mana? Pesan konsultasi gratis 30 menit untuk mendiskusikan proyek Anda dan mendapatkan saran ahli.",
+    "contact.freeConsultation.desc": "Pesan konsultasi gratis 30 menit.",
     "contact.scheduleCall": "Jadwalkan Panggilan",
-    "contact.visitOffice": "Kunjungi Kantor Kami",
-    "contact.visitOffice.desc": "Berlokasi di jantung Jakarta Selatan",
-    "contact.mapPlaceholder": "Peta interaktif akan ditampilkan di sini",
-    // Contact Form Fields
+    "contact.visitOffice": "Kunjungi Kantor",
+    "contact.visitOffice.desc": "Jakarta Selatan",
+    "contact.mapPlaceholder": "Peta",
     "contact.name": "Nama",
     "contact.company": "Perusahaan",
     "contact.message": "Pesan",
-    "contact.submit": "Kirim Pesan"
+    "contact.submit": "Kirim Pesan",
+    // Portfolio
+    "portfolio.title": "Portfolio Kami",
+    "portfolio.subtitle": "Karya terbaik kami",
+    "portfolio.all": "Semua",
+    "portfolio.webDevelopment": "Web Dev",
+    "portfolio.uiuxDesign": "UI/UX",
+    "portfolio.mobileDevelopment": "Mobile",
+    "portfolio.branding": "Branding",
+    "portfolio.view": "Lihat",
+    "portfolio.code": "Kode",
+    "portfolio.results": "Hasil",
+    "portfolio.readyToCreate": "Siap Berkarya?",
+    "portfolio.readyToCreate.desc": "Wujudkan visi Anda.",
+    "portfolio.startYourProject": "Mulai Proyek"
   },
   en: {
     // Navigation
@@ -16194,32 +16223,135 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "About",
     "nav.students": "For Students",
-    // "nav.articles": "Articles", // Disabled - not needed yet
     "nav.contact": "Contact",
     // Hero
-    "hero.title": "Smart. Sleek. Deep Impact.",
-    "hero.subtitle": "Disruptive web agency inspired by the Orca",
-    "hero.description": "We create powerful and intelligent digital solutions for your business. Like the Orca that dominates the ocean, we help your brand master the digital world.",
-    "hero.cta": "Start Your Project",
-    "hero.consultation": "Free Consultation",
-    // Services
-    "services.title": "Our Services",
-    "services.subtitle": "Comprehensive digital solutions for every business need",
+    "hero.title": "Build Modern Web Apps. End-to-End.",
+    "hero.subtitle": "We develop fast, scalable web applications and websites ready for your business operational needs.",
+    "hero.description": "From frontend, backend, to database, everything is handled thoroughly and structured.",
+    "hero.cta": "Start Project",
+    "hero.consultation": "Schedule Consultation",
+    // Value Pillars
+    "valuePillars.fullStack.title": "Full-Stack Development",
+    "valuePillars.fullStack.desc": "Modern web apps with clear architecture, stable performance, and clean code structure.",
+    "valuePillars.scalable.title": "Scalable Infrastructure",
+    "valuePillars.scalable.desc": "Technical foundation that is easy to scale as business or traffic grows.",
+    "valuePillars.workflow.title": "Operational Workflow Ready",
+    "valuePillars.workflow.desc": "Systems truly used by internal teams: CRUD, dashboard, roles, integrations, and operational workflows.",
+    // Core Services
+    "services.title": "Vorca Studio Services",
+    "services.subtitle": "Focus on modern web development solutions and scalable web-based applications.",
+    // Core Services Pillar
+    "services.core.title": "Core Services",
+    "services.core.desc": "Main services that form the digital technology foundation for clients.",
     "services.web.title": "Web Development",
-    "services.web.description": "Modern, responsive, and high-performance websites",
+    "services.web.description": "Modern, responsive websites designed for brand and business operational needs.",
+    "services.web.features": "Company profile, Landing page, Microsite campaign",
+    "services.apps.title": "Business Apps & Web App",
+    "services.apps.description": "Web-based systems for internal and business operational needs.",
+    "services.apps.features": "Dashboard, CRUD Systems, Data Management, User Authentication, Role-based access, Internal Workflow, API Integration",
+    "services.frontend.title": "Frontend Development",
+    "services.frontend.description": "Modern UI/UX based on Next.js, React, Tailwind CSS, and reusable custom components. Focused on UI performance, accessibility, and scalability.",
+    "services.system.title": "System Architecture & Integrations",
+    "services.system.description": "Clear application structure design, database design, and system integration for stable and efficient applications.",
+    // Design Pillar
+    "services.design.title": "Supporting Services (Design & Branding)",
+    "services.design.desc": "For businesses needing strong visual identity and interface.",
     "services.uiux.title": "UI/UX Design",
-    "services.uiux.description": "Intuitive and engaging interface design",
-    "services.branding.title": "Branding",
-    "services.branding.description": "Strong and memorable brand identity",
+    "services.uiux.description": "Interface design with intuitive flow, clear layout, and implementation-ready components.",
+    "services.branding.title": "Digital Branding",
+    "services.branding.description": "Basic visual elements to build brand identity.",
+    "services.branding.features": "Colors, Typography, Light Logo, Style direction",
+    // Maintenance Pillar
+    "services.maintenance.title": "Maintenance & Support",
+    "services.maintenance.desc": "Keeping applications stable and optimal after deployment.",
+    "services.maintenance.web.title": "Website / Web App Maintenance",
+    "services.maintenance.web.features": "Content updates, Performance monitoring, Bug fixing, Routine updates",
+    "services.maintenance.perf.title": "Performance Optimization",
+    "services.maintenance.perf.features": "Structure optimization, Loading speed improvement, Frontend & backend efficiency",
+    // Addons
+    "services.addons.title": "Add-Ons (Optional)",
+    "services.addons.desc": "Additions that complement core services.",
+    "services.addons.list": "SEO Basic Setup, Analytics Setup, VPS/Cloud Deployment, Additional API Integration",
+    "services.cta.discuss": "Discuss Your Project",
+    // Tech Stack
+    "techStack.title": "Our Tech Stack",
+    "techStack.description": "Technologies we use focus on performance, maintainability, and scalability.",
+    // System Types
+    "systemTypes.title": "Types of Systems We Build",
+    "systemTypes.data": "Data management systems",
+    "systemTypes.reservation": "Reservation systems",
+    "systemTypes.crm": "Mini CRM",
+    "systemTypes.inventory": "Inventory & product tracking",
+    "systemTypes.hris": "Simple HRIS",
+    "systemTypes.kpi": "KPI Dashboard",
+    "systemTypes.ticket": "Internal ticket system",
+    "systemTypes.workflow": "Custom operational workflow",
+    // Why Choose
+    "whyChoose.title": "Why Choose Vorca Studio",
+    "whyChoose.engineering.title": "Engineering-first Approach",
+    "whyChoose.engineering.desc": "We prioritize architecture, structure, and scalable technical workflows.",
+    "whyChoose.cleanUi.title": "Clean UI, Solid Backend",
+    "whyChoose.cleanUi.desc": "Combination of clean modern UI with a strong backend foundation.",
+    "whyChoose.docs.title": "Documentation & Maintainability",
+    "whyChoose.docs.desc": "Every project is designed to be easily developed in the long term.",
+    // CTA Footer
+    "cta.title": "Ready to build web apps your team actually uses?",
+    "cta.description": "Let's discuss, and we'll help design the most efficient architecture for your business needs.",
+    "cta.button": "Free Consultation",
     // About
     "about.title": "About Vorca Studio",
     "about.subtitle": "Inspired by the power and intelligence of the Orca",
     "about.mission": "Our mission is to help businesses achieve digital dominance through innovative and strategic web solutions.",
+    "about.whyOrca": "Why the Orca?",
+    "about.whyOrca.desc1": "The Orca represents intelligence, power, and precision.",
+    "about.whyOrca.desc2": "Just as Orcas dominate the ocean, we help businesses dominate the digital landscape.",
+    "about.ourValues": "Our Values",
+    "about.ourValues.desc": "Principles guiding us",
+    "about.precision": "Precision",
+    "about.precision.desc": "Exact solutions.",
+    "about.power": "Power",
+    "about.power.desc": "Maximum impact.",
+    "about.collaboration": "Collaboration",
+    "about.collaboration.desc": "Working together.",
+    "about.passion": "Passion",
+    "about.passion.desc": "Love for digital experiences.",
+    "about.meetOurPod": "Meet Our Pod",
+    "about.meetOurPod.desc": "The team behind Vorca Studio",
     // Students
     "students.title": "For Students",
-    "students.subtitle": "College assignment help at affordable prices",
-    "students.consultation": "Free 30-Minute Consultation",
+    "students.subtitle": "Affordable assignment help",
+    "students.consultation": "Free 30-Min Consultation",
     "students.pricing": "Transparent Pricing",
+    "students.whyChoose": "Why Choose Vorca?",
+    "students.whyChoose.desc": "Tailored for students",
+    "students.affordablePricing": "Affordable pricing",
+    "students.quickTurnaround": "Quick turnaround",
+    "students.highQuality": "High quality",
+    "students.codeExplanation": "Code explanation",
+    "students.revisionSupport": "Revision support",
+    "students.communication": "24/7 communication",
+    "students.servicesAndPricing": "Services & Pricing",
+    "students.servicesAndPricing.desc": "Student budget friendly",
+    "students.webDevProjects": "Web Projects",
+    "students.webDevProjects.desc": "Complete web dev",
+    "students.uiuxDesign": "UI/UX Design",
+    "students.uiuxDesign.desc": "Professional design",
+    "students.programmingAssignments": "Coding Assignments",
+    "students.programmingAssignments.desc": "Help with coding",
+    "students.howItWorks": "How It Works",
+    "students.howItWorks.desc": "Simple process",
+    "students.submitBrief": "Submit Brief",
+    "students.submitBrief.desc": "Tell us your needs",
+    "students.freeConsultation": "Free Consultation",
+    "students.freeConsultation.desc": "30-min discussion",
+    "students.development": "Development",
+    "students.development.desc": "We build it",
+    "students.explanation": "Explanation",
+    "students.explanation.desc": "We explain it",
+    "students.faq": "FAQ",
+    "students.readyToAce": "Ready to Ace?",
+    "students.readyToAce.desc": "Contact us now",
+    "students.startFreeConsultation": "Start Consultation",
     // Footer
     "footer.description": "Disruptive web agency inspired by the Orca",
     "footer.services": "Services",
@@ -16229,126 +16361,52 @@ const translations = {
     // Common
     "common.nextGen": "Next-Gen Digital Solutions",
     "common.lightningFast": "Lightning Fast",
-    "common.lightningFast.desc": "Optimized for performance and speed",
+    "common.lightningFast.desc": "Optimized for performance",
     "common.enterpriseSecurity": "Enterprise Security",
-    "common.enterpriseSecurity.desc": "Bank-level security for your data",
+    "common.enterpriseSecurity.desc": "Bank-level security",
     "common.aiPowered": "AI-Powered",
-    "common.aiPowered.desc": "Smart automation and insights",
+    "common.aiPowered.desc": "Smart automation",
     "common.viewAllServices": "View All Services",
-    "common.readyToDominate": "Ready to Dominate the Digital Ocean?",
-    "common.readyToDominate.desc": "Let's create something powerful together. Start your project today.",
+    "common.readyToDominate": "Ready to Dominate?",
+    "common.readyToDominate.desc": "Let's create something powerful.",
     "common.viewOurWork": "View Our Work",
     "common.happyClients": "Happy Clients",
     "common.projectsCompleted": "Projects Completed",
     "common.clientSatisfaction": "Client Satisfaction",
     "common.yearsExperience": "Years Experience",
-    // Services Page
-    "services.webHosting": "Web Hosting",
-    "services.webHosting.desc": "Reliable and secure hosting solutions",
-    "services.mobileApps": "Mobile Apps",
-    "services.mobileApps.desc": "Native and cross-platform mobile applications",
-    "services.seoOptimization": "SEO Optimization",
-    "services.seoOptimization.desc": "Improve your search engine rankings",
-    "services.securityAudit": "Security Audit",
-    "services.securityAudit.desc": "Comprehensive security assessment and protection",
-    "services.maintenanceSupport": "Maintenance & Support",
-    "services.maintenanceSupport.desc": "Ongoing website maintenance and technical support",
-    "services.mostPopular": "Most Popular",
-    "services.getStarted": "Get Started",
-    "services.ourProcess": "Our Process",
-    "services.ourProcess.desc": "A streamlined approach to deliver exceptional results",
-    "services.discovery": "Discovery",
-    "services.discovery.desc": "Understanding your needs and goals",
-    "services.strategy": "Strategy",
-    "services.strategy.desc": "Planning the perfect solution",
-    "services.development": "Development",
-    "services.development.desc": "Building with precision and care",
-    "services.launch": "Launch",
-    "services.launch.desc": "Deploying and optimizing for success",
-    "services.readyToStart": "Ready to Start Your Project?",
-    "services.readyToStart.desc": "Let's discuss how we can help you achieve your digital goals.",
-    "services.getFreeConsultation": "Get Free Consultation",
-    // Portfolio Page
-    "portfolio.title": "Our Portfolio",
-    "portfolio.subtitle": "Showcasing our best work and the impact we've created for our clients",
-    "portfolio.all": "All",
-    "portfolio.webDevelopment": "Web Development",
-    "portfolio.uiuxDesign": "UI/UX Design",
-    "portfolio.mobileDevelopment": "Mobile Development",
-    "portfolio.branding": "Branding",
-    "portfolio.view": "View",
-    "portfolio.code": "Code",
-    "portfolio.results": "Results:",
-    "portfolio.readyToCreate": "Ready to Create Something Amazing?",
-    "portfolio.readyToCreate.desc": "Let's discuss your project and bring your vision to life.",
-    "portfolio.startYourProject": "Start Your Project",
-    // About Page
-    "about.whyOrca": "Why the Orca?",
-    "about.whyOrca.desc1": "The Orca, or Killer Whale, represents everything we stand for: intelligence, power, and precision. These magnificent creatures are apex predators not through brute force alone, but through strategic thinking, teamwork, and adaptability.",
-    "about.whyOrca.desc2": "Just as Orcas dominate the ocean through their sophisticated hunting strategies and strong family bonds, we help businesses dominate the digital landscape through intelligent solutions and collaborative partnerships.",
-    "about.ourValues": "Our Values",
-    "about.ourValues.desc": "The principles that guide everything we do",
-    "about.precision": "Precision",
-    "about.precision.desc": "Like the Orca's precise hunting techniques, we deliver exact solutions.",
-    "about.power": "Power",
-    "about.power.desc": "Harnessing the strength of modern technology for maximum impact.",
-    "about.collaboration": "Collaboration",
-    "about.collaboration.desc": "Working together as a pod to achieve extraordinary results.",
-    "about.passion": "Passion",
-    "about.passion.desc": "Driven by genuine love for creating exceptional digital experiences.",
-    "about.meetOurPod": "Meet Our Pod",
-    "about.meetOurPod.desc": "The talented individuals behind Vorca Studio",
-    // Students Page
-    "students.whyChoose": "Why Choose Vorca for Your Assignments?",
-    "students.whyChoose.desc": "We understand the challenges students face and provide tailored solutions",
-    "students.affordablePricing": "Affordable student pricing",
-    "students.quickTurnaround": "Quick turnaround times",
-    "students.highQuality": "High-quality work",
-    "students.codeExplanation": "Code explanation included",
-    "students.revisionSupport": "Revision support",
-    "students.communication": "24/7 communication",
-    "students.servicesAndPricing": "Student Services & Pricing",
-    "students.servicesAndPricing.desc": "Transparent pricing designed for student budgets",
-    "students.webDevProjects": "Web Development Projects",
-    "students.webDevProjects.desc": "Complete website development for your assignments",
-    "students.uiuxDesign": "UI/UX Design",
-    "students.uiuxDesign.desc": "Professional design for your projects",
-    "students.programmingAssignments": "Programming Assignments",
-    "students.programmingAssignments.desc": "Help with coding assignments and projects",
-    "students.howItWorks": "How It Works",
-    "students.howItWorks.desc": "Simple process from brief to completion",
-    "students.submitBrief": "Submit Brief",
-    "students.submitBrief.desc": "Tell us about your assignment requirements and deadline",
-    "students.freeConsultation": "Free Consultation",
-    "students.freeConsultation.desc": "30-minute discussion to understand your needs better",
-    "students.development": "Development",
-    "students.development.desc": "We build your project with regular updates",
-    "students.explanation": "Explanation",
-    "students.explanation.desc": "We explain the code/design so you understand it completely",
-    "students.faq": "Frequently Asked Questions",
-    "students.readyToAce": "Ready to Ace Your Assignment?",
-    "students.readyToAce.desc": "Get your free consultation and let's discuss your project requirements.",
-    "students.startFreeConsultation": "Start Free Consultation",
-    // Contact Page
+    // Contact
     "contact.title": "Contact Us",
-    "contact.subtitle": "Let's discuss your project",
-    "contact.sendMessage": "Send us a message",
+    "contact.subtitle": "Let's discuss",
+    "contact.sendMessage": "Send message",
     "contact.getInTouch": "Get in Touch",
-    "contact.getInTouch.desc": "Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "contact.getInTouch.desc": "We'd love to hear from you.",
     "contact.email": "Email",
     "contact.phone": "Phone",
     "contact.location": "Location",
     "contact.freeConsultation": "Free Consultation",
-    "contact.freeConsultation.desc": "Not sure where to start? Book a free 30-minute consultation to discuss your project and get expert advice.",
+    "contact.freeConsultation.desc": "Book a free 30-min consultation.",
     "contact.scheduleCall": "Schedule Call",
-    "contact.visitOffice": "Visit Our Office",
-    "contact.visitOffice.desc": "Located in the heart of Jakarta Selatan",
-    "contact.mapPlaceholder": "Interactive map would be embedded here",
-    // Contact Form Fields
+    "contact.visitOffice": "Visit Office",
+    "contact.visitOffice.desc": "South Jakarta",
+    "contact.mapPlaceholder": "Map",
     "contact.name": "Name",
     "contact.company": "Company",
     "contact.message": "Message",
-    "contact.submit": "Send Message"
+    "contact.submit": "Send Message",
+    // Portfolio
+    "portfolio.title": "Our Portfolio",
+    "portfolio.subtitle": "Our best work",
+    "portfolio.all": "All",
+    "portfolio.webDevelopment": "Web Dev",
+    "portfolio.uiuxDesign": "UI/UX",
+    "portfolio.mobileDevelopment": "Mobile",
+    "portfolio.branding": "Branding",
+    "portfolio.view": "View",
+    "portfolio.code": "Code",
+    "portfolio.results": "Results",
+    "portfolio.readyToCreate": "Ready to Create?",
+    "portfolio.readyToCreate.desc": "Bring your vision to life.",
+    "portfolio.startYourProject": "Start Project"
   }
 };
 function LanguageProvider({ children }) {
@@ -17981,35 +18039,18 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$x = [
+const __iconNode$A = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$x);
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$A);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$w = [
-  [
-    "path",
-    {
-      d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
-      key: "1yiouv"
-    }
-  ],
-  ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }]
-];
-const Award = createLucideIcon("award", __iconNode$w);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$v = [
+const __iconNode$z = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -18019,31 +18060,75 @@ const __iconNode$v = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$v);
+const BookOpen = createLucideIcon("book-open", __iconNode$z);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$u = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$u);
+const __iconNode$y = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$y);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$t = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$t);
+const __iconNode$x = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$x);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$s = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$s);
+const __iconNode$w = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$w);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$v = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$v);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$u = [
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+];
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$u);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$t = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+];
+const Clock = createLucideIcon("clock", __iconNode$t);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$s = [
+  ["polyline", { points: "16 18 22 12 16 6", key: "z7tu5w" }],
+  ["polyline", { points: "8 6 2 12 8 18", key: "1eg1df" }]
+];
+const Code = createLucideIcon("code", __iconNode$s);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18051,10 +18136,18 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$s);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$r = [
-  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+  ["rect", { width: "16", height: "16", x: "4", y: "4", rx: "2", key: "14l7u7" }],
+  ["rect", { width: "6", height: "6", x: "9", y: "9", rx: "1", key: "5aljv4" }],
+  ["path", { d: "M15 2v2", key: "13l42r" }],
+  ["path", { d: "M15 20v2", key: "15mkzm" }],
+  ["path", { d: "M2 15h2", key: "1gxd5l" }],
+  ["path", { d: "M2 9h2", key: "1bbxkp" }],
+  ["path", { d: "M20 15h2", key: "19e6y8" }],
+  ["path", { d: "M20 9h2", key: "19tzq7" }],
+  ["path", { d: "M9 2v2", key: "165o2o" }],
+  ["path", { d: "M9 20v2", key: "i2bqo8" }]
 ];
-const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$r);
+const Cpu = createLucideIcon("cpu", __iconNode$r);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18062,10 +18155,11 @@ const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$q = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
+  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
+  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$q);
+const Database = createLucideIcon("database", __iconNode$q);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18073,10 +18167,11 @@ const Clock = createLucideIcon("clock", __iconNode$q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$p = [
-  ["polyline", { points: "16 18 22 12 16 6", key: "z7tu5w" }],
-  ["polyline", { points: "8 6 2 12 8 18", key: "1eg1df" }]
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const Code = createLucideIcon("code", __iconNode$p);
+const ExternalLink = createLucideIcon("external-link", __iconNode$p);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18084,11 +18179,10 @@ const Code = createLucideIcon("code", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+  ["path", { d: "m12 14 4-4", key: "9kzdfg" }],
+  ["path", { d: "M3.34 19a10 10 0 1 1 17.32 0", key: "19p75a" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$o);
+const Gauge = createLucideIcon("gauge", __iconNode$o);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18146,12 +18240,12 @@ const __iconNode$k = [
   [
     "path",
     {
-      d: "M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3",
-      key: "1xhozi"
+      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+      key: "c3ymky"
     }
   ]
 ];
-const Headphones = createLucideIcon("headphones", __iconNode$k);
+const Heart = createLucideIcon("heart", __iconNode$k);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18159,15 +18253,11 @@ const Headphones = createLucideIcon("headphones", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
-  [
-    "path",
-    {
-      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-      key: "c3ymky"
-    }
-  ]
+  ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
+  ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
+  ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
 ];
-const Heart = createLucideIcon("heart", __iconNode$j);
+const Instagram = createLucideIcon("instagram", __iconNode$j);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18175,11 +18265,29 @@ const Heart = createLucideIcon("heart", __iconNode$j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$i = [
-  ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
-  ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
-  ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
+  [
+    "path",
+    {
+      d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+      key: "zw3jo"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+      key: "1wduqc"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+      key: "kqbvx6"
+    }
+  ]
 ];
-const Instagram = createLucideIcon("instagram", __iconNode$i);
+const Layers = createLucideIcon("layers", __iconNode$i);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18245,6 +18353,16 @@ const Menu = createLucideIcon("menu", __iconNode$e);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$d = [
+  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
+];
+const MessageCircle = createLucideIcon("message-circle", __iconNode$d);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$c = [
   ["circle", { cx: "13.5", cy: "6.5", r: ".5", fill: "currentColor", key: "1okk4w" }],
   ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor", key: "f64h9f" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }],
@@ -18257,14 +18375,26 @@ const __iconNode$d = [
     }
   ]
 ];
-const Palette = createLucideIcon("palette", __iconNode$d);
+const Palette = createLucideIcon("palette", __iconNode$c);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$c = [
+const __iconNode$b = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M9 21V9", key: "1oto5p" }]
+];
+const PanelsTopLeft = createLucideIcon("panels-top-left", __iconNode$b);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$a = [
   [
     "path",
     {
@@ -18273,43 +18403,7 @@ const __iconNode$c = [
     }
   ]
 ];
-const Phone = createLucideIcon("phone", __iconNode$c);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$b = [
-  [
-    "path",
-    {
-      d: "M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z",
-      key: "m3kijz"
-    }
-  ],
-  [
-    "path",
-    {
-      d: "m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z",
-      key: "1fmvmk"
-    }
-  ],
-  ["path", { d: "M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0", key: "1f8sc4" }],
-  ["path", { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" }]
-];
-const Rocket = createLucideIcon("rocket", __iconNode$b);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
-  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
-];
-const Search = createLucideIcon("search", __iconNode$a);
+const Phone = createLucideIcon("phone", __iconNode$a);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18350,33 +18444,6 @@ const __iconNode$7 = [
   [
     "path",
     {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
-    }
-  ]
-];
-const Shield = createLucideIcon("shield", __iconNode$7);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$6 = [
-  ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", ry: "2", key: "1yt0o3" }],
-  ["path", { d: "M12 18h.01", key: "mhygvu" }]
-];
-const Smartphone = createLucideIcon("smartphone", __iconNode$6);
-/**
- * @license lucide-react v0.484.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$5 = [
-  [
-    "path",
-    {
       d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
       key: "4pj2yx"
     }
@@ -18386,7 +18453,30 @@ const __iconNode$5 = [
   ["path", { d: "M4 17v2", key: "vumght" }],
   ["path", { d: "M5 18H3", key: "zchphs" }]
 ];
-const Sparkles = createLucideIcon("sparkles", __iconNode$5);
+const Sparkles = createLucideIcon("sparkles", __iconNode$7);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
+];
+const Target = createLucideIcon("target", __iconNode$6);
+/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$5 = [
+  ["polyline", { points: "4 17 10 11 4 5", key: "akl6gq" }],
+  ["line", { x1: "12", x2: "20", y1: "19", y2: "19", key: "q2wloq" }]
+];
+const Terminal = createLucideIcon("terminal", __iconNode$5);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18394,11 +18484,12 @@ const Sparkles = createLucideIcon("sparkles", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }]
 ];
-const Target = createLucideIcon("target", __iconNode$4);
+const Users = createLucideIcon("users", __iconNode$4);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18406,10 +18497,11 @@ const Target = createLucideIcon("target", __iconNode$4);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$3 = [
-  ["polyline", { points: "22 7 13.5 15.5 8.5 10.5 2 17", key: "126l90" }],
-  ["polyline", { points: "16 7 22 7 22 13", key: "kwv8wd" }]
+  ["rect", { width: "8", height: "8", x: "3", y: "3", rx: "2", key: "by2w9f" }],
+  ["path", { d: "M7 11v4a2 2 0 0 0 2 2h4", key: "xkn7yn" }],
+  ["rect", { width: "8", height: "8", x: "13", y: "13", rx: "2", key: "1cgmvn" }]
 ];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$3);
+const Workflow = createLucideIcon("workflow", __iconNode$3);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -18417,12 +18509,15 @@ const TrendingUp = createLucideIcon("trending-up", __iconNode$3);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$2 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
-  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
-  ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }]
+  [
+    "path",
+    {
+      d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+      key: "cbrjhi"
+    }
+  ]
 ];
-const Users = createLucideIcon("users", __iconNode$2);
+const Wrench = createLucideIcon("wrench", __iconNode$2);
 /**
  * @license lucide-react v0.484.0 - ISC
  *
@@ -28836,8 +28931,8 @@ function Footer() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold mb-4 text-white", children: t("footer.services") }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-2 text-gray-400", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/services", className: "hover:text-cyan-400 transition-colors duration-300", children: t("services.web.title") }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/services", className: "hover:text-cyan-400 transition-colors duration-300", children: t("services.uiux.title") }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/services", className: "hover:text-cyan-400 transition-colors duration-300", children: t("services.branding.title") }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/services", className: "hover:text-cyan-400 transition-colors duration-300", children: t("services.apps.title") }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/services", className: "hover:text-cyan-400 transition-colors duration-300", children: t("services.frontend.title") }) })
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -28856,6 +28951,39 @@ function Footer() {
       "."
     ] }) })
   ] }) });
+}
+function CustomerServiceButton() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.a,
+    {
+      href: "https://wa.me/6285167002152",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20bd5a] transition-colors duration-300 pr-5 pl-2 py-2",
+      initial: { scale: 0, opacity: 0 },
+      animate: { scale: 1, opacity: 1 },
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: 1
+      },
+      whileHover: { scale: 1.05 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-white/20 p-2 rounded-full", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessageCircle, { size: 24 }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.span,
+          {
+            className: "font-medium text-sm",
+            initial: { x: 20, opacity: 0 },
+            animate: { x: 0, opacity: 1 },
+            transition: { delay: 1.5, duration: 0.5 },
+            children: "Konsultasi Sekarang!"
+          }
+        )
+      ]
+    }
+  );
 }
 function Card({ className, ...props }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28903,147 +29031,173 @@ function CardContent({ className, ...props }) {
     }
   );
 }
+function PageHero({ title, subtitle, children, className = "" }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `relative pt-32 pb-20 overflow-hidden ${className}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 bg-black", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 30 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8 },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-6", children: typeof title === "string" ? /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: title }) : title }),
+          subtitle && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8", children: subtitle }),
+          children
+        ]
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#050b16] pointer-events-none z-20" })
+  ] });
+}
 function HomePage() {
   const { t } = useLanguage();
   const title = t("hero.title");
-  const services = [
+  const valuePillars = [
     {
-      icon: Code,
+      icon: Layers,
+      title: t("valuePillars.fullStack.title"),
+      description: t("valuePillars.fullStack.desc")
+    },
+    {
+      icon: Server,
+      title: t("valuePillars.scalable.title"),
+      description: t("valuePillars.scalable.desc")
+    },
+    {
+      icon: Workflow,
+      title: t("valuePillars.workflow.title"),
+      description: t("valuePillars.workflow.desc")
+    }
+  ];
+  const coreServices = [
+    {
+      icon: Globe,
       title: t("services.web.title"),
       description: t("services.web.description")
     },
     {
+      icon: PanelsTopLeft,
+      title: t("services.apps.title"),
+      description: t("services.apps.description")
+    },
+    {
+      icon: Code,
+      title: t("services.frontend.title"),
+      description: t("services.frontend.description")
+    }
+  ];
+  const techStack = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Prisma ORM",
+    "MySQL / PostgreSQL",
+    "REST API",
+    "VPS / Cloud Deployment"
+  ];
+  const systemTypes = [
+    t("systemTypes.data"),
+    t("systemTypes.reservation"),
+    t("systemTypes.crm"),
+    t("systemTypes.inventory"),
+    t("systemTypes.hris"),
+    t("systemTypes.kpi"),
+    t("systemTypes.ticket"),
+    t("systemTypes.workflow")
+  ];
+  const whyChoose = [
+    {
+      icon: Terminal,
+      title: t("whyChoose.engineering.title"),
+      description: t("whyChoose.engineering.desc")
+    },
+    {
       icon: Palette,
-      title: t("services.uiux.title"),
-      description: t("services.uiux.description")
+      title: t("whyChoose.cleanUi.title"),
+      description: t("whyChoose.cleanUi.desc")
     },
     {
-      icon: Zap,
-      title: t("services.branding.title"),
-      description: t("services.branding.description")
+      icon: BookOpen,
+      title: t("whyChoose.docs.title"),
+      description: t("whyChoose.docs.desc")
     }
   ];
-  const stats = [
-    { icon: Users, value: "50+", label: t("common.happyClients") },
-    { icon: Award, value: "100+", label: t("common.projectsCompleted") },
-    { icon: TrendingUp, value: "99%", label: t("common.clientSatisfaction") }
-  ];
-  const features = [
-    {
-      icon: Rocket,
-      title: t("common.lightningFast"),
-      description: t("common.lightningFast.desc")
-    },
-    {
-      icon: Shield,
-      title: t("common.enterpriseSecurity"),
-      description: t("common.enterpriseSecurity.desc")
-    },
-    {
-      icon: Sparkles,
-      title: t("common.aiPowered"),
-      description: t("common.aiPowered.desc")
-    }
-  ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative min-h-screen flex items-center justify-center overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full" }),
-        [...Array(20)].map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          motion.div,
-          {
-            className: "absolute w-1 h-1 bg-cyan-400 rounded-full",
-            style: {
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            },
-            animate: {
-              y: [0, -20, 0],
-              opacity: [0.3, 1, 0.3]
-            },
-            transition: {
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      PageHero,
+      {
+        title: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { scale: 0.8, opacity: 0 },
+              animate: { scale: 1, opacity: 1 },
+              transition: { duration: 1, delay: 0.2 },
+              className: "mb-6 flex justify-center",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-cyan-400 mr-2" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-cyan-300 font-medium", children: t("common.nextGen") })
+              ] })
             }
-          },
-          i
-        ))
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-bold leading-tight", children: Array.from(title.replace(" End-to-End", "\nEnd-to-End")).map((char, i) => char === "\n" ? /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}, `br-${i}`) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.span,
+            {
+              initial: { opacity: 0, y: 12, filter: "blur(8px)" },
+              animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+              transition: { duration: 0.6, ease: "easeOut", delay: i * 0.06, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 },
+              className: "inline-block bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent will-change-transform will-change-opacity",
+              children: char === " " ? " " : char
+            },
+            `${char}-${i}`
+          )) })
+        ] }),
+        subtitle: t("hero.subtitle"),
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg mb-8 text-gray-400 max-w-3xl mx-auto leading-relaxed", children: t("hero.description") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center mb-12", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
-              motion.div,
+              Button,
               {
-                initial: { scale: 0.8, opacity: 0 },
-                animate: { scale: 1, opacity: 1 },
-                transition: { duration: 1, delay: 0.2 },
-                className: "mb-6",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-cyan-400 mr-2" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-cyan-300 font-medium", children: t("common.nextGen") })
+                asChild: true,
+                size: "lg",
+                className: "h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/contact", children: [
+                  t("hero.cta"),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
                 ] })
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-8xl font-bold mb-6 leading-tight", children: Array.from(title).map((char, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              motion.span,
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
               {
-                initial: { opacity: 0, y: 12, filter: "blur(8px)" },
-                animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-                transition: { duration: 0.6, ease: "easeOut", delay: i * 0.06, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 },
-                className: "inline-block bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent will-change-transform will-change-opacity",
-                children: char === " " ? " " : char
-              },
-              `${char}-${i}`
-            )) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl md:text-2xl mb-4 text-cyan-100 font-light", children: t("hero.subtitle") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg mb-8 text-gray-400 max-w-3xl mx-auto leading-relaxed", children: t("hero.description") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  size: "lg",
-                  className: "h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/contact", children: [
-                    t("hero.cta"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
-                  ] })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  variant: "ghost",
-                  size: "lg",
-                  className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("hero.consultation") })
-                }
-              )
-            ] })
-          ]
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion.div,
-        {
-          className: "absolute bottom-8 left-1/2 transform -translate-x-1/2",
-          animate: { y: [0, 10, 0] },
-          transition: { duration: 2, repeat: Infinity },
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-6 h-10 border-2 border-cyan-400/30 rounded-full flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1 h-3 bg-cyan-400/50 rounded-full mt-2" }) })
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: features.map((feature, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                asChild: true,
+                variant: "ghost",
+                size: "lg",
+                className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("hero.consultation") })
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              className: "flex justify-center relative z-10",
+              animate: { y: [0, 10, 0] },
+              transition: { duration: 2, repeat: Infinity },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-6 h-10 border-2 border-cyan-400/30 rounded-full flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1 h-3 bg-cyan-400/50 rounded-full mt-2" }) })
+            }
+          )
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: valuePillars.map((pillar, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.div,
       {
         initial: { opacity: 0, y: 30 },
@@ -29052,14 +29206,14 @@ function HomePage() {
         viewport: { once: true },
         className: "group",
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-900/50 to-gray-800/30 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8 text-center", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-500/25 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(feature.icon, { className: "w-8 h-8 text-cyan-400" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-white mb-4", children: feature.title }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: feature.description })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-500/25 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(pillar.icon, { className: "w-8 h-8 text-cyan-400" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-white mb-4", children: pillar.title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: pillar.description })
         ] }) })
       },
       index2
     )) }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29069,12 +29223,12 @@ function HomePage() {
           viewport: { once: true },
           className: "text-center mb-16",
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-5xl font-bold text-white mb-4", children: t("services.title") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-4", children: t("services.title") }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("services.subtitle") })
           ]
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: services.map((service, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center", children: coreServices.map((service, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
@@ -29083,53 +29237,103 @@ function HomePage() {
           viewport: { once: true },
           className: "group",
           children: /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8 text-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-8 h-8 text-black" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-white mb-4", children: service.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: service.description })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-7 h-7 text-black" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-semibold text-white mb-3", children: service.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-gray-400", children: service.description })
           ] }) })
         },
         index2
-      )) }),
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6 },
+          viewport: { once: true },
+          className: "mb-12",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: t("techStack.title") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 max-w-2xl mx-auto", children: t("techStack.description") })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap justify-center gap-4", children: techStack.map((tech, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, scale: 0.9 },
+          whileInView: { opacity: 1, scale: 1 },
+          transition: { duration: 0.4, delay: index2 * 0.05 },
+          viewport: { once: true },
+          className: "px-6 py-3 rounded-full bg-gray-800/50 border border-gray-700 text-cyan-300 font-medium hover:bg-gray-700/50 hover:border-cyan-500/50 transition-colors cursor-default",
+          children: tech
+        },
+        index2
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            initial: { opacity: 0, y: 30 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { duration: 0.6 },
+            viewport: { once: true },
+            className: "text-center mb-16",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-8", children: t("systemTypes.title") })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6", children: systemTypes.map((type, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0, x: -20 },
+            whileInView: { opacity: 1, x: 0 },
+            transition: { duration: 0.5, delay: index2 * 0.05 },
+            viewport: { once: true },
+            className: "flex items-center space-x-3 p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheckBig, { className: "w-5 h-5 text-cyan-500 flex-shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gray-300 text-sm font-medium", children: type })
+            ]
+          },
+          index2
+        )) })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay: 0.3 },
+          transition: { duration: 0.6 },
           viewport: { once: true },
-          className: "text-center mt-12",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Button,
-            {
-              asChild: true,
-              size: "lg",
-              className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/services", children: [
-                t("common.viewAllServices"),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
-              ] })
-            }
-          )
+          className: "text-center mb-16",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: t("whyChoose.title") })
         }
-      )
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: whyChoose.map((item, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6, delay: index2 * 0.1 },
+          viewport: { once: true },
+          className: "text-center p-6",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-700", children: /* @__PURE__ */ jsxRuntimeExports.jsx(item.icon, { className: "w-8 h-8 text-cyan-400" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-white mb-3", children: item.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 leading-relaxed", children: item.description })
+          ]
+        },
+        index2
+      )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: stats.map((stat, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
-      {
-        initial: { opacity: 0, scale: 0.8 },
-        whileInView: { opacity: 1, scale: 1 },
-        transition: { duration: 0.6, delay: index2 * 0.1 },
-        viewport: { once: true },
-        className: "text-center group",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:shadow-cyan-500/25 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(stat.icon, { className: "w-10 h-10 text-cyan-400" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent", children: stat.value }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-gray-400 text-lg", children: stat.label })
-        ]
-      },
-      index2
-    )) }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
@@ -29139,32 +29343,215 @@ function HomePage() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-5xl font-bold text-white mb-6", children: t("common.readyToDominate") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 mb-8 leading-relaxed", children: t("common.readyToDominate.desc") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  size: "lg",
-                  className: "h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/contact", children: [
-                    t("hero.cta"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
-                  ] })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  variant: "ghost",
-                  size: "lg",
-                  className: "h-auto relative group overflow-hidden bg-transparent border border-cyan-400/30 text-cyan-200 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/portfolio", children: t("common.viewOurWork") })
-                }
-              )
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: t("cta.title") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 mb-8 leading-relaxed", children: t("cta.description") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
+              {
+                asChild: true,
+                size: "lg",
+                className: "h-auto rounded-2xl px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-bold text-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/contact", children: [
+                  t("cta.button"),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-6 h-6" })
+                ] })
+              }
+            ) })
+          ]
+        }
+      ) })
+    ] })
+  ] });
+}
+function ServicesPage() {
+  const { t } = useLanguage();
+  const coreServices = [
+    {
+      icon: Globe,
+      title: t("services.web.title"),
+      description: t("services.web.description"),
+      features: t("services.web.features").split(", ")
+    },
+    {
+      icon: Database,
+      title: t("services.apps.title"),
+      description: t("services.apps.description"),
+      features: t("services.apps.features").split(", ")
+    },
+    {
+      icon: Code,
+      title: t("services.frontend.title"),
+      description: t("services.frontend.description"),
+      features: []
+    },
+    {
+      icon: Cpu,
+      title: t("services.system.title"),
+      description: t("services.system.description"),
+      features: []
+    }
+  ];
+  const designServices = [
+    {
+      icon: Palette,
+      title: t("services.uiux.title"),
+      description: t("services.uiux.description"),
+      features: []
+    },
+    {
+      icon: Zap,
+      title: t("services.branding.title"),
+      description: t("services.branding.description"),
+      features: t("services.branding.features").split(", ")
+    }
+  ];
+  const maintenanceServices = [
+    {
+      icon: Wrench,
+      title: t("services.maintenance.web.title"),
+      features: t("services.maintenance.web.features").split(", ")
+    },
+    {
+      icon: Gauge,
+      title: t("services.maintenance.perf.title"),
+      features: t("services.maintenance.perf.features").split(", ")
+    }
+  ];
+  const addons = t("services.addons.list").split(", ");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black min-h-screen", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageHero,
+      {
+        title: t("services.title"),
+        subtitle: t("services.subtitle")
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: t("services.core.title") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 max-w-2xl mx-auto", children: t("services.core.desc") })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: coreServices.map((service, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay: index2 * 0.1 },
+          viewport: { once: true },
+          className: "group",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "h-full bg-gradient-to-br from-gray-900 to-gray-800 border-gray-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-6 h-6 text-cyan-400" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-2xl text-white", children: service.title })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-6", children: service.description }),
+              service.features.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: service.features.map((feature, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start text-sm text-gray-300", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4 text-cyan-500 mr-2 mt-0.5 shrink-0" }),
+                feature
+              ] }, idx)) })
             ] })
+          ] })
+        },
+        index2
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black relative", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: t("services.design.title") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 max-w-2xl mx-auto", children: t("services.design.desc") })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto", children: designServices.map((service, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay: index2 * 0.1 },
+          viewport: { once: true },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "h-full bg-black/50 border-gray-800 hover:border-purple-500/50 transition-all duration-300", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-6 h-6 text-purple-400" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-2xl text-white", children: service.title })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-6", children: service.description }),
+              service.features.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: service.features.map((feature, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start text-sm text-gray-300", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5 shrink-0" }),
+                feature
+              ] }, idx)) })
+            ] })
+          ] })
+        },
+        index2
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900 relative", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: t("services.maintenance.title") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 max-w-2xl mx-auto", children: t("services.maintenance.desc") })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto", children: maintenanceServices.map((service, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay: index2 * 0.1 },
+          viewport: { once: true },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "h-full bg-gray-900 border-gray-800 hover:border-green-500/50 transition-all duration-300", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-6 h-6 text-green-400" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: service.title })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-3", children: service.features.map((feature, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-gray-300", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4 text-green-500 mr-3 shrink-0" }),
+              feature
+            ] }, idx)) }) })
+          ] })
+        },
+        index2
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 relative", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-12", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-bold text-white mb-4", children: t("services.addons.title") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: t("services.addons.desc") })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap justify-center gap-4", children: addons.map((addon, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        motion.div,
+        {
+          initial: { opacity: 0, scale: 0.9 },
+          whileInView: { opacity: 1, scale: 1 },
+          transition: { duration: 0.3, delay: index2 * 0.05 },
+          viewport: { once: true },
+          className: "bg-gray-800/50 border border-gray-700 rounded-full px-6 py-3 text-gray-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default",
+          children: addon
+        },
+        index2
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6 },
+          viewport: { once: true },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-8", children: t("common.readyToDominate") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
+              {
+                asChild: true,
+                size: "lg",
+                className: "h-auto rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 border-0",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: [
+                  t("services.cta.discuss"),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "ml-2 w-5 h-5" })
+                ] })
+              }
+            ) })
           ]
         }
       ) })
@@ -29202,366 +29589,6 @@ function Badge({
       ...props
     }
   );
-}
-function ServicesPage() {
-  const { t } = useLanguage();
-  const formatRupiah = (value) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
-  const services = [
-    {
-      icon: Code,
-      title: t("services.web.title"),
-      description: t("services.web.description"),
-      features: ["Responsive Design", "Performance Optimization", "Modern Frameworks", "SEO Ready"],
-      priceIdr: 15e6,
-      monthly: false,
-      discountPercent: 20,
-      popular: true
-    },
-    {
-      icon: Palette,
-      title: t("services.uiux.title"),
-      description: t("services.uiux.description"),
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-      priceIdr: 8e6,
-      monthly: false,
-      discountPercent: 10,
-      popular: false
-    },
-    {
-      icon: Zap,
-      title: t("services.branding.title"),
-      description: t("services.branding.description"),
-      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"],
-      priceIdr: 6e6,
-      monthly: false,
-      discountPercent: 12,
-      popular: false
-    },
-    {
-      icon: Server,
-      title: t("services.webHosting"),
-      description: t("services.webHosting.desc"),
-      features: ["99.9% Uptime", "SSL Certificates", "Daily Backups", "24/7 Support"],
-      priceIdr: 15e4,
-      monthly: true,
-      discountPercent: 0,
-      popular: false
-    },
-    {
-      icon: Smartphone,
-      title: t("services.mobileApps"),
-      description: t("services.mobileApps.desc"),
-      features: ["iOS & Android", "React Native", "App Store Deployment", "Push Notifications"],
-      priceIdr: 3e7,
-      monthly: false,
-      discountPercent: 15,
-      popular: false
-    },
-    {
-      icon: Search,
-      title: t("services.seoOptimization"),
-      description: t("services.seoOptimization.desc"),
-      features: ["Keyword Research", "On-page SEO", "Technical SEO", "Analytics Setup"],
-      priceIdr: 4e6,
-      monthly: false,
-      discountPercent: 10,
-      popular: false
-    },
-    {
-      icon: Shield,
-      title: t("services.securityAudit"),
-      description: t("services.securityAudit.desc"),
-      features: ["Vulnerability Scanning", "Security Hardening", "SSL Implementation", "Monitoring"],
-      priceIdr: 5e6,
-      monthly: false,
-      discountPercent: 8,
-      popular: false
-    },
-    {
-      icon: Headphones,
-      title: t("services.maintenanceSupport"),
-      description: t("services.maintenanceSupport.desc"),
-      features: ["Regular Updates", "Bug Fixes", "Performance Monitoring", "Content Updates"],
-      priceIdr: 2e6,
-      monthly: true,
-      discountPercent: 0,
-      popular: false
-    }
-  ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: "Transparent Pricing, Real Impact" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: "No hidden fees. Just smart, sleek solutions built for growth." })
-          ]
-        }
-      ) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true },
-          className: "text-center mb-12",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Unggulan" })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: [
-        {
-          name: "Starter",
-          price: 45e5,
-          discountPercent: 10,
-          description: "Cocok untuk landing page / website sederhana.",
-          features: [
-            "Landing page",
-            "1–3 halaman",
-            "SEO dasar",
-            "Hosting + domain 1 tahun",
-            "1 revisi"
-          ],
-          popular: false
-        },
-        {
-          name: "Growth",
-          price: 12e6,
-          discountPercent: 20,
-          description: "Paket bisnis dengan CMS dan SEO lengkap.",
-          features: [
-            "Website korporat",
-            "CMS",
-            "Desain custom",
-            "SEO lengkap",
-            "3 bulan maintenance"
-          ],
-          popular: true
-        },
-        {
-          name: "Enterprise",
-          price: 22e6,
-          discountPercent: 15,
-          description: "Solusi custom skala besar seperti e-commerce / aplikasi.",
-          features: [
-            "E-commerce / custom app",
-            "Sistem pembayaran",
-            "Dashboard admin",
-            "6 bulan maintenance"
-          ],
-          suffix: "+",
-          popular: false
-        }
-      ].map((pkg, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          whileInView: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay: i * 0.1 },
-          viewport: { once: true },
-          className: "group relative",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: `h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${pkg.popular ? "ring-2 ring-cyan-500/50" : ""}`, children: [
-            pkg.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-3 left-1/2 transform -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { className: "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1", children: "Paling Populer" }) }),
-            pkg.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-3 right-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { className: "rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm", children: [
-              "-",
-              pkg.discountPercent,
-              "%"
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-black font-bold", children: i + 1 }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: pkg.name })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-4", children: pkg.description }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2 mb-6", children: pkg.features.map((f, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-sm text-gray-300", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3" }),
-                f
-              ] }, idx)) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: pkg.discountPercent > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-400 line-through", children: [
-                  "Mulai dari ",
-                  formatRupiah(pkg.price),
-                  pkg.suffix ?? ""
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-emerald-300", children: [
-                  "Hemat ",
-                  formatRupiah(pkg.price - Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100)))
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400", children: [
-                  "Mulai dari ",
-                  formatRupiah(Math.round(pkg.price * (1 - (pkg.discountPercent ?? 0) / 100))),
-                  pkg.suffix ?? ""
-                ] })
-              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400", children: [
-                "Mulai dari ",
-                formatRupiah(pkg.price),
-                pkg.suffix ?? ""
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, className: "w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: "Discuss Project" }) })
-            ] })
-          ] })
-        },
-        i
-      )) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-4 bg-gradient-to-r from-cyan-900/10 via-cyan-700/10 to-blue-900/10 border-y border-cyan-500/10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-3 text-cyan-200 text-sm", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center rounded-full bg-cyan-500/15 text-cyan-300 px-3 py-1 border border-cyan-400/20", children: "Promo" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Diskon hingga 20% untuk proyek baru. Berlaku sampai akhir bulan." })
-    ] }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-12 bg-gradient-to-br from-black via-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-3xl font-bold text-white mb-6", children: "Add-Ons & Value-Add" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-6", children: [
-        { name: "UI/UX Design", price: 35e5, suffix: "+" },
-        { name: "Digital Branding", price: 3e6, suffix: "+" },
-        { name: "SEO Optimization", price: 25e5, suffix: "/bulan" },
-        { name: "Analytics Integration", price: 15e5, note: "Included in Growth+" }
-      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: item.name }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-cyan-400", children: item.note ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-          item.note,
-          " / ",
-          formatRupiah(item.price)
-        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-          formatRupiah(item.price),
-          item.suffix ?? ""
-        ] }) })
-      ] }) }, idx)) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true },
-          className: "text-center mb-12",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Layanan Kami Lainnya" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Harga transparan dengan promo aktif — lihat hematannya" })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: services.map((service, index2) => {
-        const discounted = Math.round(service.priceIdr * (1 - service.discountPercent / 100));
-        const saved = service.priceIdr - discounted;
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          motion.div,
-          {
-            initial: { opacity: 0, y: 30 },
-            whileInView: { opacity: 1, y: 0 },
-            transition: { duration: 0.6, delay: index2 * 0.05 },
-            viewport: { once: true },
-            className: "group relative",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: `h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${service.popular ? "ring-2 ring-cyan-500/50" : ""}`, children: [
-              service.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-3 left-1/2 transform -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { className: "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1", children: t("services.mostPopular") }) }),
-              service.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-3 right-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { className: "rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm", children: [
-                "-",
-                service.discountPercent,
-                "%"
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(service.icon, { className: "w-6 h-6 text-black" }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xl text-white", children: service.title })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400 mb-4", children: service.description }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2 mb-6", children: service.features.map((feature, featureIndex) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-sm text-gray-300", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3" }),
-                  feature
-                ] }, featureIndex)) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4", children: [
-                  service.discountPercent > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-400 line-through", children: [
-                      "Mulai dari ",
-                      formatRupiah(service.priceIdr),
-                      service.monthly ? "/bulan" : ""
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-emerald-300", children: [
-                      "Hemat ",
-                      formatRupiah(saved)
-                    ] })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-semibold text-cyan-400", children: [
-                    "Mulai dari ",
-                    formatRupiah(discounted),
-                    service.monthly ? "/bulan" : ""
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, className: "w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", children: t("services.getStarted") }) })
-              ] })
-            ] })
-          },
-          index2
-        );
-      }) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { className: "text-center mb-12", initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Keep Your Site Running Smoothly" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Pilih paket maintenance yang sesuai kebutuhan Anda" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: [
-        { name: "Basic", price: 12e5, includes: ["Backup", "Security updates"] },
-        { name: "Growth", price: 25e5, includes: ["+ SEO", "Analytics", "Minor updates"] },
-        { name: "Retainer", price: 4e6, includes: ["5 jam kerja/bulan"] }
-      ].map((plan, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl text-white mb-2", children: plan.name }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-cyan-400 font-semibold mb-4", children: [
-          formatRupiah(plan.price),
-          "/bulan"
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2 mb-6", children: plan.includes.map((inc, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center text-sm text-gray-300", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3" }),
-          inc
-        ] }, i2)) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gray-400", children: "Clients on Growth+ plans get 20% off first 6 months" })
-      ] }) }, idx)) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { className: "text-center mb-10", initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-2", children: "Mahasiswa? Kita Bantu." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Konsultasi gratis 30 menit untuk mulai" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: [
-        { name: "Tugas Web", range: [15e4, 3e5] },
-        { name: "Web Interaktif", range: [35e4, 6e5] },
-        { name: "Full-Stack Project", range: [8e5, 15e5] }
-      ].map((s, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-8", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: s.name }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-cyan-400", children: [
-          formatRupiah(s.range[0]),
-          " – ",
-          formatRupiah(s.range[1])
-        ] })
-      ] }) }, idx)) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: "Ajukan Konsultasi Gratis" }) }) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-8 text-center", children: "FAQ" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: [
-        { q: "Apakah harga bisa dinegosiasi?", a: "Ya, untuk proyek besar atau kerja sama jangka panjang." },
-        { q: "Apakah termasuk domain & hosting?", a: "Ya, untuk paket Starter ke atas (1 tahun)." },
-        { q: "Berapa lama pengerjaan?", a: "2–4 minggu (tergantung kompleksitas)." },
-        { q: "Apakah ada maintenance setelah launch?", a: "Ada opsi bulanan — kami sarankan untuk performa & keamanan." }
-      ].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Card, { className: "h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "p-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-semibold mb-2", children: item.q }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-gray-400", children: item.a })
-      ] }) }, idx)) })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl font-bold text-white mb-4", children: "Belum yakin paket mana yang cocok?" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { asChild: true, size: "lg", className: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: "Booking Konsultasi Gratis →" }) })
-    ] }) }) })
-  ] });
 }
 function PortfolioPage() {
   const { t } = useLanguage();
@@ -29635,25 +29662,14 @@ function PortfolioPage() {
     t("portfolio.branding")
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("portfolio.title") }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("portfolio.subtitle") })
-          ]
-        }
-      ) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-8 bg-gray-900 border-b border-gray-800/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap justify-center gap-3", children: categories.map((category, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageHero,
+      {
+        title: t("portfolio.title"),
+        subtitle: t("portfolio.subtitle")
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-8 bg-gradient-to-b from-black to-gray-900 border-b border-gray-800/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap justify-center gap-3", children: categories.map((category, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       Button,
       {
         variant: index2 === 0 ? "default" : "outline",
@@ -29663,7 +29679,7 @@ function PortfolioPage() {
       },
       index2
     )) }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: projects.map((project, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: projects.map((project, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.div,
       {
         initial: { opacity: 0, y: 30 },
@@ -29718,7 +29734,7 @@ function PortfolioPage() {
       },
       index2
     )) }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
@@ -29790,25 +29806,14 @@ function AboutPage() {
     { number: "99%", label: t("common.clientSatisfaction") }
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("about.title") }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("about.subtitle") })
-          ]
-        }
-      ) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageHero,
+      {
+        title: t("about.title"),
+        subtitle: t("about.subtitle")
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29846,7 +29851,7 @@ function AboutPage() {
         }
       )
     ] }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29878,7 +29883,7 @@ function AboutPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -29918,7 +29923,7 @@ function AboutPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 text-center", children: stats.map((stat, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 text-center", children: stats.map((stat, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       motion.div,
       {
         initial: { opacity: 0, scale: 0.8 },
@@ -30001,47 +30006,38 @@ function StudentsPage() {
     t("students.communication")
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25", children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraduationCap, { className: "w-8 h-8 text-black" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("students.title") }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto mb-8", children: t("students.subtitle") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  size: "lg",
-                  className: "rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.consultation") })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  asChild: true,
-                  variant: "ghost",
-                  size: "lg",
-                  className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-300 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#pricing", children: t("students.pricing") })
-                }
-              )
-            ] })
-          ]
-        }
-      ) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageHero,
+      {
+        title: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25", children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraduationCap, { className: "w-8 h-8 text-black" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("students.title") }) })
+        ] }),
+        subtitle: t("students.subtitle"),
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              asChild: true,
+              size: "lg",
+              className: "rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/6285167002152", target: "_blank", rel: "noopener noreferrer", children: t("students.consultation") })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              asChild: true,
+              variant: "ghost",
+              size: "lg",
+              className: "h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-300 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#pricing", children: t("students.pricing") })
+            }
+          )
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -30072,7 +30068,7 @@ function StudentsPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "pricing", className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "pricing", className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -30148,7 +30144,7 @@ function StudentsPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -30180,7 +30176,7 @@ function StudentsPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
@@ -30228,7 +30224,7 @@ function StudentsPage() {
         index2
       )) })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
@@ -35230,25 +35226,14 @@ function ContactPage() {
     }
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-16 bg-black", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-6xl md:text-7xl font-bold mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent", children: t("contact.title") }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-gray-400 max-w-3xl mx-auto", children: t("contact.subtitle") })
-          ]
-        }
-      ) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageHero,
+      {
+        title: t("contact.title"),
+        subtitle: t("contact.subtitle")
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-black to-gray-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         motion.div,
         {
@@ -35419,7 +35404,7 @@ function ContactPage() {
         }
       )
     ] }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-20 bg-gradient-to-b from-gray-900 to-black", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -35462,7 +35447,8 @@ function AppInner() {
       " "
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CustomerServiceButton, {})
   ] }) });
 }
 function App() {

@@ -84,7 +84,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="pt-16">
+    <div>
       <PageHero
         title={
           <>
@@ -125,7 +125,7 @@ export default function HomePage() {
           {t("hero.description")}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button
             asChild
             size="lg"
@@ -151,7 +151,7 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          className="flex justify-center relative z-10"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
