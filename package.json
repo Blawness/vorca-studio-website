@@ -10,9 +10,7 @@
     "build": "bun run --filter frontend build"
   },
   "overrides": {
-    "lightningcss": "npm:lightningcss-wasm@^1"
-  },
-  "resolutions": {
+    "lightningcss": "npm:lightningcss-wasm@^1",
     "esbuild": "0.19.2"
   },
   "workspaces": [
