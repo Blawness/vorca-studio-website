@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/components/ui/use-toast";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
-import backend from "~backend/client";
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
@@ -56,14 +55,21 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await backend.contact.submit({
-        ...formData,
-        language
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, language })
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
 
       toast({
         title: "Success!",
-        description: response.message,
+        description: data.message,
       });
 
       // Reset form
