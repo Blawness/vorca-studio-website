@@ -5,11 +5,8 @@ export interface Article {
     id: string
     slug: string
     title: string
-    titleEn: string
     excerpt: string
-    excerptEn: string
     content?: string
-    contentEn?: string
     image: string
     category: string
     author: string

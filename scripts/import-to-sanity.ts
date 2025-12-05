@@ -12,7 +12,7 @@ import articles from '../app/data/articles.json'
 const client = createClient({
     projectId: 'zdgfq7md',
     dataset: 'production',
-    token: process.env.SANITY_WRITE_TOKEN,
+    token: process.env.SANITY_API_TOKEN,
     useCdn: false,
     apiVersion: '2024-01-01',
 })
@@ -63,8 +63,9 @@ async function importArticles() {
 
             await client.createOrReplace(doc)
             console.log(`✅ Imported: ${article.titleEn}`)
-        } catch (error) {
-            console.error(`❌ Failed: ${article.titleEn}`, error)
+        } catch (error: any) {
+            console.error(`❌ Failed: ${article.titleEn}`)
+            console.error('Error details:', JSON.stringify(error?.response?.body || error?.message || error, null, 2))
         }
     }
 

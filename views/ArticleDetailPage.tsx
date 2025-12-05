@@ -30,10 +30,10 @@ export default function ArticleDetailPage({ article, relatedArticles }: ArticleD
         notFound();
     }
 
-    // Get content based on language
-    const content = language === "id" ? article.content : article.contentEn;
-    const title = language === "id" ? article.title : article.titleEn;
-    const excerpt = language === "id" ? article.excerpt : article.excerptEn;
+    // Article content (Indonesian only)
+    const content = article.content;
+    const title = article.title;
+    const excerpt = article.excerpt;
 
     // Extract headings for TOC
     const headings = useMemo(() => extractHeadings(content || ""), [content]);
@@ -119,13 +119,13 @@ export default function ArticleDetailPage({ article, relatedArticles }: ArticleD
                                             <div className="h-40 overflow-hidden">
                                                 <img
                                                     src={related.image}
-                                                    alt={language === "id" ? related.title : related.titleEn}
+                                                    alt={related.title}
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                 />
                                             </div>
                                             <div className="p-5">
                                                 <h3 className="text-white font-semibold line-clamp-2 group-hover:text-cyan-400 transition-colors">
-                                                    {language === "id" ? related.title : related.titleEn}
+                                                    {related.title}
                                                 </h3>
                                                 <p className="text-sm text-gray-500 mt-2">
                                                     {related.readTime} {language === "id" ? "menit baca" : "min read"}

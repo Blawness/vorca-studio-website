@@ -94,7 +94,7 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                         <div className="relative h-64 md:h-full min-h-[300px] overflow-hidden">
                                             <img
                                                 src={articles[0].image}
-                                                alt={language === "id" ? articles[0].title : articles[0].titleEn}
+                                                alt={articles[0].title}
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/80 md:block hidden" />
@@ -109,10 +109,10 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                                 {articles[0].category}
                                             </Badge>
                                             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                                                {language === "id" ? articles[0].title : articles[0].titleEn}
+                                                {articles[0].title}
                                             </h2>
                                             <p className="text-gray-400 mb-6 line-clamp-3">
-                                                {language === "id" ? articles[0].excerpt : articles[0].excerptEn}
+                                                {articles[0].excerpt}
                                             </p>
                                             <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
                                                 <div className="flex items-center gap-1.5">
@@ -171,7 +171,7 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                         <div className="relative h-48 overflow-hidden">
                                             <img
                                                 src={article.image}
-                                                alt={language === "id" ? article.title : article.titleEn}
+                                                alt={article.title}
                                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
@@ -181,10 +181,10 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                                 {article.category}
                                             </Badge>
                                             <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
-                                                {language === "id" ? article.title : article.titleEn}
+                                                {article.title}
                                             </h3>
                                             <p className="text-gray-400 mb-4 line-clamp-2">
-                                                {language === "id" ? article.excerpt : article.excerptEn}
+                                                {article.excerpt}
                                             </p>
                                             <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                                                 <div className="flex items-center gap-1">

@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return {
-        title: `${article.titleEn} | Vorca Studio`,
-        description: article.excerptEn,
+        title: `${article.title} | Vorca Studio`,
+        description: article.excerpt,
         openGraph: {
-            title: article.titleEn,
-            description: article.excerptEn,
+            title: article.title,
+            description: article.excerpt,
             url: `https://vorcastudio.com/articles/${slug}`,
             siteName: 'Vorca Studio',
             images: [
@@ -32,10 +32,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
                     url: article.image,
                     width: 1200,
                     height: 630,
-                    alt: article.titleEn,
+                    alt: article.title,
                 },
             ],
-            locale: 'en_US',
+            locale: 'id_ID',
             type: 'article',
         },
         alternates: {

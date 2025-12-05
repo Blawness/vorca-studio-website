@@ -2,18 +2,12 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'article',
-    title: 'Article',
+    title: 'Artikel',
     type: 'document',
     fields: [
         defineField({
             name: 'title',
-            title: 'Title (ID)',
-            type: 'string',
-            validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-            name: 'titleEn',
-            title: 'Title (EN)',
+            title: 'Judul Artikel',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -22,44 +16,36 @@ export default defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-                source: 'titleEn',
+                source: 'title',
                 maxLength: 96,
             },
+            description: 'URL artikel (klik Generate untuk auto-generate)',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'excerpt',
-            title: 'Excerpt (ID)',
+            title: 'Ringkasan',
             type: 'text',
             rows: 3,
-        }),
-        defineField({
-            name: 'excerptEn',
-            title: 'Excerpt (EN)',
-            type: 'text',
-            rows: 3,
+            description: 'Ringkasan singkat artikel',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'content',
-            title: 'Content (ID)',
+            title: 'Konten Artikel',
             type: 'text',
-            description: 'Markdown content in Indonesian',
-        }),
-        defineField({
-            name: 'contentEn',
-            title: 'Content (EN)',
-            type: 'text',
-            description: 'Markdown content in English',
+            description: 'Konten lengkap (format Markdown)',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'image',
-            title: 'Featured Image URL',
+            title: 'Gambar Utama',
             type: 'url',
-            description: 'External image URL (e.g., Unsplash)',
+            description: 'URL gambar (contoh: dari Unsplash)',
         }),
         defineField({
             name: 'category',
-            title: 'Category',
+            title: 'Kategori',
             type: 'string',
             options: {
                 list: [
@@ -72,21 +58,25 @@ export default defineType({
                     { title: 'Digital Marketing', value: 'Digital Marketing' },
                 ],
             },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'author',
-            title: 'Author',
+            title: 'Penulis',
             type: 'string',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'date',
-            title: 'Publish Date',
+            title: 'Tanggal Publish',
             type: 'date',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'readTime',
-            title: 'Read Time (minutes)',
+            title: 'Waktu Baca (menit)',
             type: 'number',
+            validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'tags',
@@ -100,7 +90,7 @@ export default defineType({
     ],
     preview: {
         select: {
-            title: 'titleEn',
+            title: 'title',
             subtitle: 'category',
             date: 'date',
         },
