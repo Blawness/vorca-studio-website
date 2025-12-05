@@ -99,7 +99,7 @@ export namespace contact {
          */
         public async submit(params: RequestType<typeof api_contact_submit_submit>): Promise<ResponseType<typeof api_contact_submit_submit>> {
             // Now make the actual call to the API
-            const resp = await this.baseClient.callTypedAPI(`/contact`, {method: "POST", body: JSON.stringify(params)})
+            const resp = await this.baseClient.callTypedAPI(`/contact`, { method: "POST", body: JSON.stringify(params) })
             return JSON.parse(await resp.text(), dateReviver) as ResponseType<typeof api_contact_submit_submit>
         }
     }
@@ -110,36 +110,36 @@ type PickMethods<Type> = Omit<CallParameters, "method"> & { method?: Type };
 
 // Helper type to omit all fields that are cookies.
 type OmitCookie<T> = {
-  [K in keyof T as T[K] extends CookieWithOptions<any> ? never : K]: T[K];
+    [K in keyof T as T[K] extends CookieWithOptions<any> ? never : K]: T[K];
 };
 
 type RequestType<Type extends (...args: any[]) => any> =
-  Parameters<Type> extends [infer H, ...any[]]
+    Parameters<Type> extends [infer H, ...any[]]
     ? OmitCookie<H>
     : void;
 
 type ResponseType<Type extends (...args: any[]) => any> = OmitCookie<Awaited<ReturnType<Type>>>;
 
 function dateReviver(key: string, value: any): any {
-  if (
-    typeof value === "string" &&
-    value.length >= 10 &&
-    value.charCodeAt(0) >= 48 && // '0'
-    value.charCodeAt(0) <= 57 // '9'
-  ) {
-    const parsedDate = new Date(value);
-    if (!isNaN(parsedDate.getTime())) {
-      return parsedDate;
+    if (
+        typeof value === "string" &&
+        value.length >= 10 &&
+        value.charCodeAt(0) >= 48 && // '0'
+        value.charCodeAt(0) <= 57 // '9'
+    ) {
+        const parsedDate = new Date(value);
+        if (!isNaN(parsedDate.getTime())) {
+            return parsedDate;
+        }
     }
-  }
-  return value;
+    return value;
 }
 
 
 function encodeQuery(parts: Record<string, string | string[]>): string {
     const pairs: string[] = []
     for (const key in parts) {
-        const val = (Array.isArray(parts[key]) ?  parts[key] : [parts[key]]) as string[]
+        const val = (Array.isArray(parts[key]) ? parts[key] : [parts[key]]) as string[]
         for (const v of val) {
             pairs.push(`${key}=${encodeURIComponent(v)}`)
         }
@@ -160,32 +160,32 @@ function makeRecord<K extends string | number | symbol, V>(record: Record<K, V |
 }
 
 import {
-  StreamInOutHandlerFn,
-  StreamInHandlerFn,
-  StreamOutHandlerFn,
+    StreamInOutHandlerFn,
+    StreamInHandlerFn,
+    StreamOutHandlerFn,
 } from "encore.dev/api";
 
 type StreamRequest<Type> = Type extends
-  | StreamInOutHandlerFn<any, infer Req, any>
-  | StreamInHandlerFn<any, infer Req, any>
-  | StreamOutHandlerFn<any, any>
-  ? Req
-  : never;
+    | StreamInOutHandlerFn<any, infer Req, any>
+    | StreamInHandlerFn<any, infer Req, any>
+    | StreamOutHandlerFn<any, any>
+    ? Req
+    : never;
 
 type StreamResponse<Type> = Type extends
-  | StreamInOutHandlerFn<any, any, infer Resp>
-  | StreamInHandlerFn<any, any, infer Resp>
-  | StreamOutHandlerFn<any, infer Resp>
-  ? Resp
-  : never;
+    | StreamInOutHandlerFn<any, any, infer Resp>
+    | StreamInHandlerFn<any, any, infer Resp>
+    | StreamOutHandlerFn<any, infer Resp>
+    ? Resp
+    : never;
 
 
 function encodeWebSocketHeaders(headers: Record<string, string>) {
     // url safe, no pad
     const base64encoded = btoa(JSON.stringify(headers))
-      .replaceAll("=", "")
-      .replaceAll("+", "-")
-      .replaceAll("/", "_");
+        .replaceAll("=", "")
+        .replaceAll("+", "-")
+        .replaceAll("/", "_");
     return "encore.dev.headers." + base64encoded;
 }
 
@@ -405,10 +405,10 @@ class BaseClient {
         // If we now have authentication data, add it to the request
         if (authData) {
             if (authData.query) {
-                query = {...query, ...authData.query};
+                query = { ...query, ...authData.query };
             }
             if (authData.headers) {
-                headers = {...headers, ...authData.headers};
+                headers = { ...headers, ...authData.headers };
             }
         }
 
@@ -426,10 +426,10 @@ class BaseClient {
         // If we now have authentication data, add it to the request
         if (authData) {
             if (authData.query) {
-                query = {...query, ...authData.query};
+                query = { ...query, ...authData.query };
             }
             if (authData.headers) {
-                headers = {...headers, ...authData.headers};
+                headers = { ...headers, ...authData.headers };
             }
         }
 
@@ -447,10 +447,10 @@ class BaseClient {
         // If we now have authentication data, add it to the request
         if (authData) {
             if (authData.query) {
-                query = {...query, ...authData.query};
+                query = { ...query, ...authData.query };
             }
             if (authData.headers) {
-                headers = {...headers, ...authData.headers};
+                headers = { ...headers, ...authData.headers };
             }
         }
 
@@ -475,7 +475,7 @@ class BaseClient {
         }
 
         // Merge our headers with any predefined headers
-        init.headers = {...this.headers, ...init.headers, ...headers}
+        init.headers = { ...this.headers, ...init.headers, ...headers }
 
         // Fetch auth data if there is any
         const authData = await this.getAuthData();
@@ -483,16 +483,16 @@ class BaseClient {
         // If we now have authentication data, add it to the request
         if (authData) {
             if (authData.query) {
-                query = {...query, ...authData.query};
+                query = { ...query, ...authData.query };
             }
             if (authData.headers) {
-                init.headers = {...init.headers, ...authData.headers};
+                init.headers = { ...init.headers, ...authData.headers };
             }
         }
 
         // Make the actual request
         const queryString = query ? '?' + encodeQuery(query) : ''
-        const response = await this.fetcher(this.baseURL+path+queryString, init)
+        const response = await this.fetcher(this.baseURL + path + queryString, init)
 
         // handle any error responses
         if (!response.ok) {
@@ -538,8 +538,8 @@ function isAPIErrorResponse(err: any): err is APIErrorResponse {
     return (
         err !== undefined && err !== null &&
         isErrCode(err.code) &&
-        typeof(err.message) === "string" &&
-        (err.details === undefined || err.details === null || typeof(err.details) === "object")
+        typeof (err.message) === "string" &&
+        (err.details === undefined || err.details === null || typeof (err.details) === "object")
     )
 }
 
@@ -573,8 +573,8 @@ export class APIError extends Error {
         // set error name as constructor name, make it not enumerable to keep native Error behavior
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target#new.target_in_constructors
         Object.defineProperty(this, 'name', {
-            value:        'APIError',
-            enumerable:   false,
+            value: 'APIError',
+            enumerable: false,
             configurable: true,
         })
 
@@ -798,4 +798,4 @@ export enum ErrCode {
     Unauthenticated = "unauthenticated",
 }
 
-export default new Client(import.meta.env.VITE_CLIENT_TARGET, { requestInit: { credentials: "include" } });
+export default new Client(process.env.NEXT_PUBLIC_API_URL || Local, { requestInit: { credentials: "include" } });

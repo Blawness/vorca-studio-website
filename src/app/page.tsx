@@ -1,4 +1,6 @@
-import HomePage from "@/pages/HomePage";
+import HomePage from "@/views/HomePage";
+
+export const dynamic = 'force-dynamic';
 
 export default function Page() {
     return <HomePage />;

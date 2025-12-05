@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -54,11 +53,8 @@ export default function Header() {
               >
                 {item.name}
                 {pathname === item.href && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  <div
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"
                   />
                 )}
               </Link>
@@ -91,11 +87,8 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden py-4 border-t border-gray-800/50"
+          <div
+            className="md:hidden py-4 border-t border-gray-800/50 animate-fadeIn"
           >
             <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
@@ -112,7 +105,7 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </div>
         )}
       </nav>
     </header>
