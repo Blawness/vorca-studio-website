@@ -35,14 +35,8 @@ export default function AboutPage() {
     {
       name: "Yudha Hafiz",
       role: t("about.team.yudha.role"),
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=300&h=300&fit=crop&crop=face",
+      image: "https://i.imgur.com/mosP5lg_d.png?maxwidth=520&shape=thumb&fidelity=high",
       bio: t("about.team.yudha.bio")
-    },
-    {
-      name: "Andhika Satya",
-      role: t("about.team.andhika.role"),
-      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=300&fit=crop&crop=face",
-      bio: t("about.team.andhika.bio")
     }
   ];
 
@@ -266,14 +260,14 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
-              {t("about.meetOurPod")}
+              Dibalik Layar Vorca Studio
             </h2>
             <p className="text-slate-300/70 max-w-2xl mx-auto">
               {t("about.meetOurPod.desc")}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto place-items-center">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -283,11 +277,11 @@ export default function AboutPage() {
                 viewport={{ once: true }}
               >
                 <div className="h-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 md:p-8 flex flex-col items-center text-center">
-                  <div className="relative mb-4">
+                  <div className="relative mb-5 mx-auto">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover ring-2 ring-cyan-500/30"
+                      className="w-32 h-40 md:w-40 md:h-52 rounded-2xl object-cover border border-white/10 shadow-[0_10px_40px_-18px_rgba(0,200,255,0.45)]"
                     />
                   </div>
                   <h3 className="text-xl font-semibold tracking-tight text-white mb-1">
