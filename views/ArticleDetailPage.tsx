@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
-import articlesData from "@/app/data/articles.json";
 import { notFound } from "next/navigation";
+import type { Article } from "@/sanity/lib/fetch";
 
 // Import blog components
 import {
@@ -19,30 +19,12 @@ import {
 } from "@/components/blog";
 
 interface ArticleDetailPageProps {
-    slug: string;
+    article: Article | null;
+    relatedArticles: Article[];
 }
 
-interface Article {
-    id: string;
-    slug: string;
-    title: string;
-    titleEn: string;
-    excerpt: string;
-    excerptEn: string;
-    content: string;
-    contentEn: string;
-    image: string;
-    category: string;
-    author: string;
-    date: string;
-    readTime: number;
-    tags: string[];
-}
-
-export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
+export default function ArticleDetailPage({ article, relatedArticles }: ArticleDetailPageProps) {
     const { language } = useLanguage();
-    const articles: Article[] = articlesData;
-    const article = articles.find((a) => a.slug === slug);
 
     if (!article) {
         notFound();
@@ -54,12 +36,7 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
     const excerpt = language === "id" ? article.excerpt : article.excerptEn;
 
     // Extract headings for TOC
-    const headings = useMemo(() => extractHeadings(content), [content]);
-
-    // Get related articles (same category, excluding current)
-    const relatedArticles = articles
-        .filter((a) => a.category === article.category && a.id !== article.id)
-        .slice(0, 3);
+    const headings = useMemo(() => extractHeadings(content || ""), [content]);
 
     return (
         <div className="pt-16 bg-black min-h-screen">
@@ -92,7 +69,7 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
                         <div className="flex gap-10">
                             {/* Main Content */}
                             <article className="flex-1 max-w-3xl">
-                                <ArticleBody content={content} language={language} />
+                                <ArticleBody content={content || ""} language={language} />
 
                                 {/* Divider */}
                                 <div className="mt-14 pt-8 border-t border-gray-800">

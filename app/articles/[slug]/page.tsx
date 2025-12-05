@@ -1,4 +1,6 @@
 import ArticleDetailPage from "@/views/ArticleDetailPage";
+import { getArticleBySlug, getAllArticles, getAllSlugs } from "@/sanity/lib/fetch";
+import type { Metadata } from "next";
 
 export const dynamic = 'force-dynamic';
 
@@ -6,10 +8,9 @@ interface PageProps {
     params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params;
-    const articles = await import("@/app/data/articles.json");
-    const article = articles.default.find((a: any) => a.slug === slug);
+    const article = await getArticleBySlug(slug);
 
     if (!article) {
         return {
@@ -46,13 +47,24 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Page({ params }: PageProps) {
     const { slug } = await params;
-    return <ArticleDetailPage slug={slug} />;
+    const article = await getArticleBySlug(slug);
+
+    // Get related articles (same category)
+    let relatedArticles: Awaited<ReturnType<typeof getAllArticles>> = [];
+    if (article) {
+        const allArticles = await getAllArticles();
+        relatedArticles = allArticles
+            .filter((a) => a.category === article.category && a.id !== article.id)
+            .slice(0, 3);
+    }
+
+    return <ArticleDetailPage article={article} relatedArticles={relatedArticles} />;
 }
 
 // Generate static params for all articles
 export async function generateStaticParams() {
-    const articles = await import("@/app/data/articles.json");
-    return articles.default.map((article: { slug: string }) => ({
-        slug: article.slug,
+    const slugs = await getAllSlugs();
+    return slugs.map((item) => ({
+        slug: item.slug,
     }));
 }

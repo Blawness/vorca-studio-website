@@ -9,26 +9,14 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
 import Link from "next/link";
-import articlesData from "@/app/data/articles.json";
+import type { Article } from "@/sanity/lib/fetch";
 
-interface Article {
-    id: string;
-    slug: string;
-    title: string;
-    titleEn: string;
-    excerpt: string;
-    excerptEn: string;
-    image: string;
-    category: string;
-    author: string;
-    date: string;
-    readTime: number;
-    tags: string[];
+interface ArticlesPageProps {
+    articles: Article[];
 }
 
-export default function ArticlesPage() {
-    const { t, language } = useLanguage();
-    const articles: Article[] = articlesData;
+export default function ArticlesPage({ articles }: ArticlesPageProps) {
+    const { language } = useLanguage();
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
