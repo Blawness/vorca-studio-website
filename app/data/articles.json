@@ -103,5 +103,110 @@
             "MongoDB",
             "Backend"
         ]
+    },
+    {
+        "id": "6",
+        "slug": "keamanan-website-prevent-hacking",
+        "title": "Keamanan Website: 5 Hal Wajib untuk Mencegah Peretasan",
+        "titleEn": "Website Security: 5 Must-Dos to Prevent Hacking",
+        "excerpt": "Lindungi aset digital Anda dengan praktik keamanan terbaik. Jangan biarkan website bisnis Anda rentan terhadap serangan.",
+        "excerptEn": "Protect your digital assets with best security practices. Don't let your business website be vulnerable to attacks.",
+        "content": "Keamanan website seringkali diabaikan hingga insiden terjadi. Padahal, mencegah lebih baik (dan lebih murah) daripada mengobati.\n\n## Checklist Keamanan Standar\n\n### 1. SSL/TLS Certificate\nWajib hukumnya menggunakan HTTPS. Google menandai website tanpa SSL sebagai 'Not Secure', yang menghancurkan kepercayaan user.\n\n### 2. Update Berkala\nCMS, plugin, dan library yang outdated adalah pintu masuk utama hacker. Selalu patch sistem Anda ke versi terbaru.\n\n### 3. Strong Authentication\nImplementasikan MFA (Multi-Factor Authentication) untuk akses admin dan gunakan password yang kuat dan unik.\n\n### 4. Secure Database Inputs\nMencegah SQL Injection dengan menggunakan parameterized queries dan validasi input yang ketat.\n\n### 5. Regular Backups\nSelalu miliki backup data di lokasi terpisah (off-site). Jika terjadi serangan ransomware, backup adalah satu-satunya penyelamat Anda.",
+        "contentEn": "Website security is often overlooked until an incident occurs. In fact, prevention is better (and cheaper) than cure.\n\n## Standard Security Checklist\n\n### 1. SSL/TLS Certificate\nHTTPS is mandatory. Google marks websites without SSL as 'Not Secure', which destroys user trust.\n\n### 2. Regular Updates\nOutdated CMS, plugins, and libraries are the main entry points for hackers. Always patch your system to the latest version.\n\n### 3. Strong Authentication\nImplement MFA (Multi-Factor Authentication) for admin access and use strong, unique passwords.\n\n### 4. Secure Database Inputs\nPrevent SQL Injection by using parameterized queries and strict input validation.\n\n### 5. Regular Backups\nAlways have data backups in a separate location (off-site). In the event of a ransomware attack, backups are your only savior.",
+        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=400&fit=crop",
+        "category": "Security",
+        "author": "Yudha",
+        "date": "2024-12-05",
+        "readTime": 6,
+        "tags": [
+            "Security",
+            "Cybersecurity",
+            "Web Dev",
+            "Best Practices"
+        ]
+    },
+    {
+        "id": "7",
+        "slug": "mobile-responsive-design-2025",
+        "title": "Mengapa Desain Mobile-Responsive Sangat Krusial di 2025",
+        "titleEn": "Why Mobile-Responsive Design is Crucial in 2025",
+        "excerpt": "Traffic mobile mendominasi internet. Jika website Anda tidak responsif, Anda kehilangan mayoritas potensi pelanggan.",
+        "excerptEn": "Mobile traffic dominates the internet. If your website is not responsive, you are losing the majority of potential customers.",
+        "content": "Di tahun 2025, 'Mobile-Friendly' bukan lagi fitur tambahan, melainkan standar absolut. Google menerapkan 'Mobile-First Indexing', artinya performa mobile website Anda menentukan ranking SEO secara keseluruhan.\n\n## Dampak Bisnis\n\n### User Retention\nPengguna akan meninggalkan website dalam kurang dari 3 detik jika tampilannya rusak di layar HP mereka.\n\n### SEO Ranking\nWebsite yang tidak mobile-responsive akan dihukum oleh algoritma Google, membuatnya sulit ditemukan di hasil pencarian.\n\n### Brand Image\nTampilan mobile yang buruk mencerminkan ketidakprofesionalan bisnis Anda di mata pelanggan modern.\n\n## Elemen Kunci Responsive Design\n- **Fluid Grids**: Layout yang menyesuaikan lebar layar secara proporsional.\n- **Flexible Images**: Gambar yang tidak 'pecah' atau meluber keluar container.\n- **Touch-Friendly**: Tombol dan navigasi yang mudah ditekan dengan jari, bukan cursor mouse.",
+        "contentEn": "In 2025, 'Mobile-Friendly' is no longer an add-on feature, but an absolute standard. Google implements 'Mobile-First Indexing', meaning your website's mobile performance determines your overall SEO ranking.\n\n## Business Impact\n\n### User Retention\nUsers will leave a website in less than 3 seconds if the display is broken on their phone screens.\n\n### SEO Ranking\nWebsites that are not mobile-responsive will be penalized by Google algorithms, making them difficult to find in search results.\n\n### Brand Image\nPoor mobile display reflects unprofessionalism of your business in the eyes of modern customers.\n\n## Key Elements of Responsive Design\n- **Fluid Grids**: Layouts that adjust to screen width proportionally.\n- **Flexible Images**: Images that don't break or overflow containers.\n- **Touch-Friendly**: Buttons and navigation that are easy to tap with fingers, not mouse cursors.",
+        "image": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=800&h=400&fit=crop",
+        "category": "UI/UX Design",
+        "author": "Andhika",
+        "date": "2024-12-04",
+        "readTime": 5,
+        "tags": [
+            "Mobile",
+            "Responsive Design",
+            "UI/UX",
+            "SEO"
+        ]
+    },
+    {
+        "id": "8",
+        "slug": "progressive-web-apps-pwa-guide",
+        "title": "Mengenal Progressive Web Apps (PWA): Hemat Biaya & Powerful",
+        "titleEn": "Understanding Progressive Web Apps (PWA): Cost-Effective & Powerful",
+        "excerpt": "Solusi cerdas bagi bisnis yang ingin memiliki pengalaman ala aplikasi mobile tanpa biaya pengembangan Native App yang mahal.",
+        "excerptEn": "A smart solution for businesses wanting a mobile app-like experience without the expensive Native App development costs.",
+        "content": "PWA adalah website yang memiliki kemampuan seperti aplikasi mobile native. Bisa diinstall di homescreen, jalan offline, dan mengirim push notification.\n\n## Kelebihan PWA Dibanding Native App\n\n### 1. Biaya Pengembangan Lebih Rendah\nAnda tidak perlu membuat 3 versi aplikasi (Web, Android, iOS). Cukup satu codebase PWA yang jalan di semua platform.\n\n### 2. Tidak Perlu App Store\nUser tidak perlu download file besar dari Play Store/App Store. Cukup akses URL dan 'Add to Home Screen'.\n\n### 3. Bisa Jalan Offline\nDengan teknologi Service Workers, PWA bisa menyimpan konten sehingga tetap bisa dibuka saat user kehilangan koneksi internet.\n\n## Kapan Harus Memilih PWA?\nCocok untuk e-commerce, portal berita, dan sistem manajemen internal yang membutuhkan akses cepat dan reliabilitas tinggi.",
+        "contentEn": "PWA is a website that has capabilities like a native mobile app. It can be installed on the homescreen, run offline, and send push notifications.\n\n## Advantages of PWA over Native Apps\n\n### 1. Lower Development Costs\nYou don't need to build 3 app versions (Web, Android, iOS). Just one PWA codebase runs on all platforms.\n\n### 2. No App Store Needed\nUsers don't need to download large files from Play Store/App Store. Just access the URL and 'Add to Home Screen'.\n\n### 3. Runs Offline\nWith Service Workers technology, PWAs can cache content so they can still be opened when users lose internet connection.\n\n## When to Choose PWA?\nSuitable for e-commerce, news portals, and internal management systems requiring fast access and high reliability.",
+        "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop",
+        "category": "Technology",
+        "author": "Yudha",
+        "date": "2024-12-03",
+        "readTime": 6,
+        "tags": [
+            "PWA",
+            "Technology",
+            "Mobile App",
+            "Web Development"
+        ]
+    },
+    {
+        "id": "9",
+        "slug": "strategi-seo-2025-user-experience",
+        "title": "Strategi SEO 2025: Fokus pada User Experience & Core Web Vitals",
+        "titleEn": "SEO Strategy 2025: Focusing on User Experience & Core Web Vitals",
+        "excerpt": "Algoritma Google semakin pintar. Keyword stuffing sudah mati. Pelajari cara ranking #1 dengan konten berkualitas.",
+        "excerptEn": "Google's algorithms are getting smarter. Keyword stuffing is dead. Learn how to rank #1 with quality content.",
+        "content": "SEO modern bukan lagi tentang memanipulasi mesin pencari, tapi tentang melayani pengguna manusia dengan sebaik-baiknya.\n\n## Apa itu Core Web Vitals?\nGoogle menggunakan 3 metrik utama untuk mengukur pengalaman pengguna:\n1. **LCP (Largest Contentful Paint)**: Seberapa cepat konten utama loading.\n2. **FID (First Input Delay)**: Responsivitas saat user klik tombol.\n3. **CLS (Cumulative Layout Shift)**: Stabilitas visual (apakah layout bergeser-geser saat loading).\n\n## Content is (Still) King\nMenulis untuk manusia, bukan robot. Artikel harus:\n- Menjawab pertanyaan user secara langsung (tanpa basa-basi).\n- Terstruktur dengan Heading (H1, H2) yang jelas.\n- Menggunakan bahasa yang natural dan otoritatif.\n\n## E-E-A-T\nGoogle menilai Experience, Expertise, Authoritativeness, dan Trustworthiness. Pastikan konten Anda ditulis oleh ahli atau divalidasi dengan sumber yang kredibel.",
+        "contentEn": "Modern SEO is no longer about manipulating search engines, but about serving human users as best as possible.\n\n## What are Core Web Vitals?\nGoogle uses 3 main metrics to measure user experience:\n1. **LCP (Largest Contentful Paint)**: How fast the main content loads.\n2. **FID (First Input Delay)**: Responsiveness when user clicks a button.\n3. **CLS (Cumulative Layout Shift)**: Visual stability (does layout shift while loading).\n\n## Content is (Still) King\nWrite for humans, not robots. Articles must:\n- Answer user questions directly (no fluff).\n- Be structured with clear Headings (H1, H2).\n- Use natural and authoritative language.\n\n## E-E-A-T\nGoogle evaluates Experience, Expertise, Authoritativeness, and Trustworthiness. Ensure your content is written by experts or validated with credible sources.",
+        "image": "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=800&h=400&fit=crop",
+        "category": "Digital Marketing",
+        "author": "Andhika",
+        "date": "2024-12-02",
+        "readTime": 7,
+        "tags": [
+            "SEO",
+            "Digital Marketing",
+            "Content Strategy",
+            "Google"
+        ]
+    },
+    {
+        "id": "10",
+        "slug": "biaya-website-vs-aplikasi-custom",
+        "title": "Biaya Pembuatan Website vs Aplikasi Custom: Panduan Budgeting",
+        "titleEn": "Website Cost vs Custom App: Budgeting Guide",
+        "excerpt": "Pahami perbedaan biaya dan kompleksitas antara website profil sederhana dan aplikasi sistem custom.",
+        "excerptEn": "Understand the cost and complexity differences between a simple profile website and a custom system application.",
+        "content": "Banyak klien terkejut dengan perbedaan harga antara 'Bikin Web' (landing page) dan 'Bikin Aplikasi' (Web App). Mari kita bedah perbedaannya.\n\n## Website Profil (Marketing Site)\n**Tujuan**: Menampilkan informasi, contact form, branding.\n**Kompleksitas**: Rendah. Konten statis.\n**Estimasi Waktu**: 2-4 Minggu.\n**Cost Driver**: Desain visual, copywriting, animasi.\n\n## Custom Web Application (Sistem)\n**Tujuan**: Mengelola data, transaksi, user login, dashboard.\n**Kompleksitas**: Tinggi. Ada database, logic backend, API, security layers.\n**Estimasi Waktu**: 2-6 Bulan.\n**Cost Driver**: Arsitektur sistem, kompleksitas fitur, testing, keamanan server.\n\n## Mana yang Anda Butuhkan?\nJika tujuan Anda hanya *awareness*, pilih Website Profil. Jika Anda ingin *mengotomasi operasional bisnis*, Anda butuh Web Application.",
+        "contentEn": "Many clients are surprised by the price difference between 'Making a Website' (landing page) and 'Making an App' (Web App). Let's break down the differences.\n\n## Profile Website (Marketing Site)\n**Goal**: Display information, contact form, branding.\n**Complexity**: Low. Static content.\n**Time Estimate**: 2-4 Weeks.\n**Cost Driver**: Visual design, copywriting, animations.\n\n## Custom Web Application (System)\n**Goal**: Manage data, transactions, user login, dashboards.\n**Complexity**: High. Involves database, backend logic, APIs, security layers.\n**Time Estimate**: 2-6 Months.\n**Cost Driver**: System architecture, feature complexity, testing, server security.\n\n## Which Do You Need?\nIf your goal is just *awareness*, choose a Profile Website. If you want to *automate business operations*, you need a Web Application.",
+        "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",
+        "category": "Business",
+        "author": "Andhika",
+        "date": "2024-11-29",
+        "readTime": 5,
+        "tags": [
+            "Business",
+            "Cost Analysis",
+            "Web App",
+            "Startup"
+        ]
     }
 ]
