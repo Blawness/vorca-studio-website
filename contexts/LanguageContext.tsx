@@ -18,6 +18,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "Tentang",
     "nav.students": "Untuk Mahasiswa",
+    "nav.articles": "Artikel",
     "nav.contact": "Kontak",
 
     // Hero
@@ -240,6 +241,7 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.about": "About",
     "nav.students": "For Students",
+    "nav.articles": "Articles",
     "nav.contact": "Contact",
 
     // Hero

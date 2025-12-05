@@ -1,0 +1,107 @@
+[
+    {
+        "id": "1",
+        "slug": "membangun-website-modern-dengan-nextjs",
+        "title": "Membangun Website Modern dengan Next.js",
+        "titleEn": "Building Modern Websites with Next.js",
+        "excerpt": "Pelajari cara membangun website yang cepat, SEO-friendly, dan scalable menggunakan Next.js framework.",
+        "excerptEn": "Learn how to build fast, SEO-friendly, and scalable websites using the Next.js framework.",
+        "content": "Next.js adalah framework React yang powerful untuk membangun aplikasi web modern. Dengan fitur seperti Server-Side Rendering (SSR), Static Site Generation (SSG), dan Image Optimization, Next.js menjadi pilihan utama untuk pengembangan web profesional.\n\n## Mengapa Next.js?\n\n1. **Performa Tinggi** - Automatic code splitting dan optimasi gambar built-in\n2. **SEO Friendly** - Pre-rendering memastikan konten terindeks dengan baik\n3. **Developer Experience** - Fast Refresh dan TypeScript support out of the box\n\n## Fitur Unggulan\n\nNext.js menyediakan berbagai fitur yang memudahkan pengembangan:\n\n- File-based routing\n- API Routes\n- Built-in CSS dan Sass support\n- Image dan Font optimization",
+        "contentEn": "Next.js is a powerful React framework for building modern web applications. With features like Server-Side Rendering (SSR), Static Site Generation (SSG), and Image Optimization, Next.js becomes the top choice for professional web development.\n\n## Why Next.js?\n\n1. **High Performance** - Automatic code splitting and built-in image optimization\n2. **SEO Friendly** - Pre-rendering ensures content is well-indexed\n3. **Developer Experience** - Fast Refresh and TypeScript support out of the box\n\n## Key Features\n\nNext.js provides various features that simplify development:\n\n- File-based routing\n- API Routes\n- Built-in CSS and Sass support\n- Image and Font optimization",
+        "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=400&fit=crop",
+        "category": "Web Development",
+        "author": "Yudha",
+        "date": "2024-12-01",
+        "readTime": 5,
+        "tags": [
+            "Next.js",
+            "React",
+            "Web Development",
+            "Frontend"
+        ]
+    },
+    {
+        "id": "2",
+        "slug": "tips-desain-ui-ux-untuk-bisnis",
+        "title": "Tips Desain UI/UX untuk Meningkatkan Konversi Bisnis",
+        "titleEn": "UI/UX Design Tips to Boost Business Conversion",
+        "excerpt": "Desain yang baik bukan hanya soal estetika, tapi juga tentang pengalaman pengguna yang meningkatkan konversi.",
+        "excerptEn": "Good design is not just about aesthetics, but also about user experience that increases conversion.",
+        "content": "UI/UX design yang efektif dapat secara signifikan meningkatkan conversion rate bisnis Anda. Berikut beberapa tips praktis yang bisa Anda terapkan.\n\n## Prinsip Dasar UI/UX\n\n### 1. Clarity Over Creativity\nPastikan pesan utama mudah dipahami. Jangan korbankan kejelasan demi kreativitas berlebihan.\n\n### 2. Konsistensi Visual\nGunakan color palette, typography, dan spacing yang konsisten di seluruh aplikasi.\n\n### 3. Mobile-First Approach\nOptimalkan pengalaman mobile karena mayoritas traffic berasal dari perangkat mobile.\n\n## Call-to-Action yang Efektif\n\nButton CTA harus:\n- Kontras dengan background\n- Menggunakan action words yang jelas\n- Ditempatkan di posisi strategis",
+        "contentEn": "Effective UI/UX design can significantly increase your business conversion rate. Here are some practical tips you can apply.\n\n## Basic UI/UX Principles\n\n### 1. Clarity Over Creativity\nMake sure the main message is easy to understand. Don't sacrifice clarity for excessive creativity.\n\n### 2. Visual Consistency\nUse consistent color palette, typography, and spacing throughout the application.\n\n### 3. Mobile-First Approach\nOptimize the mobile experience as the majority of traffic comes from mobile devices.\n\n## Effective Call-to-Action\n\nCTA buttons should:\n- Contrast with the background\n- Use clear action words\n- Be placed in strategic positions",
+        "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop",
+        "category": "UI/UX Design",
+        "author": "Andhika",
+        "date": "2024-11-28",
+        "readTime": 7,
+        "tags": [
+            "UI/UX",
+            "Design",
+            "Conversion",
+            "Business"
+        ]
+    },
+    {
+        "id": "3",
+        "slug": "pentingnya-website-untuk-umkm",
+        "title": "Pentingnya Website untuk UMKM di Era Digital",
+        "titleEn": "The Importance of Websites for SMEs in the Digital Era",
+        "excerpt": "Mengapa setiap bisnis, sekecil apapun, membutuhkan kehadiran online yang profesional.",
+        "excerptEn": "Why every business, no matter how small, needs a professional online presence.",
+        "content": "Di era digital saat ini, memiliki website bukan lagi pilihan tapi keharusan untuk UMKM. Website adalah representasi digital bisnis Anda yang bekerja 24/7.\n\n## Manfaat Website untuk UMKM\n\n### Kredibilitas\nCustomer lebih percaya pada bisnis yang memiliki website profesional. Ini menunjukkan bahwa bisnis Anda serius dan dapat dipercaya.\n\n### Jangkauan Luas\nWebsite memungkinkan bisnis Anda dijangkau oleh calon customer dari mana saja, kapan saja.\n\n### Marketing Hub\nWebsite menjadi pusat dari semua aktivitas digital marketing Anda - dari SEO, social media, hingga email marketing.\n\n## Investasi yang Worth It\n\nBiaya membuat website profesional jauh lebih terjangkau dibanding dampak positifnya terhadap bisnis Anda.",
+        "contentEn": "In today's digital era, having a website is no longer an option but a necessity for SMEs. A website is your business's digital representation that works 24/7.\n\n## Benefits of Websites for SMEs\n\n### Credibility\nCustomers trust businesses with professional websites more. It shows that your business is serious and trustworthy.\n\n### Wide Reach\nA website allows your business to be reached by potential customers from anywhere, anytime.\n\n### Marketing Hub\nYour website becomes the center of all your digital marketing activities - from SEO, social media, to email marketing.\n\n## A Worthy Investment\n\nThe cost of creating a professional website is far more affordable than its positive impact on your business.",
+        "image": "https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=800&h=400&fit=crop",
+        "category": "Business",
+        "author": "Yudha",
+        "date": "2024-11-25",
+        "readTime": 4,
+        "tags": [
+            "UMKM",
+            "Business",
+            "Digital Marketing",
+            "Website"
+        ]
+    },
+    {
+        "id": "4",
+        "slug": "optimasi-performa-website",
+        "title": "Panduan Lengkap Optimasi Performa Website",
+        "titleEn": "Complete Guide to Website Performance Optimization",
+        "excerpt": "Tips dan teknik untuk membuat website Anda loading lebih cepat dan meningkatkan user experience.",
+        "excerptEn": "Tips and techniques to make your website load faster and improve user experience.",
+        "content": "Kecepatan website memiliki dampak langsung terhadap SEO dan user experience. Berikut panduan lengkap untuk mengoptimasi performa website Anda.\n\n## Faktor yang Mempengaruhi Kecepatan\n\n### 1. Optimasi Gambar\n- Gunakan format modern seperti WebP\n- Compress gambar tanpa mengurangi kualitas visual\n- Implement lazy loading\n\n### 2. Minifikasi Code\n- Minify CSS, JavaScript, dan HTML\n- Remove unused code\n- Enable GZIP compression\n\n### 3. Caching Strategy\n- Implement browser caching\n- Use CDN untuk asset static\n- Cache API responses yang jarang berubah\n\n## Tools untuk Testing\n\n- Google PageSpeed Insights\n- GTmetrix\n- WebPageTest",
+        "contentEn": "Website speed has a direct impact on SEO and user experience. Here's a complete guide to optimizing your website's performance.\n\n## Factors Affecting Speed\n\n### 1. Image Optimization\n- Use modern formats like WebP\n- Compress images without reducing visual quality\n- Implement lazy loading\n\n### 2. Code Minification\n- Minify CSS, JavaScript, and HTML\n- Remove unused code\n- Enable GZIP compression\n\n### 3. Caching Strategy\n- Implement browser caching\n- Use CDN for static assets\n- Cache API responses that rarely change\n\n## Testing Tools\n\n- Google PageSpeed Insights\n- GTmetrix\n- WebPageTest",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+        "category": "Web Development",
+        "author": "Yudha",
+        "date": "2024-11-20",
+        "readTime": 8,
+        "tags": [
+            "Performance",
+            "Optimization",
+            "SEO",
+            "Web Development"
+        ]
+    },
+    {
+        "id": "5",
+        "slug": "database-untuk-aplikasi-bisnis",
+        "title": "Memilih Database yang Tepat untuk Aplikasi Bisnis",
+        "titleEn": "Choosing the Right Database for Business Applications",
+        "excerpt": "Panduan memilih antara SQL dan NoSQL database sesuai kebutuhan aplikasi bisnis Anda.",
+        "excerptEn": "A guide to choosing between SQL and NoSQL databases based on your business application needs.",
+        "content": "Pemilihan database adalah keputusan arsitektur krusial yang mempengaruhi performa dan skalabilitas aplikasi Anda.\n\n## SQL vs NoSQL\n\n### Kapan Menggunakan SQL (PostgreSQL, MySQL)\n- Data terstruktur dengan relasi yang jelas\n- Butuh ACID compliance untuk transaksi\n- Query kompleks dengan JOIN\n\n### Kapan Menggunakan NoSQL (MongoDB, Firestore)\n- Data semi-structured atau unstructured\n- Butuh skalabilitas horizontal\n- Schema flexibility tinggi\n\n## Rekomendasi untuk Startup\n\nUntuk kebanyakan startup dan UMKM, **PostgreSQL** adalah pilihan yang solid:\n- Open source dan gratis\n- JSONB support untuk flexibilitas\n- Performa excellent untuk skala menengah",
+        "contentEn": "Database selection is a crucial architectural decision that affects your application's performance and scalability.\n\n## SQL vs NoSQL\n\n### When to Use SQL (PostgreSQL, MySQL)\n- Structured data with clear relationships\n- Need ACID compliance for transactions\n- Complex queries with JOINs\n\n### When to Use NoSQL (MongoDB, Firestore)\n- Semi-structured or unstructured data\n- Need horizontal scalability\n- High schema flexibility\n\n## Recommendations for Startups\n\nFor most startups and SMEs, **PostgreSQL** is a solid choice:\n- Open source and free\n- JSONB support for flexibility\n- Excellent performance at medium scale",
+        "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop",
+        "category": "Backend",
+        "author": "Yudha",
+        "date": "2024-11-15",
+        "readTime": 6,
+        "tags": [
+            "Database",
+            "PostgreSQL",
+            "MongoDB",
+            "Backend"
+        ]
+    }
+]

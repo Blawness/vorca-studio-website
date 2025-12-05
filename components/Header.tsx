@@ -19,7 +19,7 @@ export default function Header() {
     { name: t("nav.portfolio"), href: "/portfolio" },
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.students"), href: "/students" },
-    // { name: t("nav.articles"), href: "/articles" }, // Disabled - not needed yet
+    { name: t("nav.articles"), href: "/articles" },
     { name: t("nav.contact"), href: "/contact" },
   ];
 
