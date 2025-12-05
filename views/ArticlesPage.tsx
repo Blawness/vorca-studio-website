@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, User, ArrowRight, Tag } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +30,16 @@ export default function ArticlesPage() {
     const { t, language } = useLanguage();
     const articles: Article[] = articlesData;
 
+    // Pagination state
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
+
+    // Calculate paginated articles (excluding featured article at index 0)
+    const remainingArticles = articles.slice(1);
+    const totalPages = Math.ceil(remainingArticles.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedArticles = remainingArticles.slice(startIndex, startIndex + itemsPerPage);
+
     const categories = ["Semua", "Web Development", "UI/UX Design", "Business", "Backend"];
 
     const formatDate = (dateStr: string) => {
@@ -38,6 +49,12 @@ export default function ArticlesPage() {
             month: "long",
             day: "numeric",
         });
+    };
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        // Scroll to articles section
+        document.getElementById("articles-grid")?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -139,7 +156,7 @@ export default function ArticlesPage() {
             )}
 
             {/* Articles Grid */}
-            <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+            <section id="articles-grid" className="py-16 bg-gradient-to-b from-black to-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="mb-12">
                         <h2 className="text-3xl font-bold text-white mb-2">
@@ -153,7 +170,7 @@ export default function ArticlesPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {articles.slice(1).map((article, index) => (
+                        {paginatedArticles.map((article, index) => (
                             <motion.div
                                 key={article.id}
                                 initial={{ opacity: 0, y: 30 }}
@@ -211,6 +228,47 @@ export default function ArticlesPage() {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                        <div className="flex justify-center items-center gap-2 mt-12">
+                            <Button
+                                variant="outline"
+                                size="icon"
+                                onClick={() => handlePageChange(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="border-gray-700 text-gray-400 hover:bg-gray-800 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <ChevronLeft className="w-4 h-4" />
+                            </Button>
+
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                <Button
+                                    key={page}
+                                    variant={currentPage === page ? "default" : "outline"}
+                                    size="icon"
+                                    onClick={() => handlePageChange(page)}
+                                    className={
+                                        currentPage === page
+                                            ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold"
+                                            : "border-gray-700 text-gray-400 hover:bg-gray-800 hover:text-white"
+                                    }
+                                >
+                                    {page}
+                                </Button>
+                            ))}
+
+                            <Button
+                                variant="outline"
+                                size="icon"
+                                onClick={() => handlePageChange(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                                className="border-gray-700 text-gray-400 hover:bg-gray-800 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <ChevronRight className="w-4 h-4" />
+                            </Button>
+                        </div>
+                    )}
                 </div>
             </section>
 

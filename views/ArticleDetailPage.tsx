@@ -145,12 +145,51 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
                         {/* Article Content */}
                         <div className="prose prose-lg prose-invert max-w-none">
                             {content.split("\n\n").map((paragraph, index) => {
+                                // Helper function to parse inline formatting (bold, italic, links)
+                                const parseInlineFormatting = (text: string) => {
+                                    // Split by bold (**), italic (*), and links ([text](url))
+                                    const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/);
+                                    return parts.map((part, j) => {
+                                        // Bold text
+                                        if (part.startsWith("**") && part.endsWith("**")) {
+                                            return (
+                                                <strong key={j} className="text-cyan-400 font-semibold">
+                                                    {part.slice(2, -2)}
+                                                </strong>
+                                            );
+                                        }
+                                        // Italic text
+                                        if (part.startsWith("*") && part.endsWith("*") && !part.startsWith("**")) {
+                                            return (
+                                                <em key={j} className="text-gray-200 italic">
+                                                    {part.slice(1, -1)}
+                                                </em>
+                                            );
+                                        }
+                                        // Links [text](url)
+                                        const linkMatch = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
+                                        if (linkMatch) {
+                                            const [, linkText, linkUrl] = linkMatch;
+                                            return (
+                                                <Link
+                                                    key={j}
+                                                    href={linkUrl}
+                                                    className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/50 hover:decoration-cyan-300 transition-colors font-medium"
+                                                >
+                                                    {linkText}
+                                                </Link>
+                                            );
+                                        }
+                                        return <span key={j}>{part}</span>;
+                                    });
+                                };
+
                                 // Check if it's a heading
                                 if (paragraph.startsWith("## ")) {
                                     return (
                                         <h2
                                             key={index}
-                                            className="text-2xl font-bold text-white mt-10 mb-4"
+                                            className="text-2xl md:text-3xl font-bold text-white mt-12 mb-6 pb-2 border-b border-cyan-500/30"
                                         >
                                             {paragraph.replace("## ", "")}
                                         </h2>
@@ -160,7 +199,7 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
                                     return (
                                         <h3
                                             key={index}
-                                            className="text-xl font-bold text-white mt-8 mb-3"
+                                            className="text-xl md:text-2xl font-bold text-white mt-10 mb-4"
                                         >
                                             {paragraph.replace("### ", "")}
                                         </h3>
@@ -170,11 +209,11 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
                                 if (paragraph.startsWith("- ")) {
                                     const items = paragraph.split("\n");
                                     return (
-                                        <ul key={index} className="list-none space-y-2 my-4">
+                                        <ul key={index} className="list-none space-y-3 my-6 pl-2">
                                             {items.map((item, i) => (
-                                                <li key={i} className="flex items-start text-gray-300">
-                                                    <span className="w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3 flex-shrink-0" />
-                                                    {item.replace("- ", "")}
+                                                <li key={i} className="flex items-start text-gray-300 leading-relaxed">
+                                                    <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                                                    <span>{parseInlineFormatting(item.replace("- ", ""))}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -184,45 +223,25 @@ export default function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
                                 if (/^\d+\./.test(paragraph)) {
                                     const items = paragraph.split("\n");
                                     return (
-                                        <ol key={index} className="list-none space-y-3 my-4">
+                                        <ol key={index} className="list-none space-y-4 my-6">
                                             {items.map((item, i) => {
-                                                // Parse bold text **text**
-                                                const parts = item.replace(/^\d+\.\s*/, "").split(/(\*\*[^*]+\*\*)/);
+                                                const content = item.replace(/^\d+\.\s*/, "");
                                                 return (
-                                                    <li key={i} className="flex items-start text-gray-300">
-                                                        <span className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-black text-sm font-bold mr-3 flex-shrink-0">
+                                                    <li key={i} className="flex items-start text-gray-300 leading-relaxed">
+                                                        <span className="w-7 h-7 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-black text-sm font-bold mr-4 flex-shrink-0 mt-0.5">
                                                             {i + 1}
                                                         </span>
-                                                        <span>
-                                                            {parts.map((part, j) =>
-                                                                part.startsWith("**") ? (
-                                                                    <strong key={j} className="text-cyan-400">
-                                                                        {part.replace(/\*\*/g, "")}
-                                                                    </strong>
-                                                                ) : (
-                                                                    <span key={j}>{part}</span>
-                                                                )
-                                                            )}
-                                                        </span>
+                                                        <span className="flex-1">{parseInlineFormatting(content)}</span>
                                                     </li>
                                                 );
                                             })}
                                         </ol>
                                     );
                                 }
-                                // Regular paragraph - parse bold text
-                                const parts = paragraph.split(/(\*\*[^*]+\*\*)/);
+                                // Regular paragraph
                                 return (
-                                    <p key={index} className="text-gray-300 leading-relaxed mb-6">
-                                        {parts.map((part, j) =>
-                                            part.startsWith("**") ? (
-                                                <strong key={j} className="text-white">
-                                                    {part.replace(/\*\*/g, "")}
-                                                </strong>
-                                            ) : (
-                                                <span key={j}>{part}</span>
-                                            )
-                                        )}
+                                    <p key={index} className="text-gray-300 leading-relaxed text-lg mb-6">
+                                        {parseInlineFormatting(paragraph)}
                                     </p>
                                 );
                             })}
