@@ -53,6 +53,12 @@ export default function AboutPage() {
     { label: "Fokus pada kualitas & maintainability" },
   ];
 
+  const storyHighlights = [
+    "Studio teknologi yang lahir dari kebutuhan bisnis nyata.",
+    "Tim kecil yang dekat dengan founder dan stakeholder.",
+    "Eksekusi rapi dengan dokumentasi dan handover yang jelas."
+  ];
+
   return (
     <div className="bg-[#050b16]">
       <PageHero
@@ -60,19 +66,100 @@ export default function AboutPage() {
         subtitle={t("about.subtitle")}
       />
 
-      {/* Why Orca Section */}
+      {/* Story + Why Orca */}
       <section className="py-16 md:py-24 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Card */}
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-blue-900/10 to-transparent blur-3xl" />
+        <div className="max-w-6xl mx-auto px-4 relative space-y-16">
+          {/* Story about Vorca Studio */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 shadow-[0_20px_80px_-30px_rgba(0,120,255,0.35)]">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  Cerita awal Vorca Studio
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
+                  Kami lahir untuk merapikan teknologi bisnis Anda
+                </h2>
+                <p className="text-slate-300/90 leading-relaxed mb-4">
+                  Vorca Studio bermula dari keresahan melihat produk digital yang sulit dirawat.
+                  Kami membangun tim inti yang terbiasa bekerja dekat dengan founder, memastikan
+                  keputusan teknis dan bisnis berjalan serarah sejak hari pertama.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                  {storyHighlights.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-3"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-sm font-semibold">
+                        {idx + 1}
+                      </div>
+                      <p className="text-slate-200/90 text-sm leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-200 text-sm border border-cyan-500/20">
+                    Product-minded engineering
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-white/10 text-white text-sm border border-white/10">
+                    Desain yang bisa di-scale
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-blue-500/15 text-blue-100 text-sm border border-blue-500/20">
+                    Shipping dengan rapi & cepat
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-[0_0_60px_-20px_rgba(0,140,255,0.4)]">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#050b16]/60 via-transparent to-cyan-500/10 pointer-events-none" />
+                <img
+                  src="https://i.imgur.com/zbGukz9.png"
+                  alt="Orca whale swimming"
+                  className="w-full h-80 lg:h-96 object-cover"
+                />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-black/40 backdrop-blur-md rounded-2xl px-4 py-3 border border-white/10">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.16em] text-slate-200/80">Vorca Studio</p>
+                    <p className="text-white font-semibold text-lg leading-tight">Membangun produk digital yang tahan lama</p>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-cyan-200 text-sm font-semibold">
+                    VS
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Why Orca */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  Mengapa Orca?
+                </div>
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
                   {t("about.whyOrca")}
                 </h2>
@@ -94,20 +181,24 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Right Image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative order-1 lg:order-2"
             >
-              <div className="relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(0,140,255,0.3)]">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-[0_0_60px_-20px_rgba(0,140,255,0.4)]">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050b16]/20 to-[#050b16]/70 pointer-events-none" />
                 <img
-                  src="https://i.imgur.com/Zn2Ylgo.png"
-                  alt="Orca whale swimming"
+                  src="https://images.unsplash.com/photo-1669707355372-b2d1e31dc083?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Orca whale swimming in the ocean"
                   className="w-full h-80 lg:h-96 object-cover"
                 />
+                <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
+                  <span className="px-3 py-1 rounded-full bg-black/60 text-white text-xs border border-white/10">Kolaborasi pod</span>
+                  <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-100 text-xs border border-cyan-500/20">Focus & agile</span>
+                </div>
               </div>
             </motion.div>
           </div>
