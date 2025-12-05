@@ -27,13 +27,10 @@ export default function ContactPage() {
   });
 
   const serviceTypes = [
-    "Web Development",
-    "UI/UX Design",
-    "Branding",
-    "Mobile App",
-    "SEO Optimization",
-    "Student Project",
-    "Other"
+    t("services.web.title"),
+    t("services.apps.title"),
+    t("services.frontend.title"),
+    t("services.system.title"),
   ];
 
   const handleInputChange = (field: string, value: string) => {

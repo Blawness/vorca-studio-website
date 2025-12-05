@@ -1,21 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Globe,
-  Database,
-  Code,
-  Cpu,
-  Palette,
-  Zap,
-  Wrench,
-  Gauge,
-  ArrowRight,
-  CheckCircle2
-} from "lucide-react";
+import { Globe, Database, Code, Cpu, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
 
@@ -49,36 +37,6 @@ export default function ServicesPage() {
     },
   ];
 
-  const designServices = [
-    {
-      icon: Palette,
-      title: t("services.uiux.title"),
-      description: t("services.uiux.description"),
-      features: [],
-    },
-    {
-      icon: Zap,
-      title: t("services.branding.title"),
-      description: t("services.branding.description"),
-      features: t("services.branding.features").split(", "),
-    },
-  ];
-
-  const maintenanceServices = [
-    {
-      icon: Wrench,
-      title: t("services.maintenance.web.title"),
-      features: t("services.maintenance.web.features").split(", "),
-    },
-    {
-      icon: Gauge,
-      title: t("services.maintenance.perf.title"),
-      features: t("services.maintenance.perf.features").split(", "),
-    },
-  ];
-
-  const addons = t("services.addons.list").split(", ");
-
   return (
     <div className="pt-16 bg-black min-h-screen">
       <PageHero
@@ -87,160 +45,61 @@ export default function ServicesPage() {
       />
 
       {/* Core Services */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.core.title")}</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">{t("services.core.desc")}</p>
-          </div>
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020712] via-[#060f20] to-black" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -right-24 -top-24 h-72 w-72 bg-cyan-500/20 blur-3xl" />
+          <div className="absolute -left-20 bottom-0 h-64 w-64 bg-blue-600/20 blur-3xl" />
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {coreServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <Card className="h-full bg-gradient-to-br from-gray-900 to-gray-800 border-gray-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
-                      <service.icon className="w-6 h-6 text-cyan-400" />
-                    </div>
-                    <CardTitle className="text-2xl text-white">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 mb-6">{service.description}</p>
-                    {service.features.length > 0 && (
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-300">
-                            <CheckCircle2 className="w-4 h-4 text-cyan-500 mr-2 mt-0.5 shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_25px_90px_-35px_rgba(0,140,255,0.45)] p-8 lg:p-12">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-cyan-500/10" />
+            <div className="relative">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.core.title")}</h2>
+                <p className="text-gray-300/90 max-w-2xl mx-auto">{t("services.core.desc")}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {coreServices.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group"
+                  >
+                    <Card className="h-full bg-gradient-to-br from-[#0b1526] to-[#0f1c33] border border-white/10 hover:border-cyan-400/60 transition-all duration-300 hover:shadow-[0_18px_80px_-32px_rgba(0,220,255,0.55)]">
+                      <CardHeader>
+                        <div className="w-12 h-12 bg-cyan-500/15 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/25 transition-colors shadow-[0_10px_30px_-18px_rgba(0,200,255,0.6)]">
+                          <service.icon className="w-6 h-6 text-cyan-300" />
+                        </div>
+                        <CardTitle className="text-2xl text-white">{service.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-300 mb-6">{service.description}</p>
+                        {service.features.length > 0 && (
+                          <ul className="space-y-2">
+                            {service.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start text-sm text-gray-200">
+                                <CheckCircle2 className="w-4 h-4 text-cyan-400 mr-2 mt-0.5 shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Design & Branding */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.design.title")}</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">{t("services.design.desc")}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {designServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-black/50 border-gray-800 hover:border-purple-500/50 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
-                      <service.icon className="w-6 h-6 text-purple-400" />
-                    </div>
-                    <CardTitle className="text-2xl text-white">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 mb-6">{service.description}</p>
-                    {service.features.length > 0 && (
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-300">
-                            <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5 shrink-0"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-      </section>
-
-      {/* Maintenance & Support */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("services.maintenance.title")}</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">{t("services.maintenance.desc")}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {maintenanceServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-gray-900 border-gray-800 hover:border-green-500/50 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4">
-                      <service.icon className="w-6 h-6 text-green-400" />
-                    </div>
-                    <CardTitle className="text-xl text-white">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-300">
-                          <CheckCircle2 className="w-4 h-4 text-green-500 mr-3 shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Add-Ons */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4">{t("services.addons.title")}</h3>
-            <p className="text-gray-400">{t("services.addons.desc")}</p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {addons.map((addon, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-gray-800/50 border border-gray-700 rounded-full px-6 py-3 text-gray-300 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
-              >
-                {addon}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">

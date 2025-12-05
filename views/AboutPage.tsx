@@ -73,42 +73,45 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 shadow-[0_20px_80px_-30px_rgba(0,120,255,0.35)]">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  Cerita awal Vorca Studio
-                </div>
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
-                  Kami lahir untuk merapikan teknologi bisnis Anda
-                </h2>
-                <p className="text-slate-300/90 leading-relaxed mb-4">
-                  Vorca Studio bermula dari keresahan melihat produk digital yang sulit dirawat.
-                  Kami membangun tim inti yang terbiasa bekerja dekat dengan founder, memastikan
-                  keputusan teknis dan bisnis berjalan serarah sejak hari pertama.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                  {storyHighlights.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-3"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-sm font-semibold">
-                        {idx + 1}
-                      </div>
-                      <p className="text-slate-200/90 text-sm leading-relaxed">{item}</p>
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 lg:p-10 shadow-[0_20px_80px_-30px_rgba(0,120,255,0.35)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/0 to-cyan-500/10" />
+                <div className="absolute -right-16 -top-24 h-56 w-56 bg-cyan-500/20 blur-3xl" />
+
+                <div className="relative space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    Cerita awal Vorca Studio
+                  </div>
+
+                  <div className="space-y-3">
+                    <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white max-w-2xl">
+                      Kami lahir untuk merapikan teknologi bisnis Anda
+                    </h2>
+                    <div className="space-y-3 text-slate-300/90 leading-relaxed max-w-3xl">
+                      <p>
+                        Vorca Studio bermula dari keresahan melihat produk digital yang sulit dirawat.
+                        Kami membangun tim inti yang terbiasa bekerja dekat dengan founder.
+                      </p>
+                      <p>
+                        Dengan komunikasi yang rapat sejak hari pertama, keputusan teknis dan bisnis bisa
+                        berjalan serarah dan siap dipelihara jangka panjang.
+                      </p>
                     </div>
-                  ))}
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-200 text-sm border border-cyan-500/20">
-                    Product-minded engineering
-                  </span>
-                  <span className="px-4 py-2 rounded-full bg-white/10 text-white text-sm border border-white/10">
-                    Desain yang bisa di-scale
-                  </span>
-                  <span className="px-4 py-2 rounded-full bg-blue-500/15 text-blue-100 text-sm border border-blue-500/20">
-                    Shipping dengan rapi & cepat
-                  </span>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {storyHighlights.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-3"
+                      >
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-sm font-semibold">
+                          {idx + 1}
+                        </div>
+                        <p className="text-slate-200/90 text-sm leading-relaxed">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -149,27 +152,32 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative order-2 lg:order-1"
             >
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  Mengapa Orca?
-                </div>
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
-                  {t("about.whyOrca")}
-                </h2>
-                <div className="space-y-4 text-slate-300/90 leading-relaxed">
-                  <p>
-                    {t("about.whyOrca.desc1")}
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-slate-300/80 ml-2">
-                    <li>kami pelajari konteks bisnis,</li>
-                    <li>kami rancang arsitektur sistemnya,</li>
-                    <li>kami eksekusi secara fokus hingga siap dipakai.</li>
-                  </ul>
-                  <div className="pt-4">
-                    <p className="text-cyan-400 font-medium italic">
-                      "{t("about.mission")}"
+              <div className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 shadow-[0_20px_80px_-30px_rgba(0,120,255,0.35)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-cyan-500/10" />
+                <div className="absolute -left-10 -bottom-12 h-44 w-44 bg-blue-500/15 blur-3xl" />
+
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-sm text-cyan-300/90 mb-4">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    Mengapa Orca?
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
+                    {t("about.whyOrca")}
+                  </h2>
+                  <div className="space-y-4 text-slate-300/90 leading-relaxed">
+                    <p>
+                      {t("about.whyOrca.desc1")}
                     </p>
+                    <ul className="list-disc list-inside space-y-1 text-slate-300/80 ml-2">
+                      <li>kami pelajari konteks bisnis,</li>
+                      <li>kami rancang arsitektur sistemnya,</li>
+                      <li>kami eksekusi secara fokus hingga siap dipakai.</li>
+                    </ul>
+                    <div className="pt-4">
+                      <p className="text-cyan-400 font-medium italic">
+                        "{t("about.mission")}"
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
