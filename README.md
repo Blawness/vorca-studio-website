@@ -31,7 +31,7 @@ Vorca Studio is a modern web agency that helps businesses dominate the digital l
 
 ### Prerequisites
 - Node.js 18+ 
-- npm or yarn
+- Bun (https://bun.sh)
 - Encore CLI
 
 ### Installation
@@ -52,7 +52,7 @@ Vorca Studio is a modern web agency that helps businesses dominate the digital l
    # Backend dependencies are managed by Encore
    # Frontend dependencies
    cd frontend
-   npm install
+   bun install
    ```
 
 ### Environment Setup
@@ -87,7 +87,7 @@ Vorca Studio is a modern web agency that helps businesses dominate the digital l
 2. **Start the frontend** (in a new terminal)
    ```bash
    cd frontend
-   npm run dev
+   bun run dev
    ```
    The frontend will be available at `http://localhost:5173`
 
@@ -112,13 +112,13 @@ encore test ./backend/contact
 cd frontend
 
 # Run unit tests
-npm run test
+bun run test
 
 # Run tests in watch mode
-npm run test:watch
+bun run test:watch
 
 # Run tests with coverage
-npm run test:coverage
+bun run test:coverage
 ```
 
 ### End-to-End Testing
@@ -126,10 +126,10 @@ npm run test:coverage
 cd frontend
 
 # Run E2E tests
-npm run test:e2e
+bun run test:e2e
 
 # Run E2E tests in UI mode
-npm run test:e2e:ui
+bun run test:e2e:ui
 ```
 
 ## 🏗️ Building for Production
@@ -148,10 +148,10 @@ encore deploy
 cd frontend
 
 # Build for production
-npm run build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 ```
 
 ### Production Deployment
