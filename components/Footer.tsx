@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Linkedin, Github, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -14,9 +15,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                <span className="text-black font-bold text-sm">V</span>
-              </div>
+              <Image
+                src="/favicon.svg"
+                alt="Vorca Studio Logo"
+                width={32}
+                height={32}
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Vorca Studio
               </span>

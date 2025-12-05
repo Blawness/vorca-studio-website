@@ -104,7 +104,7 @@ export default function AboutPage() {
             >
               <div className="relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(0,140,255,0.3)]">
                 <img
-                  src="https://images.unsplash.com/photo-1669707355372-b2d1e31dc083?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://i.imgur.com/Zn2Ylgo.png"
                   alt="Orca whale swimming"
                   className="w-full h-80 lg:h-96 object-cover"
                 />
