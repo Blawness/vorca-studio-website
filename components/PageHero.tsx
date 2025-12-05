@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface PageHeroProps {
@@ -22,11 +21,7 @@ export function PageHero({ title, subtitle, children, className = "" }: PageHero
 
             {/* Content */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="animate-fadeInUp">
                     <div className="mb-6">
                         {typeof title === "string" ? (
                             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent pb-3">
@@ -44,7 +39,7 @@ export function PageHero({ title, subtitle, children, className = "" }: PageHero
                     )}
 
                     {children}
-                </motion.div>
+                </div>
             </div>
 
             {/* Bottom Fade Out */}
