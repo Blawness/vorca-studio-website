@@ -1,7 +1,7 @@
 import ArticlesPage from "@/views/ArticlesPage";
-import { getAllArticles } from "@/sanity/lib/fetch";
+import { getAllArticles } from "@/lib/articles";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export default async function Page() {
     const articles = await getAllArticles();

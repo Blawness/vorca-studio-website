@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
 import Link from "next/link";
-import type { Article } from "@/sanity/lib/fetch";
+import type { Article } from "@/lib/articles";
 
 interface ArticlesPageProps {
     articles: Article[];
