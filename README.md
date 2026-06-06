@@ -10,7 +10,7 @@ This repository is the marketing website and blog for Vorca Studio — a fully b
 
 ## Tech Stack
 
-- **Next.js 15** (App Router) + **React 19** + **TypeScript**
+- **Next.js 16** (App Router) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** + **shadcn/ui** (Radix UI primitives) + **Framer Motion**
 - **Sanity CMS** via `next-sanity`, with the Studio embedded at the `/studio` route
 - **TanStack Query** for client-side data fetching and caching
