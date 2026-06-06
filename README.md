@@ -4,17 +4,19 @@ A disruptive web agency inspired by the Orca (Killer Whale), representing intell
 
 ## About
 
-Vorca Studio is a modern web agency that helps businesses dominate the digital landscape through intelligent solutions and collaborative partnerships. Like the Orca that dominates the ocean through sophisticated strategies, we help brands master the digital world.
+Vorca Studio is a modern web agency that helps businesses dominate the digital landscape through intelligent solutions and collaborative partnerships.
 
-This repository is the marketing website and blog for Vorca Studio — a fully bilingual (Indonesian / English) Next.js application with an embedded Sanity CMS.
+This repository is the marketing website and blog for Vorca Studio — a fully bilingual (Indonesian / English) Next.js application with a self-hosted CMS powered by `@blawness/admin-kit`.
 
 ## Tech Stack
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** + **shadcn/ui** (Radix UI primitives) + **Framer Motion**
-- **Sanity CMS** via `next-sanity`, with the Studio embedded at the `/studio` route
-- **TanStack Query** for client-side data fetching and caching
-- **Resend** for transactional email from the contact form (`app/api/contact/route.ts`)
+- **@blawness/admin-kit** — self-hosted CMS (Postgres + Drizzle ORM, NextAuth v5, Tiptap editor, Cloudflare R2 media)
+- **Neon Serverless Postgres** via Vercel Marketplace
+- **Cloudflare R2** for media storage
+- **TanStack Query** for client-side data fetching
+- **Resend** for transactional email from the contact form
 - **pnpm** as the package manager
 - Deployed on **Vercel**
 
@@ -43,12 +45,28 @@ This repository is the marketing website and blog for Vorca Studio — a fully b
    cp .env.example .env.local
    ```
 
-   | Variable           | Purpose                                                            |
-   | ------------------ | ------------------------------------------------------------------ |
-   | `SANITY_API_TOKEN` | Write token for importing/updating content (Sanity > API > Tokens) |
-   | `RESEND_API_KEY`   | Sends the contact form email via `/api/contact`                    |
+   | Variable | Purpose |
+   |---|---|
+   | `DATABASE_URL` | Neon Postgres connection string |
+   | `AUTH_SECRET` | Random 32-byte secret for NextAuth v5 (`openssl rand -base64 32`) |
+   | `R2_BUCKET` | Cloudflare R2 bucket name |
+   | `R2_PUBLIC_URL` | Public base URL of the R2 bucket |
+   | `R2_ACCESS_KEY_ID` | R2 access key |
+   | `R2_SECRET_ACCESS_KEY` | R2 secret key |
+   | `R2_ENDPOINT` | R2 endpoint URL |
+   | `RESEND_API_KEY` | Sends the contact form email |
 
-4. **Run the dev server**
+4. **Run DB migrations**
+   ```bash
+   pnpm db:migrate
+   ```
+
+5. **Seed the admin user**
+   ```bash
+   ADMIN_PASSWORD=<secret> pnpm seed:admin
+   ```
+
+6. **Run the dev server**
    ```bash
    pnpm dev
    ```
@@ -60,118 +78,79 @@ This repository is the marketing website and blog for Vorca Studio — a fully b
 - `pnpm build` — create a production build
 - `pnpm start` — serve the production build
 - `pnpm lint` — run Next.js linting
-- `pnpm test:e2e` — run the Playwright end-to-end tests
-- `pnpm test:e2e:ui` — run the E2E tests in Playwright's UI mode
+- `pnpm db:generate` — generate Drizzle migration SQL
+- `pnpm db:migrate` — apply migrations to the DB
+- `pnpm db:studio` — open Drizzle Studio
+- `pnpm seed:admin` — create/update the admin user
+- `pnpm backfill:covers` — migrate article cover images from Sanity CDN to R2
+- `pnpm test:e2e` — run Playwright end-to-end tests
+- `pnpm test:e2e:ui` — run E2E tests in Playwright UI mode
 - `pnpm test:e2e:report` — open the last HTML test report
 
-## End-to-End Tests
+## Admin Panel
 
-Guest-facing flows are covered by Playwright specs in `e2e/`: navigation,
-the bilingual language toggle, homepage CTAs, the contact form (validation +
-submission), and the blog listing/detail pages.
+The CMS admin area is at `/admin`. Login with the credentials created by `pnpm seed:admin`.
+
+- **Dashboard** — overview
+- **Artikel** — create/edit/publish/delete blog articles (Tiptap rich text editor, R2 cover upload)
+- **Media** — upload and manage media files
+- **Users** — manage admin/editor users
+
+## End-to-End Tests
 
 ```bash
 pnpm exec playwright install chromium   # one-time browser download
 pnpm test:e2e
 ```
 
-By default Playwright boots its own dev server. To test an already-running
-instance (e.g. a preview URL), set `PLAYWRIGHT_BASE_URL`:
-
-```bash
-PLAYWRIGHT_BASE_URL=https://your-preview.vercel.app pnpm test:e2e
-```
-
-## Sanity CMS
-
-The Sanity Studio is embedded in the app and served at:
-
-```
-http://localhost:3000/studio
-```
-
-- Schemas live in `sanity/schemas/`.
-- Client, queries, and image helpers live in `sanity/lib/`.
-- Studio configuration (project id, dataset, base path) is in `sanity.config.ts`.
-
-To bulk-import content into Sanity, use the import script (requires `SANITY_API_TOKEN`):
-
-```bash
-pnpm tsx scripts/import-to-sanity.ts
-```
-
 ## Project Structure
 
 ```
 vorca-studio-website/
-├── app/                      # Next.js App Router routes
-│   ├── api/contact/          # Contact form endpoint (Resend)
-│   ├── articles/             # Blog listing & detail routes
-│   ├── studio/               # Embedded Sanity Studio (/studio)
-│   ├── about/  contact/  portfolio/  services/  students/
-│   ├── layout.tsx            # Root layout
-│   └── globals.css           # Global styles (Tailwind v4)
-├── views/                    # Page-level components rendered by routes
-├── components/               # Shared components
-│   ├── ui/                   # shadcn/ui primitives
-│   └── blog/                 # Blog-specific components
-├── contexts/                 # React contexts (e.g. LanguageContext)
-├── lib/                      # Utilities
-├── sanity/                   # Sanity client, queries, schemas
-│   ├── lib/
-│   └── schemas/
-├── scripts/import-to-sanity.ts
-├── sanity.config.ts          # Sanity Studio config
-└── vercel.json               # Vercel build/install commands
+├── app/
+│   ├── (admin)/admin/       # Admin area (auth-protected)
+│   │   ├── layout.tsx       # Shell + sidebar
+│   │   ├── articles/        # Article CRUD
+│   │   ├── media/           # Media library
+│   │   ├── users/           # User management
+│   │   └── login/           # Login screen
+│   ├── api/
+│   │   ├── auth/            # NextAuth v5 handler
+│   │   └── contact/         # Contact form (Resend)
+│   ├── articles/            # Public blog listing + detail
+│   └── [other routes]/
+├── db/
+│   ├── index.ts             # Drizzle client
+│   ├── schema.ts            # users + media + articles tables
+│   └── migrations/          # Generated SQL migrations
+├── lib/
+│   └── articles.ts          # Public read layer (Drizzle)
+├── views/                   # Page-level components
+├── components/              # Shared components
+├── scripts/
+│   ├── seed-admin.ts        # Create first admin user
+│   └── backfill-covers-to-r2.ts  # Migrate cover images to R2
+├── drizzle.config.ts
+└── vercel.json
 ```
 
 ## Internationalization
 
-The site is fully bilingual:
-
-- **Indonesian (id)** — default language
-- **English (en)** — secondary language
-
-Language state is managed by `contexts/LanguageContext.tsx`, with switching available in the header.
-
-## Contact Form
-
-The contact form posts to `app/api/contact/route.ts`, which sends an email notification through the Resend API. Both the client and the API route validate input.
+Fully bilingual: Indonesian (default) and English. Language state managed by `contexts/LanguageContext.tsx`.
 
 ## Design System
 
-### Colors
 - **Primary**: Cyan (#06b6d4) and Blue (#2563eb)
-- **Background**: Black (#000000) and gray variations
+- **Background**: Black (#000000) and gray
 - **Text**: White and gray variations
-
-### Typography
-- **Headings**: Bold with gradient text effects
-- **Body**: Clean, readable fonts
-- **Accent**: Cyan highlights
-
-### Components
-- **Cards**: Gradient backgrounds with hover effects
-- **Buttons**: Gradient primary buttons with shadows
-- **Animations**: Smooth transitions with Framer Motion
 
 ## Deployment
 
-The site is deployed on **Vercel**. Build and install commands are defined in `vercel.json`:
-
-```json
-{
-  "framework": "nextjs",
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm run build"
-}
-```
-
-Set `SANITY_API_TOKEN` and `RESEND_API_KEY` in the Vercel project's environment variables before deploying.
+Deployed on **Vercel**. Build commands in `vercel.json`. Set all env vars from `.env.example` in Vercel project settings. Run `pnpm db:migrate` as a build step or manually after provisioning Neon.
 
 ## License
 
-This project is proprietary software. All rights reserved.
+Proprietary. All rights reserved.
 
 ---
 
