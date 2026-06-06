@@ -60,6 +60,27 @@ This repository is the marketing website and blog for Vorca Studio — a fully b
 - `pnpm build` — create a production build
 - `pnpm start` — serve the production build
 - `pnpm lint` — run Next.js linting
+- `pnpm test:e2e` — run the Playwright end-to-end tests
+- `pnpm test:e2e:ui` — run the E2E tests in Playwright's UI mode
+- `pnpm test:e2e:report` — open the last HTML test report
+
+## End-to-End Tests
+
+Guest-facing flows are covered by Playwright specs in `e2e/`: navigation,
+the bilingual language toggle, homepage CTAs, the contact form (validation +
+submission), and the blog listing/detail pages.
+
+```bash
+pnpm exec playwright install chromium   # one-time browser download
+pnpm test:e2e
+```
+
+By default Playwright boots its own dev server. To test an already-running
+instance (e.g. a preview URL), set `PLAYWRIGHT_BASE_URL`:
+
+```bash
+PLAYWRIGHT_BASE_URL=https://your-preview.vercel.app pnpm test:e2e
+```
 
 ## Sanity CMS
 
