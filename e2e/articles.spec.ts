@@ -22,9 +22,13 @@ test.describe("articles", () => {
     await page.goto("/articles");
 
     const articleLinks = page.locator('a[href^="/articles/"]');
-    test.skip((await articleLinks.count()) === 0, "No articles published in Postgres to open.");
-
     const href = await articleLinks.first().getAttribute("href");
+
+    if (!href) {
+        throw new Error(
+            "No article links found on /articles. Ensure DATABASE_URL is set and the DB has published articles.",
+        );
+    }
 
     // domcontentloaded avoids blocking on external (Unsplash) article images.
     await page.goto(href!, { waitUntil: "domcontentloaded" });
