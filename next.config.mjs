@@ -1,14 +1,17 @@
+const r2Host = process.env.R2_PUBLIC_URL
+    ? new URL(process.env.R2_PUBLIC_URL).hostname
+    : null;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Enable React strict mode
     reactStrictMode: true,
-
-    // admin-kit ships source that must be transpiled by the consumer.
     transpilePackages: ["@blawness/admin-kit"],
-
-    // Image optimization for external domains (if needed)
     images: {
-        remotePatterns: [],
+        remotePatterns: [
+            ...(r2Host
+                ? [{ protocol: "https", hostname: r2Host }]
+                : []),
+        ],
     },
 };
 
