@@ -2,203 +2,127 @@
 
 A disruptive web agency inspired by the Orca (Killer Whale), representing intelligence, power, and precision in digital solutions.
 
-## 🌊 About
+## About
 
 Vorca Studio is a modern web agency that helps businesses dominate the digital landscape through intelligent solutions and collaborative partnerships. Like the Orca that dominates the ocean through sophisticated strategies, we help brands master the digital world.
 
-### Core Services
-- **Web Development**: Modern, responsive, high-performance websites
-- **UI/UX Design**: Intuitive and engaging interface design
-- **Branding**: Strong and memorable brand identity
-- **Student Services**: Affordable college assignment help
+This repository is the marketing website and blog for Vorca Studio — a fully bilingual (Indonesian / English) Next.js application with an embedded Sanity CMS.
 
-## 🚀 Tech Stack
+## Tech Stack
 
-### Backend
-- **Encore.ts**: TypeScript backend framework
-- **PostgreSQL**: Database with SQL migrations
-- **Resend**: Email service integration
+- **Next.js 15** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS v4** + **shadcn/ui** (Radix UI primitives) + **Framer Motion**
+- **Sanity CMS** via `next-sanity`, with the Studio embedded at the `/studio` route
+- **TanStack Query** for client-side data fetching and caching
+- **Resend** for transactional email from the contact form (`app/api/contact/route.ts`)
+- **pnpm** as the package manager
+- Deployed on **Vercel**
 
-### Frontend
-- **React 18**: Modern React with TypeScript
-- **Tailwind CSS v4**: Utility-first CSS framework
-- **Framer Motion**: Animation library
-- **shadcn/ui**: Component library
-- **React Router**: Client-side routing
-- **TanStack Query**: Data fetching and caching
+## Prerequisites
 
-## 🛠️ Development Setup
+- **Node.js 20** (see `engines` in `package.json`)
+- **pnpm** (`npm i -g pnpm`, or enable via `corepack`)
 
-### Prerequisites
-- Node.js 18+ 
-- Bun (https://bun.sh)
-- Encore CLI
-
-### Installation
+## Getting Started
 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd vorca-studio
+   cd vorca-studio-website
    ```
 
-2. **Install Encore CLI** (if not already installed)
+2. **Install dependencies**
    ```bash
-   curl -L https://encore.dev/install.sh | bash
+   pnpm install
    ```
 
-3. **Install dependencies**
+3. **Set up environment variables**
+
+   Copy the example file and fill in the values:
    ```bash
-   # Backend dependencies are managed by Encore
-   # Frontend dependencies
-   cd frontend
-   bun install
+   cp .env.example .env.local
    ```
 
-### Environment Setup
+   | Variable           | Purpose                                                            |
+   | ------------------ | ------------------------------------------------------------------ |
+   | `SANITY_API_TOKEN` | Write token for importing/updating content (Sanity > API > Tokens) |
+   | `RESEND_API_KEY`   | Sends the contact form email via `/api/contact`                    |
 
-1. **Backend Secrets**
-   Configure secrets in the Encore dashboard or locally:
+4. **Run the dev server**
    ```bash
-   encore secret set --type local ResendApiKey your-resend-api-key
+   pnpm dev
    ```
+   The site is available at http://localhost:3000.
 
-2. **Frontend Configuration**
-   Update `frontend/config.ts` with your configuration:
-   ```typescript
-   export const contactEmail = "your-email@domain.com";
-   export const socialLinks = {
-     instagram: "your-instagram-url",
-     linkedin: "your-linkedin-url",
-     github: "your-github-url",
-   };
-   ```
+## Available Scripts
 
-## 🏃‍♂️ Running the Application
+- `pnpm dev` — start the development server
+- `pnpm build` — create a production build
+- `pnpm start` — serve the production build
+- `pnpm lint` — run Next.js linting
 
-### Development Mode
+## Sanity CMS
 
-1. **Start the backend**
-   ```bash
-   encore run
-   ```
-   The backend will be available at `http://localhost:4000`
+The Sanity Studio is embedded in the app and served at:
 
-2. **Start the frontend** (in a new terminal)
-   ```bash
-   cd frontend
-   bun run dev
-   ```
-   The frontend will be available at `http://localhost:5173`
+```
+http://localhost:3000/studio
+```
 
-### Development URLs
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:4000
-- **Encore Dashboard**: http://localhost:9400
+- Schemas live in `sanity/schemas/`.
+- Client, queries, and image helpers live in `sanity/lib/`.
+- Studio configuration (project id, dataset, base path) is in `sanity.config.ts`.
 
-## 🧪 Testing
+To bulk-import content into Sanity, use the import script (requires `SANITY_API_TOKEN`):
 
-### Backend Testing
 ```bash
-# Run backend tests
-encore test
-
-# Run specific service tests
-encore test ./backend/contact
+pnpm tsx scripts/import-to-sanity.ts
 ```
 
-### Frontend Testing
-```bash
-cd frontend
-
-# Run unit tests
-bun run test
-
-# Run tests in watch mode
-bun run test:watch
-
-# Run tests with coverage
-bun run test:coverage
-```
-
-### End-to-End Testing
-```bash
-cd frontend
-
-# Run E2E tests
-bun run test:e2e
-
-# Run E2E tests in UI mode
-bun run test:e2e:ui
-```
-
-## 🏗️ Building for Production
-
-### Backend Build
-```bash
-# Build backend for production
-encore build
-
-# Deploy to Encore Cloud
-encore deploy
-```
-
-### Frontend Build
-```bash
-cd frontend
-
-# Build for production
-bun run build
-
-# Preview production build
-bun run preview
-```
-
-### Production Deployment
-
-1. **Backend Deployment**
-   ```bash
-   # Deploy to production environment
-   encore deploy --env production
-   ```
-
-2. **Frontend Deployment**
-   The frontend can be deployed to any static hosting service:
-   - Vercel
-   - Netlify
-   - AWS S3 + CloudFront
-   - GitHub Pages
-
-   Build the frontend and upload the `dist` folder to your hosting service.
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-vorca-studio/
-├── backend/                 # Encore.ts backend
-│   └── contact/            # Contact service
-│       ├── encore.service.ts
-│       ├── submit.ts       # Contact form API
-│       ├── email.ts        # Email functionality
-│       ├── db.ts          # Database connection
-│       └── migrations/     # SQL migrations
-├── frontend/               # React frontend
-│   ├── App.tsx            # Main app component
-│   ├── config.ts          # Configuration
-│   ├── contexts/          # React contexts
-│   ├── components/        # Reusable components
-│   ├── pages/            # Page components
-│   └── index.css         # Global styles
-├── agents.md             # AI agent documentation
-└── README.md            # This file
+vorca-studio-website/
+├── app/                      # Next.js App Router routes
+│   ├── api/contact/          # Contact form endpoint (Resend)
+│   ├── articles/             # Blog listing & detail routes
+│   ├── studio/               # Embedded Sanity Studio (/studio)
+│   ├── about/  contact/  portfolio/  services/  students/
+│   ├── layout.tsx            # Root layout
+│   └── globals.css           # Global styles (Tailwind v4)
+├── views/                    # Page-level components rendered by routes
+├── components/               # Shared components
+│   ├── ui/                   # shadcn/ui primitives
+│   └── blog/                 # Blog-specific components
+├── contexts/                 # React contexts (e.g. LanguageContext)
+├── lib/                      # Utilities
+├── sanity/                   # Sanity client, queries, schemas
+│   ├── lib/
+│   └── schemas/
+├── scripts/import-to-sanity.ts
+├── sanity.config.ts          # Sanity Studio config
+└── vercel.json               # Vercel build/install commands
 ```
 
-## 🎨 Design System
+## Internationalization
+
+The site is fully bilingual:
+
+- **Indonesian (id)** — default language
+- **English (en)** — secondary language
+
+Language state is managed by `contexts/LanguageContext.tsx`, with switching available in the header.
+
+## Contact Form
+
+The contact form posts to `app/api/contact/route.ts`, which sends an email notification through the Resend API. Both the client and the API route validate input.
+
+## Design System
 
 ### Colors
 - **Primary**: Cyan (#06b6d4) and Blue (#2563eb)
-- **Background**: Black (#000000) and Gray variations
-- **Text**: White and Gray variations
+- **Background**: Black (#000000) and gray variations
+- **Text**: White and gray variations
 
 ### Typography
 - **Headings**: Bold with gradient text effects
@@ -210,86 +134,24 @@ vorca-studio/
 - **Buttons**: Gradient primary buttons with shadows
 - **Animations**: Smooth transitions with Framer Motion
 
-## 🌐 Internationalization
+## Deployment
 
-The application supports multiple languages:
-- **Indonesian (id)**: Default language
-- **English (en)**: Secondary language
+The site is deployed on **Vercel**. Build and install commands are defined in `vercel.json`:
 
-Language switching is available in the header navigation.
+```json
+{
+  "framework": "nextjs",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build"
+}
+```
 
-## 📧 Contact Form Integration
+Set `SANITY_API_TOKEN` and `RESEND_API_KEY` in the Vercel project's environment variables before deploying.
 
-The contact form integrates with:
-- **Database**: Stores all submissions in PostgreSQL
-- **Email**: Sends notifications via Resend API
-- **Validation**: Client and server-side validation
-- **Multi-language**: Supports Indonesian and English
-
-## 🔧 Configuration
-
-### Backend Configuration
-- Secrets managed through Encore.ts
-- Database migrations in `backend/contact/migrations/`
-- API endpoints documented in code
-
-### Frontend Configuration
-- Configuration in `frontend/config.ts`
-- Environment-specific settings
-- Social media links and contact information
-
-## 📚 Documentation
-
-- **API Documentation**: Available in Encore dashboard
-- **Component Documentation**: Inline code comments
-- **Brand Guidelines**: See `agents.md`
-- **Development Guide**: This README
-
-## 🤝 Contributing
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Follow the brand guidelines** in `agents.md`
-4. **Write tests** for new functionality
-5. **Commit changes**: `git commit -m 'Add amazing feature'`
-6. **Push to branch**: `git push origin feature/amazing-feature`
-7. **Open a Pull Request**
-
-### Code Style
-- Use TypeScript for all new code
-- Follow the existing component patterns
-- Maintain responsive design
-- Include proper error handling
-- Write meaningful commit messages
-
-## 📄 License
+## License
 
 This project is proprietary software. All rights reserved.
 
-## 🆘 Support
-
-For support and questions:
-- **Email**: marketing@vorcastudio.com
-- **Documentation**: See `agents.md` for detailed guidelines
-- **Issues**: Create an issue in the repository
-
-## 🚀 Deployment Environments
-
-### Development
-- **Backend**: http://localhost:4000
-- **Frontend**: http://localhost:5173
-- **Database**: Local PostgreSQL via Encore
-
-### Staging
-- **Backend**: Encore staging environment
-- **Frontend**: Staging deployment URL
-- **Database**: Staging PostgreSQL
-
-### Production
-- **Backend**: Encore production environment
-- **Frontend**: Production deployment URL
-- **Database**: Production PostgreSQL
-
 ---
 
-**Vorca Studio** - Smart. Sleek. Deep Impact. 🌊
+**Vorca Studio** — Smart. Sleek. Deep Impact.
