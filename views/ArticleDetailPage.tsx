@@ -1,12 +1,10 @@
 "use client";
 
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import type { Article } from "@/sanity/lib/fetch";
+import type { Article } from "@/lib/articles";
 
 // Import blog components
 import {
@@ -15,28 +13,27 @@ import {
     ArticleTOC,
     TagList,
     ShareSection,
-    extractHeadings,
 } from "@/components/blog";
+import type { TOCHeading } from "@/components/blog";
 
 interface ArticleDetailPageProps {
-    article: Article | null;
+    article: Article;
+    contentHtml: string;
+    headings: TOCHeading[];
     relatedArticles: Article[];
 }
 
-export default function ArticleDetailPage({ article, relatedArticles }: ArticleDetailPageProps) {
+export default function ArticleDetailPage({
+    article,
+    contentHtml,
+    headings,
+    relatedArticles,
+}: ArticleDetailPageProps) {
     const { language } = useLanguage();
 
-    if (!article) {
-        notFound();
-    }
-
     // Article content (Indonesian only)
-    const content = article.content;
     const title = article.title;
     const excerpt = article.excerpt;
-
-    // Extract headings for TOC
-    const headings = useMemo(() => extractHeadings(content || ""), [content]);
 
     return (
         <div className="pt-16 bg-black min-h-screen">
@@ -69,7 +66,7 @@ export default function ArticleDetailPage({ article, relatedArticles }: ArticleD
                         <div className="flex gap-10">
                             {/* Main Content */}
                             <article className="flex-1 max-w-3xl">
-                                <ArticleBody content={content || ""} language={language} />
+                                <ArticleBody content={contentHtml} language={language} />
 
                                 {/* Divider */}
                                 <div className="mt-14 pt-8 border-t border-gray-800">

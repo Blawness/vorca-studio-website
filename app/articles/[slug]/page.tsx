@@ -1,8 +1,10 @@
 import ArticleDetailPage from "@/views/ArticleDetailPage";
-import { getArticleBySlug, getAllArticles, getAllSlugs } from "@/sanity/lib/fetch";
+import { buildArticleHtml, extractHeadingsFromHtml } from "@/lib/article-html";
+import { getArticleBySlug, getAllArticles, getAllSlugs } from "@/lib/articles";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -49,22 +51,30 @@ export default async function Page({ params }: PageProps) {
     const { slug } = await params;
     const article = await getArticleBySlug(slug);
 
+    if (!article) notFound();
+
+    const contentHtml = buildArticleHtml(article.content);
+    const headings = extractHeadingsFromHtml(contentHtml);
+
     // Get related articles (same category)
     let relatedArticles: Awaited<ReturnType<typeof getAllArticles>> = [];
-    if (article) {
-        const allArticles = await getAllArticles();
-        relatedArticles = allArticles
-            .filter((a) => a.category === article.category && a.id !== article.id)
-            .slice(0, 3);
-    }
+    const allArticles = await getAllArticles();
+    relatedArticles = allArticles
+        .filter((a) => a.category === article.category && a.id !== article.id)
+        .slice(0, 3);
 
-    return <ArticleDetailPage article={article} relatedArticles={relatedArticles} />;
+    return (
+        <ArticleDetailPage
+            article={article}
+            contentHtml={contentHtml}
+            headings={headings}
+            relatedArticles={relatedArticles}
+        />
+    );
 }
 
 // Generate static params for all articles
 export async function generateStaticParams() {
     const slugs = await getAllSlugs();
-    return slugs.map((item) => ({
-        slug: item.slug,
-    }));
+    return slugs.map((slug) => ({ slug }));
 }
