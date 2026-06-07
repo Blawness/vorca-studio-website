@@ -3,8 +3,6 @@ import { articles } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
 import { unstable_cache } from "next/cache";
 
-const FALLBACK_ARTICLE_IMAGE = "/icon-512x512.png";
-
 export type Article = {
     id: number;
     slug: string;
@@ -26,7 +24,7 @@ function mapRow(row: typeof articles.$inferSelect): Article {
         title: row.title,
         excerpt: row.excerpt,
         content: row.content,
-        image: row.coverImageUrl ?? FALLBACK_ARTICLE_IMAGE,
+        image: row.coverImageUrl?.trim() ? row.coverImageUrl : "",
         category: row.category,
         author: row.author,
         date: row.publishedAt?.toISOString() ?? row.createdAt.toISOString(),

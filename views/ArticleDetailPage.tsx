@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
+import ArticleCover from "@/components/ArticleCover";
 import type { Article } from "@/lib/articles";
 
 // Import blog components
@@ -114,10 +115,10 @@ export default function ArticleDetailPage({
                                     <Link href={`/articles/${related.slug}`}>
                                         <div className="group bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/30 hover:bg-gray-800 transition-all duration-300">
                                             <div className="h-40 overflow-hidden">
-                                                <img
+                                                <ArticleCover
                                                     src={related.image}
                                                     alt={related.title}
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    seed={related.slug}
                                                 />
                                             </div>
                                             <div className="p-5">

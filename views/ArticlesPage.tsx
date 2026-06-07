@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
+import ArticleCover from "@/components/ArticleCover";
 import Link from "next/link";
 import type { Article } from "@/lib/articles";
 
@@ -121,10 +122,10 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                 <Card className="group bg-white/[0.02] border border-white/[0.06] rounded-xl overflow-hidden hover:border-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-lg shadow-blue-600/20">
                                     <div className="grid md:grid-cols-2 gap-0">
                                         <div className="relative h-64 md:h-full min-h-[300px] overflow-hidden">
-                                            <img
+                                            <ArticleCover
                                                 src={articles[0].image}
                                                 alt={articles[0].title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                seed={articles[0].slug}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#050b16]/80 md:block hidden" />
                                             <div className="absolute top-4 left-4">
@@ -206,10 +207,10 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
                                 <Link href={`/articles/${article.slug}`}>
                                     <Card className="group h-full bg-white/[0.02] border border-white/[0.06] rounded-xl overflow-hidden hover:border-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-lg shadow-blue-600/20">
                                         <div className="relative h-48 overflow-hidden">
-                                            <img
+                                            <ArticleCover
                                                 src={article.image}
                                                 alt={article.title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                seed={article.slug}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#050b16] via-transparent to-transparent" />
                                         </div>

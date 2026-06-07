@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import ArticleCover from "@/components/ArticleCover";
 import Link from "next/link";
 
 interface ArticleHeroProps {
@@ -127,12 +128,8 @@ export default function ArticleHero({
                     {/* Subtle overlay/glow behind */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-white/5">
-                        <img
-                            src={image}
-                            alt={title}
-                            className="w-full h-64 md:h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                        />
+                    <div className="relative h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-white/5">
+                        <ArticleCover src={image} alt={title} seed={title} />
                     </div>
                 </motion.div>
             </section>
