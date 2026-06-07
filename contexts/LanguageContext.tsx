@@ -23,10 +23,16 @@ const translations = {
 
     // Hero
     "hero.title": "Build Modern Web Apps. End-to-End.",
-    "hero.subtitle": "Kami mengembangkan website dan aplikasi berbasis web yang cepat, scalable, dan siap digunakan untuk kebutuhan operasional bisnis Anda.",
     "hero.description": "Dari frontend, backend, hingga database, semuanya ditangani secara menyeluruh dan terstruktur.",
     "hero.cta": "Mulai Proyek",
     "hero.consultation": "Jadwalkan Konsultasi",
+    "hero.label": "WEB DEVELOPMENT STUDIO",
+    "hero.headline": "Membangun Web, Menggerakkan Bisnis Anda.",
+    "hero.subtitle": "Vorca Studio membantu bisnis dan startup di Indonesia hadir secara digital dengan website yang modern, cepat, dan berdampak.",
+    "hero.feature1": "Performa Cepat & Optimal",
+    "hero.feature2": "Desain Modern & Responsif",
+    "hero.feature3": "Aman, Stabil & Terpercaya",
+    "hero.cta.dm": "DM @vorcastudio untuk konsultasi",
 
     // Value Pillars
     "valuePillars.fullStack.title": "Full-Stack Development",
@@ -41,6 +47,7 @@ const translations = {
     "services.subtitle": "Fokus pada solusi pengembangan web modern dan aplikasi berbasis web yang scalable.",
 
     // Core Services Pillar
+    "services.core.label": "LAYANAN INTI",
     "services.core.title": "Layanan Inti (Core Services)",
     "services.core.desc": "Layanan utama yang membentuk fondasi teknologi digital klien.",
 
@@ -85,10 +92,38 @@ const translations = {
     "services.addons.list": "SEO Basic Setup, Analytics Setup, Deployment VPS/Cloud, Integrasi API tambahan",
 
     "services.cta.discuss": "Diskusikan Proyek Anda",
+    "services.label": "LAYANAN KAMI",
+    "services.headline": "Solusi Digital yang Sesuai Kebutuhan Anda",
+    "services.description": "Kami fokus pada 3 layanan utama untuk membantu bisnis Anda tampil profesional dan berkembang di dunia digital.",
+    "services.landing.title": "Landing Page",
+    "services.landing.desc": "Halaman landing yang dirancang untuk konversi tinggi dan kampanye yang efektif.",
+    "services.company.title": "Company Profile",
+    "services.company.desc": "Website company profile yang membangun kredibilitas dan meningkatkan kepercayaan.",
+    "services.webapp.title": "Custom Web App",
+    "services.webapp.desc": "Aplikasi web custom yang disesuaikan dengan proses bisnis dan kebutuhan Anda.",
+
+    // Process
+    "process.label": "PROSES KERJA",
+    "process.headline": "Proses Jelas, Hasil Berkualitas",
+    "process.step1.title": "Diskusi",
+    "process.step1.desc": "Kita bahas kebutuhan, tujuan, dan solusi terbaik untuk project Anda.",
+    "process.step2.title": "Perancangan",
+    "process.step2.desc": "Wireframe & UI/UX dirancang untuk pengalaman terbaik.",
+    "process.step3.title": "Pengembangan",
+    "process.step3.desc": "Website dibangun dengan kode yang clean, cepat, dan scalable.",
+    "process.step4.title": "Testing & Launch",
+    "process.step4.desc": "Pengujian menyeluruh sebelum website siap digunakan.",
 
     // Tech Stack
     "techStack.title": "Tech Stack Kami",
     "techStack.description": "Teknologi yang kami gunakan berfokus pada performa, maintainability, dan skalabilitas.",
+    "tech.label": "TEKNOLOGI KAMI",
+    "tech.headline": "Modern Tech Stack Untuk Hasil Terbaik",
+    "tech.nextjs.label": "React Framework",
+    "tech.typescript.label": "Type Safety",
+    "tech.tailwind.label": "Utility First CSS",
+    "tech.vercel.label": "Deployment",
+    "tech.supabase.label": "Database (Opsional)",
 
     // System Types
     "systemTypes.title": "Jenis Sistem yang Bisa Kami Bangun",
@@ -112,8 +147,9 @@ const translations = {
 
     // CTA Footer
     "cta.title": "Siap membangun aplikasi web yang benar-benar dipakai tim Anda?",
-    "cta.description": "Ayo diskusi, dan kami bantu merancang arsitektur yang paling efisien untuk kebutuhan bisnis Anda.",
     "cta.button": "Konsultasi Gratis",
+    "cta.headline": "Siap Membawa Bisnis Anda ke Level Berikutnya?",
+    "cta.description": "Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhan Anda dan kami bantu rancang solusi digital yang tepat.",
 
     // About
     "about.title": "Tentang Vorca Studio",
@@ -174,6 +210,10 @@ const translations = {
     "students.readyToAce": "Siap Mulai?",
     "students.readyToAce.desc": "Hubungi kami sekarang",
     "students.startFreeConsultation": "Mulai Konsultasi",
+    "students.benefits.label": "KEUNGGULAN",
+    "students.pricing.label": "LAYANAN & HARGA",
+    "students.process.label": "CARA KERJA",
+    "students.faq.label": "FAQ",
 
     // Footer
     "footer.description": "Agency web disruptif yang terinspirasi oleh Orca",
@@ -233,6 +273,12 @@ const translations = {
     "portfolio.readyToCreate": "Siap Berkarya?",
     "portfolio.readyToCreate.desc": "Wujudkan visi Anda.",
     "portfolio.startYourProject": "Mulai Proyek",
+    "portfolio.label": "PORTFOLIO KAMI",
+    "portfolio.headline": "Karya Terbaru Kami",
+    "portfolio.viewAll": "Lihat Semua Portfolio",
+    "portfolio.viewDetail": "Lihat Detail",
+    "portfolio.categories": "KATEGORI",
+    "portfolio.projects": "PROYEK",
   },
   en: {
     // Navigation
@@ -246,10 +292,16 @@ const translations = {
 
     // Hero
     "hero.title": "Build Modern Web Apps. End-to-End.",
-    "hero.subtitle": "We develop fast, scalable web applications and websites ready for your business operational needs.",
     "hero.description": "From frontend, backend, to database, everything is handled thoroughly and structured.",
     "hero.cta": "Start Project",
     "hero.consultation": "Schedule Consultation",
+    "hero.label": "WEB DEVELOPMENT STUDIO",
+    "hero.headline": "Building Websites, Driving Your Business.",
+    "hero.subtitle": "Vorca Studio helps businesses and startups in Indonesia establish a digital presence with modern, fast, and impactful websites.",
+    "hero.feature1": "Fast & Optimal Performance",
+    "hero.feature2": "Modern & Responsive Design",
+    "hero.feature3": "Secure, Stable & Reliable",
+    "hero.cta.dm": "DM @vorcastudio for consultation",
 
     // Value Pillars
     "valuePillars.fullStack.title": "Full-Stack Development",
@@ -264,6 +316,7 @@ const translations = {
     "services.subtitle": "Focus on modern web development solutions and scalable web-based applications.",
 
     // Core Services Pillar
+    "services.core.label": "CORE SERVICES",
     "services.core.title": "Core Services",
     "services.core.desc": "Main services that form the digital technology foundation for clients.",
 
@@ -308,10 +361,38 @@ const translations = {
     "services.addons.list": "SEO Basic Setup, Analytics Setup, VPS/Cloud Deployment, Additional API Integration",
 
     "services.cta.discuss": "Discuss Your Project",
+    "services.label": "OUR SERVICES",
+    "services.headline": "Digital Solutions Tailored to Your Needs",
+    "services.description": "We focus on 3 core services to help your business look professional and grow in the digital world.",
+    "services.landing.title": "Landing Page",
+    "services.landing.desc": "Landing pages designed for high conversion and effective campaigns.",
+    "services.company.title": "Company Profile",
+    "services.company.desc": "Company profile websites that build credibility and increase trust.",
+    "services.webapp.title": "Custom Web App",
+    "services.webapp.desc": "Custom web applications tailored to your business processes and needs.",
+
+    // Process
+    "process.label": "OUR PROCESS",
+    "process.headline": "Clear Process, Quality Results",
+    "process.step1.title": "Discussion",
+    "process.step1.desc": "We discuss your needs, goals, and the best solution for your project.",
+    "process.step2.title": "Design",
+    "process.step2.desc": "Wireframes & UI/UX designed for the best experience.",
+    "process.step3.title": "Development",
+    "process.step3.desc": "Website built with clean, fast, and scalable code.",
+    "process.step4.title": "Testing & Launch",
+    "process.step4.desc": "Thorough testing before the website is ready to use.",
 
     // Tech Stack
     "techStack.title": "Our Tech Stack",
     "techStack.description": "Technologies we use focus on performance, maintainability, and scalability.",
+    "tech.label": "OUR TECHNOLOGY",
+    "tech.headline": "Modern Tech Stack For Best Results",
+    "tech.nextjs.label": "React Framework",
+    "tech.typescript.label": "Type Safety",
+    "tech.tailwind.label": "Utility First CSS",
+    "tech.vercel.label": "Deployment",
+    "tech.supabase.label": "Database (Optional)",
 
     // System Types
     "systemTypes.title": "Types of Systems We Build",
@@ -335,8 +416,9 @@ const translations = {
 
     // CTA Footer
     "cta.title": "Ready to build web apps your team actually uses?",
-    "cta.description": "Let's discuss, and we'll help design the most efficient architecture for your business needs.",
     "cta.button": "Free Consultation",
+    "cta.headline": "Ready to Take Your Business to the Next Level?",
+    "cta.description": "Free consultation, no commitment. Tell us your needs and we'll help design the right digital solution.",
 
     // About
     "about.title": "About Vorca Studio",
@@ -397,6 +479,10 @@ const translations = {
     "students.readyToAce": "Ready to Ace?",
     "students.readyToAce.desc": "Contact us now",
     "students.startFreeConsultation": "Start Consultation",
+    "students.benefits.label": "BENEFITS",
+    "students.pricing.label": "SERVICES & PRICING",
+    "students.process.label": "HOW IT WORKS",
+    "students.faq.label": "FAQ",
 
     // Footer
     "footer.description": "Disruptive web agency inspired by the Orca",
@@ -456,6 +542,12 @@ const translations = {
     "portfolio.readyToCreate": "Ready to Create?",
     "portfolio.readyToCreate.desc": "Bring your vision to life.",
     "portfolio.startYourProject": "Start Project",
+    "portfolio.label": "OUR PORTFOLIO",
+    "portfolio.headline": "Our Latest Work",
+    "portfolio.viewAll": "View All Portfolio",
+    "portfolio.viewDetail": "View Details",
+    "portfolio.categories": "CATEGORIES",
+    "portfolio.projects": "PROJECTS",
   },
 };
 

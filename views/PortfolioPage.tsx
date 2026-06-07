@@ -8,6 +8,26 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
 
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+};
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="text-xs uppercase tracking-[0.2em] text-blue-400 font-semibold">
+      {children}
+    </span>
+  );
+}
+
+function SectionDivider() {
+  return (
+    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+  );
+}
+
 export default function PortfolioPage() {
   const { t } = useLanguage();
 
@@ -83,15 +103,21 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="pt-16 bg-black">
+    <div className="pt-16 bg-[#050b16]">
       <PageHero
         title={t("portfolio.title")}
         subtitle={t("portfolio.subtitle")}
       />
 
+      <SectionDivider />
+
       {/* Filter Tabs */}
-      <section className="py-8 bg-gradient-to-b from-black to-gray-900 border-b border-gray-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-8 bg-[#050b16] border-b border-white/[0.06]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.04)_0%,transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4 text-center">
+            <SectionLabel>{t("portfolio.categories")}</SectionLabel>
+          </motion.div>
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category, index) => (
               <Button
@@ -100,8 +126,8 @@ export default function PortfolioPage() {
                 size="sm"
                 className={
                   index === 0
-                    ? "rounded-full px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold shadow-[0_8px_24px_-12px_rgba(34,211,238,0.45)] hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
-                    : "rounded-full px-5 py-2.5 border border-white/10 text-gray-200/80 bg-white/5 hover:bg-white/10 hover:text-white shadow-inner backdrop-blur-md transition-all duration-300"
+                    ? "rounded-full px-5 py-2.5 bg-blue-600 text-white font-semibold shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all duration-300"
+                    : "rounded-full px-5 py-2.5 bg-white/[0.02] border border-white/[0.06] text-gray-400 hover:bg-white/[0.05] hover:text-white transition-all duration-300"
                 }
               >
                 {category}
@@ -111,9 +137,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Projects Grid */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-[#050b16]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.03)_0%,transparent_70%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-8">
+            <SectionLabel>{t("portfolio.projects")}</SectionLabel>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -124,7 +156,7 @@ export default function PortfolioPage() {
                 viewport={{ once: true }}
                 className="group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 overflow-hidden">
+                <Card className="h-full bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/20 overflow-hidden">
                   <div className="relative group/image">
                     <img
                       src={project.image}
@@ -134,7 +166,6 @@ export default function PortfolioPage() {
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;
-                        // Prevent infinite loop if fallback also fails
                         if (target.dataset.fallbackApplied === "true") return;
                         target.dataset.fallbackApplied = "true";
                         target.src = "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg";
@@ -142,13 +173,13 @@ export default function PortfolioPage() {
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover/image:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                      <Button size="sm" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold" asChild>
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-600/20" asChild>
                         <a href={project.link} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           {t("portfolio.view")}
                         </a>
                       </Button>
-                      <Button size="sm" variant="outline" className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10" asChild>
+                      <Button size="sm" variant="outline" className="border-blue-500/20 text-blue-400 hover:bg-blue-500/10" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4 mr-2" />
                           {t("portfolio.code")}
@@ -157,7 +188,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <Badge className="mb-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold">
+                    <Badge className="mb-3 bg-blue-600/15 text-blue-400 border border-blue-500/10 font-semibold">
                       {project.category}
                     </Badge>
                     <h3 className="text-xl font-semibold text-white mb-2">
@@ -168,16 +199,16 @@ export default function PortfolioPage() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary" className="text-xs bg-gray-700/50 text-gray-300 border-gray-600">
+                        <Badge key={tagIndex} variant="secondary" className="text-xs bg-white/[0.04] text-gray-400 border border-white/[0.06]">
                           {tag}
                         </Badge>
                       ))}
                     </div>
                     <div className="space-y-1">
-                      <h4 className="font-semibold text-sm text-cyan-400">{t("portfolio.results")}</h4>
+                      <h4 className="font-semibold text-sm text-blue-400">{t("portfolio.results")}</h4>
                       {project.results.map((result, resultIndex) => (
                         <div key={resultIndex} className="flex items-center text-sm text-gray-300">
-                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></div>
+                          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
                           {result}
                         </div>
                       ))}
@@ -190,10 +221,12 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section className="relative py-20 bg-[#050b16] overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(59,130,246,0.08)_0%,transparent_70%)] rounded-full"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -212,7 +245,7 @@ export default function PortfolioPage() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/20 transition-all duration-300"
             >
               <a href="/contact">
                 {t("portfolio.startYourProject")}

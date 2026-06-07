@@ -1,13 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Clock, DollarSign, CheckCircle, BookOpen, Code, Palette } from "lucide-react";
+import { GraduationCap, Clock, CheckCircle, BookOpen, Code, Palette } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { useLanguage } from "../contexts/LanguageContext";
 import { PageHero } from "@/components/PageHero";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+};
+
+const container = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="text-xs uppercase tracking-[0.2em] text-blue-400 font-semibold">
+      {children}
+    </span>
+  );
+}
+
+function SectionDivider() {
+  return <div className="border-t border-white/[0.06]" />;
+}
+
+function AmbientGlow({ position = "center" }: { position?: string }) {
+  const posMap: Record<string, string> = {
+    center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    "top-right": "-top-40 -right-40",
+    "bottom-left": "-bottom-40 -left-40",
+  };
+  return (
+    <div className={`absolute ${posMap[position]} w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none`} />
+  );
+}
 
 export default function StudentsPage() {
   const { t } = useLanguage();
@@ -81,15 +112,15 @@ export default function StudentsPage() {
   ];
 
   return (
-    <div className="pt-16 bg-black">
+    <div className="pt-16 bg-[#050b16]">
       <PageHero
         title={
           <>
-            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25">
-              <GraduationCap className="w-8 h-8 text-black" />
+            <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-600/20">
+              <GraduationCap className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-6xl md:text-7xl font-bold">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
                 {t("students.title")}
               </span>
             </h1>
@@ -101,7 +132,7 @@ export default function StudentsPage() {
           <Button
             asChild
             size="lg"
-            className="rounded-2xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+            className="rounded-2xl px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-600/20 transition-all duration-300"
           >
             <a href="https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website." target="_blank" rel="noopener noreferrer">
               {t("students.consultation")}
@@ -111,7 +142,7 @@ export default function StudentsPage() {
             asChild
             variant="ghost"
             size="lg"
-            className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-cyan-400/30 text-cyan-300 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_0_3px_rgba(34,211,238,0.15)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/8 before:to-white/0 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-black"
+            className="h-auto relative group overflow-hidden bg-transparent !bg-transparent !shadow-none border border-white/[0.06] text-blue-400 px-8 py-4 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:bg-white/[0.02]"
           >
             <a href="#pricing">
               {t("students.pricing")}
@@ -120,20 +151,24 @@ export default function StudentsPage() {
         </div>
       </PageHero>
 
+      <SectionDivider />
+
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-[#050b16] relative overflow-hidden">
+        <AmbientGlow position="top-right" />
+        <div className={container}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+            <SectionLabel>{t("students.benefits.label")}</SectionLabel>
+          </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t("students.whyChoose")}
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-3xl">
               {t("students.whyChoose.desc")}
             </p>
           </motion.div>
@@ -144,107 +179,110 @@ export default function StudentsPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="flex items-center space-x-3"
+                className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.06] rounded-xl p-4 hover:border-blue-500/20 hover:-translate-y-0.5 transition-all duration-300"
               >
-                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">{benefit}</span>
+                <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">{benefit}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Services Section */}
-      <section id="pricing" className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-24 bg-[#050b16] relative overflow-hidden">
+        <AmbientGlow position="bottom-left" />
+        <div className={container}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+            <SectionLabel>{t("students.pricing.label")}</SectionLabel>
+          </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t("students.servicesAndPricing")}
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-3xl">
               {t("students.servicesAndPricing.desc")}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <Card className={`h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 ${service.popular ? 'ring-2 ring-cyan-500/50' : ''
-                  }`}>
+                <Card className={`h-full bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm hover:border-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/20 ${service.popular ? 'ring-2 ring-blue-500/30 border-blue-500/20' : ''}`}>
                   {service.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold px-4 py-1">
+                      <Badge className="bg-blue-600 text-white font-semibold px-4 py-1">
                         {t("services.mostPopular")}
                       </Badge>
                     </div>
                   )}
                   {service.discountPercent > 0 && (
                     <div className="absolute top-3 right-3">
-                      <Badge className="rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 px-3 py-1 backdrop-blur-sm">
+                      <Badge className="rounded-full bg-blue-600/10 text-blue-400 border border-blue-500/20 px-3 py-1 backdrop-blur-sm">
                         -{service.discountPercent}%
                       </Badge>
                     </div>
                   )}
 
                   <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
-                      <service.icon className="w-6 h-6 text-black" />
+                    <div className="w-12 h-12 bg-blue-600/15 border border-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                      <service.icon className="w-6 h-6 text-blue-400" />
                     </div>
-                    <CardTitle className="text-xl text-white">
+                    <CardTitle className="text-lg text-white">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-gray-400 text-sm mb-4">
                       {service.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         {service.discountPercent > 0 && (
                           <>
-                            <div className="text-sm text-gray-400 line-through">
+                            <div className="text-sm text-gray-500 line-through">
                               Mulai dari {formatRupiah(service.priceIdr)}
                             </div>
-                            <div className="text-xs text-emerald-300">
+                            <div className="text-xs text-emerald-400">
                               Hemat {formatRupiah(service.priceIdr - Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))}
                             </div>
                           </>
                         )}
-                        <div className="text-2xl font-bold text-cyan-400">
+                        <div className="text-2xl font-bold text-blue-400">
                           Mulai dari {formatRupiah(Math.round(service.priceIdr * (1 - (service.discountPercent ?? 0) / 100)))}
                         </div>
                       </div>
-                      <Badge variant="secondary" className="flex items-center bg-gray-700/50 text-gray-300">
+                      <Badge variant="secondary" className="flex items-center bg-white/[0.02] text-gray-400 border border-white/[0.06]">
                         <Clock className="w-3 h-3 mr-1" />
                         {service.duration}
                       </Badge>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-400">
+                          <CheckCircle className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Button
                       asChild
-                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300"
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-300 border-0 shadow-lg shadow-blue-600/20"
                     >
                       <Link href="/contact">
                         {t("services.getStarted")}
@@ -258,41 +296,45 @@ export default function StudentsPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Process Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-[#050b16] relative overflow-hidden">
+        <AmbientGlow position="center" />
+        <div className={container}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+            <SectionLabel>{t("students.process.label")}</SectionLabel>
+          </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t("students.howItWorks")}
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-3xl">
               {t("students.howItWorks.desc")}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {process.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center group"
+                className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-6 hover:border-blue-500/20 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 text-black rounded-2xl flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
-                  {step.step}
+                <div className="w-10 h-10 rounded-lg bg-blue-600 shadow-lg shadow-blue-600/30 flex items-center justify-center mb-4">
+                  <span className="text-sm font-bold text-white">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-sm">
                   {step.description}
                 </p>
               </motion.div>
@@ -301,90 +343,96 @@ export default function StudentsPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-4">
-              {t("students.faq")}
-            </h2>
-          </motion.div>
+      <SectionDivider />
 
-          <div className="space-y-6">
-            {[
-              {
-                question: "Do you guarantee good grades?",
-                answer: "While we can't guarantee grades (as that depends on your professor's evaluation), we ensure high-quality work that meets academic standards and provide thorough explanations so you understand the project completely."
-              },
-              {
-                question: "How do you ensure I understand the work?",
-                answer: "Every project includes a detailed explanation session where we walk through the code/design, explain the concepts used, and answer any questions you have."
-              },
-              {
-                question: "What if I need revisions?",
-                answer: "We include reasonable revisions in our pricing. If your professor requests changes or you need modifications, we'll work with you to make them."
-              },
-              {
-                question: "Is this considered cheating?",
-                answer: "We provide educational assistance and tutoring. It's your responsibility to use our work according to your institution's academic integrity policies. We recommend using our work as a learning reference."
-              },
-              {
-                question: "How quickly can you complete my project?",
-                answer: "Turnaround times vary based on complexity. Simple assignments can be completed in 1-2 days, while complex projects may take up to a week. We always respect your deadlines."
-              }
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="text-gray-400">
-                      {faq.answer}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+      {/* FAQ Section */}
+      <section className="py-24 bg-[#050b16] relative overflow-hidden">
+        <AmbientGlow position="top-right" />
+        <div className={container}>
+          <div className="max-w-4xl mx-auto">
+            <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+              <SectionLabel>{t("students.faq.label")}</SectionLabel>
+            </motion.div>
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                {t("students.faq")}
+              </h2>
+            </motion.div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  question: "Do you guarantee good grades?",
+                  answer: "While we can't guarantee grades (as that depends on your professor's evaluation), we ensure high-quality work that meets academic standards and provide thorough explanations so you understand the project completely."
+                },
+                {
+                  question: "How do you ensure I understand the work?",
+                  answer: "Every project includes a detailed explanation session where we walk through the code/design, explain the concepts used, and answer any questions you have."
+                },
+                {
+                  question: "What if I need revisions?",
+                  answer: "We include reasonable revisions in our pricing. If your professor requests changes or you need modifications, we'll work with you to make them."
+                },
+                {
+                  question: "Is this considered cheating?",
+                  answer: "We provide educational assistance and tutoring. It's your responsibility to use our work according to your institution's academic integrity policies. We recommend using our work as a learning reference."
+                },
+                {
+                  question: "How quickly can you complete my project?",
+                  answer: "Turnaround times vary based on complexity. Simple assignments can be completed in 1-2 days, while complex projects may take up to a week. We always respect your deadlines."
+                }
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 transition-all duration-300">
+                    <CardContent className="p-6">
+                      <h3 className="text-base font-semibold text-white mb-2">
+                        {faq.question}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {faq.answer}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section className="py-24 bg-[#050b16] relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(59,130,246,0.08)_0%,transparent_70%)]" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className={`${container} relative z-10 text-center`}>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            {...fadeUp}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t("students.readyToAce")}
             </h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
               {t("students.readyToAce.desc")}
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+              className="h-auto rounded-xl px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-600/20 transition-all duration-300 border-0"
             >
               <a href="https://wa.me/6285167002152?text=Halo%20Vorca%20Studio%2C%20saya%20mau%20konsultasi%20untuk%20jasa%20pembuatan%20website." target="_blank" rel="noopener noreferrer">
                 {t("students.startFreeConsultation")}
