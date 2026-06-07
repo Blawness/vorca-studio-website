@@ -19,7 +19,7 @@
     "test:e2e:report": "playwright show-report"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "dependencies": {
     "@blawness/admin-kit": "0.2.0",

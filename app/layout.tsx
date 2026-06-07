@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import CustomerServiceButton from "@/components/CustomerServiceButton";
+import SiteChrome from "@/components/SiteChrome";
 import { Providers } from "../components/providers";
 
 export const metadata: Metadata = {
@@ -146,11 +144,8 @@ export default function RootLayout({
             </head>
             <body className="min-h-screen bg-black text-white">
                 <Providers>
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
+                    <SiteChrome>{children}</SiteChrome>
                     <Toaster />
-                    <CustomerServiceButton />
                 </Providers>
             </body>
         </html>

@@ -11,12 +11,19 @@ import {
   Monitor,
   Building,
   Grid3x3,
-  Wind,
-  Triangle,
   ArrowUpRight,
+  Quote,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
+import {
+  NextjsLogo,
+  TypeScriptLogo,
+  TailwindLogo,
+  VercelLogo,
+  SupabaseLogo,
+} from "@/components/TechLogos";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -46,17 +53,33 @@ export default function HomePage() {
       icon: Monitor,
       title: t("services.landing.title"),
       desc: t("services.landing.desc"),
+      popular: false,
     },
     {
       icon: Building,
       title: t("services.company.title"),
       desc: t("services.company.desc"),
+      popular: true,
     },
     {
       icon: Grid3x3,
       title: t("services.webapp.title"),
       desc: t("services.webapp.desc"),
+      popular: false,
     },
+  ];
+
+  const stats = [
+    { value: t("stats.projects.value"), label: t("stats.projects.label") },
+    { value: t("stats.clients.value"), label: t("stats.clients.label") },
+    { value: t("stats.satisfaction.value"), label: t("stats.satisfaction.label") },
+    { value: t("stats.experience.value"), label: t("stats.experience.label") },
+  ];
+
+  const testimonials = [
+    { quote: t("testimonials.1.quote"), name: t("testimonials.1.name"), role: t("testimonials.1.role") },
+    { quote: t("testimonials.2.quote"), name: t("testimonials.2.name"), role: t("testimonials.2.role") },
+    { quote: t("testimonials.3.quote"), name: t("testimonials.3.name"), role: t("testimonials.3.role") },
   ];
 
   const processSteps = [
@@ -67,11 +90,11 @@ export default function HomePage() {
   ];
 
   const techItems = [
-    { label: "N", name: "Next.js", desc: t("tech.nextjs.label"), icon: null },
-    { label: "TS", name: "TypeScript", desc: t("tech.typescript.label"), icon: null },
-    { label: "", name: "Tailwind CSS", desc: t("tech.tailwind.label"), icon: Wind },
-    { label: "", name: "Vercel", desc: t("tech.vercel.label"), icon: Triangle },
-    { label: "", name: "Supabase", desc: t("tech.supabase.label"), icon: Zap },
+    { name: "Next.js", desc: t("tech.nextjs.label"), Logo: NextjsLogo },
+    { name: "TypeScript", desc: t("tech.typescript.label"), Logo: TypeScriptLogo },
+    { name: "Tailwind CSS", desc: t("tech.tailwind.label"), Logo: TailwindLogo },
+    { name: "Vercel", desc: t("tech.vercel.label"), Logo: VercelLogo },
+    { name: "Supabase", desc: t("tech.supabase.label"), Logo: SupabaseLogo },
   ];
 
   const portfolioItems = [
@@ -112,10 +135,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-white to-blue-300 bg-clip-text text-transparent"
               >
-                Membangun Web, Menggerakkan{" "}
-                <span className="text-blue-500">Bisnis</span> Anda.
+                {t("hero.headline")}
               </motion.h1>
 
               <motion.p
@@ -152,6 +174,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-wrap items-center gap-3"
               >
                 <Button
                   asChild
@@ -168,6 +191,13 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 h-auto rounded-lg px-6 py-3.5 text-sm font-medium text-gray-200 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-300"
+                >
+                  {t("hero.cta.portfolio")}
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
               </motion.div>
             </div>
 
@@ -175,49 +205,119 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden md:block"
+              className="hidden md:block relative"
             >
-              {/* Blue glow behind laptop */}
-              <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.2)_0%,transparent_60%)] pointer-events-none" />
-              <div className="relative bg-[#0a1628]/80 rounded-xl border border-blue-500/10 aspect-[4/3] p-5 shadow-2xl shadow-blue-900/20 backdrop-blur-sm">
+              {/* Blue glow behind dashboard */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.2)_0%,transparent_60%)] pointer-events-none" />
+              <div className="relative bg-[#0a1628]/80 rounded-xl border border-blue-500/10 p-5 shadow-2xl shadow-blue-900/30 backdrop-blur-sm">
                 {/* Browser chrome */}
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2 mb-5 pb-3 border-b border-white/[0.06]">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                  <div className="ml-3 flex-1 h-5 bg-white/[0.04] rounded-md" />
-                </div>
-                {/* Dashboard mockup content */}
-                <div className="space-y-3">
-                  <div className="flex gap-3">
-                    <div className="w-1/3 h-16 bg-blue-500/15 rounded-lg border border-blue-500/10" />
-                    <div className="w-1/3 h-16 bg-cyan-500/10 rounded-lg border border-cyan-500/10" />
-                    <div className="w-1/3 h-16 bg-blue-400/10 rounded-lg border border-blue-400/10" />
-                  </div>
-                  <div className="h-12 bg-white/[0.03] rounded-lg border border-white/[0.05]" />
-                  <div className="flex gap-3">
-                    <div className="w-2/3 h-20 bg-white/[0.03] rounded-lg border border-white/[0.05]" />
-                    <div className="w-1/3 h-20 bg-blue-500/10 rounded-lg border border-blue-500/10" />
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="w-1/4 h-8 bg-blue-500/20 rounded border border-blue-500/20" />
-                    <div className="w-1/4 h-8 bg-white/[0.03] rounded border border-white/[0.05]" />
-                    <div className="w-1/4 h-8 bg-white/[0.03] rounded border border-white/[0.05]" />
+                  <div className="ml-3 flex-1 h-5 bg-white/[0.04] rounded-md flex items-center px-3">
+                    <span className="text-[10px] text-gray-500 tracking-wide">app.vorca.studio/dashboard</span>
                   </div>
                 </div>
-                {/* Placeholder label */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gray-500 text-xs font-medium bg-[#0a1628]/90 px-3 py-1.5 rounded-md border border-white/[0.06]">
-                    Your screenshot here
-                  </span>
+
+                {/* KPI row */}
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  {[
+                    { label: "Revenue", value: "Rp 248jt", delta: "+12.4%" },
+                    { label: "Visitors", value: "18.2k", delta: "+8.1%" },
+                    { label: "Conversion", value: "4.7%", delta: "+1.3%" },
+                  ].map((kpi, i) => (
+                    <div
+                      key={i}
+                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-3"
+                    >
+                      <p className="text-[10px] text-gray-500 mb-1">{kpi.label}</p>
+                      <p className="text-sm font-bold text-white">{kpi.value}</p>
+                      <p className="text-[10px] text-emerald-400 mt-0.5">{kpi.delta}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Chart card */}
+                <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4 mb-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] text-gray-400 font-medium">Performance</span>
+                    <span className="text-[10px] text-blue-400">Last 7 days</span>
+                  </div>
+                  <div className="flex items-end gap-2 h-24">
+                    {[45, 62, 38, 78, 55, 88, 70].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ duration: 0.6, delay: 0.6 + i * 0.08, ease: "easeOut" }}
+                        className={`flex-1 rounded-t ${
+                          i === 5
+                            ? "bg-gradient-to-t from-blue-600 to-blue-400"
+                            : "bg-blue-500/25"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Activity rows */}
+                <div className="space-y-2">
+                  {[
+                    { w: "w-3/5", c: "bg-emerald-400" },
+                    { w: "w-4/5", c: "bg-blue-400" },
+                    { w: "w-2/5", c: "bg-cyan-400" },
+                  ].map((row, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className={`w-1.5 h-1.5 rounded-full ${row.c}`} />
+                      <div className={`h-2 rounded-full bg-white/[0.06] ${row.w}`} />
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* Floating badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="absolute -bottom-4 -left-4 flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-[#0a1628]/95 px-3 py-2 shadow-xl backdrop-blur-sm"
+              >
+                <div className="w-6 h-6 rounded-md bg-emerald-500/15 flex items-center justify-center">
+                  <Zap className="w-3.5 h-3.5 text-emerald-400" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-gray-400 leading-none mb-0.5">Lighthouse</p>
+                  <p className="text-xs font-bold text-white leading-none">98 / 100</p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <SectionDivider />
+      {/* Section 1.5: Stats strip */}
+      <section className="relative border-y border-white/[0.06] bg-[#070f1e]">
+        <div className={`${container} py-10`}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center md:text-left"
+              >
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-white to-blue-300 bg-clip-text text-transparent">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Section 2: Layanan Kami */}
       <section className="py-24 bg-[#050b16] relative">
@@ -258,18 +358,38 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white/[0.02] border border-white/[0.06] rounded-xl p-6 hover:-translate-y-1 hover:border-blue-500/20 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-600/15 rounded-lg flex items-center justify-center mb-4 border border-blue-500/10">
-                  <service.icon className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{service.desc}</p>
-                <div className="flex justify-end">
-                  <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
-                </div>
+                <Link
+                  href="/services"
+                  className={`group relative flex flex-col h-full rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 ${
+                    service.popular
+                      ? "bg-blue-600/[0.07] border border-blue-500/40 shadow-lg shadow-blue-900/20"
+                      : "bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20"
+                  }`}
+                >
+                  {service.popular && (
+                    <span className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg shadow-blue-600/30">
+                      <Star className="w-3 h-3 fill-current" />
+                      {t("services.popular")}
+                    </span>
+                  )}
+                  <div
+                    className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 border ${
+                      service.popular
+                        ? "bg-blue-600/25 border-blue-500/30"
+                        : "bg-blue-600/15 border-blue-500/10"
+                    }`}
+                  >
+                    <service.icon className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-1">{service.desc}</p>
+                  <div className="flex justify-end">
+                    <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -298,70 +418,56 @@ export default function HomePage() {
           </motion.h2>
 
           {/* Desktop timeline */}
-          <div className="hidden md:block relative">
-            {/* Animated progress line */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              viewport={{ once: true }}
-              className="absolute top-5 left-[10%] right-[10%] h-[2px] origin-left"
-              style={{
-                background: "linear-gradient(90deg, rgba(59,130,246,0.6) 0%, rgba(96,165,250,0.3) 50%, rgba(59,130,246,0.6) 100%)",
-              }}
-            />
-            {/* Glow line underneath */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.1 }}
-              viewport={{ once: true }}
-              className="absolute top-[18px] left-[10%] right-[10%] h-[4px] origin-left blur-md"
-              style={{
-                background: "linear-gradient(90deg, rgba(59,130,246,0.3) 0%, rgba(96,165,250,0.1) 50%, rgba(59,130,246,0.3) 100%)",
-              }}
-            />
+          <div className="hidden md:block">
+            {/* Dots row with connecting line (aligned to dot centers) */}
+            <div className="relative mb-10">
+              {/* base track */}
+              <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px -translate-y-1/2 bg-white/[0.08]" />
+              {/* animated fill */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+                viewport={{ once: true }}
+                className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px -translate-y-1/2 origin-left bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500"
+              />
 
+              <div className="grid grid-cols-4">
+                {processSteps.map((step, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.4 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.45, delay: 0.3 + i * 0.18, ease: [0.34, 1.56, 0.64, 1] }}
+                    viewport={{ once: true }}
+                    className="flex justify-center"
+                  >
+                    <div className="relative">
+                      <div className="absolute -inset-2 rounded-full bg-blue-500/15 blur-md" />
+                      <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-600/40 ring-4 ring-[#050b16]">
+                        <span className="text-xs font-bold text-white">{step.num}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Step cards */}
             <div className="grid grid-cols-4 gap-6">
               {processSteps.map((step, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + i * 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
                   viewport={{ once: true }}
-                  className="relative text-center group"
+                  className="group rounded-xl bg-white/[0.02] border border-white/[0.06] p-5 text-center hover:-translate-y-1 hover:border-blue-500/20 transition-all duration-300"
                 >
-                  {/* Glowing dot */}
-                  <div className="relative mx-auto mb-8">
-                    {/* Outer pulse ring */}
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.5 + i * 0.2 }}
-                      viewport={{ once: true }}
-                      className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping"
-                      style={{ animationDuration: "3s", animationDelay: `${i * 0.5}s` }}
-                    />
-                    {/* Glow ring */}
-                    <div className="absolute -inset-2 rounded-full bg-blue-500/10 blur-md" />
-                    {/* Main dot */}
-                    <div className="relative w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center mx-auto shadow-lg shadow-blue-600/40 ring-4 ring-[#050b16]">
-                      <span className="text-xs font-bold text-white">{step.num}</span>
-                    </div>
-                  </div>
-
-                  {/* Step card */}
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 hover:border-blue-500/20 transition-all duration-300"
-                  >
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
-                  </motion.div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -405,7 +511,66 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
+      {/* Section 3.5: Testimonials */}
+      <section className="py-24 bg-[#070f1e] border-y border-white/[0.06] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.05)_0%,transparent_60%)]" />
+        </div>
+
+        <div className={`${container} relative z-10`}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+            <SectionLabel>{t("testimonials.label")}</SectionLabel>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <motion.h2
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl md:text-4xl font-bold text-white leading-tight"
+            >
+              {t("testimonials.headline")}
+            </motion.h2>
+            <motion.p
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-400 text-lg self-end leading-relaxed"
+            >
+              {t("testimonials.description")}
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((tm, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="relative flex flex-col rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-blue-500/20 transition-all duration-300"
+              >
+                <Quote className="w-8 h-8 text-blue-500/30 mb-4" />
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-6">
+                  &ldquo;{tm.quote}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/20 flex items-center justify-center text-sm font-bold text-blue-200 border border-white/[0.08]">
+                    {tm.name.charAt(0)}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-white text-sm font-semibold truncate">{tm.name}</p>
+                    <p className="text-gray-500 text-xs truncate">{tm.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Section 4: Teknologi Kami */}
       <section className="py-24 bg-[#050b16] relative">
@@ -435,15 +600,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-4 flex items-center gap-3 hover:border-blue-500/20 hover:-translate-y-0.5 transition-all duration-300"
               >
-                {tech.icon ? (
-                  <tech.icon className="w-6 h-6 text-blue-400 shrink-0" />
-                ) : (
-                  <div className="w-8 h-8 bg-blue-600/15 rounded-md flex items-center justify-center shrink-0 border border-blue-500/10">
-                    <span className="text-xs font-bold text-blue-400">
-                      {tech.label}
-                    </span>
-                  </div>
-                )}
+                <div className="w-9 h-9 rounded-md bg-white/[0.04] flex items-center justify-center shrink-0 border border-white/[0.06] p-1.5">
+                  <tech.Logo className="w-full h-full" />
+                </div>
                 <div className="min-w-0">
                   <p className="text-white text-sm font-medium truncate">
                     {tech.name}

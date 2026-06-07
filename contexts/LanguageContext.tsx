@@ -33,6 +33,34 @@ const translations = {
     "hero.feature2": "Desain Modern & Responsif",
     "hero.feature3": "Aman, Stabil & Terpercaya",
     "hero.cta.dm": "DM @vorcastudio untuk konsultasi",
+    "hero.cta.portfolio": "Lihat Portfolio",
+
+    // Stats
+    "stats.projects.value": "50+",
+    "stats.projects.label": "Proyek Selesai",
+    "stats.clients.value": "30+",
+    "stats.clients.label": "Klien Puas",
+    "stats.satisfaction.value": "100%",
+    "stats.satisfaction.label": "On-Time Delivery",
+    "stats.experience.value": "4.9",
+    "stats.experience.label": "Rating Klien",
+
+    // Testimonials
+    "testimonials.label": "TESTIMONI",
+    "testimonials.headline": "Apa Kata Klien Kami",
+    "testimonials.description": "Kepercayaan klien adalah hasil dari kerja yang presisi dan komunikasi yang jelas.",
+    "testimonials.1.quote": "Vorca mengubah ide kami jadi website yang benar-benar menaikkan penjualan. Prosesnya cepat dan komunikatif dari awal sampai launch.",
+    "testimonials.1.name": "Andre Wijaya",
+    "testimonials.1.role": "Founder, Kopi Nusantara",
+    "testimonials.2.quote": "Dashboard internal yang dibangun Vorca sangat memudahkan operasional tim. Rapi, cepat, dan benar-benar dipakai setiap hari.",
+    "testimonials.2.name": "Sarah Putri",
+    "testimonials.2.role": "Operations Lead, PT Maju Jaya",
+    "testimonials.3.quote": "Hasil desainnya modern dan profesional. Tim Vorca paham betul kebutuhan bisnis kami, bukan sekadar bikin website.",
+    "testimonials.3.name": "Budi Santoso",
+    "testimonials.3.role": "Owner, Klinik Sehat",
+
+    // Service highlight
+    "services.popular": "Paling Populer",
 
     // Value Pillars
     "valuePillars.fullStack.title": "Full-Stack Development",
@@ -302,6 +330,34 @@ const translations = {
     "hero.feature2": "Modern & Responsive Design",
     "hero.feature3": "Secure, Stable & Reliable",
     "hero.cta.dm": "DM @vorcastudio for consultation",
+    "hero.cta.portfolio": "View Portfolio",
+
+    // Stats
+    "stats.projects.value": "50+",
+    "stats.projects.label": "Projects Delivered",
+    "stats.clients.value": "30+",
+    "stats.clients.label": "Happy Clients",
+    "stats.satisfaction.value": "100%",
+    "stats.satisfaction.label": "On-Time Delivery",
+    "stats.experience.value": "4.9",
+    "stats.experience.label": "Client Rating",
+
+    // Testimonials
+    "testimonials.label": "TESTIMONIALS",
+    "testimonials.headline": "What Our Clients Say",
+    "testimonials.description": "Client trust is the result of precise work and clear communication.",
+    "testimonials.1.quote": "Vorca turned our idea into a website that genuinely boosted sales. The process was fast and communicative from start to launch.",
+    "testimonials.1.name": "Andre Wijaya",
+    "testimonials.1.role": "Founder, Kopi Nusantara",
+    "testimonials.2.quote": "The internal dashboard Vorca built made our team's operations so much easier. Clean, fast, and used every single day.",
+    "testimonials.2.name": "Sarah Putri",
+    "testimonials.2.role": "Operations Lead, PT Maju Jaya",
+    "testimonials.3.quote": "The design results are modern and professional. The Vorca team truly understood our business needs, not just building a website.",
+    "testimonials.3.name": "Budi Santoso",
+    "testimonials.3.role": "Owner, Klinik Sehat",
+
+    // Service highlight
+    "services.popular": "Most Popular",
 
     // Value Pillars
     "valuePillars.fullStack.title": "Full-Stack Development",

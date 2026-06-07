@@ -68,3 +68,4 @@ encore.gen.cue
 # Cache
 .cache
 .turbo
+.playwright-cli/
