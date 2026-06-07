@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Linkedin, Github, Mail } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-gray-800/50">
+    <footer className="relative bg-black border-t border-white/[0.06]">
+      {/* Top accent line */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -28,18 +31,31 @@ export default function Footer() {
             <p className="text-gray-400 mb-4 max-w-md">
               {t("footer.description")}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <Instagram className="w-5 h-5" />
+            <div className="flex space-x-3">
+              <a
+                href="https://www.instagram.com/vorcastudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Vorca Studio"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-300"
+              >
+                <Instagram className="w-[18px] h-[18px]" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <Linkedin className="w-5 h-5" />
+              <a
+                href="https://wa.me/6285167002152"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Vorca Studio"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-gray-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-all duration-300"
+              >
+                <MessageCircle className="w-[18px] h-[18px]" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="mailto:marketing@vorcastudio.com" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <Mail className="w-5 h-5" />
+              <a
+                href="mailto:marketing@vorcastudio.com"
+                aria-label="Email Vorca Studio"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-300"
+              >
+                <Mail className="w-[18px] h-[18px]" />
               </a>
             </div>
           </div>
@@ -66,8 +82,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800/50 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Vorca Studio. {t("footer.rights")}.</p>
+        <div className="border-t border-white/[0.06] mt-8 pt-8 text-center text-gray-400 text-sm">
+          <p>&copy; {year} Vorca Studio. {t("footer.rights")}.</p>
         </div>
       </div>
     </footer>

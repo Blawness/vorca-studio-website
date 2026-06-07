@@ -24,6 +24,14 @@ import {
   VercelLogo,
   SupabaseLogo,
 } from "@/components/TechLogos";
+import { CountUp } from "@/components/CountUp";
+
+/** Cursor-following spotlight: sets --x/--y on the card so an overlay can glow. */
+function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`);
+}
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -309,9 +317,10 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center md:text-left"
               >
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
+                <CountUp
+                  value={stat.value}
+                  className="block text-3xl md:text-4xl font-bold bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
+                />
                 <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
               </motion.div>
             ))}
@@ -361,12 +370,21 @@ export default function HomePage() {
               >
                 <Link
                   href="/services"
+                  onMouseMove={handleSpotlight}
                   className={`group relative flex flex-col h-full rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 ${
                     service.popular
                       ? "bg-blue-600/[0.07] border border-blue-500/40 shadow-lg shadow-blue-900/20"
                       : "bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20"
                   }`}
                 >
+                  {/* Cursor spotlight */}
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      background:
+                        "radial-gradient(380px circle at var(--x) var(--y), rgba(56,189,248,0.10), transparent 65%)",
+                    }}
+                  />
                   {service.popular && (
                     <span className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg shadow-blue-600/30">
                       <Star className="w-3 h-3 fill-current" />
