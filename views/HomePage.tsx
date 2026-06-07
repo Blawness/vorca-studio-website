@@ -135,7 +135,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-white to-blue-300 bg-clip-text text-transparent"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
               >
                 {t("hero.headline")}
               </motion.h1>
@@ -309,7 +309,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center md:text-left"
               >
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-white to-blue-300 bg-clip-text text-transparent">
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
                   {stat.value}
                 </p>
                 <p className="text-sm text-gray-400 mt-1">{stat.label}</p>

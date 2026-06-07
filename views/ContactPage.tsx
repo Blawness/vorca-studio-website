@@ -207,7 +207,7 @@ export default function ContactPage() {
                     <Label htmlFor="serviceType" className="text-gray-300">{t("contact.service")} *</Label>
                     <Select value={formData.serviceType} onValueChange={(value) => handleInputChange("serviceType", value)}>
                       <SelectTrigger className="bg-white/[0.03] border-white/[0.08] text-white focus:border-blue-500/30">
-                        <SelectValue placeholder="Select a service" />
+                        <SelectValue placeholder={t("contact.servicePlaceholder")} />
                       </SelectTrigger>
                       <SelectContent className="bg-[#0a1628] border-white/[0.08]">
                         {serviceTypes.map((service) => (
@@ -226,7 +226,7 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
-                      placeholder="Tell us about your project..."
+                      placeholder={t("contact.messagePlaceholder")}
                       required
                       className="bg-white/[0.03] border-white/[0.08] text-white focus:border-blue-500/30"
                     />
