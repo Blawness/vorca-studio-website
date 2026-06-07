@@ -19,8 +19,9 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   const isAdmin = pathname?.startsWith("/admin");
 
   if (isAdmin) {
-    // Reset inherited white text so admin-kit's light-themed UI is readable.
-    return <div className="text-slate-900">{children}</div>;
+    // admin-kit ships a light theme: give it a solid light canvas and reset the
+    // inherited white text so its UI is readable.
+    return <div className="min-h-screen bg-slate-50 text-slate-900">{children}</div>;
   }
 
   return (

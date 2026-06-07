@@ -1,12 +1,7 @@
 import { requireUser } from "@blawness/admin-kit/auth-helpers";
 import { AdminLayout } from "@blawness/admin-kit/shell";
 import type { NavItem } from "@blawness/admin-kit/shell/sidebar";
-import {
-    FileText,
-    Image,
-    LayoutDashboard,
-    Users,
-} from "lucide-react";
+import { FileText, Image, LayoutDashboard, Users } from "./nav-icons";
 
 const navItems: NavItem[] = [
     { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
@@ -23,7 +18,7 @@ export default async function AdminRootLayout({
     await requireUser();
 
     return (
-        <AdminLayout navItems={navItems} brandName="Vorca Studio">
+        <AdminLayout navItems={navItems} brandName="Vorca Studio" logoSrc="/favicon.svg">
             {children}
         </AdminLayout>
     );
