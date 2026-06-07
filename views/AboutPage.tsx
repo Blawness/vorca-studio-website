@@ -64,6 +64,7 @@ export default function AboutPage() {
   return (
     <div className="bg-[#050b16]">
       <PageHero
+        eyebrow={t("about.label")}
         title={t("about.title")}
         subtitle={t("about.subtitle")}
       />

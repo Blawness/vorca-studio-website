@@ -128,6 +128,7 @@ export default function ContactPage() {
   return (
     <div className="pt-16 bg-[#050b16]">
       <PageHero
+        eyebrow={t("contact.label")}
         title={t("contact.title")}
         subtitle={t("contact.subtitle")}
       />

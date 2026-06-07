@@ -105,6 +105,7 @@ export default function PortfolioPage() {
   return (
     <div className="pt-16 bg-[#050b16]">
       <PageHero
+        eyebrow={t("portfolio.label")}
         title={t("portfolio.title")}
         subtitle={t("portfolio.subtitle")}
       />

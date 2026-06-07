@@ -116,11 +116,11 @@ export default function StudentsPage() {
       <PageHero
         title={
           <>
-            <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-600/20">
-              <GraduationCap className="w-8 h-8 text-white" />
+            <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-600/20">
+              <GraduationCap className="w-7 h-7 text-white" />
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              <span className="bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
                 {t("students.title")}
               </span>
             </h1>

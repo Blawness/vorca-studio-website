@@ -59,6 +59,7 @@ export default function ArticlesPage({ articles }: ArticlesPageProps) {
     return (
         <div className="pt-16 bg-[#050b16] min-h-screen">
             <PageHero
+                eyebrow={language === "id" ? "BLOG VORCA" : "VORCA BLOG"}
                 title={language === "id" ? "Artikel & Insight" : "Articles & Insights"}
                 subtitle={
                     language === "id"

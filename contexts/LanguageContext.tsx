@@ -182,6 +182,7 @@ const translations = {
     "cta.description": "Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhan Anda dan kami bantu rancang solusi digital yang tepat.",
 
     // About
+    "about.label": "TENTANG KAMI",
     "about.title": "Tentang Vorca Studio",
     "about.subtitle": "Studio pengembangan web dan aplikasi berbasis web yang dibangun dengan prinsip presisi, strategi, dan arsitektur modern.",
     "about.mission": "Membangun sistem yang relevan, kuat, dan berorientasi pada hasil nyata.",
@@ -486,6 +487,7 @@ const translations = {
     "cta.description": "Free consultation, no commitment. Tell us your needs and we'll help design the right digital solution.",
 
     // About
+    "about.label": "ABOUT US",
     "about.title": "About Vorca Studio",
     "about.subtitle": "A web and web-app development studio built on principles of precision, strategy, and modern architecture.",
     "about.mission": "Building systems that are relevant, strong, and results-oriented.",

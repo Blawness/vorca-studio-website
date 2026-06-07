@@ -40,6 +40,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-16 bg-[#050b16] min-h-screen">
       <PageHero
+        eyebrow={t("services.label")}
         title={t("services.title")}
         subtitle={t("services.subtitle")}
       />
