@@ -730,27 +730,26 @@ export default function HomePage() {
             {t("tech.headline")}
           </motion.h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {techItems.map((tech, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                viewport={{ once: true }}
-                className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-4 flex items-center gap-3 hover:border-blue-500/20 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="w-9 h-9 rounded-md bg-white/[0.04] flex items-center justify-center shrink-0 border border-white/[0.06] p-1.5">
-                  <tech.Logo className="w-full h-full" />
+          <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+            <div className="flex w-max gap-4 animate-marquee group-hover:[animation-play-state:paused]">
+              {[...techItems, ...techItems].map((tech, i) => (
+                <div
+                  key={i}
+                  aria-hidden={i >= techItems.length}
+                  className="w-[230px] shrink-0 bg-white/[0.02] border border-white/[0.06] rounded-lg p-4 flex items-center gap-3 hover:border-blue-500/20 transition-colors duration-300"
+                >
+                  <div className="w-9 h-9 rounded-md bg-white/[0.04] flex items-center justify-center shrink-0 border border-white/[0.06] p-1.5">
+                    <tech.Logo className="w-full h-full" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-white text-sm font-medium truncate">
+                      {tech.name}
+                    </p>
+                    <p className="text-gray-500 text-xs truncate">{tech.desc}</p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <p className="text-white text-sm font-medium truncate">
-                    {tech.name}
-                  </p>
-                  <p className="text-gray-500 text-xs truncate">{tech.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
