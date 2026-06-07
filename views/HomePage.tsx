@@ -13,6 +13,7 @@ import {
   Grid3x3,
   ArrowUpRight,
   Star,
+  Check,
   Cpu,
   Layers,
   BookOpen,
@@ -100,8 +101,47 @@ function SectionDivider() {
   return <div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />;
 }
 
+// Pricing packages. Prices are intentionally left blank → the card shows a
+// "request a quote" CTA. To publish real prices, set `priceFrom` (e.g.
+// priceFrom: { id: "Rp 1,5jt", en: "$120" }) and they render as "Mulai dari …".
+const PACKAGES = [
+  {
+    key: "landing",
+    name: "Landing Page",
+    popular: false,
+    priceFrom: { id: "", en: "" },
+    tagline: { id: "Untuk kampanye & konversi cepat", en: "For campaigns & fast conversion" },
+    features: {
+      id: ["1 halaman, fokus konversi", "Desain modern & responsif", "Form kontak / WhatsApp", "SEO dasar", "2x revisi"],
+      en: ["Single page, conversion-focused", "Modern & responsive design", "Contact / WhatsApp form", "Basic SEO", "2 revisions"],
+    },
+  },
+  {
+    key: "company",
+    name: "Company Profile",
+    popular: true,
+    priceFrom: { id: "", en: "" },
+    tagline: { id: "Untuk kredibilitas bisnis", en: "For business credibility" },
+    features: {
+      id: ["5–7 halaman", "Desain custom + branding", "CMS / blog (panel admin)", "SEO + Analytics", "Setup domain & hosting", "3x revisi"],
+      en: ["5–7 pages", "Custom design + branding", "CMS / blog (admin panel)", "SEO + Analytics", "Domain & hosting setup", "3 revisions"],
+    },
+  },
+  {
+    key: "webapp",
+    name: "Custom Web App",
+    popular: false,
+    priceFrom: { id: "", en: "" },
+    tagline: { id: "Untuk sistem operasional", en: "For operational systems" },
+    features: {
+      id: ["Dashboard, CRUD, autentikasi", "Database & integrasi API", "Role-based access", "Arsitektur scalable", "Maintenance 1 bulan"],
+      en: ["Dashboard, CRUD, auth", "Database & API integration", "Role-based access", "Scalable architecture", "1 month maintenance"],
+    },
+  },
+] as const;
+
 export default function HomePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -172,32 +212,25 @@ export default function HomePage() {
         <div className={`${container} relative z-10 w-full py-24`}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mb-6"
-              >
+              {/* Above-the-fold text uses CSS (not framer-motion) so it paints
+                  immediately without waiting for JS hydration — critical for LCP. */}
+              <div className="mb-6 animate-fadeInUp">
                 <SectionLabel>{t("hero.label")}</SectionLabel>
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent animate-fadeInUp"
+                style={{ animationDelay: "0.06s" }}
               >
                 {t("hero.headline")}
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed"
+              <p
+                className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed animate-fadeInUp"
+                style={{ animationDelay: "0.14s" }}
               >
                 {t("hero.subtitle")}
-              </motion.p>
+              </p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -454,6 +487,117 @@ export default function HomePage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Section 2.2: Packages */}
+      <section className="py-24 bg-[#070f1e] border-y border-white/[0.06] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.06)_0%,transparent_60%)]" />
+        </div>
+
+        <div className={`${container} relative z-10`}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4 text-center">
+            <SectionLabel>{language === "id" ? "PAKET & HARGA" : "PACKAGES & PRICING"}</SectionLabel>
+          </motion.div>
+          <motion.h2
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-3"
+          >
+            {language === "id" ? "Paket yang Jelas, Sesuai Kebutuhan" : "Clear Packages, Tailored to You"}
+          </motion.h2>
+          <motion.p
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-gray-400 text-center max-w-2xl mx-auto mb-12 leading-relaxed"
+          >
+            {language === "id"
+              ? "Setiap proyek unik — harga final menyesuaikan scope. Hubungi kami untuk penawaran yang pas."
+              : "Every project is unique — final pricing matches scope. Reach out for a quote that fits."}
+          </motion.p>
+
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            {PACKAGES.map((pkg, i) => {
+              const price = pkg.priceFrom[language];
+              return (
+                <motion.div
+                  key={pkg.key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  onMouseMove={handleSpotlight}
+                  className={`group relative flex flex-col rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${
+                    pkg.popular
+                      ? "bg-blue-600/[0.08] border border-blue-500/40 shadow-lg shadow-blue-900/20 md:-mt-3 md:mb-3"
+                      : "bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20"
+                  }`}
+                >
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ background: "radial-gradient(420px circle at var(--x) var(--y), rgba(56,189,248,0.10), transparent 60%)" }}
+                  />
+                  {pkg.popular && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg shadow-blue-600/30">
+                      <Star className="w-3 h-3 fill-current" />
+                      {language === "id" ? "Paling Populer" : "Most Popular"}
+                    </span>
+                  )}
+
+                  <div className="relative">
+                    <h3 className="text-lg font-semibold text-white">{pkg.name}</h3>
+                    <p className="text-gray-400 text-sm mt-1 mb-5">{pkg.tagline[language]}</p>
+
+                    <div className="mb-6">
+                      {price ? (
+                        <>
+                          <span className="text-xs text-gray-500">{language === "id" ? "Mulai dari" : "From"}</span>
+                          <p className="text-3xl font-bold bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+                            {price}
+                          </p>
+                        </>
+                      ) : (
+                        <p className="text-2xl font-bold text-white">
+                          {language === "id" ? "Konsultasi" : "Let's talk"}
+                          <span className="block text-xs font-normal text-gray-500 mt-1">
+                            {language === "id" ? "penawaran sesuai kebutuhan" : "quote tailored to scope"}
+                          </span>
+                        </p>
+                      )}
+                    </div>
+
+                    <ul className="space-y-3 mb-8">
+                      {pkg.features[language].map((f) => (
+                        <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
+                          <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href={`https://wa.me/6285167002152?text=${encodeURIComponent(
+                      `Halo Vorca Studio, saya tertarik dengan paket ${pkg.name}.`,
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative mt-auto inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-medium transition-all duration-300 ${
+                      pkg.popular
+                        ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20"
+                        : "border border-white/10 bg-white/[0.02] text-gray-200 hover:bg-white/[0.05] hover:border-blue-500/30"
+                    }`}
+                  >
+                    {language === "id" ? "Konsultasi Paket Ini" : "Discuss This Package"}
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

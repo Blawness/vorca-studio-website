@@ -4,10 +4,8 @@ import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CustomerServiceButton from "@/components/CustomerServiceButton";
-import SmoothScroll from "@/components/effects/SmoothScroll";
 import ScrollProgress from "@/components/effects/ScrollProgress";
-import GrainOverlay from "@/components/effects/GrainOverlay";
-import CustomCursor from "@/components/effects/CustomCursor";
+import DeferredEffects from "@/components/effects/DeferredEffects";
 
 /**
  * Renders the public marketing chrome (header, footer, WhatsApp button) for
@@ -25,14 +23,13 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <SmoothScroll>
+    <>
       <ScrollProgress />
-      <GrainOverlay />
-      <CustomCursor />
       <Header />
       <main>{children}</main>
       <Footer />
       <CustomerServiceButton />
-    </SmoothScroll>
+      <DeferredEffects />
+    </>
   );
 }

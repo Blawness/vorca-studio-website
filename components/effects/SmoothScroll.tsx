@@ -1,13 +1,13 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
 /**
- * Buttery inertia scrolling via Lenis. Respects reduced-motion and stays out
- * of the way of native anchor / scrollIntoView behaviour.
+ * Buttery inertia scrolling via Lenis. Setup-only (renders nothing) so it can
+ * be mounted lazily after first paint. Respects reduced-motion.
  */
-export default function SmoothScroll({ children }: { children: ReactNode }) {
+export default function SmoothScroll() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -31,5 +31,5 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return null;
 }
