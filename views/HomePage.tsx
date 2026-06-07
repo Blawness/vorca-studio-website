@@ -25,6 +25,8 @@ import {
   SupabaseLogo,
 } from "@/components/TechLogos";
 import { CountUp } from "@/components/CountUp";
+import TiltCard from "@/components/effects/TiltCard";
+import Magnetic from "@/components/effects/Magnetic";
 
 /** Cursor-following spotlight: sets --x/--y on the card so an overlay can glow. */
 function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
@@ -117,10 +119,11 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background lighting */}
         <div className="absolute inset-0 bg-[#050b16]">
+          {/* Drifting aurora blobs */}
+          <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[100px] bg-[radial-gradient(circle,rgba(37,99,235,0.25)_0%,transparent_65%)] animate-aurora-1" />
+          <div className="absolute top-[10%] left-[10%] w-[520px] h-[520px] rounded-full blur-[100px] bg-[radial-gradient(circle,rgba(6,182,212,0.16)_0%,transparent_65%)] animate-aurora-2" />
           {/* Main blue spotlight behind laptop area (right side) */}
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[900px] h-[900px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.15)_0%,rgba(37,99,235,0.05)_40%,transparent_70%)]" />
-          {/* Subtle ambient blue from top */}
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(59,130,246,0.08)_0%,transparent_60%)]" />
           {/* Bottom ambient */}
           <div className="absolute bottom-0 right-1/3 w-[500px] h-[400px] bg-[radial-gradient(circle,rgba(37,99,235,0.06)_0%,transparent_60%)]" />
           {/* Grid overlay for depth */}
@@ -184,21 +187,23 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-wrap items-center gap-3"
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-auto rounded-lg px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-600/20 transition-all duration-300 border-0 gap-2 text-sm"
-                >
-                  <a
-                    href="https://wa.me/6285167002152"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Magnetic strength={0.4}>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-auto rounded-lg px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-600/20 transition-all duration-300 border-0 gap-2 text-sm"
                   >
-                    <Mail className="w-4 h-4" />
-                    {t("hero.cta.dm")}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </Button>
+                    <a
+                      href="https://wa.me/6285167002152"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {t("hero.cta.dm")}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </Magnetic>
                 <Link
                   href="/portfolio"
                   className="inline-flex items-center gap-2 h-auto rounded-lg px-6 py-3.5 text-sm font-medium text-gray-200 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-300"
@@ -217,7 +222,7 @@ export default function HomePage() {
             >
               {/* Blue glow behind dashboard */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.2)_0%,transparent_60%)] pointer-events-none" />
-              <div className="relative bg-[#0a1628]/80 rounded-xl border border-blue-500/10 p-5 shadow-2xl shadow-blue-900/30 backdrop-blur-sm">
+              <TiltCard max={9} className="relative bg-[#0a1628]/80 rounded-xl border border-blue-500/10 p-5 shadow-2xl shadow-blue-900/30 backdrop-blur-sm">
                 {/* Browser chrome */}
                 <div className="flex items-center gap-2 mb-5 pb-3 border-b border-white/[0.06]">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
@@ -282,7 +287,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </TiltCard>
 
               {/* Floating badge */}
               <motion.div
