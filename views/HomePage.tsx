@@ -98,9 +98,9 @@ export default function HomePage() {
   ];
 
   const portfolioItems = [
-    { title: "E-Commerce Platform", category: "Web App" },
-    { title: "Company Profile — PT Maju Jaya", category: "Website" },
-    { title: "Dashboard Analytics", category: "Web App" },
+    { title: "Harun Pratitno Law Firm", category: "Company Profile", slug: "harun-lawfirm", url: "https://www.harunlawfirm.com" },
+    { title: "FinEdu", category: "Web App", slug: "finedu", url: "https://www.finedu.my.id" },
+    { title: "NudgeCart", category: "Web App", slug: "nudgecart", url: "https://nudgecart.vercel.app" },
   ];
 
   return (
@@ -637,21 +637,29 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {portfolioItems.map((item, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group rounded-xl overflow-hidden bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 transition-all duration-300"
+                className="group block rounded-xl overflow-hidden bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="relative aspect-video bg-[#0a1628] rounded-t-xl overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5" />
-                  {/* Subtle grid pattern */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
+                <div className="relative aspect-video bg-[#0a1628] overflow-hidden">
+                  <img
+                    src={`/portfolio/${item.slug}.jpg`}
+                    alt={`Screenshot ${item.title}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition-opacity duration-300">
-                    <span className="text-sm text-white font-medium px-4 py-2 rounded-lg bg-blue-600/80">
+                    <span className="inline-flex items-center gap-2 text-sm text-white font-medium px-4 py-2 rounded-lg bg-blue-600/90">
                       {t("portfolio.viewDetail")}
+                      <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
@@ -661,7 +669,7 @@ export default function HomePage() {
                   </span>
                   <h3 className="text-white font-semibold mt-1">{item.title}</h3>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
