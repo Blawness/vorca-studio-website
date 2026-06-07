@@ -1,4 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+
+const STORAGE_KEY = "vorca-lang";
 
 type Language = "id" | "en";
 
@@ -630,7 +632,19 @@ const translations = {
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("id");
+  const [language, setLanguageState] = useState<Language>("id");
+
+  // Restore the saved language on mount (kept out of the initial state to avoid
+  // an SSR/CSR hydration mismatch).
+  useEffect(() => {
+    const saved = typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
+    if (saved === "id" || saved === "en") setLanguageState(saved);
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    if (typeof window !== "undefined") localStorage.setItem(STORAGE_KEY, lang);
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;

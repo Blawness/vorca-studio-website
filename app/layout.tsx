@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/toaster";
 import SiteChrome from "@/components/SiteChrome";
 import { Providers } from "../components/providers";
@@ -147,6 +148,7 @@ export default function RootLayout({
                     <SiteChrome>{children}</SiteChrome>
                     <Toaster />
                 </Providers>
+                <Analytics />
             </body>
         </html>
     );

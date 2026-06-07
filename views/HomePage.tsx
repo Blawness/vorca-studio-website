@@ -12,7 +12,6 @@ import {
   Building,
   Grid3x3,
   ArrowUpRight,
-  Quote,
   Star,
   Cpu,
   Layers,
@@ -130,12 +129,6 @@ export default function HomePage() {
     { value: t("stats.clients.value"), label: t("stats.clients.label") },
     { value: t("stats.satisfaction.value"), label: t("stats.satisfaction.label") },
     { value: t("stats.experience.value"), label: t("stats.experience.label") },
-  ];
-
-  const testimonials = [
-    { quote: t("testimonials.1.quote"), name: t("testimonials.1.name"), role: t("testimonials.1.role") },
-    { quote: t("testimonials.2.quote"), name: t("testimonials.2.name"), role: t("testimonials.2.role") },
-    { quote: t("testimonials.3.quote"), name: t("testimonials.3.name"), role: t("testimonials.3.role") },
   ];
 
   const processSteps = [
@@ -651,66 +644,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 3.5: Testimonials */}
-      <section className="py-24 bg-[#070f1e] border-y border-white/[0.06] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.05)_0%,transparent_60%)]" />
-        </div>
-
-        <div className={`${container} relative z-10`}>
-          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
-            <SectionLabel>{t("testimonials.label")}</SectionLabel>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <motion.h2
-              {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl md:text-4xl font-bold text-white leading-tight"
-            >
-              {t("testimonials.headline")}
-            </motion.h2>
-            <motion.p
-              {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-400 text-lg self-end leading-relaxed"
-            >
-              {t("testimonials.description")}
-            </motion.p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((tm, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="relative flex flex-col rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-blue-500/20 transition-all duration-300"
-              >
-                <Quote className="w-8 h-8 text-blue-500/30 mb-4" />
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <Star key={s} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-6">
-                  &ldquo;{tm.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/20 flex items-center justify-center text-sm font-bold text-blue-200 border border-white/[0.08]">
-                    {tm.name.charAt(0)}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-white text-sm font-semibold truncate">{tm.name}</p>
-                    <p className="text-gray-500 text-xs truncate">{tm.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SectionDivider />
 
       {/* Section 4: Teknologi Kami */}
       <section className="py-24 bg-[#050b16] relative">
