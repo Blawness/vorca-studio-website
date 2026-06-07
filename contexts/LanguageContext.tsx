@@ -120,6 +120,8 @@ const translations = {
     "services.addons.list": "SEO Basic Setup, Analytics Setup, Deployment VPS/Cloud, Integrasi API tambahan",
 
     "services.cta.discuss": "Diskusikan Proyek Anda",
+    "services.mostPopular": "Paling Populer",
+    "services.getStarted": "Mulai Sekarang",
     "services.label": "LAYANAN KAMI",
     "services.headline": "Solusi Digital yang Sesuai Kebutuhan Anda",
     "services.description": "Kami fokus pada 3 layanan utama untuk membantu bisnis Anda tampil profesional dan berkembang di dunia digital.",
@@ -270,6 +272,9 @@ const translations = {
     // Contact
     "contact.title": "Hubungi Kami",
     "contact.subtitle": "Mari diskusikan proyek Anda",
+    "contact.label": "HUBUNGI KAMI",
+    "contact.locationLabel": "LOKASI",
+    "contact.service": "Jenis Layanan",
     "contact.sendMessage": "Kirim pesan",
     "contact.getInTouch": "Hubungi Kami",
     "contact.getInTouch.desc": "Siap memulai? Kami ingin mendengar dari Anda.",
@@ -417,6 +422,8 @@ const translations = {
     "services.addons.list": "SEO Basic Setup, Analytics Setup, VPS/Cloud Deployment, Additional API Integration",
 
     "services.cta.discuss": "Discuss Your Project",
+    "services.mostPopular": "Most Popular",
+    "services.getStarted": "Get Started",
     "services.label": "OUR SERVICES",
     "services.headline": "Digital Solutions Tailored to Your Needs",
     "services.description": "We focus on 3 core services to help your business look professional and grow in the digital world.",
@@ -567,6 +574,9 @@ const translations = {
     // Contact
     "contact.title": "Contact Us",
     "contact.subtitle": "Let's discuss",
+    "contact.label": "GET IN TOUCH",
+    "contact.locationLabel": "LOCATION",
+    "contact.service": "Service Type",
     "contact.sendMessage": "Send message",
     "contact.getInTouch": "Get in Touch",
     "contact.getInTouch.desc": "We'd love to hear from you.",
