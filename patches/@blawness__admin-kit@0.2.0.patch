@@ -1,0 +1,26 @@
+diff --git a/dist/components/admin/editor.js b/dist/components/admin/editor.js
+index ce00f21d0b5713c770328b4b8325824ff94c03a8..3c644b5525a546f3e4a93c9682a99728c0c30163 100644
+--- a/dist/components/admin/editor.js
++++ b/dist/components/admin/editor.js
+@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
+ export function Editor({ value, onChange, }) {
+     const editor = useEditor({
+         extensions: [
+-            StarterKit.configure({ heading: { levels: [2, 3, 4] } }),
++            StarterKit.configure({ heading: { levels: [2, 3, 4] }, link: false }),
+             Link.configure({ openOnClick: false }),
+             Image,
+         ],
+diff --git a/src/components/admin/editor.tsx b/src/components/admin/editor.tsx
+index 2438c5a04db09044f9889410765ddc4df5ac4d99..d6e4cba08275ca30ac55bf4e1fe17babadec1e6f 100644
+--- a/src/components/admin/editor.tsx
++++ b/src/components/admin/editor.tsx
+@@ -15,7 +15,7 @@ export function Editor({
+ }) {
+   const editor = useEditor({
+     extensions: [
+-      StarterKit.configure({ heading: { levels: [2, 3, 4] } }),
++      StarterKit.configure({ heading: { levels: [2, 3, 4] }, link: false }),
+       Link.configure({ openOnClick: false }),
+       Image,
+     ],

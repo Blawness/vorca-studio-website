@@ -73,6 +73,9 @@
     "overrides": {
       "postcss@<8.5.10": "^8.5.10",
       "load-yaml-file>js-yaml": "^3.14.2"
+    },
+    "patchedDependencies": {
+      "@blawness/admin-kit@0.2.0": "patches/@blawness__admin-kit@0.2.0.patch"
     }
   }
 }
