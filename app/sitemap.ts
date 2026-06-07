@@ -1,22 +1,40 @@
 import type { MetadataRoute } from "next";
+import { db } from "@/db";
+import { articles } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 const baseUrl = "https://www.vorcastudio.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const routes = [
-        "",
-        "/services",
-        "/about",
-        "/portfolio",
-        "/contact",
-        "/articles",
-        "/students",
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const staticRoutes = [
+        { url: "", priority: 1, changeFrequency: "weekly" as const },
+        { url: "/services", priority: 0.8, changeFrequency: "monthly" as const },
+        { url: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+        { url: "/portfolio", priority: 0.8, changeFrequency: "monthly" as const },
+        { url: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
+        { url: "/students", priority: 0.8, changeFrequency: "monthly" as const },
     ];
 
-    return routes.map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: route === "" ? "weekly" : "monthly",
-        priority: route === "" ? 1 : 0.8,
+    const articleRows = await db
+        .select({ slug: articles.slug, updatedAt: articles.updatedAt })
+        .from(articles)
+        .where(eq(articles.status, "published"));
+
+    const articleEntries: MetadataRoute.Sitemap = articleRows.map((a) => ({
+        url: `${baseUrl}/articles/${a.slug}`,
+        lastModified: a.updatedAt,
+        changeFrequency: "weekly" as const,
+        priority: 0.64,
     }));
+
+    return [
+        ...staticRoutes.map((r) => ({
+            url: `${baseUrl}${r.url}`,
+            lastModified: new Date(),
+            changeFrequency: r.changeFrequency,
+            priority: r.priority,
+        })),
+        { url: `${baseUrl}/articles`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+        ...articleEntries,
+    ];
 }
