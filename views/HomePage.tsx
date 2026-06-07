@@ -14,6 +14,12 @@ import {
   ArrowUpRight,
   Quote,
   Star,
+  Cpu,
+  Layers,
+  BookOpen,
+  Server,
+  Workflow,
+  type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -33,6 +39,46 @@ function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
   const r = e.currentTarget.getBoundingClientRect();
   e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`);
   e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`);
+}
+
+/** A single Bento grid cell with icon, copy, and cursor spotlight. */
+function BentoCell({
+  icon: Icon,
+  title,
+  desc,
+  delay = 0,
+  wide = false,
+}: {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  delay?: number;
+  wide?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      onMouseMove={handleSpotlight}
+      className={`group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-blue-500/20 transition-colors duration-300 ${
+        wide ? "md:col-span-2" : ""
+      }`}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ background: "radial-gradient(380px circle at var(--x) var(--y), rgba(56,189,248,0.08), transparent 60%)" }}
+      />
+      <div className="relative">
+        <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center mb-4">
+          <Icon className="w-5 h-5 text-cyan-300" />
+        </div>
+        <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+        <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+      </div>
+    </motion.div>
+  );
 }
 
 const fadeUp = {
@@ -415,6 +461,77 @@ export default function HomePage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Section 2.5: Why Vorca — Bento */}
+      <section className="py-24 bg-[#050b16] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/3 right-0 w-[600px] h-[500px] bg-[radial-gradient(ellipse,rgba(6,182,212,0.05)_0%,transparent_60%)]" />
+        </div>
+
+        <div className={`${container} relative z-10`}>
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-4">
+            <SectionLabel>{t("whyChoose.label")}</SectionLabel>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <motion.h2
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl md:text-4xl font-bold text-white leading-tight"
+            >
+              {t("whyChoose.headline")}
+            </motion.h2>
+            <motion.p
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-400 text-lg self-end leading-relaxed"
+            >
+              {t("whyChoose.subtitle")}
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[190px]">
+            {/* Big: Engineering-first */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              onMouseMove={handleSpotlight}
+              className="group relative overflow-hidden rounded-2xl border border-blue-500/20 bg-blue-600/[0.06] p-6 md:col-span-2 md:row-span-2 hover:border-blue-500/30 transition-colors duration-300"
+            >
+              <div
+                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                style={{ background: "radial-gradient(500px circle at var(--x) var(--y), rgba(56,189,248,0.1), transparent 60%)" }}
+              />
+              <div className="relative">
+                <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center mb-4">
+                  <Cpu className="w-6 h-6 text-blue-300" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{t("whyChoose.engineering.title")}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-md">{t("whyChoose.engineering.desc")}</p>
+              </div>
+              {/* Decorative code block */}
+              <div className="hidden md:block absolute right-5 bottom-5 left-5 rounded-lg border border-white/[0.06] bg-black/40 p-3 font-mono text-[11px] leading-relaxed text-gray-500 backdrop-blur-sm">
+                <p><span className="text-pink-400">const</span> <span className="text-blue-300">app</span> = <span className="text-cyan-300">architect</span>({"{"}</p>
+                <p className="pl-4"><span className="text-gray-400">scalable</span>: <span className="text-emerald-400">true</span>,</p>
+                <p className="pl-4"><span className="text-gray-400">maintainable</span>: <span className="text-emerald-400">true</span>,</p>
+                <p>{"}"});</p>
+              </div>
+            </motion.div>
+
+            {/* Clean UI */}
+            <BentoCell icon={Layers} title={t("whyChoose.cleanUi.title")} desc={t("whyChoose.cleanUi.desc")} delay={0.1} />
+            {/* Docs */}
+            <BentoCell icon={BookOpen} title={t("whyChoose.docs.title")} desc={t("whyChoose.docs.desc")} delay={0.15} />
+            {/* Scalable (wide) */}
+            <BentoCell icon={Server} title={t("valuePillars.scalable.title")} desc={t("valuePillars.scalable.desc")} delay={0.2} wide />
+            {/* Workflow */}
+            <BentoCell icon={Workflow} title={t("valuePillars.workflow.title")} desc={t("valuePillars.workflow.desc")} delay={0.25} />
           </div>
         </div>
       </section>

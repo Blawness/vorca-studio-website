@@ -174,6 +174,9 @@ const translations = {
     "whyChoose.cleanUi.desc": "Perpaduan UI modern yang rapi dengan fondasi backend yang kuat.",
     "whyChoose.docs.title": "Dokumentasi & Maintainability",
     "whyChoose.docs.desc": "Setiap proyek dirancang agar mudah dikembangkan dalam jangka panjang.",
+    "whyChoose.label": "KENAPA VORCA",
+    "whyChoose.headline": "Dibangun beda, dengan sengaja",
+    "whyChoose.subtitle": "Bukan sekadar bikin website — kami bangun fondasi teknis yang benar-benar dipakai dan tahan lama.",
 
     // CTA Footer
     "cta.title": "Siap membangun aplikasi web yang benar-benar dipakai tim Anda?",
@@ -479,6 +482,9 @@ const translations = {
     "whyChoose.cleanUi.desc": "Combination of clean modern UI with a strong backend foundation.",
     "whyChoose.docs.title": "Documentation & Maintainability",
     "whyChoose.docs.desc": "Every project is designed to be easily developed in the long term.",
+    "whyChoose.label": "WHY VORCA",
+    "whyChoose.headline": "Built different, on purpose",
+    "whyChoose.subtitle": "Not just building websites — we lay technical foundations that are actually used and built to last.",
 
     // CTA Footer
     "cta.title": "Ready to build web apps your team actually uses?",
