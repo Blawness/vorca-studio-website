@@ -69,3 +69,11 @@ encore.gen.cue
 .cache
 .turbo
 .playwright-cli/
+
+# Lighthouse / Chrome temp profiles (can land in-repo when run under WSL)
+C:\\*
+lighthouse.*
+**/lighthouse.*
+**/SingletonLock
+**/SingletonCookie
+**/DawnWebGPUCache/
