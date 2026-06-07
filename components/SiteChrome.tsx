@@ -26,7 +26,10 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     <>
       <ScrollProgress />
       <Header />
-      <main>{children}</main>
+      {/* overflow-x-clip contains decorative glows/aurora that extend past the
+          viewport, preventing sideways scroll on mobile. `clip` doesn't create a
+          scroll container, so sticky positioning inside still works. */}
+      <main className="overflow-x-clip">{children}</main>
       <Footer />
       <CustomerServiceButton />
       <DeferredEffects />
