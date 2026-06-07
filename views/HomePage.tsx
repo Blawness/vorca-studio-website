@@ -135,7 +135,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-br from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
               >
                 {t("hero.headline")}
               </motion.h1>
