@@ -38,6 +38,119 @@ type Project = {
   tags: string[];
 };
 
+/**
+ * Portfolio card that lazy-loads a live, scaled-down iframe of the real site
+ * on first hover — a screenshot stays underneath as the instant/fallback view.
+ */
+function ProjectCard({
+  project,
+  index,
+  language,
+  liveLabel,
+  visitLabel,
+  previewLabel,
+}: {
+  project: Project;
+  index: number;
+  language: "id" | "en";
+  liveLabel: string;
+  visitLabel: string;
+  previewLabel: string;
+}) {
+  const [active, setActive] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <motion.a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+      viewport={{ once: true }}
+      onMouseEnter={() => setActive(true)}
+      className="group block"
+    >
+      <Card className="h-full bg-white/[0.02] border border-white/[0.06] group-hover:border-blue-500/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-blue-600/20 overflow-hidden p-0">
+        <div className="relative h-48 overflow-hidden bg-[#0a1628]">
+          {/* Screenshot (instant + fallback) */}
+          <img
+            src={`/portfolio/${project.slug}.jpg`}
+            alt={`Screenshot ${project.title}`}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+
+          {/* Live iframe — mounts on first hover, fades in over the screenshot */}
+          {active && (
+            <iframe
+              src={project.url}
+              title={`Live preview ${project.title}`}
+              loading="lazy"
+              tabIndex={-1}
+              aria-hidden
+              onLoad={() => setLoaded(true)}
+              className={`absolute inset-0 h-[285%] w-[285%] origin-top-left scale-[0.35] border-0 pointer-events-none transition-opacity duration-700 ${
+                loaded ? "opacity-0 group-hover:opacity-100" : "opacity-0"
+              }`}
+            />
+          )}
+
+          {/* Loading hint while iframe warms up */}
+          {active && !loaded && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-[11px] text-gray-300 border border-white/10">
+                {previewLabel}
+              </span>
+            </div>
+          )}
+
+          {/* Live badge */}
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-sm px-2.5 py-1 text-[11px] font-medium text-white border border-white/10">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            </span>
+            {liveLabel}
+          </div>
+
+          {/* Visit pill on hover */}
+          <div className="absolute inset-x-0 bottom-0 z-20 flex items-end justify-center pb-4 pt-10 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-600/20">
+              <ExternalLink className="w-4 h-4" />
+              {visitLabel}
+            </span>
+          </div>
+        </div>
+
+        <CardContent className="p-6">
+          <div className="flex items-center justify-between mb-3">
+            <Badge className="bg-blue-600/15 text-blue-400 border border-blue-500/10 font-semibold">
+              {project.category}
+            </Badge>
+            <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
+          </div>
+          <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+          <p className="text-gray-400 text-sm leading-relaxed mb-4">{project.desc[language]}</p>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag, tagIndex) => (
+              <Badge
+                key={tagIndex}
+                variant="secondary"
+                className="text-xs bg-white/[0.04] text-gray-400 border border-white/[0.06]"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.a>
+  );
+}
+
 export default function PortfolioPage() {
   const { t, language } = useLanguage();
   const [active, setActive] = useState(0);
@@ -156,6 +269,7 @@ export default function PortfolioPage() {
 
   const visitLabel = language === "id" ? "Kunjungi Situs" : "Visit Site";
   const liveLabel = language === "id" ? "Live" : "Live";
+  const previewLabel = language === "id" ? "Memuat preview…" : "Loading preview…";
 
   return (
     <div className="pt-16 bg-[#050b16]">
@@ -199,69 +313,15 @@ export default function PortfolioPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((project, index) => (
-              <motion.a
+              <ProjectCard
                 key={project.slug}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                viewport={{ once: true }}
-                className="group block"
-              >
-                <Card className="h-full bg-white/[0.02] border border-white/[0.06] group-hover:border-blue-500/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-blue-600/20 overflow-hidden p-0">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={`/portfolio/${project.slug}.jpg`}
-                      alt={`Screenshot ${project.title}`}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    />
-                    {/* Live badge */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-sm px-2.5 py-1 text-[11px] font-medium text-white border border-white/10">
-                      <span className="relative flex h-1.5 w-1.5">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      </span>
-                      {liveLabel}
-                    </div>
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                      <span className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-600/20">
-                        <ExternalLink className="w-4 h-4" />
-                        {visitLabel}
-                      </span>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <Badge className="bg-blue-600/15 text-blue-400 border border-blue-500/10 font-semibold">
-                        {project.category}
-                      </Badge>
-                      <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {project.desc[language]}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <Badge
-                          key={tagIndex}
-                          variant="secondary"
-                          className="text-xs bg-white/[0.04] text-gray-400 border border-white/[0.06]"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.a>
+                project={project}
+                index={index}
+                language={language}
+                liveLabel={liveLabel}
+                visitLabel={visitLabel}
+                previewLabel={previewLabel}
+              />
             ))}
           </div>
         </div>
