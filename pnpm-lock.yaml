@@ -8,18 +8,13 @@ overrides:
   postcss@<8.5.10: ^8.5.10
   load-yaml-file>js-yaml: ^3.14.2
 
-patchedDependencies:
-  '@blawness/admin-kit@0.2.0':
-    hash: 87ab4117ec1ca06485b6aaaa9a3a78e4364703f219b0084a963d6c601ae58e2b
-    path: patches/@blawness__admin-kit@0.2.0.patch
-
 importers:
 
   .:
     dependencies:
       '@blawness/admin-kit':
-        specifier: 0.2.0
-        version: 0.2.0(patch_hash=87ab4117ec1ca06485b6aaaa9a3a78e4364703f219b0084a963d6c601ae58e2b)(@date-fns/tz@1.5.0)(@floating-ui/dom@1.7.6)(@tiptap/core@3.26.0(@tiptap/pm@3.26.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(date-fns@4.4.0)(next@16.2.7(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwindcss@4.3.0)
+        specifier: 0.4.0
+        version: 0.4.0(@date-fns/tz@1.5.0)(@floating-ui/dom@1.7.6)(@tiptap/core@3.26.0(@tiptap/pm@3.26.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(date-fns@4.4.0)(next@16.2.7(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwindcss@4.3.0)
       '@radix-ui/react-label':
         specifier: ^2.1.7
         version: 2.1.9(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -288,8 +283,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@blawness/admin-kit@0.2.0':
-    resolution: {integrity: sha512-cjHFuFkSPOXAVI1k4ipfbWmdsjwy/5UTBDAWrD+ndaG9+dGQeYRGHW1xWcZcQ3bxFz2JWs0JdH6QONhnKIcfiA==}
+  '@blawness/admin-kit@0.4.0':
+    resolution: {integrity: sha512-f0e8dMdgZb/SBsh35okaSxLxh5FKxm9YM3oIOnEBClptTjbgLniWQ9oA6t9kBozncCWDBrID3liWWvg8gO5njg==}
     peerDependencies:
       next: ^16.2.0
       react: ^19.2.0
@@ -2709,7 +2704,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.17
 
-  '@blawness/admin-kit@0.2.0(patch_hash=87ab4117ec1ca06485b6aaaa9a3a78e4364703f219b0084a963d6c601ae58e2b)(@date-fns/tz@1.5.0)(@floating-ui/dom@1.7.6)(@tiptap/core@3.26.0(@tiptap/pm@3.26.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(date-fns@4.4.0)(next@16.2.7(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwindcss@4.3.0)':
+  '@blawness/admin-kit@0.4.0(@date-fns/tz@1.5.0)(@floating-ui/dom@1.7.6)(@tiptap/core@3.26.0(@tiptap/pm@3.26.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(date-fns@4.4.0)(next@16.2.7(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwindcss@4.3.0)':
     dependencies:
       '@aws-sdk/client-s3': 3.1063.0
       '@base-ui/react': 1.5.0(@date-fns/tz@1.5.0)(@types/react@19.2.17)(date-fns@4.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
