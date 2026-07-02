@@ -15,7 +15,7 @@ export default async function AdminArticlesPage() {
             title: articles.title,
             slug: articles.slug,
             status: articles.status,
-            category: articles.category,
+            categoryId: articles.categoryId,
             publishedAt: articles.publishedAt,
         })
         .from(articles)
@@ -54,7 +54,7 @@ export default async function AdminArticlesPage() {
                     {rows.map((row) => (
                         <tr key={row.id} className="border-b hover:bg-muted/30">
                             <td className="py-3 font-medium">{row.title}</td>
-                            <td className="py-3">{row.category}</td>
+                            <td className="py-3">{row.categoryId}</td>
                             <td className="py-3">
                                 <span
                                     className={

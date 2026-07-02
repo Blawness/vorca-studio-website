@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import ArticlesPage from "@/views/ArticlesPage";
 import { getAllArticles } from "@/lib/articles";
 
-export const revalidate = 3600;
-
 export const metadata: Metadata = {
     title: { absolute: "Artikel & Insight Web Development | Vorca Studio" },
     description:

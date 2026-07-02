@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import ContactPage from "@/views/ContactPage";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: { absolute: "Kontak & Konsultasi Gratis | Vorca Studio" },
     description:

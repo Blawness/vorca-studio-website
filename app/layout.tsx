@@ -145,7 +145,7 @@ export default function RootLayout({
             </head>
             <body className="min-h-screen bg-black text-white">
                 <Providers>
-                    <SiteChrome>{children}</SiteChrome>
+                    {children}
                     <Toaster />
                 </Providers>
                 <Analytics />

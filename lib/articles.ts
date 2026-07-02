@@ -1,7 +1,8 @@
-import { db } from "@/db";
-import { articles } from "@/db/schema";
-import { desc, eq } from "drizzle-orm";
-import { unstable_cache } from "next/cache";
+import {
+    getPublishedArticles,
+    getPublishedArticleBySlug,
+    getPublishedArticleSlugs,
+} from "@blawness/admin-kit/public";
 
 export type Article = {
     id: number;
@@ -17,61 +18,43 @@ export type Article = {
     tags: string[];
 };
 
-function mapRow(row: typeof articles.$inferSelect): Article {
+export async function getAllArticles(): Promise<Article[]> {
+    const rawArticles = await getPublishedArticles();
+    return rawArticles.map((raw) => ({
+        id: raw.id,
+        slug: raw.slug,
+        title: raw.title,
+        excerpt: raw.excerpt ?? "",
+        content: "",
+        image: raw.coverImageUrl?.trim() ? raw.coverImageUrl : "",
+        category: raw.categoryName ?? "",
+        author: raw.authorName ?? "Vorca Studio",
+        date: raw.publishedAt?.toISOString() ?? new Date().toISOString(),
+        readTime: 5,
+        tags: [],
+    }));
+}
+
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+    const raw = await getPublishedArticleBySlug(slug);
+    if (!raw) return null;
+
     return {
-        id: row.id,
-        slug: row.slug,
-        title: row.title,
-        excerpt: row.excerpt,
-        content: row.content,
-        image: row.coverImageUrl?.trim() ? row.coverImageUrl : "",
-        category: row.category,
-        author: row.author,
-        date: row.publishedAt?.toISOString() ?? row.createdAt.toISOString(),
-        readTime: row.readTime,
-        tags: row.tags,
+        id: raw.id,
+        slug: raw.slug,
+        title: raw.title,
+        excerpt: raw.excerpt ?? "",
+        content: raw.content ?? "",
+        image: raw.coverImageUrl?.trim() ? raw.coverImageUrl : "",
+        category: raw.categoryName ?? "",
+        author: raw.authorName ?? "Vorca Studio",
+        date: raw.publishedAt?.toISOString() ?? raw.updatedAt?.toISOString() ?? new Date().toISOString(),
+        readTime: 5, // We can calculate read time based on content length or leave as default
+        tags: raw.tags.map((t) => t.name),
     };
 }
 
-export const getAllArticles = unstable_cache(
-    async (): Promise<Article[]> => {
-        const rows = await db
-            .select()
-            .from(articles)
-            .where(eq(articles.status, "published"))
-            .orderBy(desc(articles.publishedAt), desc(articles.createdAt));
+export async function getAllSlugs(): Promise<string[]> {
+    return await getPublishedArticleSlugs();
+}
 
-        return rows.map(mapRow);
-    },
-    ["articles-list"],
-    { tags: ["articles"], revalidate: 3600 },
-);
-
-export const getArticleBySlug = unstable_cache(
-    async (slug: string): Promise<Article | null> => {
-        const [row] = await db
-            .select()
-            .from(articles)
-            .where(eq(articles.slug, slug))
-            .limit(1);
-
-        if (!row || row.status !== "published") return null;
-
-        return mapRow(row);
-    },
-    ["article-by-slug"],
-    { tags: ["articles"], revalidate: 3600 },
-);
-
-export const getAllSlugs = unstable_cache(
-    async (): Promise<string[]> => {
-        const rows = await db
-            .select({ slug: articles.slug })
-            .from(articles)
-            .where(eq(articles.status, "published"));
-
-        return rows.map((row) => row.slug);
-    },
-    ["articles-slugs"],
-    { tags: ["articles"], revalidate: 3600 },
-);

@@ -22,7 +22,7 @@
     "node": "24.x"
   },
   "dependencies": {
-    "@blawness/admin-kit": "0.4.0",
+    "@blawness/admin-kit": "github:Blawness/admin-kit",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",

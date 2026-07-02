@@ -51,7 +51,7 @@ export function ArticleForm({
                 <label className="mb-1 block text-sm font-medium">Excerpt</label>
                 <textarea
                     name="excerpt"
-                    defaultValue={article?.excerpt}
+                    defaultValue={article?.excerpt ?? ""}
                     required
                     rows={3}
                     className="w-full rounded-md border px-3 py-2 text-sm"
@@ -75,18 +75,18 @@ export function ArticleForm({
 
             <div className="grid grid-cols-2 gap-4">
                 <div>
-                    <label className="mb-1 block text-sm font-medium">Kategori</label>
+                    <label className="mb-1 block text-sm font-medium">Kategori ID</label>
                     <select
-                        name="category"
-                        defaultValue={article?.category ?? ""}
+                        name="categoryId"
+                        defaultValue={article?.categoryId ?? ""}
                         required
                         className="w-full rounded-md border px-3 py-2 text-sm"
                     >
                         <option value="" disabled>
                             Pilih kategori
                         </option>
-                        {CATEGORIES.map((category) => (
-                            <option key={category} value={category}>
+                        {CATEGORIES.map((category, i) => (
+                            <option key={category} value={i + 1}>
                                 {category}
                             </option>
                         ))}
@@ -94,43 +94,18 @@ export function ArticleForm({
                 </div>
 
                 <div>
-                    <label className="mb-1 block text-sm font-medium">Author</label>
+                    <label className="mb-1 block text-sm font-medium">Author ID</label>
                     <input
-                        name="author"
-                        defaultValue={article?.author ?? "Vorca Studio"}
-                        required
-                        className="w-full rounded-md border px-3 py-2 text-sm"
-                    />
-                </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-                <div>
-                    <label className="mb-1 block text-sm font-medium">
-                        Read Time (menit)
-                    </label>
-                    <input
-                        name="readTime"
+                        name="authorId"
                         type="number"
-                        min={1}
-                        defaultValue={article?.readTime ?? 5}
+                        defaultValue={article?.authorId ?? 1}
                         required
                         className="w-full rounded-md border px-3 py-2 text-sm"
                     />
                 </div>
-
-                <div>
-                    <label className="mb-1 block text-sm font-medium">
-                        Tags (pisah koma)
-                    </label>
-                    <input
-                        name="tags"
-                        defaultValue={article?.tags?.join(", ")}
-                        placeholder="nextjs, typescript, web"
-                        className="w-full rounded-md border px-3 py-2 text-sm"
-                    />
-                </div>
             </div>
+
+
 
             <div>
                 <label className="mb-1 block text-sm font-medium">Status</label>

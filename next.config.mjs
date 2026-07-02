@@ -6,6 +6,7 @@ const r2Host = process.env.R2_PUBLIC_URL
 const nextConfig = {
     reactStrictMode: true,
     transpilePackages: ["@blawness/admin-kit"],
+    cacheComponents: true,
     images: {
         remotePatterns: [
             ...(r2Host

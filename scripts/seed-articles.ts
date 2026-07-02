@@ -3,11 +3,23 @@ config({ path: ".env" });
 
 import { eq } from "drizzle-orm";
 
-const [{ db }, { articles }, { slugify }] = await Promise.all([
+const [{ db }, { articles, users, categories }, { slugify }] = await Promise.all([
     import("../db"),
     import("../db/schema"),
     import("@blawness/admin-kit"),
 ]);
+
+// Seed user and category first
+await db.insert(users).values({
+    name: "Vorca Team",
+    email: "admin@vorca.com",
+    passwordHash: "dummy",
+}).onConflictDoNothing();
+
+await db.insert(categories).values({
+    name: "Technology",
+    slug: "technology",
+}).onConflictDoNothing();
 
 const articleData = [
     {
@@ -22,11 +34,9 @@ const articleData = [
 <p>Brand yang kuat akan membedakan Anda dari kompetitor. Fokus pada nilai unik yang ditawarkan dan konsisten dalam setiap komunikasi.</p>
 <h2 id="strategi-pemasaran">Strategi Pemasaran Digital</h2>
 <p>Gunakan kombinasi SEO, media sosial, dan email marketing untuk menjangkau audiens yang lebih luas. Analisis data secara berkala untuk mengoptimalkan strategi Anda.</p>`,
-        category: "Business",
-        author: "Vorca Studio",
-        readTime: 8,
-        tags: ["bisnis online", "digital marketing", "SEO", "entrepreneur"],
-        status: "published",
+        categoryId: 1,
+        authorId: 1,
+        status: "published" as const,
     },
     {
         title: "Tips Optimalisasi Performa Website dengan Next.js 16",
@@ -40,11 +50,9 @@ const articleData = [
 <p>Gunakan komponen <code>next/image</code> untuk optimasi gambar otomatis, termasuk lazy loading, responsive images, dan format WebP/AVIF.</p>
 <h2 id="caching-strategy">Strategi Caching</h2>
 <p>Implementasikan caching yang tepat dengan ISR (Incremental Static Regeneration) dan revalidation berbasis tag untuk konten dinamis.</p>`,
-        category: "Web Development",
-        author: "Vorca Studio",
-        readTime: 10,
-        tags: ["Next.js", "web performance", "React", "SSR", "caching"],
-        status: "published",
+        categoryId: 1,
+        authorId: 1,
+        status: "published" as const,
     },
     {
         title: "Mengenal UI/UX Design: Prinsip Dasar untuk Pemula",
@@ -58,11 +66,9 @@ const articleData = [
 <p>Lakukan riset untuk memahami kebutuhan dan pain points pengguna. Metode yang umum digunakan: wawancara, survei, dan usability testing.</p>
 <h2 id="tools-desain">Tools Desain yang Direkomendasikan</h2>
 <p>Figma, Sketch, dan Adobe XD adalah tools populer untuk desain UI/UX. Pilih yang paling sesuai dengan kebutuhan dan workflow tim Anda.</p>`,
-        category: "UI/UX Design",
-        author: "Vorca Studio",
-        readTime: 7,
-        tags: ["UI/UX", "design", "Figma", "user research"],
-        status: "published",
+        categoryId: 1,
+        authorId: 1,
+        status: "published" as const,
     },
 ];
 
@@ -84,11 +90,9 @@ for (const data of articleData) {
         slug,
         excerpt: data.excerpt,
         content: data.content,
-        category: data.category,
-        author: data.author,
+        categoryId: data.categoryId,
+        authorId: data.authorId,
         publishedAt: new Date(),
-        readTime: data.readTime,
-        tags: data.tags,
         status: data.status,
     });
 

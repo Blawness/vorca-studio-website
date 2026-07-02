@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-import { db } from "@/db";
-import { articles } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { getSitemapEntries } from "@blawness/admin-kit/public";
 
 const baseUrl = "https://www.vorcastudio.com";
 
@@ -15,14 +13,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: "/students", priority: 0.8, changeFrequency: "monthly" as const },
     ];
 
-    const articleRows = await db
-        .select({ slug: articles.slug, updatedAt: articles.updatedAt })
-        .from(articles)
-        .where(eq(articles.status, "published"));
+    const articleEntries = await getSitemapEntries({
+        siteUrl: baseUrl,
+        articleBasePath: "/articles",
+    });
 
-    const articleEntries: MetadataRoute.Sitemap = articleRows.map((a) => ({
-        url: `${baseUrl}/articles/${a.slug}`,
-        lastModified: a.updatedAt,
+    const formattedArticleEntries: MetadataRoute.Sitemap = articleEntries.map((a) => ({
+        url: a.url,
+        lastModified: a.lastModified,
         changeFrequency: "weekly" as const,
         priority: 0.64,
     }));
@@ -35,6 +33,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: r.priority,
         })),
         { url: `${baseUrl}/articles`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-        ...articleEntries,
+        ...formattedArticleEntries,
     ];
 }

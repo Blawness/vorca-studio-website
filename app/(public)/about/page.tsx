@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import AboutPage from "@/views/AboutPage";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: { absolute: "Tentang Vorca Studio | Web Development Agency Indonesia" },
     description:

@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 
 import Link from "next/link";
 import Image from "next/image";
@@ -7,7 +8,10 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();
-  const year = new Date().getFullYear();
+  const [year, setYear] = React.useState(2024);
+  React.useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="relative bg-black border-t border-white/[0.06]">

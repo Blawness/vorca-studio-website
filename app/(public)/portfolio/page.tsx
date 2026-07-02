@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioPage from "@/views/PortfolioPage";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: { absolute: "Portfolio | Vorca Studio" },
     description:

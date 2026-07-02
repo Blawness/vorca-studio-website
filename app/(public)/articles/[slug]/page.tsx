@@ -4,8 +4,6 @@ import { getArticleBySlug, getAllArticles, getAllSlugs } from "@/lib/articles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const revalidate = 3600;
-
 interface PageProps {
     params: Promise<{ slug: string }>;
 }

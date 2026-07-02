@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import ServicesPage from "@/views/ServicesPage";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: { absolute: "Layanan Web Development | Vorca Studio" },
     description:

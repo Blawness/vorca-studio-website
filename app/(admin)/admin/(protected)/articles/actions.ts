@@ -13,10 +13,8 @@ const ArticleSchema = z.object({
     excerpt: z.string().min(1),
     content: z.string().min(1),
     coverImageUrl: z.string().optional(),
-    category: z.string().min(1),
-    author: z.string().min(1),
-    readTime: z.coerce.number().int().min(1),
-    tags: z.string().optional(),
+    categoryId: z.coerce.number().int().min(1),
+    authorId: z.coerce.number().int().min(1),
     status: z.enum(["draft", "published"]),
 });
 
@@ -27,15 +25,11 @@ function revalidateArticles() {
 function parseArticleForm(formData: FormData) {
     const raw = Object.fromEntries(formData.entries());
     const parsed = ArticleSchema.parse(raw);
-    const tags = parsed.tags
-        ? parsed.tags.split(",").map((tag) => tag.trim()).filter(Boolean)
-        : [];
 
     return {
         ...parsed,
         content: sanitizeHtml(parsed.content),
         coverImageUrl: parsed.coverImageUrl || null,
-        tags,
     };
 }
 
@@ -48,10 +42,8 @@ export async function createArticleAction(formData: FormData) {
         excerpt: parsed.excerpt,
         content: parsed.content,
         coverImageUrl: parsed.coverImageUrl,
-        category: parsed.category,
-        author: parsed.author,
-        readTime: parsed.readTime,
-        tags: parsed.tags,
+        categoryId: parsed.categoryId,
+        authorId: parsed.authorId,
         status: parsed.status,
         publishedAt: parsed.status === "published" ? new Date() : null,
     });
@@ -79,10 +71,8 @@ export async function updateArticleAction(id: number, formData: FormData) {
             excerpt: parsed.excerpt,
             content: parsed.content,
             coverImageUrl: parsed.coverImageUrl,
-            category: parsed.category,
-            author: parsed.author,
-            readTime: parsed.readTime,
-            tags: parsed.tags,
+            categoryId: parsed.categoryId,
+            authorId: parsed.authorId,
             status: parsed.status,
             publishedAt:
                 nowPublished && !wasPublished
