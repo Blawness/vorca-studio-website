@@ -1,6 +1,7 @@
 import { requireUser } from "@blawness/admin-kit/auth-helpers";
 import { AdminLayout } from "@blawness/admin-kit/shell";
 import type { NavItem } from "@blawness/admin-kit/shell/sidebar";
+import "@/rbac";
 import { FileText, Image, LayoutDashboard, Users } from "./nav-icons";
 
 // admin-kit 0.4.0 types NavItem.icon as ReactNode (an element). Icons come
