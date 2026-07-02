@@ -156,6 +156,304 @@
   }
 }
 
+/* ==========================================================================
+   Article typography — editorial reading experience for CMS-authored HTML.
+   Replaces the (uninstalled) Tailwind Typography `prose` plugin with a
+   bespoke, dark-theme system tuned to the Vorca cyan/blue brand.
+   Applied via the `.article-prose` class in components/blog/ArticleBody.tsx.
+   ========================================================================== */
+.article-prose {
+  --prose-body: #d3dae4;
+  --prose-heading: #ffffff;
+  --prose-muted: #8b96a6;
+  --prose-accent: #22d3ee;
+  --prose-accent-deep: #0891b2;
+  --prose-rule: color-mix(in oklab, #22d3ee 22%, transparent);
+  --prose-surface: color-mix(in oklab, #0b1220 78%, transparent);
+
+  font-family: var(--font-article), Georgia, "Times New Roman", serif;
+  font-size: clamp(1.08rem, 0.99rem + 0.42vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--prose-body);
+  font-weight: 400;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Vertical rhythm: space flows between blocks, not around the whole thing. */
+.article-prose > * + * {
+  margin-top: 1.55em;
+}
+
+.article-prose p {
+  margin: 0;
+  letter-spacing: 0.003em;
+}
+
+/* Lead paragraph — sets an editorial tone and gives the intro presence. */
+.article-prose > p:first-of-type {
+  font-size: 1.22em;
+  line-height: 1.6;
+  color: #e7ecf3;
+  font-weight: 400;
+}
+
+/* Drop cap on the opening paragraph — a small signature flourish. */
+.article-prose > p:first-of-type::first-letter {
+  float: left;
+  font-weight: 600;
+  font-size: 3.4em;
+  line-height: 0.72;
+  padding: 0.06em 0.14em 0 0;
+  margin-top: 0.02em;
+  background: linear-gradient(150deg, var(--prose-accent), var(--prose-accent-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Headings switch to the site's sans for contrast against the serif body. */
+.article-prose h2,
+.article-prose h3,
+.article-prose h4 {
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  color: var(--prose-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 6rem;
+  text-wrap: balance;
+}
+
+.article-prose h2 {
+  margin-top: 2.6em;
+  margin-bottom: 0.2em;
+  font-size: clamp(1.6rem, 1.35rem + 1vw, 2.05rem);
+  line-height: 1.2;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--prose-rule);
+}
+
+/* Cyan accent tick before every H2 — anchors the eye to section starts. */
+.article-prose h2::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-bottom: 0.75rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--prose-accent), transparent);
+}
+
+.article-prose h3 {
+  margin-top: 2em;
+  margin-bottom: 0.1em;
+  font-size: clamp(1.3rem, 1.15rem + 0.55vw, 1.55rem);
+  line-height: 1.3;
+}
+
+.article-prose h4 {
+  margin-top: 1.7em;
+  margin-bottom: 0.1em;
+  font-size: 1.18rem;
+  line-height: 1.35;
+  color: #eef2f7;
+}
+
+.article-prose strong,
+.article-prose b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.article-prose em,
+.article-prose i {
+  font-style: italic;
+}
+
+.article-prose a {
+  color: var(--prose-accent);
+  font-weight: 500;
+  text-decoration: none;
+  background-image: linear-gradient(var(--prose-accent), var(--prose-accent));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  padding-bottom: 1px;
+  transition: background-size 0.25s ease, color 0.2s ease;
+}
+
+.article-prose a:hover {
+  color: #67e8f9;
+  background-size: 100% 2px;
+}
+
+/* Lists — custom cyan markers instead of the browser default bullets. */
+.article-prose ul,
+.article-prose ol {
+  margin: 0;
+  padding-left: 1.4em;
+  list-style: none;
+}
+
+.article-prose li {
+  margin-top: 0.55em;
+  padding-left: 0.35em;
+}
+
+.article-prose li::marker {
+  color: var(--prose-accent);
+}
+
+.article-prose ul > li {
+  position: relative;
+}
+
+.article-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: -0.95em;
+  top: 0.78em;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 50%;
+  background: var(--prose-accent);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--prose-accent) 60%, transparent);
+}
+
+.article-prose ol {
+  counter-reset: prose-ol;
+}
+
+.article-prose ol > li {
+  counter-increment: prose-ol;
+  position: relative;
+}
+
+.article-prose ol > li::before {
+  content: counter(prose-ol);
+  position: absolute;
+  left: -1.6em;
+  top: 0.05em;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--prose-accent);
+}
+
+.article-prose li > ul,
+.article-prose li > ol {
+  margin-top: 0.55em;
+}
+
+/* Blockquote — editorial pull-quote with a large decorative glyph. */
+.article-prose blockquote {
+  position: relative;
+  margin: 2.2em 0;
+  padding: 0.4em 0 0.4em 1.6em;
+  border-left: 3px solid var(--prose-accent);
+  color: #e7ecf3;
+  font-style: italic;
+  font-size: 1.12em;
+  line-height: 1.6;
+}
+
+.article-prose blockquote p {
+  margin-top: 0.6em;
+}
+
+.article-prose blockquote p:first-child {
+  margin-top: 0;
+}
+
+/* Figures & images — soft rounding, hairline ring, centered captions. */
+.article-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.9rem;
+  box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.article-prose figure {
+  margin: 2.4em 0;
+}
+
+.article-prose figcaption {
+  margin-top: 0.85em;
+  text-align: center;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.85rem;
+  color: var(--prose-muted);
+}
+
+/* Inline code & code blocks. */
+.article-prose code {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+  font-size: 0.86em;
+  background: color-mix(in oklab, var(--prose-accent) 12%, transparent);
+  color: #a5f3fc;
+  padding: 0.15em 0.42em;
+  border-radius: 0.4rem;
+  border: 1px solid var(--prose-rule);
+}
+
+.article-prose pre {
+  margin: 2em 0;
+  padding: 1.25rem 1.4rem;
+  overflow-x: auto;
+  border-radius: 0.9rem;
+  background: var(--prose-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.article-prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #d3dae4;
+  font-size: inherit;
+}
+
+/* Horizontal rule — a slim gradient divider, not a flat grey line. */
+.article-prose hr {
+  margin: 3em auto;
+  width: 40%;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--prose-rule), transparent);
+}
+
+/* Tables. */
+.article-prose table {
+  width: 100%;
+  margin: 2em 0;
+  border-collapse: collapse;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.95rem;
+}
+
+.article-prose th,
+.article-prose td {
+  padding: 0.7em 1em;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article-prose th {
+  color: var(--prose-heading);
+  font-weight: 600;
+  border-bottom-color: var(--prose-rule);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-prose a {
+    transition: none;
+  }
+}
+
 /* Custom Animations */
 @keyframes fadeIn {
   from {

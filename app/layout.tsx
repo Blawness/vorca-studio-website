@@ -1,5 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import { Newsreader } from "next/font/google";
 import "./globals.css";
+
+// Editorial serif used for long-form article reading (see .article-prose).
+const newsreader = Newsreader({
+    subsets: ["latin"],
+    variable: "--font-article",
+    display: "swap",
+    style: ["normal", "italic"],
+    weight: ["400", "500", "600", "700"],
+});
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/toaster";
 import SiteChrome from "@/components/SiteChrome";
@@ -134,7 +144,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="id">
+        <html lang="id" className={newsreader.variable}>
             <head>
                 <script
                     type="application/ld+json"

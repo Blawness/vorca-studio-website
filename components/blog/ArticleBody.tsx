@@ -31,7 +31,7 @@ export function extractHeadings(content: string): TOCHeading[] {
 export default function ArticleBody({ content }: ArticleBodyProps) {
     return (
         <div
-            className="prose prose-lg prose-invert max-w-none prose-headings:scroll-mt-24 prose-headings:text-white prose-h2:mt-14 prose-h2:border-b prose-h2:border-cyan-500/20 prose-h2:pb-3 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-cyan-400 prose-a:underline-offset-4 prose-strong:text-cyan-400 prose-blockquote:border-cyan-500/50 prose-blockquote:text-gray-200 prose-li:text-gray-300"
+            className="article-prose"
             dangerouslySetInnerHTML={{ __html: content }}
         />
     );
