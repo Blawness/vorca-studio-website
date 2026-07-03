@@ -22,6 +22,8 @@ const translations = {
     "nav.students": "Untuk Mahasiswa",
     "nav.articles": "Artikel",
     "nav.contact": "Kontak",
+    "nav.openMenu": "Buka menu navigasi",
+    "nav.closeMenu": "Tutup menu navigasi",
 
     // Hero
     "hero.title": "Build Modern Web Apps. End-to-End.",
@@ -330,6 +332,8 @@ const translations = {
     "nav.students": "For Students",
     "nav.articles": "Articles",
     "nav.contact": "Contact",
+    "nav.openMenu": "Open navigation menu",
+    "nav.closeMenu": "Close navigation menu",
 
     // Hero
     "hero.title": "Build Modern Web Apps. End-to-End.",

@@ -84,6 +84,8 @@ export default function Header() {
               size="sm"
               className="md:hidden text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
