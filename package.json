@@ -51,6 +51,7 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@tailwindcss/oxide": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "24.10.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

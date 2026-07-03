@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @source "../node_modules/@blawness/admin-kit/src/**/*.{tsx,ts}";
 
+@plugin "@tailwindcss/typography";
+
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
