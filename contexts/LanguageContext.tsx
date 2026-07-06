@@ -22,6 +22,7 @@ const translations = {
     "nav.students": "Untuk Mahasiswa",
     "nav.articles": "Artikel",
     "nav.contact": "Kontak",
+    "nav.clientLogin": "Login Klien",
     "nav.openMenu": "Buka menu navigasi",
     "nav.closeMenu": "Tutup menu navigasi",
 
@@ -356,6 +357,7 @@ const translations = {
     "nav.students": "For Students",
     "nav.articles": "Articles",
     "nav.contact": "Contact",
+    "nav.clientLogin": "Client Login",
     "nav.openMenu": "Open navigation menu",
     "nav.closeMenu": "Close navigation menu",
 
