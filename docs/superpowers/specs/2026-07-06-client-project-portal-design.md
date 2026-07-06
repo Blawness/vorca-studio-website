@@ -48,15 +48,19 @@ for current needs.
 New app-local tables in `db/schema.ts` alongside `articles`. All child tables FK to `projects`
 with cascade delete. Migration via `pnpm db:generate` + `pnpm db:migrate` (same as `articles`).
 
+> **User/PK id type:** admin-kit `users.id` is a **`serial` (integer)**, and `requireUserId()`
+> returns a `number`. All FKs to `users.id` are `integer`; all new PKs are `serial`. (An earlier
+> draft said uuid — corrected here.)
+
 ### `projects`
 | Column | Type | Notes |
 |---|---|---|
-| `id` | uuid PK | |
+| `id` | serial PK | integer |
 | `slug` | text unique | **non-guessable** short id (nanoid), used in portal URL |
 | `name` | text | |
 | `description` | text nullable | short summary |
 | `prd` | text nullable | sanitized HTML, authored via Tiptap; rendered read-only in portal |
-| `clientUserId` | uuid FK → `users.id` | owning client |
+| `clientUserId` | integer FK → `users.id` | owning client |
 | `stage` | enum | `planning` · `design` · `development` · `review` · `completed` |
 | `progress` | int | 0–100 |
 | `liveUrl` | text nullable | Vercel/live preview link |
