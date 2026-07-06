@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -66,8 +66,16 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Language Toggle & Mobile Menu */}
+          {/* Client Login, Language Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
+            <Link
+              href="/portal/login"
+              className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 px-3 py-1.5 text-sm font-medium text-cyan-400 transition-all duration-300 hover:bg-cyan-400/10 hover:border-cyan-400"
+            >
+              <LogIn className="w-4 h-4" />
+              {t("nav.clientLogin")}
+            </Link>
+
             <Button
               variant="ghost"
               size="sm"
@@ -111,6 +119,14 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="/portal/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-cyan-400/40 px-3 py-2 text-sm font-medium text-cyan-400 transition-colors hover:bg-cyan-400/10 hover:border-cyan-400"
+              >
+                <LogIn className="w-4 h-4" />
+                {t("nav.clientLogin")}
+              </Link>
             </div>
           </div>
         )}

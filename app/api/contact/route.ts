@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml, sendEmail } from "@/lib/email";
 
 interface ContactRequest {
     name: string;
@@ -11,40 +12,21 @@ interface ContactRequest {
 }
 
 async function sendContactEmail(contact: ContactRequest): Promise<void> {
-    const resendApiKey = process.env.RESEND_API_KEY;
-
-    if (!resendApiKey) {
-        console.warn("RESEND_API_KEY not configured, skipping email");
-        return;
-    }
-
-    const response = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${resendApiKey}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            from: "noreply@vorcastudio.com",
-            to: ["marketing@vorcastudio.com"],
-            subject: `New Contact Form Submission - ${contact.name}`,
-            html: `
+    await sendEmail({
+        to: ["marketing@vorcastudio.com"],
+        subject: `New Contact Form Submission - ${contact.name}`,
+        html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${contact.name}</p>
-        <p><strong>Email:</strong> ${contact.email}</p>
-        <p><strong>Phone:</strong> ${contact.phone || "Not provided"}</p>
-        <p><strong>Company:</strong> ${contact.company || "Not provided"}</p>
-        <p><strong>Service Type:</strong> ${contact.serviceType}</p>
-        <p><strong>Language:</strong> ${contact.language}</p>
+        <p><strong>Name:</strong> ${escapeHtml(contact.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(contact.email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(contact.phone || "Not provided")}</p>
+        <p><strong>Company:</strong> ${escapeHtml(contact.company || "Not provided")}</p>
+        <p><strong>Service Type:</strong> ${escapeHtml(contact.serviceType)}</p>
+        <p><strong>Language:</strong> ${escapeHtml(contact.language)}</p>
         <p><strong>Message:</strong></p>
-        <p>${contact.message}</p>
+        <p>${escapeHtml(contact.message)}</p>
       `,
-        }),
     });
-
-    if (!response.ok) {
-        throw new Error(`Failed to send email: ${response.statusText}`);
-    }
 }
 
 export async function POST(request: NextRequest) {
