@@ -45,7 +45,9 @@ export function ProjectDashboardChrome({
             {prdHtml && (
                 <section className="rounded-xl bg-white p-6 shadow-sm">
                     <h2 className="mb-3 text-lg font-semibold">{t("portal.section.prd")}</h2>
-                    <div className="article-prose max-w-none" dangerouslySetInnerHTML={{ __html: prdHtml }} />
+                    {/* Plain `prose` (not `article-prose`) — the blog editorial styles
+                        (drop-cap, serif, decorative rules) look wrong in a dashboard card. */}
+                    <div className="prose prose-slate max-w-none prose-sm" dangerouslySetInnerHTML={{ __html: prdHtml }} />
                 </section>
             )}
 
