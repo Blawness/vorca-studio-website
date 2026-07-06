@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendEmail } from "@/lib/email";
 
 interface ContactRequest {
     name: string;
@@ -11,24 +12,10 @@ interface ContactRequest {
 }
 
 async function sendContactEmail(contact: ContactRequest): Promise<void> {
-    const resendApiKey = process.env.RESEND_API_KEY;
-
-    if (!resendApiKey) {
-        console.warn("RESEND_API_KEY not configured, skipping email");
-        return;
-    }
-
-    const response = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${resendApiKey}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            from: "noreply@vorcastudio.com",
-            to: ["marketing@vorcastudio.com"],
-            subject: `New Contact Form Submission - ${contact.name}`,
-            html: `
+    await sendEmail({
+        to: ["marketing@vorcastudio.com"],
+        subject: `New Contact Form Submission - ${contact.name}`,
+        html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${contact.name}</p>
         <p><strong>Email:</strong> ${contact.email}</p>
@@ -39,12 +26,7 @@ async function sendContactEmail(contact: ContactRequest): Promise<void> {
         <p><strong>Message:</strong></p>
         <p>${contact.message}</p>
       `,
-        }),
     });
-
-    if (!response.ok) {
-        throw new Error(`Failed to send email: ${response.statusText}`);
-    }
 }
 
 export async function POST(request: NextRequest) {
