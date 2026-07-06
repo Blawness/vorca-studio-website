@@ -1,6 +1,7 @@
 import { requireUser } from "@blawness/admin-kit/auth-helpers";
 import { AdminLayout } from "@blawness/admin-kit/shell";
 import type { NavItem } from "@blawness/admin-kit/shell/sidebar";
+import { redirect } from "next/navigation";
 import "@/rbac";
 import { FileText, FolderKanban, Image, LayoutDashboard, Users } from "./nav-icons";
 
@@ -20,7 +21,12 @@ export default async function AdminRootLayout({
 }: {
     children: React.ReactNode;
 }) {
-    await requireUser();
+    const session = await requireUser();
+    // Clients authenticate through the same NextAuth as staff, but must never
+    // reach the admin CMS — send them to their portal. (admin-kit's middleware
+    // only checks authentication, not role.)
+    const user = session.user as { role?: string } | undefined;
+    if (user?.role === "client") redirect("/portal");
 
     return (
         <AdminLayout navItems={navItems} brandName="Vorca Studio" logoSrc="/favicon.svg">
