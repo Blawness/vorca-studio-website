@@ -1,5 +1,6 @@
 import "server-only";
 import { db } from "@/db";
+import { buildArticleHtml } from "@/lib/article-html";
 import {
     projects,
     projectUpdates,
@@ -120,7 +121,7 @@ export async function getClientProject(
         updates: updateRows.map((u) => ({
             id: u.id,
             title: u.title,
-            body: u.body,
+            body: buildArticleHtml(u.body),
             createdAt: u.createdAt.toISOString(),
         })),
         tasks: taskRows.map((t) => ({

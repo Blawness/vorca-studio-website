@@ -113,8 +113,8 @@ export async function updateTaskAction(formData: FormData) {
     await requirePermission("projects.update");
     const id = Number(formData.get("id"));
     const projectId = Number(formData.get("projectId"));
-    const status = z.enum(["todo", "in_progress", "done"]).parse(formData.get("status"));
     if (!Number.isInteger(id)) return;
+    const status = z.enum(["todo", "in_progress", "done"]).parse(formData.get("status"));
     await db.update(projectTasks).set({ status }).where(eq(projectTasks.id, id));
     revalidatePath(`/admin/projects/${projectId}`);
 }
