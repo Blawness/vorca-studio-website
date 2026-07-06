@@ -34,11 +34,12 @@ test("admin approves a request and the new client can log in", async ({ page }) 
     test.skip(!ADMIN_PASSWORD, "Set ADMIN_PASSWORD (and seed the admin) to run this test");
 
     const email = `approve-${Date.now()}@example.com`;
+    const name = `Approve Me ${Date.now()}`;
     const password = "supersecret1";
 
     // 1. Visitor registers.
     await page.goto("/portal/register");
-    await page.fill('input[name="name"]', "Approve Me");
+    await page.fill('input[name="name"]', name);
     await page.fill('input[name="email"]', email);
     await page.fill('input[name="password"]', password);
     await page.fill('input[name="confirmPassword"]', password);
@@ -53,7 +54,7 @@ test("admin approves a request and the new client can log in", async ({ page }) 
     await expect(page).toHaveURL(/\/admin(?!\/login)/);
 
     await page.goto("/admin/client-requests");
-    await page.getByRole("link", { name: "Approve Me" }).click();
+    await page.getByRole("link", { name }).click();
     await page.getByRole("button", { name: "Approve" }).click();
     await expect(page).toHaveURL(/client-requests\?success=approved/);
 
