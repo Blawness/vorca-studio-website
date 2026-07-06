@@ -7,7 +7,7 @@ import {
     deliverables,
     deliverableEvents,
 } from "@/db/schema";
-import { and, asc, desc, eq } from "drizzle-orm";
+import { and, asc, desc, eq, inArray } from "drizzle-orm";
 
 export type ClientProjectSummary = {
     id: number;
@@ -102,6 +102,7 @@ export async function getClientProject(
         ? await db
               .select()
               .from(deliverableEvents)
+              .where(inArray(deliverableEvents.deliverableId, deliverableIds))
               .orderBy(desc(deliverableEvents.createdAt))
         : [];
 
