@@ -51,4 +51,23 @@ test("client approves a deliverable", async ({ page }) => {
     await page.goto("/portal/seed-project-001");
     await page.getByRole("button", { name: /Approve|Setujui/ }).first().click();
     await expect(page.getByText(/Approved|Disetujui/).first()).toBeVisible();
+    // The deliverable's event history list also renders the approved entry
+    // (a second "Approved"/"Disetujui" occurrence: the status badge is the
+    // first match, the history line is the second).
+    await expect(page.getByText(/Approved|Disetujui/).nth(1)).toBeVisible();
+});
+
+test("client A cannot view client B's project", async ({ page }) => {
+    // Log in as the FIRST client, then try to open the SECOND client's
+    // project (seeded by scripts/seed-client.ts as client2@example.com's
+    // "Second Client Project" at slug seed-project-002).
+    await login(page);
+    await page.goto("/portal/seed-project-002");
+    // Same reasoning as the "ownership gate" test above: cacheComponents
+    // (PPR) flushes a 200 static shell before notFound() resolves, so we
+    // assert on rendered content, not HTTP status. The second client's
+    // project must never render for the first client, and the not-found UI
+    // must be what's shown instead — proving cross-client isolation.
+    await expect(page.getByText(/swam too far|berenang terlalu jauh/i)).toBeVisible();
+    await expect(page.getByText("Second Client Project")).not.toBeVisible();
 });

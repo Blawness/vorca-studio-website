@@ -9,7 +9,7 @@ const [{ db }, schema] = await Promise.all([
     import("../db"),
     import("../db/schema"),
 ]);
-const { users, projects, projectUpdates, projectTasks, deliverables } = schema;
+const { users, projects, projectUpdates, projectTasks, deliverables, deliverableEvents } = schema;
 
 const EMAIL = process.env.CLIENT_EMAIL ?? "client@example.com";
 const PASSWORD = process.env.CLIENT_PASSWORD ?? "client-password-123";
@@ -31,6 +31,8 @@ const existing = await db
     .from(projects)
     .where(eq(projects.clientUserId, user.id))
     .limit(1);
+
+let firstProjectId: number;
 
 if (existing.length === 0) {
     const slug = "seed-project-001";
@@ -64,9 +66,52 @@ if (existing.length === 0) {
         previewUrl: "https://example.com/preview",
         approvalStatus: "pending",
     });
+    firstProjectId = project.id;
     console.log(`Created client ${EMAIL} + project slug: ${slug}`);
 } else {
+    firstProjectId = (
+        await db.select({ id: projects.id }).from(projects).where(eq(projects.slug, existing[0].slug)).limit(1)
+    )[0].id;
     console.log(`Client ${EMAIL} already has project slug: ${existing[0].slug}`);
 }
+
+// Idempotency: e2e mutates the seeded deliverable's approval_status (approve
+// test) and inserts a deliverableEvents row. Reset both back to a clean
+// pending state on every run so the suite is repeatable without a DB wipe.
+// Scoped to this seed's own project/deliverables only.
+const seededDeliverables = await db
+    .select({ id: deliverables.id })
+    .from(deliverables)
+    .where(eq(deliverables.projectId, firstProjectId));
+
+for (const d of seededDeliverables) {
+    await db.delete(deliverableEvents).where(eq(deliverableEvents.deliverableId, d.id));
+    await db.update(deliverables).set({ approvalStatus: "pending" }).where(eq(deliverables.id, d.id));
+}
+console.log(`Reset ${seededDeliverables.length} deliverable(s) for seed-project-001 to pending`);
+
+// --- Second client, for cross-client ownership isolation e2e ---
+const OTHER_EMAIL = "client2@example.com";
+const otherHash = await bcrypt.hash("client-password-456", 12);
+let [other] = await db.select({ id: users.id }).from(users).where(eq(users.email, OTHER_EMAIL)).limit(1);
+if (other) {
+    await db.update(users).set({ passwordHash: otherHash, role: "client" }).where(eq(users.id, other.id));
+} else {
+    [other] = await db
+        .insert(users)
+        .values({ email: OTHER_EMAIL, name: "Second Client", passwordHash: otherHash, role: "client" })
+        .returning({ id: users.id });
+}
+const otherHas = await db.select({ id: projects.id }).from(projects).where(eq(projects.clientUserId, other.id)).limit(1);
+if (otherHas.length === 0) {
+    await db.insert(projects).values({
+        slug: "seed-project-002",
+        name: "Second Client Project",
+        clientUserId: other.id,
+        stage: "planning",
+        progress: 5,
+    });
+}
+console.log(`Second client ${OTHER_EMAIL} + slug: seed-project-002 ready`);
 
 process.exit(0);
