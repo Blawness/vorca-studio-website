@@ -4,7 +4,7 @@
 
 **Goal:** Give Vorca clients a logged-in portal to monitor their own project(s) — brief/PRD, stage & progress, timeline updates, tasks, and deliverables they can approve or request revisions on — all managed from the existing admin CMS.
 
-**Architecture:** Reuse admin-kit NextAuth + `users` table with a new `client` RBAC role. New app-local Drizzle tables (`projects`, `projectUpdates`, `projectTasks`, `deliverables`, `deliverableEvents`). A custom admin screen manages them (mirrors the existing `articles` screen). A separate `(portal)` route group serves clients, guarded by a custom `requireClient()` + per-query ownership filtering. Portal reads are uncached (`force-dynamic`); public site caching is untouched.
+**Architecture:** Reuse admin-kit NextAuth + `users` table with a new `client` RBAC role. New app-local Drizzle tables (`projects`, `projectUpdates`, `projectTasks`, `deliverables`, `deliverableEvents`). A custom admin screen manages them (mirrors the existing `articles` screen). A separate `(portal)` route group serves clients, guarded by a custom `requireClient()` + per-query ownership filtering. Portal reads are uncached — dynamic rendering comes from the auth cookie read in `requireClient()` (this app runs `cacheComponents: true`, so `force-dynamic` is disallowed); public site caching is untouched.
 
 **Tech Stack:** Next.js 16 (App Router), React 19, TypeScript, Drizzle ORM (postgres-js/Neon), NextAuth v5 via `@blawness/admin-kit`, Tailwind v4, Playwright (e2e), bcryptjs, nanoid.
 
@@ -14,7 +14,7 @@
 - **Drizzle client uses `prepare: false`** (Neon pooled) — already configured in `db/index.ts`; do not change.
 - **Migrations are generated, never hand-written.** Run `pnpm db:generate` then `pnpm db:migrate`. Drizzle reads env from `.env` then `.env.local`.
 - **All portal reads must filter by `clientUserId` at the query level**, never post-filter. Every portal write action re-checks ownership server-side.
-- **Portal routes are uncached**: every portal route file sets `export const dynamic = "force-dynamic"`. Do NOT wrap portal reads in `unstable_cache`.
+- **Portal routes are uncached.** This app has `cacheComponents: true` (Next 16 Cache Components/PPR), under which `export const dynamic = "force-dynamic"` is **disallowed** — do NOT add it. Instead, dynamic rendering happens automatically: every portal `(protected)` page/layout calls `requireClient()` (and admin pages `requireUser()`), which reads auth **cookies** — a dynamic API that opts the subtree into fresh per-request rendering. The login page reads `searchParams`, also dynamic. This is exactly how the existing `articles` admin screen stays fresh with no `dynamic` export. Do NOT wrap portal reads in `unstable_cache` or `use cache`.
 - **Sanitize HTML on save and on render.** Use `sanitizeHtml` from `@blawness/admin-kit` in server actions; use `buildArticleHtml`/`extractHeadingsFromHtml` from `lib/article-html.ts` when rendering PRD.
 - **All portal UI chrome labels go through `LanguageContext`** (`useLanguage().t(key)`), with keys added to BOTH `id` and `en` maps in `contexts/LanguageContext.tsx`. Staff-authored content (PRD, update bodies) is free-text, not translated.
 - **`proxy.ts` matcher stays `["/admin/:path*"]`** — do not add `/portal`. Portal is guarded in its layout.
@@ -836,7 +836,9 @@ import { projects, users } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { deleteProjectFormAction } from "./actions";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function AdminProjectsPage() {
     const rows = await db
@@ -1176,7 +1178,9 @@ import { eq } from "drizzle-orm";
 import { ProjectForm, type ProjectFormValues } from "../_components/ProjectForm";
 import { createProjectAction } from "../actions";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 const empty: ProjectFormValues = {
     name: "", description: "", prd: "", clientUserId: "", stage: "planning",
@@ -1209,7 +1213,9 @@ import { ProjectForm, type ProjectFormValues } from "../_components/ProjectForm"
 import { SubEntityManager } from "../_components/SubEntityManager";
 import { updateProjectAction } from "../actions";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function EditProjectPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -1369,7 +1375,9 @@ export function LoginForm({ hasError }: { hasError: boolean }) {
 ```tsx
 import { LoginForm } from "./LoginForm";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function PortalLoginPage({
     searchParams,
@@ -1486,7 +1494,9 @@ export async function portalSignOut() {
 import { requireClient } from "@/lib/portal-auth";
 import { PortalHeader } from "./PortalHeader";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function PortalProtectedLayout({ children }: { children: React.ReactNode }) {
     const client = await requireClient();
@@ -1544,7 +1554,9 @@ import { requireClient } from "@/lib/portal-auth";
 import { getClientProjects } from "@/lib/projects";
 import { ProjectListClient } from "./ProjectListClient";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function PortalHomePage() {
     const { userId } = await requireClient();
@@ -1788,7 +1800,9 @@ import { buildArticleHtml } from "@/lib/article-html";
 import { DeliverableActions } from "./DeliverableActions";
 import { ProjectDashboardChrome } from "./ProjectDashboardChrome";
 
-export const dynamic = "force-dynamic";
+// No `export const dynamic` — this app has cacheComponents:true (force-dynamic is
+// disallowed). requireClient()/requireUser() read auth cookies, making the route
+// dynamic (fresh per request) automatically.
 
 export default async function PortalProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -2061,6 +2075,6 @@ git commit -m "docs: document client project portal"
 ## Self-Review Notes
 
 - **Spec coverage:** Data model → Task 1. RBAC/client role → Task 2. requireClient → Task 3. Ownership-filtered reads → Task 4. Admin management (list/form/actions/nav) → Tasks 6–7. Portal login/chrome → Task 8. Portal list → Task 9. Dashboard + approve/revise + history → Task 10. Ownership isolation test → Task 11. Seed → Task 5. Testing (login, ownership gate, approve, revise, redirect) → Tasks 9–11. Migration/seed → Tasks 1, 5.
-- **Non-guessable slug** → Task 1 (`lib/project-slug.ts`). **No `unstable_cache` / `force-dynamic`** → applied on every portal route. **Sanitize on save & render** → actions use `sanitizeHtml`; dashboard uses `buildArticleHtml`.
+- **Non-guessable slug** → Task 1 (`lib/project-slug.ts`). **No `unstable_cache`; dynamic via auth cookie read** (not `force-dynamic`, which `cacheComponents:true` disallows) → every portal route. **Sanitize on save & render** → actions use `sanitizeHtml`; dashboard uses `buildArticleHtml`.
 - **Type consistency:** `getClientProject`/`getClientProjects`/`getDeliverableOwner` signatures in Task 4 match their consumers in Tasks 9–10; `ClientProjectSummary`/`ClientProjectDetail`/`ClientDeliverable` types are imported where used. Integer ids throughout.
 - **Known verification-order caveat:** Task 9's "sees project" test depends on Task 10's detail page because a single project auto-redirects; the task documents the temporary URL-assertion workaround and Task 10 Step 6 restores it.
