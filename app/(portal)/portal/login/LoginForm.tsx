@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { clientSignIn } from "./actions";
 
@@ -20,6 +21,9 @@ export function LoginForm({ hasError }: { hasError: boolean }) {
             <button type="submit" className="w-full rounded bg-slate-900 px-4 py-2 text-sm font-medium text-white">
                 {t("portal.login.submit")}
             </button>
+            <Link href="/portal/register" className="block text-center text-sm text-slate-600 hover:underline">
+                {t("portal.login.register")}
+            </Link>
         </form>
     );
 }
