@@ -21,6 +21,7 @@ pnpm db:push             # push schema without a migration (dev only)
 pnpm db:studio           # Drizzle Studio
 
 ADMIN_PASSWORD=<secret> pnpm seed:admin   # create/update admin user
+pnpm seed:client                           # create/update demo client user(s) + sample project(s)
 pnpm backfill:covers                       # migrate legacy article covers to R2
 
 pnpm test:e2e                              # Playwright (auto-starts `pnpm dev`, see playwright.config.ts)
@@ -54,6 +55,9 @@ Route files under `app/` are minimal server components that set metadata, fetch 
 - Media & Users screens are dropped in from `@blawness/admin-kit/screens/*`; Articles is a custom screen (`_components/ArticleForm.tsx` + `actions.ts`) because `articles` is an app-local table.
 - `nav-icons.ts` is a `"use client"` re-export of lucide icons so icon *elements* can cross from the server layout into admin-kit's client sidebar (admin-kit types `NavItem.icon` as a ReactNode).
 - Working with admin-kit? Use the **`admin-kit` skill** (API reference for the package).
+
+### Client portal
+`app/(portal)/portal/` is a separate client-facing surface: `users` with role `client` log in at `/portal/login` and see only their own project(s) (PRD, status, updates, tasks, deliverables; approve/request-revision). `lib/projects.ts` / `lib/portal-auth.ts` / `lib/project-slug.ts` back it; admin manages projects at `/admin/projects`. The admin `(protected)/layout.tsx` redirects `client`-role users to `/portal` if they land on `/admin`.
 
 ### Article HTML
 User-authored article content is HTML from a Tiptap editor. It's sanitized on write with `sanitizeHtml` (admin-kit) in the server action, and again on render via `lib/article-html.ts` (`sanitize-html` with an explicit tag/attr allowlist; also extracts a TOC).

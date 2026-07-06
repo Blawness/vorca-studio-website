@@ -82,6 +82,7 @@ This repository is the marketing website and blog for Vorca Studio — a fully b
 - `pnpm db:migrate` — apply migrations to the DB
 - `pnpm db:studio` — open Drizzle Studio
 - `pnpm seed:admin` — create/update the admin user
+- `pnpm seed:client` — create/update demo client users + sample projects for the portal
 - `pnpm backfill:covers` — migrate article cover images from Sanity CDN to R2
 - `pnpm test:e2e` — run Playwright end-to-end tests
 - `pnpm test:e2e:ui` — run E2E tests in Playwright UI mode
@@ -95,6 +96,15 @@ The CMS admin area is at `/admin`. Login with the credentials created by `pnpm s
 - **Artikel** — create/edit/publish/delete blog articles (Tiptap rich text editor, R2 cover upload)
 - **Media** — upload and manage media files
 - **Users** — manage admin/editor users
+- **Projects** — manage client projects (PRD, status, updates, tasks, deliverables); assign a project to a `client`-role user
+
+## Client Portal
+
+Clients log in at `/portal/login` to view their project's PRD, status, updates, tasks, and deliverables, and to approve or request revisions on deliverables.
+
+- Create a client account via the admin **Users** screen with role `client`, then assign them to a project in **Projects**.
+- For a quick demo, run `pnpm seed:client` to create demo client accounts (`CLIENT_EMAIL`/`CLIENT_PASSWORD` env vars optional) with sample projects.
+- No new environment variables are required — the portal reuses the existing DB and auth setup.
 
 ## End-to-End Tests
 
@@ -113,7 +123,9 @@ vorca-studio-website/
 │   │   ├── articles/        # Article CRUD
 │   │   ├── media/           # Media library
 │   │   ├── users/           # User management
+│   │   ├── projects/        # Client project CRUD
 │   │   └── login/           # Login screen
+│   ├── (portal)/portal/     # Client project portal (auth-protected)
 │   ├── api/
 │   │   ├── auth/            # NextAuth v5 handler
 │   │   └── contact/         # Contact form (Resend)
