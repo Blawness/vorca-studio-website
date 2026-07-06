@@ -91,3 +91,27 @@ export const deliverableEvents = pgTable("deliverable_events", {
     actorUserId: integer("actor_user_id").references(() => users.id, { onDelete: "set null" }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+export const signupRequestStatus = pgEnum("signup_request_status", [
+    "pending",
+    "approved",
+    "rejected",
+]);
+
+export const clientSignupRequests = pgTable("client_signup_requests", {
+    id: serial("id").primaryKey(),
+    name: text("name").notNull(),
+    email: text("email").notNull().unique(),
+    passwordHash: text("password_hash"),
+    company: text("company"),
+    phone: text("phone"),
+    note: text("note"),
+    locale: text("locale").notNull().default("id"),
+    status: signupRequestStatus("status").notNull().default("pending"),
+    reviewNote: text("review_note"),
+    reviewedByUserId: integer("reviewed_by_user_id").references(() => users.id, {
+        onDelete: "set null",
+    }),
+    reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
