@@ -3,12 +3,15 @@ import { db } from "@/db";
 import { clientSignupRequests } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { approveRequestFormAction, rejectRequestFormAction } from "../actions";
+import { requirePermission } from "@blawness/admin-kit/auth-helpers";
 
 export default async function ClientRequestDetailPage({
     params,
 }: {
     params: Promise<{ id: string }>;
 }) {
+    await requirePermission("clientRequests.review");
+
     const { id } = await params;
     const reqId = Number(id);
     if (!Number.isInteger(reqId)) notFound();

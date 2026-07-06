@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendEmail } from "@/lib/email";
+import { escapeHtml, sendEmail } from "@/lib/email";
 
 interface ContactRequest {
     name: string;
@@ -17,14 +17,14 @@ async function sendContactEmail(contact: ContactRequest): Promise<void> {
         subject: `New Contact Form Submission - ${contact.name}`,
         html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${contact.name}</p>
-        <p><strong>Email:</strong> ${contact.email}</p>
-        <p><strong>Phone:</strong> ${contact.phone || "Not provided"}</p>
-        <p><strong>Company:</strong> ${contact.company || "Not provided"}</p>
-        <p><strong>Service Type:</strong> ${contact.serviceType}</p>
-        <p><strong>Language:</strong> ${contact.language}</p>
+        <p><strong>Name:</strong> ${escapeHtml(contact.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(contact.email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(contact.phone || "Not provided")}</p>
+        <p><strong>Company:</strong> ${escapeHtml(contact.company || "Not provided")}</p>
+        <p><strong>Service Type:</strong> ${escapeHtml(contact.serviceType)}</p>
+        <p><strong>Language:</strong> ${escapeHtml(contact.language)}</p>
         <p><strong>Message:</strong></p>
-        <p>${contact.message}</p>
+        <p>${escapeHtml(contact.message)}</p>
       `,
     });
 }

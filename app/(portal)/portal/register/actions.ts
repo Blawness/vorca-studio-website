@@ -11,13 +11,13 @@ import { z } from "zod";
 
 const SignupSchema = z
     .object({
-        name: z.string().min(1),
-        email: z.string().email(),
+        name: z.string().min(1).max(200),
+        email: z.string().email().max(320),
         password: z.string().min(8),
         confirmPassword: z.string().min(8),
-        company: z.string().optional(),
-        phone: z.string().optional(),
-        note: z.string().optional(),
+        company: z.string().max(200).optional(),
+        phone: z.string().max(200).optional(),
+        note: z.string().max(5000).optional(),
         locale: z.enum(["id", "en"]).default("id"),
     })
     .refine((d) => d.password === d.confirmPassword, { path: ["confirmPassword"] });
@@ -70,8 +70,9 @@ export async function submitSignupRequest(formData: FormData) {
                 locale,
             })
             .returning({ id: clientSignupRequests.id });
-    } catch {
+    } catch (e) {
         // Unique-email collision from a concurrent submission → same generic result.
+        console.error("signup insert failed", e);
         redirect("/portal/register?error=exists");
     }
 

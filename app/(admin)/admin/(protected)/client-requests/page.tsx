@@ -2,8 +2,11 @@ import Link from "next/link";
 import { db } from "@/db";
 import { clientSignupRequests } from "@/db/schema";
 import { desc } from "drizzle-orm";
+import { requirePermission } from "@blawness/admin-kit/auth-helpers";
 
 export default async function ClientRequestsPage() {
+    await requirePermission("clientRequests.review");
+
     const rows = await db
         .select({
             id: clientSignupRequests.id,

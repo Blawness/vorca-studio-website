@@ -1,6 +1,15 @@
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const FROM = "noreply@vorcastudio.com";
 
+export function escapeHtml(value: string): string {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
 /**
  * Send an email via Resend's REST API. If RESEND_API_KEY is unset this is a
  * logged no-op (dev/test). Throws on a non-OK response so callers can decide
