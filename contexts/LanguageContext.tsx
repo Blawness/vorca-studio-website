@@ -22,7 +22,7 @@ const translations = {
     "nav.students": "Untuk Mahasiswa",
     "nav.articles": "Artikel",
     "nav.contact": "Kontak",
-    "nav.clientLogin": "Login Klien",
+    "nav.clientLogin": "Client Login",
     "nav.openMenu": "Buka menu navigasi",
     "nav.closeMenu": "Tutup menu navigasi",
 
