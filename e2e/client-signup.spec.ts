@@ -26,3 +26,42 @@ test("registering with an existing user email is rejected generically", async ({
     await expect(page).toHaveURL(/\/portal\/register\?error=exists/);
     await expect(page.getByText(/already registered or is being processed|sudah terdaftar atau sedang diproses/)).toBeVisible();
 });
+
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "admin@vorcastudio.com";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+test("admin approves a request and the new client can log in", async ({ page }) => {
+    test.skip(!ADMIN_PASSWORD, "Set ADMIN_PASSWORD (and seed the admin) to run this test");
+
+    const email = `approve-${Date.now()}@example.com`;
+    const password = "supersecret1";
+
+    // 1. Visitor registers.
+    await page.goto("/portal/register");
+    await page.fill('input[name="name"]', "Approve Me");
+    await page.fill('input[name="email"]', email);
+    await page.fill('input[name="password"]', password);
+    await page.fill('input[name="confirmPassword"]', password);
+    await page.click('button[type="submit"]');
+    await expect(page).toHaveURL(/success=1/);
+
+    // 2. Admin logs in and approves.
+    await page.goto("/admin/login");
+    await page.locator('input[type="email"]').fill(ADMIN_EMAIL);
+    await page.locator('input[type="password"]').fill(ADMIN_PASSWORD!);
+    await page.getByRole("button", { name: /masuk|sign in|login/i }).click();
+    await expect(page).toHaveURL(/\/admin(?!\/login)/);
+
+    await page.goto("/admin/client-requests");
+    await page.getByRole("link", { name: "Approve Me" }).click();
+    await page.getByRole("button", { name: "Approve" }).click();
+    await expect(page).toHaveURL(/client-requests\?success=approved/);
+
+    // 3. Log the admin out, then the new client logs in.
+    await page.context().clearCookies();
+    await page.goto("/portal/login");
+    await page.fill('input[name="email"]', email);
+    await page.fill('input[name="password"]', password);
+    await page.click('button[type="submit"]');
+    await expect(page).toHaveURL(/\/portal(\/.*)?$/);
+});

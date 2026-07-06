@@ -361,6 +361,7 @@ const translations = {
     "portal.status.pending": "Menunggu",
     "portal.status.approved": "Disetujui",
     "portal.status.revision_requested": "Revisi diminta",
+    "admin.clientRequests.title": "Permintaan Klien",
   },
   en: {
     // Navigation
@@ -710,6 +711,7 @@ const translations = {
     "portal.status.pending": "Pending",
     "portal.status.approved": "Approved",
     "portal.status.revision_requested": "Revision requested",
+    "admin.clientRequests.title": "Client Requests",
   },
 };
 

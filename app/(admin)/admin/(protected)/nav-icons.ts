@@ -4,4 +4,4 @@
 // into client references, so they can be passed as props from the server
 // AdminRootLayout down into admin-kit's client AdminSidebar without the
 // "Only plain objects can be passed to Client Components" error.
-export { FileText, FolderKanban, Image, LayoutDashboard, Users } from "lucide-react";
+export { FileText, FolderKanban, Image, LayoutDashboard, UserPlus, Users } from "lucide-react";
