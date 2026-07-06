@@ -56,18 +56,24 @@ export async function submitSignupRequest(formData: FormData) {
     }
 
     const passwordHash = await bcrypt.hash(password, 12);
-    const [row] = await db
-        .insert(clientSignupRequests)
-        .values({
-            name,
-            email: emailNorm,
-            passwordHash,
-            company: company || null,
-            phone: phone || null,
-            note: note || null,
-            locale,
-        })
-        .returning({ id: clientSignupRequests.id });
+    let row: { id: number };
+    try {
+        [row] = await db
+            .insert(clientSignupRequests)
+            .values({
+                name,
+                email: emailNorm,
+                passwordHash,
+                company: company || null,
+                phone: phone || null,
+                note: note || null,
+                locale,
+            })
+            .returning({ id: clientSignupRequests.id });
+    } catch {
+        // Unique-email collision from a concurrent submission → same generic result.
+        redirect("/portal/register?error=exists");
+    }
 
     try {
         const { subject, html } = adminNewRequestEmail({
