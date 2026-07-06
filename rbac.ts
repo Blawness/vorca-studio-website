@@ -11,6 +11,7 @@ export const rbac = defineRbac({
             "projects.create",
             "projects.update",
             "projects.delete",
+            "clientRequests.review",
         ],
         // Clients authenticate through the same NextAuth instance but hold NO
         // admin permissions — the portal authorizes them by role + ownership,
