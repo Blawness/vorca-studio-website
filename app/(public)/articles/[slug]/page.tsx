@@ -14,32 +14,47 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!article) {
         return {
-            title: 'Article Not Found | Vorca Studio',
+            title: { absolute: 'Article Not Found | Vorca Studio' },
             description: 'The requested article could not be found.',
+            robots: { index: false, follow: true },
         };
     }
 
+    // `title` as a plain string would pick up the root layout's
+    // `template: "%s | Vorca Studio"` and render "… | Vorca Studio | Vorca Studio".
+    const title = `${article.title} | Vorca Studio`;
+    const path = `/articles/${slug}`;
+
+    // An article without a cover falls through to this segment's
+    // `opengraph-image.tsx`. The key must be *absent*, not set to `undefined` —
+    // Next treats a present `images` key as "caller specified images" and drops
+    // the file-convention image either way.
+    const images = article.image
+        ? { images: [{ url: article.image, width: 1200, height: 630, alt: article.title }] }
+        : {};
+
     return {
-        title: `${article.title} | Vorca Studio`,
+        title: { absolute: title },
         description: article.excerpt,
         openGraph: {
+            type: 'article',
+            locale: 'id_ID',
+            siteName: 'Vorca Studio',
+            url: path,
             title: article.title,
             description: article.excerpt,
-            url: `https://vorcastudio.com/articles/${slug}`,
-            siteName: 'Vorca Studio',
-            images: [
-                {
-                    url: article.image,
-                    width: 1200,
-                    height: 630,
-                    alt: article.title,
-                },
-            ],
-            locale: 'id_ID',
-            type: 'article',
+            ...images,
+            publishedTime: article.date,
+            tags: article.tags,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: article.title,
+            description: article.excerpt,
+            ...images,
         },
         alternates: {
-            canonical: `https://vorcastudio.com/articles/${slug}`,
+            canonical: path,
         },
         keywords: article.tags,
     };

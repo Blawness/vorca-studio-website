@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "id_ID",
-        url: "https://www.vorcastudio.com",
+        url: "/",
         siteName: "Vorca Studio",
         title: "Vorca Studio | Jasa Web Development & Custom Web App Indonesia",
         description:
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
         description:
             "Studio pengembangan website dan web app modern berbasis Next.js untuk bisnis Indonesia.",
     },
-    alternates: {
-        canonical: "https://www.vorcastudio.com",
-    },
+    // NOTE: no `alternates.canonical` here on purpose — Next inherits the whole
+    // object into every child route, which would point every page's canonical at
+    // the homepage. Each page declares its own.
     robots: {
         index: true,
         follow: true,
