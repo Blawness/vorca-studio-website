@@ -1,7 +1,8 @@
 {
   "name": "Vorca Studio",
   "short_name": "Vorca",
-  "description": "Disruptive web agency inspired by the Orca",
+  "description": "Studio pengembangan website dan web app modern berbasis Next.js untuk bisnis Indonesia.",
+  "lang": "id",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
