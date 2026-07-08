@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LOGO_DATA_URI } from "./og-logo";
 
 // Shared renderer for the `opengraph-image` / `twitter-image` file conventions.
 // Kept in one place so every generated card stays on-brand: black canvas,
@@ -30,16 +31,9 @@ export function renderOgImage({ eyebrow, title }: OgImageOptions) {
                         "linear-gradient(135deg, #000000 0%, #04121f 55%, #06263a 100%)",
                 }}
             >
-                <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            width: 14,
-                            height: 44,
-                            borderRadius: 999,
-                            backgroundImage: "linear-gradient(180deg, #22d3ee 0%, #2563eb 100%)",
-                        }}
-                    />
+                <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element -- satori only renders <img> */}
+                    <img src={LOGO_DATA_URI} width={64} height={64} alt="" />
                     <div
                         style={{
                             fontSize: 26,
