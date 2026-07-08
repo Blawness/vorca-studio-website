@@ -17,24 +17,25 @@ import { Providers } from "../components/providers";
 
 export const metadata: Metadata = {
     title: {
-        default: "Vorca Studio | Jasa Web Development & Custom Web App Indonesia",
+        default: "Jasa Web Development & Custom Web App | Vorca Studio",
         template: "%s | Vorca Studio",
     },
+    // Kept under 160 chars so Google doesn't truncate it in search results.
     description:
-        "Vorca Studio adalah studio pengembangan website dan web app modern berbasis Next.js di Indonesia. Dari landing page, company profile, hingga custom web app untuk bisnis Anda.",
+        "Studio pengembangan website & web app modern berbasis Next.js di Indonesia — dari landing page dan company profile hingga custom web app untuk bisnis Anda.",
     metadataBase: new URL("https://www.vorcastudio.com"),
     openGraph: {
         type: "website",
         locale: "id_ID",
         url: "/",
         siteName: "Vorca Studio",
-        title: "Vorca Studio | Jasa Web Development & Custom Web App Indonesia",
+        title: "Jasa Web Development & Custom Web App | Vorca Studio",
         description:
             "Studio pengembangan website dan web app modern berbasis Next.js untuk bisnis Indonesia.",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Vorca Studio | Jasa Web Development & Custom Web App Indonesia",
+        title: "Jasa Web Development & Custom Web App | Vorca Studio",
         description:
             "Studio pengembangan website dan web app modern berbasis Next.js untuk bisnis Indonesia.",
     },
