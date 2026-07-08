@@ -1,0 +1,14 @@
+# favicon.ico was committed with 486 UTF-8 replacement characters baked into it,
+# i.e. something read it as text and wrote it back. Mark binaries explicitly so
+# git never applies text/eol filters to them.
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.pdf binary
