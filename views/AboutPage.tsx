@@ -188,7 +188,7 @@ export default function AboutPage() {
                     </ul>
                     <div className="pt-4">
                       <p className="text-blue-400 font-medium italic">
-                        "{t("about.mission")}"
+                        &ldquo;{t("about.mission")}&rdquo;
                       </p>
                     </div>
                   </div>

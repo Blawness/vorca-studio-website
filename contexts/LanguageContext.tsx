@@ -722,6 +722,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // an SSR/CSR hydration mismatch).
   useEffect(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- see comment above
     if (saved === "id" || saved === "en") setLanguageState(saved);
   }, []);
 

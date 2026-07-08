@@ -10,6 +10,9 @@ export default function Footer() {
   const { t } = useLanguage();
   const [year, setYear] = React.useState(2024);
   React.useEffect(() => {
+    // Deliberate: the footer is prerendered, so the year must be filled in on
+    // the client or it would freeze at build time.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setYear(new Date().getFullYear());
   }, []);
 

@@ -24,6 +24,8 @@ export default function CustomCursor() {
     const fine = window.matchMedia("(pointer: fine)").matches;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!fine || reduced) return;
+    // Deliberate: pointer/motion capability is only knowable on the client.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEnabled(true);
     document.body.style.cursor = "none";
 

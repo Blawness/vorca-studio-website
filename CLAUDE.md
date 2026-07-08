@@ -13,7 +13,8 @@ Stack: Next.js 16 (App Router) · React 19 · TypeScript · Tailwind v4 · Frame
 ```bash
 pnpm dev                 # dev server (http://localhost:3000)
 pnpm build               # production build
-pnpm lint                # next lint
+pnpm lint                # eslint . (flat config in eslint.config.mjs; `next lint` was removed in Next 16)
+pnpm lint:fix            # eslint . --fix
 
 pnpm db:generate         # generate Drizzle migration SQL from db/schema.ts
 pnpm db:migrate          # apply migrations
