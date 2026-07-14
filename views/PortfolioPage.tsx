@@ -179,17 +179,6 @@ export default function PortfolioPage() {
       tags: ["Next.js", "Tailwind CSS"],
     },
     {
-      title: "Harun Pratitno Law Firm",
-      slug: "harun-lawfirm",
-      url: "https://www.harunlawfirm.com",
-      category: "Company Profile",
-      desc: {
-        id: "Website firma hukum profesional dengan halaman layanan, profil tim, dan konsultasi.",
-        en: "Professional law firm website with services, team profiles, and consultation pages.",
-      },
-      tags: ["Next.js", "Tailwind CSS"],
-    },
-    {
       title: "FinEdu",
       slug: "finedu",
       url: "https://www.finedu.my.id",
@@ -243,6 +232,17 @@ export default function PortfolioPage() {
         en: "On-demand mechanic app — trusted mechanics come to the user's vehicle location.",
       },
       tags: ["Next.js", "Mobile-first"],
+    },
+    {
+      title: "Koka Scent",
+      slug: "koka-scent",
+      url: "https://koka-scent.vercel.app",
+      category: "Web App",
+      desc: {
+        id: "Toko online parfum oil-based bergaya Jepang dengan katalog produk, filter, dan keranjang belanja.",
+        en: "Japanese-inspired oil-based perfume store with a filterable product catalog and shopping cart.",
+      },
+      tags: ["Next.js", "E-Commerce", "Cart"],
     },
     {
       title: "Tiga Anak Propertindo",
