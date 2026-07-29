@@ -35,7 +35,7 @@ export function ProjectDashboardChrome({
                 </div>
                 <p className="mt-1 text-xs text-slate-500">{project.progress}%</p>
                 {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block rounded bg-slate-900 px-4 py-2 text-sm text-white">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block rounded bg-slate-900 px-4 py-2 text-sm text-white">
                         {t("portal.viewLive")}
                     </a>
                 )}
@@ -97,8 +97,8 @@ export function ProjectDashboardChrome({
                                 <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs">{t(STATUS_KEY[d.approvalStatus])}</span>
                             </div>
                             <div className="mt-1 flex gap-4 text-sm">
-                                {d.fileUrl && <a className="text-brand hover:underline" href={d.fileUrl} target="_blank" rel="noreferrer">File</a>}
-                                {d.previewUrl && <a className="text-brand hover:underline" href={d.previewUrl} target="_blank" rel="noreferrer">Preview</a>}
+                                {d.fileUrl && <a className="text-brand hover:underline" href={d.fileUrl} target="_blank" rel="noopener noreferrer">File</a>}
+                                {d.previewUrl && <a className="text-brand hover:underline" href={d.previewUrl} target="_blank" rel="noopener noreferrer">Preview</a>}
                             </div>
                             <DeliverableActions deliverable={d} slug={slug} />
                             {d.events.length > 0 && (
