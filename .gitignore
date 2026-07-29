@@ -70,6 +70,9 @@ encore.gen.cue
 .turbo
 .playwright-cli/
 
+# Security & bug scan output (local-only artifacts from the /scan workflow)
+.scan-output/
+
 # Lighthouse / Chrome temp profiles (can land in-repo when run under WSL)
 C:\\*
 lighthouse.*
