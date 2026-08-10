@@ -4,9 +4,13 @@ import {
     pgTable,
     serial,
     integer,
+    bigint,
+    boolean,
     text,
     date,
     timestamp,
+    jsonb,
+    index,
     pgEnum,
 } from "drizzle-orm/pg-core";
 import { users } from "@blawness/admin-kit/schema";
@@ -91,6 +95,67 @@ export const deliverableEvents = pgTable("deliverable_events", {
     actorUserId: integer("actor_user_id").references(() => users.id, { onDelete: "set null" }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+/* ------------------------------------------------------------------ *
+ * Payments (Duitku)
+ * ------------------------------------------------------------------ */
+
+export const paymentStatus = pgEnum("payment_status", [
+    "pending",
+    "paid",
+    "failed",
+    "expired",
+]);
+
+export const payments = pgTable(
+    "payments",
+    {
+        id: serial("id").primaryKey(),
+        /** merchantOrderId yang kita kirim ke Duitku — unik, jadi kunci idempotency. */
+        merchantOrderId: text("merchant_order_id").notNull().unique(),
+        /** Rupiah penuh, tanpa desimal (sesuai paymentAmount Duitku). */
+        amount: bigint("amount", { mode: "number" }).notNull(),
+        status: paymentStatus("status").notNull().default("pending"),
+        /** Kode metode pembayaran Duitku, mis. "BC", "SP", "VC". */
+        paymentMethod: text("payment_method"),
+        productDetails: text("product_details"),
+        customerEmail: text("customer_email"),
+        /** Referensi dari Duitku (diisi setelah inquiry / callback). */
+        reference: text("reference"),
+        publisherOrderId: text("publisher_order_id"),
+        paymentUrl: text("payment_url"),
+        vaNumber: text("va_number"),
+        /** Opsional: kaitkan pembayaran ke project / user portal. */
+        projectId: integer("project_id").references(() => projects.id, { onDelete: "set null" }),
+        userId: integer("user_id").references(() => users.id, { onDelete: "set null" }),
+        paidAt: timestamp("paid_at", { withTimezone: true }),
+        expiresAt: timestamp("expires_at", { withTimezone: true }),
+        createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+        updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    },
+    (t) => [
+        index("payments_status_idx").on(t.status),
+        index("payments_created_at_idx").on(t.createdAt),
+    ]
+);
+
+/** Audit trail: satu baris per callback/cek status yang masuk. */
+export const paymentEvents = pgTable(
+    "payment_events",
+    {
+        id: serial("id").primaryKey(),
+        paymentId: integer("payment_id").references(() => payments.id, { onDelete: "cascade" }),
+        /** Disimpan mentah supaya callback untuk order tak dikenal tetap terekam. */
+        merchantOrderId: text("merchant_order_id").notNull(),
+        /** "callback" | "status_check" | "inquiry" */
+        source: text("source").notNull(),
+        resultCode: text("result_code"),
+        signatureValid: boolean("signature_valid").notNull().default(true),
+        payload: jsonb("payload").notNull(),
+        createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    },
+    (t) => [index("payment_events_order_idx").on(t.merchantOrderId)]
+);
 
 export const signupRequestStatus = pgEnum("signup_request_status", [
     "pending",
