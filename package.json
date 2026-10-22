@@ -14,6 +14,7 @@
     "backfill:covers": "tsx scripts/backfill-covers-to-r2.ts",
     "seed:admin": "tsx scripts/seed-admin.ts",
     "seed:client": "tsx scripts/seed-client.ts",
+    "seed:portfolio": "tsx scripts/seed-portfolio.ts",
     "duitku:check": "tsx scripts/duitku-check.ts",
     "duitku:pending": "tsx scripts/duitku-seed-pending.ts",
     "duitku:inspect": "tsx scripts/duitku-inspect.ts",

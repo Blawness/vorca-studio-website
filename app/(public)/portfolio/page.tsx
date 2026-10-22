@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PortfolioPage from "@/views/PortfolioPage";
 import { pageMetadata } from "@/lib/seo";
+import { getVisiblePortfolio } from "@/lib/portfolio";
 
 export const metadata: Metadata = pageMetadata({
     title: "Portfolio | Vorca Studio",
@@ -9,6 +10,7 @@ export const metadata: Metadata = pageMetadata({
     path: "/portfolio",
 });
 
-export default function Page() {
-    return <PortfolioPage />;
+export default async function Page() {
+    const projects = await getVisiblePortfolio();
+    return <PortfolioPage projects={projects} />;
 }

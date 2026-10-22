@@ -180,3 +180,22 @@ export const clientSignupRequests = pgTable("client_signup_requests", {
     reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+export const portfolioItems = pgTable("portfolio_items", {
+    id: serial("id").primaryKey(),
+    slug: text("slug").notNull().unique(),
+    // Null for hand-added entries that don't map to a Vercel project.
+    vercelProjectId: text("vercel_project_id").unique(),
+    vercelProjectName: text("vercel_project_name"),
+    title: text("title").notNull(),
+    category: text("category").notNull().default("Landing Page"),
+    descriptionId: text("description_id"),
+    descriptionEn: text("description_en"),
+    url: text("url").notNull(),
+    thumbnailUrl: text("thumbnail_url"),
+    tags: jsonb("tags").$type<string[]>().notNull().default([]),
+    visible: boolean("visible").notNull().default(false),
+    sortOrder: integer("sort_order").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});

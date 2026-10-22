@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
+import type { PortfolioItem } from "@/lib/portfolio";
 import {
   NextjsLogo,
   TypeScriptLogo,
@@ -140,7 +141,7 @@ const PACKAGES = [
   },
 ] as const;
 
-export default function HomePage() {
+export default function HomePage({ portfolio }: { portfolio: PortfolioItem[] }) {
   const { t, language } = useLanguage();
 
   const services = [
@@ -186,11 +187,7 @@ export default function HomePage() {
     { name: "Supabase", desc: t("tech.supabase.label"), Logo: SupabaseLogo },
   ];
 
-  const portfolioItems = [
-    { title: "Harun Pratitno Law Firm", category: "Company Profile", slug: "harun-lawfirm", url: "https://www.harunlawfirm.com" },
-    { title: "FinEdu", category: "Web App", slug: "finedu", url: "https://www.finedu.my.id" },
-    { title: "NudgeCart", category: "Web App", slug: "nudgecart", url: "https://nudgecart.vercel.app" },
-  ];
+  const portfolioItems = portfolio.slice(0, 3);
 
   return (
     <div className="bg-[#050b16]">
@@ -866,13 +863,15 @@ export default function HomePage() {
                 className="group block rounded-xl overflow-hidden bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative aspect-video bg-[#0a1628] overflow-hidden">
-                  <img
-                    src={`/portfolio/${item.slug}.jpg`}
-                    alt={`Screenshot ${item.title}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {item.thumbnailUrl && (
+                    <img
+                      src={item.thumbnailUrl}
+                      alt={`Screenshot ${item.title}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/60 transition-opacity duration-300">
                     <span className="inline-flex items-center gap-2 text-sm text-white font-medium px-4 py-2 rounded-lg bg-blue-600/90">
                       {t("portfolio.viewDetail")}

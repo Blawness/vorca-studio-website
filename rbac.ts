@@ -11,6 +11,9 @@ export const rbac = defineRbac({
             "projects.create",
             "projects.update",
             "projects.delete",
+            "portfolio.read",
+            "portfolio.update",
+            "portfolio.delete",
             "clientRequests.review",
         ],
         // Clients authenticate through the same NextAuth instance but hold NO

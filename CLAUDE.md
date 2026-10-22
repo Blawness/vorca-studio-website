@@ -70,3 +70,6 @@ User-authored article content is HTML from a Tiptap editor. It's sanitized on wr
 - `app/data/articles.json` is legacy pre-migration seed data (bilingual fields), consumed by `scripts/seed-articles.ts` — it is **not** the live data source; the DB is.
 - `pnpm.onlyBuiltDependencies` (admin-kit/esbuild/sharp) and `pnpm.overrides` in `package.json` are load-bearing for install — don't strip them.
 - Design/migration history lives in `docs/superpowers/` (specs + phased plans for the Sanity→admin-kit migration and homepage revamp).
+
+### Portfolio (Vercel-synced)
+`portfolio_items` table (`db/schema.ts`) feeds `/portfolio` and the homepage via `lib/portfolio.ts` (`"use cache"`, tag `portfolio`). Admin at `/admin/portfolio`: "Sync from Vercel" (`lib/vercel.ts`, needs `VERCEL_API_TOKEN` + `VERCEL_TEAM_ID`) imports projects hidden; toggle visibility to publish. Showing an item without a thumbnail screenshots its URL via Microlink into R2 (`lib/portfolio-thumbnail.ts`). Mutations call `revalidateTag("portfolio", "max")`. `pnpm seed:portfolio` imports the original hardcoded entries.

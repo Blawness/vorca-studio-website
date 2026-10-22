@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "../contexts/LanguageContext";
+import type { PortfolioItem } from "@/lib/portfolio";
 import { PageHero } from "@/components/PageHero";
 
 const fadeUp = {
@@ -29,14 +30,7 @@ function SectionDivider() {
   );
 }
 
-type Project = {
-  title: string;
-  slug: string;
-  url: string;
-  category: string;
-  desc: { id: string; en: string };
-  tags: string[];
-};
+type Project = PortfolioItem;
 
 /**
  * Portfolio card that lazy-loads a live, scaled-down iframe of the real site
@@ -75,13 +69,15 @@ function ProjectCard({
       <Card className="h-full bg-white/[0.02] border border-white/[0.06] group-hover:border-blue-500/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-blue-600/20 overflow-hidden p-0">
         <div className="relative h-48 overflow-hidden bg-[#0a1628]">
           {/* Screenshot (instant + fallback) */}
-          <img
-            src={`/portfolio/${project.slug}.jpg`}
-            alt={`Screenshot ${project.title}`}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          />
+          {project.thumbnailUrl && (
+            <img
+              src={project.thumbnailUrl}
+              alt={`Screenshot ${project.title}`}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
 
           {/* Live iframe — mounts on first hover, fades in over the screenshot */}
           {active && (
@@ -133,7 +129,7 @@ function ProjectCard({
             <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-4">{project.desc[language]}</p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-4">{project.description[language]}</p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag, tagIndex) => (
               <Badge
@@ -151,116 +147,14 @@ function ProjectCard({
   );
 }
 
-export default function PortfolioPage() {
+export default function PortfolioPage({ projects }: { projects: Project[] }) {
   const { t, language } = useLanguage();
   const [active, setActive] = useState(0);
 
-  const projects: Project[] = [
-    {
-      title: "LIPAN-RI",
-      slug: "lipan-ri",
-      url: "https://www.lipan-ri.com",
-      category: "Website",
-      desc: {
-        id: "Portal media & publikasi resmi dengan manajemen artikel dan tampilan berita yang rapi.",
-        en: "Official media & publication portal with article management and a clean news layout.",
-      },
-      tags: ["Next.js", "Tailwind CSS", "CMS"],
-    },
-    {
-      title: "Aset Nusantara Internasional",
-      slug: "aset-nusantara",
-      url: "https://www.asetnusantarainternasional.com",
-      category: "Company Profile",
-      desc: {
-        id: "Company profile institusi dengan identitas visual kuat dan struktur layanan yang jelas.",
-        en: "Institutional company profile with a strong visual identity and clear service structure.",
-      },
-      tags: ["Next.js", "Tailwind CSS"],
-    },
-    {
-      title: "FinEdu",
-      slug: "finedu",
-      url: "https://www.finedu.my.id",
-      category: "Web App",
-      desc: {
-        id: "Platform edukasi fintech dengan kuis interaktif, gamifikasi, XP, achievement, dan leaderboard.",
-        en: "Fintech education platform with interactive quizzes, gamification, XP, achievements, and a leaderboard.",
-      },
-      tags: ["Next.js", "Auth", "Database"],
-    },
-    {
-      title: "Tiga Anak Propertindo — Katalog",
-      slug: "next-property-catalog",
-      url: "https://next-property-catalog.vercel.app",
-      category: "Web App",
-      desc: {
-        id: "Katalog properti dengan pencarian & filter (rumah, apartemen, tanah) dan halaman detail listing.",
-        en: "Property catalog with search & filters (house, apartment, land) and listing detail pages.",
-      },
-      tags: ["Next.js", "Tailwind CSS", "Search"],
-    },
-    {
-      title: "Terrasmave",
-      slug: "terrasmave",
-      url: "https://terrasmave.vercel.app",
-      category: "Landing Page",
-      desc: {
-        id: "Landing page brand F&B (es krim sandwich homemade) dengan menu dan pemesanan via WhatsApp.",
-        en: "F&B brand landing page (homemade ice cream sandwich) with menu and WhatsApp ordering.",
-      },
-      tags: ["Next.js", "Tailwind CSS"],
-    },
-    {
-      title: "NudgeCart",
-      slug: "nudgecart",
-      url: "https://nudgecart.vercel.app",
-      category: "Web App",
-      desc: {
-        id: "Toko online sembako dengan katalog produk, kategori, promo, dan keranjang belanja.",
-        en: "Online grocery store with product catalog, categories, promos, and a shopping cart.",
-      },
-      tags: ["Next.js", "E-Commerce", "Cart"],
-    },
-    {
-      title: "Auto Jalan",
-      slug: "auto-jalan",
-      url: "https://auto-jalan.vercel.app",
-      category: "Web App",
-      desc: {
-        id: "Aplikasi panggil montir on-demand — montir terpercaya datang ke lokasi kendaraan pengguna.",
-        en: "On-demand mechanic app — trusted mechanics come to the user's vehicle location.",
-      },
-      tags: ["Next.js", "Mobile-first"],
-    },
-    {
-      title: "Koka Scent",
-      slug: "koka-scent",
-      url: "https://koka-scent.vercel.app",
-      category: "Web App",
-      desc: {
-        id: "Toko online parfum oil-based bergaya Jepang dengan katalog produk, filter, dan keranjang belanja.",
-        en: "Japanese-inspired oil-based perfume store with a filterable product catalog and shopping cart.",
-      },
-      tags: ["Next.js", "E-Commerce", "Cart"],
-    },
-    {
-      title: "Tiga Anak Propertindo",
-      slug: "tiga-anak-propertindo",
-      url: "https://www.tigaanakpropertindo.com",
-      category: "Company Profile",
-      desc: {
-        id: "Company profile pengembang properti dengan fokus kredibilitas dan perencanaan proyek yang matang.",
-        en: "Property developer company profile focused on credibility and thorough project planning.",
-      },
-      tags: ["Next.js", "Tailwind CSS"],
-    },
+  const categories = [
+    language === "id" ? "Semua" : "All",
+    ...Array.from(new Set(projects.map((p) => p.category))),
   ];
-
-  const categories =
-    language === "id"
-      ? ["Semua", "Company Profile", "Web App", "Website", "Landing Page"]
-      : ["All", "Company Profile", "Web App", "Website", "Landing Page"];
 
   const filtered =
     active === 0

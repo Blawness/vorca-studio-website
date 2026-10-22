@@ -80,3 +80,4 @@ lighthouse.*
 **/SingletonLock
 **/SingletonCookie
 **/DawnWebGPUCache/
+.env*
